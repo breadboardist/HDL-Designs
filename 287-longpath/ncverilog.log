@@ -1,0 +1,230 @@
+ncverilog: 14.10-p001: (c) Copyright 1995-2014 Cadence Design Systems, Inc.
+TOOL:	ncverilog	14.10-p001: Started on Jan 29, 2015 at 11:39:30 PST
+ncverilog
+	+libext+.tsbvlibp
+	+access+r
+	+sv
+	-y
+	/apps/toshiba/sjsu/verilog/tc240c
+	-f files.f
+		tbsfilt.sv
+		sfilt_gates.v
+file: tbsfilt.sv
+    mk.randomize();
+               |
+ncvlog: *W,FUNTSK (tbsfilt.sv,53|15): function called as a task without void'().
+    randomize();
+            |
+ncvlog: *W,FUNTSK (tbsfilt.sv,82|12): function called as a task without void'().
+	module worklib.tbsfilt:sv
+		errors: 0, warnings: 2
+file: sfilt_gates.v
+	module worklib.sfilt_DW01_add_0:v
+		errors: 0, warnings: 0
+	module worklib.sfilt_DW01_add_1:v
+		errors: 0, warnings: 0
+	module worklib.sfilt_DW_mult_tc_0:v
+		errors: 0, warnings: 0
+	module worklib.sfilt:v
+		errors: 0, warnings: 0
+file: /apps/toshiba/sjsu/verilog/tc240c/CAN2X1.tsbvlibp
+	module tc240c.CAN2X1:tsbvlibp
+		errors: 0, warnings: 0
+file: /apps/toshiba/sjsu/verilog/tc240c/CEOX1.tsbvlibp
+	module tc240c.CEOX1:tsbvlibp
+		errors: 0, warnings: 0
+file: /apps/toshiba/sjsu/verilog/tc240c/CFA1X1.tsbvlibp
+	module tc240c.CFA1X1:tsbvlibp
+		errors: 0, warnings: 0
+file: /apps/toshiba/sjsu/verilog/tc240c/CHA1X1.tsbvlibp
+	module tc240c.CHA1X1:tsbvlibp
+		errors: 0, warnings: 0
+file: /apps/toshiba/sjsu/verilog/tc240c/CIVX2.tsbvlibp
+	module tc240c.CIVX2:tsbvlibp
+		errors: 0, warnings: 0
+file: /apps/toshiba/sjsu/verilog/tc240c/CND2X1.tsbvlibp
+	module tc240c.CND2X1:tsbvlibp
+		errors: 0, warnings: 0
+file: /apps/toshiba/sjsu/verilog/tc240c/CNIVX1.tsbvlibp
+	module tc240c.CNIVX1:tsbvlibp
+		errors: 0, warnings: 0
+file: /apps/toshiba/sjsu/verilog/tc240c/CNR2X1.tsbvlibp
+	module tc240c.CNR2X1:tsbvlibp
+		errors: 0, warnings: 0
+file: /apps/toshiba/sjsu/verilog/tc240c/CENX1.tsbvlibp
+	module tc240c.CENX1:tsbvlibp
+		errors: 0, warnings: 0
+file: /apps/toshiba/sjsu/verilog/tc240c/COR2X1.tsbvlibp
+	module tc240c.COR2X1:tsbvlibp
+		errors: 0, warnings: 0
+file: /apps/toshiba/sjsu/verilog/tc240c/COND2X1.tsbvlibp
+	module tc240c.COND2X1:tsbvlibp
+		errors: 0, warnings: 0
+file: /apps/toshiba/sjsu/verilog/tc240c/CAOR1X1.tsbvlibp
+	module tc240c.CAOR1X1:tsbvlibp
+		errors: 0, warnings: 0
+file: /apps/toshiba/sjsu/verilog/tc240c/COND1XL.tsbvlibp
+	module tc240c.COND1XL:tsbvlibp
+		errors: 0, warnings: 0
+file: /apps/toshiba/sjsu/verilog/tc240c/COND11X1.tsbvlibp
+	module tc240c.COND11X1:tsbvlibp
+		errors: 0, warnings: 0
+file: /apps/toshiba/sjsu/verilog/tc240c/CND2IX1.tsbvlibp
+	module tc240c.CND2IX1:tsbvlibp
+		errors: 0, warnings: 0
+file: /apps/toshiba/sjsu/verilog/tc240c/CAOR2X1.tsbvlibp
+	module tc240c.CAOR2X1:tsbvlibp
+		errors: 0, warnings: 0
+file: /apps/toshiba/sjsu/verilog/tc240c/CFD2QXL.tsbvlibp
+	module tc240c.CFD2QXL:tsbvlibp
+		errors: 0, warnings: 0
+file: /apps/toshiba/sjsu/verilog/tc240c/CFD2XL.tsbvlibp
+	module tc240c.CFD2XL:tsbvlibp
+		errors: 0, warnings: 0
+file: /apps/toshiba/sjsu/verilog/tc240c/CAOR2X2.tsbvlibp
+	module tc240c.CAOR2X2:tsbvlibp
+		errors: 0, warnings: 0
+file: /apps/toshiba/sjsu/verilog/tc240c/CAOR2X4.tsbvlibp
+	module tc240c.CAOR2X4:tsbvlibp
+		errors: 0, warnings: 0
+file: /apps/toshiba/sjsu/verilog/tc240c/CNR3XL.tsbvlibp
+	module tc240c.CNR3XL:tsbvlibp
+		errors: 0, warnings: 0
+file: /apps/toshiba/sjsu/verilog/tc240c/CNR4X1.tsbvlibp
+	module tc240c.CNR4X1:tsbvlibp
+		errors: 0, warnings: 0
+file: /apps/toshiba/sjsu/verilog/tc240c/CANR2X1.tsbvlibp
+	module tc240c.CANR2X1:tsbvlibp
+		errors: 0, warnings: 0
+file: /apps/toshiba/sjsu/verilog/tc240c/CNR2IX1.tsbvlibp
+	module tc240c.CNR2IX1:tsbvlibp
+		errors: 0, warnings: 0
+file: /apps/toshiba/sjsu/verilog/tc240c/CIVXL.tsbvlibp
+	module tc240c.CIVXL:tsbvlibp
+		errors: 0, warnings: 0
+file: /apps/toshiba/sjsu/verilog/tc240c/CMX2X1.tsbvlibp
+	module tc240c.CMX2X1:tsbvlibp
+		errors: 0, warnings: 0
+file: /apps/toshiba/sjsu/verilog/tc240c/CMXI2X1.tsbvlibp
+	module tc240c.CMXI2X1:tsbvlibp
+		errors: 0, warnings: 0
+file: /apps/toshiba/sjsu/verilog/tc240c/CMX2GX1.tsbvlibp
+	module tc240c.CMX2GX1:tsbvlibp
+		errors: 0, warnings: 0
+file: /apps/toshiba/sjsu/verilog/tc240c/TADDR2Sprim.tsbvlibp
+	primitive tc240c.TADDR2Sprim:tsbvlibp
+		errors: 0, warnings: 0
+file: /apps/toshiba/sjsu/verilog/tc240c/TADDR2Cprim.tsbvlibp
+	primitive tc240c.TADDR2Cprim:tsbvlibp
+		errors: 0, warnings: 0
+file: /apps/toshiba/sjsu/verilog/tc240c/tsbCFD2QXL.tsbvlibp
+	module tc240c.tsbCFD2QXL:tsbvlibp
+		errors: 0, warnings: 0
+file: /apps/toshiba/sjsu/verilog/tc240c/tsbCFD2XL.tsbvlibp
+	module tc240c.tsbCFD2XL:tsbvlibp
+		errors: 0, warnings: 0
+file: /apps/toshiba/sjsu/verilog/tc240c/TMUX21prim.tsbvlibp
+	primitive tc240c.TMUX21prim:tsbvlibp
+		errors: 0, warnings: 0
+file: /apps/toshiba/sjsu/verilog/tc240c/TMUX21INVprim.tsbvlibp
+	primitive tc240c.TMUX21INVprim:tsbvlibp
+		errors: 0, warnings: 0
+file: /apps/toshiba/sjsu/verilog/tc240c/tsbMUXXprim.tsbvlibp
+	primitive tc240c.tsbMUXXprim:tsbvlibp
+		errors: 0, warnings: 0
+file: /apps/toshiba/sjsu/verilog/tc240c/TFDPRBNOprim.tsbvlibp
+	primitive tc240c.TFDPRBNOprim:tsbvlibp
+		errors: 0, warnings: 0
+		Caching library 'tc240c' ....... Done
+		Caching library 'worklib' ....... Done
+	Elaborating the design hierarchy:
+  sfilt_DW01_add_0 add_43 ( .A({N272, N271, N270, N269, N268, N267, N266, N265, 
+                        |
+ncelab: *W,CUVWSP (./sfilt_gates.v,2351|24): 1 output port was not connected:
+ncelab: (./sfilt_gates.v,2): CO
+
+  sfilt_DW01_add_1 add_39 ( .A({N79, N78, N77, N76, N75, N74, N73, N72, N71, 
+                        |
+ncelab: *W,CUVWSP (./sfilt_gates.v,2368|24): 1 output port was not connected:
+ncelab: (./sfilt_gates.v,144): CO
+
+  CFA1X1 U1_63 ( .A(A[63]), .B(B[63]), .CI(carry[63]), .S(SUM[63]) );
+             |
+ncelab: *W,CUVWSP (./sfilt_gates.v,153|13): 1 output port was not connected:
+ncelab: (/apps/toshiba/sjsu/verilog/tc240c/CFA1X1.tsbvlibp,12): CO
+
+	Building instance overlay tables: .................... Done
+	Generating native compiled code:
+		tc240c.CANR2X1:tsbvlibp <0x57668566>
+			streams:   0, words:     0
+		tc240c.CAOR1X1:tsbvlibp <0x7d4a8e76>
+			streams:   0, words:     0
+		tc240c.CAOR2X1:tsbvlibp <0x4549541c>
+			streams:   0, words:     0
+		tc240c.CAOR2X2:tsbvlibp <0x461c1c2b>
+			streams:   0, words:     0
+		tc240c.CAOR2X4:tsbvlibp <0x47c1ac49>
+			streams:   0, words:     0
+		tc240c.CENX1:tsbvlibp <0x39befbc0>
+			streams:   0, words:     0
+		tc240c.CEOX1:tsbvlibp <0x33335aca>
+			streams:   0, words:     0
+		tc240c.CFA1X1:tsbvlibp <0x45e6fc5d>
+			streams:   0, words:     0
+		tc240c.CHA1X1:tsbvlibp <0x6c4e77bc>
+			streams:   0, words:     0
+		tc240c.CMX2GX1:tsbvlibp <0x5b5a7f3f>
+			streams:   0, words:     0
+		tc240c.CMX2X1:tsbvlibp <0x4ed36aeb>
+			streams:   0, words:     0
+		tc240c.CMXI2X1:tsbvlibp <0x466da597>
+			streams:   0, words:     0
+		tc240c.COND11X1:tsbvlibp <0x72ea0348>
+			streams:   0, words:     0
+		tc240c.COND1XL:tsbvlibp <0x1a84d017>
+			streams:   0, words:     0
+		tc240c.COND2X1:tsbvlibp <0x6a469495>
+			streams:   0, words:     0
+		tc240c.tsbCFD2QXL:tsbvlibp <0x2cef90ab>
+			streams:   0, words:     0
+		tc240c.tsbCFD2XL:tsbvlibp <0x7be24a53>
+			streams:   0, words:     0
+		worklib.sfilt:v <0x2959b4c9>
+			streams:   0, words:     0
+		worklib.tbsfilt:sv <0x1a26140a>
+			streams:  29, words: 24459
+	Building instance specific data structures.
+	Loading native compiled code:     .................... Done
+	Design hierarchy summary:
+		                       Instances  Unique
+		Modules:                    3097      35
+		UDPs:                       1607       6
+		Primitives:                29325       9
+		Timing outputs:             3503      24
+		Registers:                   185      33
+		Scalar wires:               3675       -
+		Expanded wires:               66       3
+		Always blocks:                 1       1
+		Initial blocks:                4       4
+		Clocking blocks:               1       1
+		Pseudo assignments:            5       5
+		Timing checks:              1476     659
+		SV Class declarations:         2       2
+		SV Class specializations:      2       2
+		Simulation timescale:       10ps
+	Writing initial simulation snapshot: worklib.tbsfilt:sv
+Loading snapshot worklib.tbsfilt:sv .................... Done
+SVSEED default: 1
+ncsim> source /apps/cadence/INCISIV141/tools/inca/files/ncsimrc
+ncsim> run
+
+
+
+We passed the test, happy happy :)
+
+
+
+Simulation complete via $finish(1) at time 2271500 NS + 0
+./tbsfilt.sv:170   $finish;
+ncsim> exit
+TOOL:	ncverilog	14.10-p001: Exiting on Jan 29, 2015 at 11:39:38 PST  (total: 00:00:08)

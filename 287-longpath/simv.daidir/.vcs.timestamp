@@ -1,0 +1,130 @@
+0 
+20
++systemverilogext+.sv
+-Mamsrun=
+-Masflags=--32
+-Mcc=gcc
+-Mcfl= -pipe -m32 -fPIC -O -I/apps/synopsys/VCSMX_NEW/include
+-Mcplusplus=g++
+-Mcrt0=
+-Mcrtn=
+-Mcsrc=
+-Mldflags=-m32 -m32
+-Mobjects= /apps/synopsys/VCSMX_NEW/linux/lib/libvirsim.so /apps/synopsys/VCSMX_NEW/linux/lib/librterrorinf.so /apps/synopsys/VCSMX_NEW/linux/lib/libsnpsmalloc.so
+-Mout=simv
+-Msaverestoreobj=/apps/synopsys/VCSMX_NEW/linux/lib/vcs_save_restore_new.o
+-Msyslibs=/apps/synopsys/VCSMX_NEW/linux/lib/ctype-stubs_32.a -ldl
+-Mvcsaceobjs=
+-f files.f
+-gen_obj
+-picarchive
+-sverilog
+/apps/synopsys/VCSMX_NEW/linux/bin/vcs1
+96
+sysc_uni_pwd=/home/so/soun0694/HW/sfilt
+XSCH_PARAM_NAME=/usr/lib64/alliance/etc/xsch.par
+XPAT_PARAM_NAME=/usr/lib64/alliance/etc/xpat.par
+XFSM_PARAM_NAME=/usr/lib64/alliance/etc/xfsm.par
+XDM_MANAGED=method=classic
+XDG_SESSION_ID=479
+XDG_RUNTIME_DIR=/run/user/70884
+XDG_MENU_PREFIX=kde4-
+XDG_DATA_DIRS=/usr/share/kde-settings/kde-profile/default/share:/usr/local/share:/usr/share
+XDG_CURRENT_DESKTOP=KDE
+XCURSOR_THEME=Adwaita
+XAUTHORITY=/tmp/kde-soun0694/xauth-70884-_1
+VMR_MODE_FLAG=32
+VH_PATSFX=pat
+VH_MAXERR=10
+VH_DLYSFX=dly
+VH_BEHSFX=vbe
+VENDOR=unknown
+VCS_MX_HOME_INTERNAL=1
+VCS_HOME=/apps/synopsys/VCSMX_NEW
+VCS_DEPTH=0
+VCS_ARG_ADDED_FOR_TMP=1
+VCS_ARCH=linux
+VCS_AMD_PURE32=1
+VCSMX_HOME=/apps/synopsys/VCSMX_NEW
+UNAME=/bin/uname
+TPD_LOCAL=/home/so/soun0694
+TPD_GLOBAL=/usr/share/toped/
+TOOL_HOME=/apps/synopsys/VCSMX_NEW/linux
+TK_LIBRARY=/apps/synopsys/VCSMX_NEW/etc/auxx/tcllib/tk8.4/library
+SSH_AUTH_SOCK=/tmp/ssh-Pg2E5cY8oku7/agent.30368
+SSH_ASKPASS=/usr/bin/ksshaskpass
+SSH_AGENT_PID=30413
+SNPSLMS_LICENSE_FILE=27000@innersanctum.engr.sjsu.edu:/apps/synopsys/license/current-license-key
+SHELL_SESSION_ID=788d9e89a5a7400090484e95aeb47295
+SFLM_SERVER=innersanctum
+SESSION_MANAGER=local/unix:@/tmp/.ICE-unix/30494,unix/unix:/tmp/.ICE-unix/30494
+SCRNAME=vcs
+SCRIPT_NAME=vcs
+RDS_TECHNO_NAME=/usr/lib64/alliance/etc/cmos.rds
+RDS_OUT=cif
+RDS_IN=cif
+QT_PLUGIN_PATH=/home/so/soun0694/.kde/lib64/kde4/plugins/:/usr/lib64/kde4/plugins/
+QT_GRAPHICSSYSTEM_CHECKED=1
+QTLIB=/usr/lib64/qt-3.3/lib
+QTINC=/usr/lib64/qt-3.3/include
+QTDIR=/usr/lib64/qt-3.3
+PROFILEHOME=
+OVA_UUM=0
+OSTYPE=linux
+MBK_WORK_LIB=.
+MBK_VSS=vss
+MBK_VDD=vdd
+MBK_TARGET_LIB=/usr/lib64/alliance/cells/sxlib
+MBK_SPI_MODEL=/usr/lib64/alliance/etc/spimodel.cfg
+MBK_SCALE_X=100
+MBK_OUT_PH=ap
+MBK_OUT_LO=vst
+MBK_IN_PH=ap
+MBK_IN_LO=vst
+MBK_CATA_LIB=.:/usr/lib64/alliance/cells/sxlib:/usr/lib64/alliance/cells/dp_sxlib:/usr/lib64/alliance/cells/rflib:/usr/lib64/alliance/cells/rf2lib:/usr/lib64/alliance/cells/romlib:/usr/lib64/alliance/cells/ramlib:/usr/lib64/alliance/cells/pxlib:/usr/lib64/alliance/cells/padlib
+MBK_CATAL_NAME=CATAL
+MBK_C4_LIB=./cellsC4
+LESSOPEN=||/usr/bin/lesspipe.sh %s
+LC_ALL=C
+KONSOLE_PROFILE_NAME=Shell
+KONSOLE_DBUS_SESSION=/Sessions/1
+KONSOLE_DBUS_SERVICE=:1.28
+KDE_SESSION_VERSION=4
+KDE_SESSION_UID=70884
+KDE_MULTIHEAD=false
+KDE_FULL_SESSION=true
+KDEDIRS=/usr
+HOSTTYPE=x86_64-linux
+HISTCONTROL=ignoredups
+GTK_RC_FILES=/etc/gtk/gtkrc:/home/so/soun0694/.gtkrc:/home/so/soun0694/.kde/share/config/gtkrc
+GTK2_RC_FILES=/etc/gtk-2.0/gtkrc:/home/so/soun0694/.gtkrc-2.0:/home/so/soun0694/.gtkrc-2.0-kde4:/home/so/soun0694/.kde/share/config/gtkrc-2.0
+GS_LIB=
+GROUP=Users
+GRAAL_TECHNO_NAME=/usr/lib64/alliance/etc/cmos.graal
+GPG_AGENT_INFO=/home/so/soun0694/.gnupg/S.gpg-agent:30442:1
+GNOME_KEYRING_PID=30365
+GNOME_KEYRING_CONTROL=/run/user/70884/keyring-V2BzfB
+GENVIEW_TECHNO_NAME=/usr/lib64/alliance/etc/cmos.genview
+ELP_TECHNO_NAME=/usr/lib64/alliance/etc/prol.elp
+DREAL_TECHNO_NAME=/usr/lib64/alliance/etc/cmos.dreal
+DM_CONTROL=/var/run/xdmctl
+DESKTOP_SESSION=default
+DBUS_SESSION_BUS_ADDRESS=unix:abstract=/tmp/dbus-D9M9y2P4kn,guid=ebb514a97a574119540c9dbf54ca8b4d
+CVS_RSH=ssh
+COLORFGBG=15;0
+CDS_LIC_FILE=5280@innersanctum:/apps/cadence/license-current
+CDSLMD_LICENSE_FILE=5280@innersanctum:/apps/cadence/license-current
+CCACHE_HASHDIR=
+ARCH=linux
+ALLIANCE_TOP=/usr/lib64/alliance
+0
+3
+1422560162 sfilt.v
+1422560280 tbsfilt.sv
+1422560280 files.f
+4
+0 
+1410372690 /apps/synopsys/VCSMX_NEW/linux/lib/libvirsim.so
+1410372633 /apps/synopsys/VCSMX_NEW/linux/lib/librterrorinf.so
+1410372654 /apps/synopsys/VCSMX_NEW/linux/lib/libsnpsmalloc.so
+1422560294 simv.daidir
