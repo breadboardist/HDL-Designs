@@ -40,7 +40,7 @@ module top();
   default clocking defclk @(posedge(ai.clk));
   endclocking
 
-    const reg [7:0] A_tccra=8'h24;
+  const reg [7:0] A_tccra=8'h24;
   const reg [7:0] A_tccra1=8'h44;
   const reg [7:0] A_tccrb=8'h25;
   const reg [7:0] A_tccrb1=8'h45;
