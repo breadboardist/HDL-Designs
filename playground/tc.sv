@@ -18,23 +18,21 @@ logic [31:0] i;
 bit out_clk;
 
 
-always @ (posedge(ai.clk) or posedge(ai.rst)) 
-  begin
-    if(ai.rst) 
-      begin
-	ai.write<=0;
-	ai.addr<=0;
-	ai.wdata<=0;
-	ai.read<=0;
-	ai.rdata<=0;
-	ai.t0<=0;
-	ai.oca_data<=0;
-	ai.ocb_data<=0;
-	ai.status_reg_interrupt_enable<=0;
-	ai.interrupt_request<=0;
-	ai.interrupt_executed<=0;
-	A_tccra<=0;
-	A_tccra1<=0;
+always @ (posedge(ai.clk) or posedge(ai.rst)) begin
+if(ai.rst) begin
+ai.write<=0;
+ai.addr<=0;
+ai.wdata<=0;
+ai.read<=0;
+ai.rdata<=0;
+ai.t0<=0;
+ai.oca_data<=0;
+ai.ocb_data<=0;
+ai.status_reg_interrupt_enable<=0;
+ai.interrupt_request<=0;
+ai.interrupt_executed<=0;
+A_tccra<=0;
+A_tccra1<=0;
 A_tccrb<=0;
 A_tccrb1<=0;
 A_ocra<=0;
