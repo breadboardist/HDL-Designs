@@ -24,19 +24,23 @@ interface tci ;
 
 endinterface
 
-////////////////////////
-//Control Logic Block //
-////////////////////////
-module control_logic (
+////////////
+//Counter //
+////////////
+module counter (
   input clk,
   input bottom,
   input top,
   output count,
   output clear,
   output direction,
-  output interrupt_request
+  output int_request,
+  output tcnt0
   
 );
+
+  reg [7:0] tcnt0;
+  
 
 
 
