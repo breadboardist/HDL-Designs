@@ -21,7 +21,7 @@ interface tci ;
     output ocb_data,input status_reg_interrupt_enable,
     output interrupt_request,input interrupt_executed);
 
-endinterface
+endinterface: tci
 
 module top();
 

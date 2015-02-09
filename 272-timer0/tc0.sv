@@ -1,46 +1,26 @@
-`timescale 1ns/10ps
-
-/////////////////////////////
-//Interface from testbench //
-/////////////////////////////
-interface tci ;
-  logic clk;
-  logic rst;
-  logic write;
-  logic [7:0] addr;
-  logic [7:0] wdata;
-  logic read;
-  logic [7:0] rdata;
-  logic t0;
-  logic oca_data,ocb_data;
-  logic interrupt_request;
-  logic status_reg_interrupt_enable;
-  logic interrupt_executed;
-
-  modport tc(input clk, input rst, input write, input addr,
-    input wdata, input read, output rdata,input t0,output oca_data,
-    output ocb_data,input status_reg_interrupt_enable,
-    output interrupt_request,input interrupt_executed);
-
-endinterface
-
 ////////////
 //Counter //
 ////////////
 module counter (
-  input clk,
-  input bottom,
-  input top,
-  output count,
-  output clear,
-  output direction,
-  output int_request,
-  output tcnt0
+  tci ai
   
 );
 
-  reg [7:0] tcnt0;
-  
+  reg [7:0] A_tccra=8'h24;
+  reg [7:0] A_tccra1=8'h44;
+  reg [7:0] A_tccrb=8'h25;
+  reg [7:0] A_tccrb1=8'h45;
+  reg [7:0] A_ocra=8'h27;
+  reg [7:0] A_ocra1=8'h47;
+  reg [7:0] A_ocrb=8'h28;
+  reg [7:0] A_ocrb1=8'h48;
+  reg [7:0] A_tcnt=8'h26;
+  reg [7:0] A_tcnt1=8'h46;
+  reg [7:0] A_timsk=8'h6e;
+  reg [7:0] A_tifr=8'h15;
+  reg [7:0] A_tifr1=8'h35;
+
+always @(posedge(ai.clk)or posedge(ai.rst))
 
 
 
