@@ -18,12 +18,11 @@ include filelist.pli
 include filelist.hsopt
 
 
-VCS_OBJS =5NrI_d.o 5NrIB_d.o SIM_l.o 
+VCS_OBJS =SIM_l.o \
+	5NrI_d.o 5NrIB_d.o 
 VCS_ARC0=_csrc0.so
 VCS_OBJS0=$(VCS_OBJS) 
 
-VCS_ARC1=_csrc1.so
-VCS_OBJS1=_vcsobj_1_1.a 
 
 LD_PRE_OPTS=--whole-archive
 LD_POST_OPTS=--no-whole-archive
@@ -35,19 +34,19 @@ PIC_LD_POST_OPTS=$(LD_POST_OPTS)
 $(VCS_ARC0) : $(VCS_OBJS0)
 	$(PIC_LD) -m elf_i386 -shared -o .//../simv.daidir//$(VCS_ARC0) $(VCS_OBJS0)
 	@ln -sf .//../simv.daidir//$(VCS_ARC0) $(VCS_ARC0)
-$(VCS_ARC1) : $(VCS_OBJS1)
-	@-if [ ! -L $< ]; then \
-		$(AR) -s $(VCS_OBJS1); \
-	fi
-	$(PIC_LD) -m elf_i386 -shared -o .//../simv.daidir//$(VCS_ARC1) $(PIC_LD_PRE_OPTS) $(VCS_OBJS1) $(PIC_LD_POST_OPTS)
-	@ln -sf .//../simv.daidir//$(VCS_ARC1) $(VCS_ARC1)
+
+VCS_INCR1_OBJ1=pre_vcsobj_1_1.a
+VCS_INCR1_ARC1=pre_vcsobj_1_1.so
+$(VCS_INCR1_ARC1) : $(VCS_INCR1_OBJ1)
+	$(PIC_LD) -m elf_i386 -shared -o .//../simv.daidir//$(VCS_INCR1_ARC1) $(PIC_LD_PRE_OPTS) $(VCS_INCR1_OBJ1) $(PIC_LD_POST_OPTS)
+	@ln -sf .//../simv.daidir//$(VCS_INCR1_ARC1) $(VCS_INCR1_ARC1)
 
 
-VCS_INCR_OBJS=
+VCS_INCR_OBJS= $(VCS_INCR1_ARC1)
 
 
 SHARED_OBJ_SO=
 
 
 
-VLOG_OBJS= $(VCS_ARC1) $(VCS_ARC0) $(XTRN_OBJS) $(DPI_WRAPPER_OBJS) $(VCS_INCR_OBJS) $(SHARED_OBJ_SO) $(HSOPT_OBJS)  
+VLOG_OBJS= $(VCS_ARC0) $(XTRN_OBJS) $(DPI_WRAPPER_OBJS) $(VCS_INCR_OBJS) $(SHARED_OBJ_SO) $(HSOPT_OBJS)  

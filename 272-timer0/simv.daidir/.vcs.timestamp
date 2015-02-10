@@ -21,22 +21,19 @@
 /apps/synopsys/VCSMX_NEW/linux/bin/vcs1
 tc.sv
 tctb.sv
-100
+97
 sysc_uni_pwd=/home/so/soun0694/Work/272-timer0
 XSCH_PARAM_NAME=/usr/lib64/alliance/etc/xsch.par
 XPAT_PARAM_NAME=/usr/lib64/alliance/etc/xpat.par
 XFSM_PARAM_NAME=/usr/lib64/alliance/etc/xfsm.par
 XDM_MANAGED=method=classic
-XDG_VTNR=1
-XDG_SESSION_ID=569
-XDG_SEAT=seat0
+XDG_SESSION_ID=30
 XDG_RUNTIME_DIR=/run/user/70884
 XDG_MENU_PREFIX=kde4-
 XDG_DATA_DIRS=/usr/share/kde-settings/kde-profile/default/share:/usr/local/share:/usr/share
 XDG_CURRENT_DESKTOP=KDE
 XCURSOR_THEME=Adwaita
-XAUTHORITY=/tmp/kde-soun0694/xauth-70884-_0
-WINDOWPATH=1
+XAUTHORITY=/tmp/kde-soun0694/xauth-70884-_1
 VMR_MODE_FLAG=32
 VH_PATSFX=pat
 VH_MAXERR=10
@@ -55,13 +52,13 @@ TPD_LOCAL=/home/so/soun0694
 TPD_GLOBAL=/usr/share/toped/
 TOOL_HOME=/apps/synopsys/VCSMX_NEW/linux
 TK_LIBRARY=/apps/synopsys/VCSMX_NEW/etc/auxx/tcllib/tk8.4/library
-SSH_AUTH_SOCK=/tmp/ssh-1lpohGeXkOYT/agent.24529
+SSH_AUTH_SOCK=/tmp/ssh-svMLeKr6EUYy/agent.5164
 SSH_ASKPASS=/usr/bin/ksshaskpass
-SSH_AGENT_PID=24574
+SSH_AGENT_PID=5209
 SNPSLMS_LICENSE_FILE=27000@innersanctum.engr.sjsu.edu:/apps/synopsys/license/current-license-key
-SHELL_SESSION_ID=3ced64c3f18e4000b74048674e19e65d
+SHELL_SESSION_ID=ead3285b83494000b67d604c00d764dd
 SFLM_SERVER=innersanctum
-SESSION_MANAGER=local/unix:@/tmp/.ICE-unix/24655,unix/unix:/tmp/.ICE-unix/24655
+SESSION_MANAGER=local/unix:@/tmp/.ICE-unix/5286,unix/unix:/tmp/.ICE-unix/5286
 SCRNAME=vcs
 SCRIPT_NAME=vcs
 RDS_TECHNO_NAME=/usr/lib64/alliance/etc/cmos.rds
@@ -93,7 +90,7 @@ LC_ALL=C
 KONSOLE_PROFILE_NAME=Shell
 KONSOLE_DBUS_WINDOW=/Windows/1
 KONSOLE_DBUS_SESSION=/Sessions/1
-KONSOLE_DBUS_SERVICE=:1.49
+KONSOLE_DBUS_SERVICE=:1.48
 KDE_SESSION_VERSION=4
 KDE_SESSION_UID=70884
 KDE_MULTIHEAD=false
@@ -106,15 +103,15 @@ GTK2_RC_FILES=/etc/gtk-2.0/gtkrc:/home/so/soun0694/.gtkrc-2.0:/home/so/soun0694/
 GS_LIB=
 GROUP=Users
 GRAAL_TECHNO_NAME=/usr/lib64/alliance/etc/cmos.graal
-GPG_AGENT_INFO=/home/so/soun0694/.gnupg/S.gpg-agent:24602:1
-GNOME_KEYRING_PID=24527
-GNOME_KEYRING_CONTROL=/run/user/70884/keyring-K0pWm1
+GPG_AGENT_INFO=/home/so/soun0694/.gnupg/S.gpg-agent:5237:1
+GNOME_KEYRING_PID=5162
+GNOME_KEYRING_CONTROL=/run/user/70884/keyring-b0ACYW
 GENVIEW_TECHNO_NAME=/usr/lib64/alliance/etc/cmos.genview
 ELP_TECHNO_NAME=/usr/lib64/alliance/etc/prol.elp
 DREAL_TECHNO_NAME=/usr/lib64/alliance/etc/cmos.dreal
 DM_CONTROL=/var/run/xdmctl
 DESKTOP_SESSION=default
-DBUS_SESSION_BUS_ADDRESS=unix:abstract=/tmp/dbus-4KAFO2BKCS,guid=1678c28c89fa2acb409dad7954d96555
+DBUS_SESSION_BUS_ADDRESS=unix:abstract=/tmp/dbus-vcEmGGJFU7,guid=824abf174b693d4c320618f754d98767
 CVS_RSH=ssh
 COLORFGBG=15;0
 CDS_LIC_FILE=5280@innersanctum:/apps/cadence/license-current
@@ -124,11 +121,11 @@ ARCH=linux
 ALLIANCE_TOP=/usr/lib64/alliance
 0
 2
-1423527242 tc.sv
+1423536728 tc.sv
 1423524384 tctb.sv
 4
 0 
 1410372690 /apps/synopsys/VCSMX_NEW/linux/lib/libvirsim.so
 1410372633 /apps/synopsys/VCSMX_NEW/linux/lib/librterrorinf.so
 1410372654 /apps/synopsys/VCSMX_NEW/linux/lib/libsnpsmalloc.so
-1423533499 simv.daidir
+1423542272 simv.daidir
