@@ -153,127 +153,129 @@ module tc (tci ai);
         A_tifr1[2]<=1;
         ai.interrupt_request<=1;
         end
-  
 
 
-  if(A_tccra[1:0]==0 && A_tccrb[3]==0) begin
-    if(A_tcnt==0) 
-    A_tifr[0]<=1; 
-    else if (ai.interrupt_executed)
-    A_tifr[0]<=0;
-  end
+        //Check if timer is in Normal mode  
+        if(A_tccra[1:0]==0 && A_tccrb[3]==0) begin
+          if(A_tcnt==0) 
+          A_tifr[0]<=1; 
+          else if (ai.interrupt_executed)
+          A_tifr[0]<=0;
+        end
+        
+        if(A_tccra1[1:0]==0 && A_tccrb1[3]==0) begin
+          if(A_tcnt1==0) 
+          A_tifr1[0]<=1;
+          else if (ai.interrupt_executed)
+          A_tifr1[0]<=0;
+        end
   
-  if(A_tccra1[1:0]==0 && A_tccrb1[3]==0) begin
-    if(A_tcnt1==0) 
-    A_tifr1[0]<=1;
-    else if (ai.interrupt_executed)
-    A_tifr1[0]<=0;
-  end
+        //Setting interrupt flags to zero, once they are read  
+        if(A_tifr[2]==1)
+        A_tifr[2]<=0;
+        
+        if(A_tifr1[2]==1) 
+        A_tifr1[2]<=0;
+        
+        if(A_tifr[1]==1) 
+        A_tifr[1]<=0;
+        
+        if(A_tifr1[1]==1) 
+        A_tifr1[1]<=0;
+        
+        if(A_tifr[0]==1) 
+        A_tifr[0]<=0;
+        
+        if(A_tifr1[0]==1) 
+        A_tifr1[0]<=0;
+
+
+        //Set interrupt flag based on interrupt register and interrupt mask
+        if(A_timsk[2]==1 && ai.status_reg_interrupt_enable) begin 
+          ai.interrupt_request<=1;
+        
+          if(A_tifr[2]==1 && ai.status_reg_interrupt_enable) 
+          ai.interrupt_executed<=1;
+          
+          if(A_tifr1[2]==1 && ai.status_reg_interrupt_enable) 
+          ai.interrupt_executed<=1;
+        end
+        
+        if(A_timsk[1]==1 && ai.status_reg_interrupt_enable) begin 
+          ai.interrupt_request<=1;
   
-  if(A_tifr[2]==1)
-  A_tifr[2]<=0;
+          if(A_tifr[1]==1 && ai.status_reg_interrupt_enable) 
+          ai.interrupt_executed<=1;
+          
+          if(A_tifr1[1]==1 && ai.status_reg_interrupt_enable) 
+          ai.interrupt_executed<=1;
+        end
   
-  if(A_tifr1[2]==1) 
-  A_tifr1[2]<=0;
-  
-  if(A_tifr[1]==1) 
-  A_tifr[1]<=0;
-  
-  if(A_tifr1[1]==1) 
-  A_tifr1[1]<=0;
-  
-  if(A_tifr[0]==1) 
-  A_tifr[0]<=0;
-  
-  if(A_tifr1[0]==1) 
-  A_tifr1[0]<=0;
-  
-  if(A_timsk[2]==1 && ai.status_reg_interrupt_enable) begin 
-  ai.interrupt_request<=1;
-  
-    if(A_tifr[2]==1 && ai.status_reg_interrupt_enable) 
-    ai.interrupt_executed<=1;
-    
-    if(A_tifr1[2]==1 && ai.status_reg_interrupt_enable) 
-    ai.interrupt_executed<=1;
-  end
-  
-  if(A_timsk[1]==1 && ai.status_reg_interrupt_enable) begin 
-  ai.interrupt_request<=1;
-  
-    if(A_tifr[1]==1 && ai.status_reg_interrupt_enable) 
-    ai.interrupt_executed<=1;
-    
-    if(A_tifr1[1]==1 && ai.status_reg_interrupt_enable) 
-    ai.interrupt_executed<=1;
-  end
-  
-  if(A_timsk[0]==1 && ai.status_reg_interrupt_enable) begin 
-  ai.interrupt_request<=1;
-    if(A_tifr[0]==1) 
-    ai.interrupt_executed<=1;
-    
-    if(A_tifr1[0]==1) 
-    ai.interrupt_executed<=1;
-  end
+        if(A_timsk[0]==1 && ai.status_reg_interrupt_enable) begin 
+          ai.interrupt_request<=1;
+
+          if(A_tifr[0]==1) 
+          ai.interrupt_executed<=1;
+          
+          if(A_tifr1[0]==1) 
+          ai.interrupt_executed<=1;
+        end
 
 end
-
+//ending always block one
 
 initial i=0;
 
-always @(posedge(ai.clk)) begin
- if(i<7)
- i<=i+1;
- else
- i<=0;
- end
+//Basic counter, simply increments i
+always @(posedge(ai.clk)) 
+  begin
+     if(i<7)
+     i<=i+1;
+     else
+     i<=0;
+   end
  
-always @(i) begin
-if(i<1)
-out_clk<=1;
-else
-out_clk<=0;
-end
-
-
-  always @ (posedge(out_clk)) begin
-
-  if(A_tccra[0]==0 && A_tccra[1]==1 && A_tccrb[3]==0) begin
-    
-    A_tcnt<=A_tcnt+1;
-    
-    if(A_ocra<A_tcnt) begin
-    A_tcnt<=255;
-    A_tcnt<=0;
-    end
-    
-    if(A_tcnt==A_ocra) begin
-    A_tcnt<=0;
-    A_tifr[1]<=1;
-    ai.interrupt_request<=1;
-    end
-    
-    
+always @(i) 
+  begin
+    if(i<1)
+    out_clk<=1;
+    else
+    out_clk<=0;
   end
+//Always counter ended
+
+
+always @ (posedge(out_clk))
+ begin
+  if(A_tccra[0]==0 && A_tccra[1]==1 && A_tccrb[3]==0) 
+    begin
+      A_tcnt<=A_tcnt+1;
+      if(A_ocra<A_tcnt) begin
+      A_tcnt<=255;
+      A_tcnt<=0;
+      end     
+      if(A_tcnt==A_ocra) begin
+      A_tcnt<=0;
+      A_tifr[1]<=1;
+      ai.interrupt_request<=1;
+      end
+    end
   
-  if(A_tccra1[0]==0 && A_tccra1[1]==1 && A_tccrb1[3]==0) begin
-    
-    A_tcnt1<=A_tcnt1+1;
-    
-     if(A_ocra1<A_tcnt1) begin
-    A_tcnt1<=255;
-    A_tcnt1<=0;
+  if(A_tccra1[0]==0 && A_tccra1[1]==1 && A_tccrb1[3]==0) 
+    begin
+      A_tcnt1<=A_tcnt1+1;
+      if(A_ocra1<A_tcnt1) begin
+      A_tcnt1<=255;
+      A_tcnt1<=0;
+      end
+      
+      if(A_tcnt1==A_ocra1) begin
+      A_tcnt1<=0;
+      A_tifr1[1]<=1;
+      ai.interrupt_request<=1;
+      end
     end
-    
-    if(A_tcnt1==A_ocra1) begin
-    A_tcnt1<=0;
-    A_tifr1[1]<=1;
-    ai.interrupt_request<=1;
-    end
- 
-  end
-  end
+end
 
 endmodule
 
