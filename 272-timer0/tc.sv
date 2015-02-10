@@ -1,5 +1,5 @@
 `timescale 1ns/10ps
-module counter (tci ai);
+module tc (tci ai);
 
   logic [7:0] A_tccra;
   logic [7:0] A_tccra1;
@@ -129,7 +129,7 @@ module counter (tci ai);
         //If interrupt request is granted, set interrupt_request bit to 0
         if(ai.interrupt_executed) 
         ai.interrupt_request<=0;
-      
+
         //Compare counter with Output Compare A
 
         if(A_tcnt==A_ocra) begin 
