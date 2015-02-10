@@ -276,7 +276,6 @@ always @ (posedge(out_clk))
       end
     end
 end
-
 endmodule
 
 
