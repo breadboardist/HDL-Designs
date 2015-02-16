@@ -2,7 +2,10 @@
 // File created by:  ncverilog
 // Do not modify this file
 //
-+sv
++libext+.tsbvlibp
 +access+r
++sv
+-y
+/apps/toshiba/sjsu/verilog/tc240c
 -f
 files.f

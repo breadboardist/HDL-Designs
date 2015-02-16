@@ -1,0 +1,60 @@
+ncverilog: 14.10-p001: (c) Copyright 1995-2014 Cadence Design Systems, Inc.
+TOOL:	ncverilog	14.10-p001: Started on Feb 15, 2015 at 19:32:12 PST
+ncverilog
+	+sv
+	+access+r
+	-f files.f
+		tbsfilt.sv
+		sfilt.v
+file: tbsfilt.sv
+    mk.randomize();
+               |
+ncvlog: *W,FUNTSK (tbsfilt.sv,52|15): function called as a task without void'().
+    randomize();
+            |
+ncvlog: *W,FUNTSK (tbsfilt.sv,81|12): function called as a task without void'().
+	module worklib.tbsfilt:sv
+		errors: 0, warnings: 2
+file: sfilt.v
+	module worklib.sfilt:v
+		errors: 0, warnings: 0
+		Caching library 'worklib' ....... Done
+	Elaborating the design hierarchy:
+	Building instance overlay tables: .................... Done
+	Generating native compiled code:
+		worklib.sfilt:v <0x560796f4>
+			streams:  42, words: 21912
+		worklib.tbsfilt:sv <0x3f3d82f5>
+			streams:  29, words: 24060
+	Building instance specific data structures.
+	Loading native compiled code:     .................... Done
+	Design hierarchy summary:
+		                      Instances  Unique
+		Modules:                      2       2
+		Registers:                   62      71
+		Scalar wires:                 9       -
+		Vectored wires:               4       -
+		Always blocks:               11      11
+		Initial blocks:               4       4
+		Clocking blocks:              1       1
+		Cont. assignments:            2       7
+		Pseudo assignments:           5       5
+		SV Class declarations:        2       2
+		SV Class specializations:     2       2
+		Simulation timescale:      10ps
+	Writing initial simulation snapshot: worklib.tbsfilt:sv
+Loading snapshot worklib.tbsfilt:sv .................... Done
+SVSEED default: 1
+ncsim> source /apps/cadence/INCISIV141/tools/inca/files/ncsimrc
+ncsim> run
+
+
+
+We passed the test, happy happy :)
+
+
+
+Simulation complete via $finish(1) at time 18250650 NS + 0
+./tbsfilt.sv:169   $finish;
+ncsim> exit
+TOOL:	ncverilog	14.10-p001: Exiting on Feb 15, 2015 at 19:32:28 PST  (total: 00:00:16)

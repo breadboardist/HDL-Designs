@@ -54,6 +54,8 @@ DEFINE LANG_MAP (\
 	.pslsc => psl_sc,\
 	.vhcfg => vhcfg,\
 	.vhcfgp => vhcfg,\
+	.tsbvlibp.gz => verilog,\
+	.tsbvlibp.Z => verilog,\
 	DEF => verilog\
 )
 define VIEW_MAP ( $VIEW_MAP, * => verilog)
@@ -74,4 +76,8 @@ define VIEW_MAP ( $VIEW_MAP \
 , .VLIB => VLIB \
 , .vams => vams \
 , .VAMS => VAMS \
+, .tsbvlibp.gz => tsbvlibp \
+, .tsbvlibp.Z => tsbvlibp \
 )
+define ELAB_SNAPSHOT
+define SNAPSHOT worklib.tbsfilt:sv

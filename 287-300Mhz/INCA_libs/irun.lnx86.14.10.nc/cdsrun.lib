@@ -1,0 +1,3 @@
+SOFTINCLUDE /apps/cadence/INCISIV141/tools/inca/files/cds.lib
+include ../../../../../../../apps/cadence/local/cdssetup/cds.lib
+define worklib ../worklib

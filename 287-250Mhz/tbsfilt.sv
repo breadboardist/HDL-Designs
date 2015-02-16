@@ -2,7 +2,8 @@
 //
 //
 `timescale 1ns/10ps
-// Generated on Thu Feb 12 22:29:34 2015/n// Generated for student
+// Generated on Sun Feb 15 19:25:12 2015/n// Gate level simulation test bench only
+// Generated for student
 //    Prem Bharath Soundararajan 0694
 
 // cmd codes
@@ -160,7 +161,7 @@ initial begin
   ##3;
   #1 rst=0;
   ##2;
-  repeat(5000) doatest;
+  repeat(50) doatest;
   ##20;
   if(expected.size() > 0) begin
     death("Test finished, and you didn't push everything");

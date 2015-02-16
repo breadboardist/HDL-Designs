@@ -1,0 +1,10 @@
+sfilt script run started on Sun Feb 15 19:31:32 2015
+run on machine eecad21.engr.sjsu.edu
+
+Run with a clock period of 3.3
+student names
+  Prem Bharath Soundararajan  0694
+options syn False gates False
+VCS simulation worked
+NCverilog simulation worked
+///// Synthesis failed /////

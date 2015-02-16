@@ -38,6 +38,7 @@
 //		@(#)DW02_mult_2_stage.v	1.1
 //
 //---------------------------------------------------------------------------------
+//Adding Test line
 module DW02_mult_2_stage(A,B,TC,CLK,PRODUCT);
 parameter	A_width = 8;
 parameter	B_width = 8;
