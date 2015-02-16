@@ -198,37 +198,6 @@ end
 assign pushout = _pushout;
 assign z = dout;
 
-//always @(*) begin
-//  q0_d = q0;
-//  h0_d = h0;
-//  acc_d = acc;
-//  dout_d = dout;
-//  _pushout_d=0;
-//  if(pushin) begin
-//    q0_d = q;
-//    h0_d = h;
-//  end
-//  if(push0) begin
-//    case(cmd0)
-//      0: begin
-//           acc_d = q0*h0;
-//         end
-//      1: begin
-//           acc_d = q0*h0+acc;
-//         end
-//      2: begin
-//           {acc_d,roundit} = {acc,1'b0} >>> h0[6:0];
-//           acc_d = acc_d + ((roundit)?64'b1:64'b0);
-//         end
-//      3: begin
-//           dout_d = acc[31:0];
-//           acc_d = 0;
-//           _pushout_d=1;
-//         end
-//    endcase
-//  end
-//end
-//
 always @(*) begin
   q0_d = q0;
   h0_d = h0;
