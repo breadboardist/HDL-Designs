@@ -1,0 +1,949 @@
+
+                      Design Compiler Graphical
+                            DC Ultra (TM)
+                             DFTMAX (TM)
+                         Power Compiler (TM)
+                           DesignWare (R)
+                           DC Expert (TM)
+                         Design Vision (TM)
+                          HDL Compiler (TM)
+                         VHDL Compiler (TM)
+                            DFT Compiler
+                        Library Compiler (TM)
+                         Design Compiler(R)
+
+          Version I-2013.12-SP5 for RHEL32 -- Jul 20, 2014
+               Copyright (c) 1988-2014 Synopsys, Inc.
+
+This software and the associated documentation are confidential and 
+proprietary to Synopsys, Inc. Your use or disclosure of this software 
+is subject to the terms and conditions of a written license agreement 
+between you, or your company, and Synopsys, Inc.
+
+Information: As of the J-2014.09 version of dc_shell, the 32-bit
+             version of the product will not be delivered by default.
+             If you require a 32-bit version for any reason, please
+             contact Synopsys technical support.
+
+Initializing...
+set link_library {/apps/toshiba/sjsu/synopsys/tc240c/tc240c.db_NOMIN25 /apps/synopsys/I-2013.12-SP5/libraries/syn/dw_foundation.sldb}
+/apps/toshiba/sjsu/synopsys/tc240c/tc240c.db_NOMIN25 /apps/synopsys/I-2013.12-SP5/libraries/syn/dw_foundation.sldb
+set target_library {/apps/toshiba/sjsu/synopsys/tc240c/tc240c.db_NOMIN25}
+/apps/toshiba/sjsu/synopsys/tc240c/tc240c.db_NOMIN25
+read_verilog sfilt.v
+Loading db file '/apps/toshiba/sjsu/synopsys/tc240c/tc240c.db_NOMIN25'
+Loading db file '/apps/synopsys/I-2013.12-SP5/libraries/syn/dw_foundation.sldb'
+Loading db file '/apps/synopsys/I-2013.12-SP5/libraries/syn/gtech.db'
+Loading db file '/apps/synopsys/I-2013.12-SP5/libraries/syn/standard.sldb'
+  Loading link library 'tc240c'
+  Loading link library 'gtech'
+Loading verilog file '/home/so/soun0694/Work/287-250Mhz/sfilt.v'
+Detecting input file type automatically (-rtl or -netlist).
+Reading with Presto HDL Compiler (equivalent to -rtl option).
+Running PRESTO HDLC
+Compiling source file /home/so/soun0694/Work/287-250Mhz/sfilt.v
+Warning:  Starting with the 2000.11-1 release, the Presto Verilog reader treats Verilog 'integer' types as signed; synthesized result may not match earlier versions of HDL Compiler. (VER-314)
+Warning:  /home/so/soun0694/Work/287-250Mhz/sfilt.v:155: signed to unsigned part selection occurs. (VER-318)
+Warning:  /home/so/soun0694/Work/287-250Mhz/sfilt.v:163: signed to unsigned part selection occurs. (VER-318)
+Warning:  /home/so/soun0694/Work/287-250Mhz/sfilt.v:175: unsigned to signed assignment occurs. (VER-318)
+Warning:  /home/so/soun0694/Work/287-250Mhz/sfilt.v:176: unsigned to signed assignment occurs. (VER-318)
+Warning:  /home/so/soun0694/Work/287-250Mhz/sfilt.v:187: signed to unsigned conversion occurs. (VER-318)
+Warning:  /home/so/soun0694/Work/287-250Mhz/sfilt.v:190: signed to unsigned part selection occurs. (VER-318)
+Warning:  /home/so/soun0694/Work/287-250Mhz/sfilt.v:199: signed to unsigned assignment occurs. (VER-318)
+
+Statistics for case statements in always block at line 168 in file
+	'/home/so/soun0694/Work/287-250Mhz/sfilt.v'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|           179            |    auto/auto     |
+===============================================
+
+Inferred memory devices in process
+	in routine sfilt line 32 in file
+		'/home/so/soun0694/Work/287-250Mhz/sfilt.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|    cmd0_stg2_reg    | Flip-flop |   2   |  Y  | N  | Y  | N  | N  | N  | N  |
+|    cmd0_stg1_reg    | Flip-flop |   2   |  Y  | N  | Y  | N  | N  | N  | N  |
+|    cmd0_stg0_reg    | Flip-flop |   2   |  Y  | N  | Y  | N  | N  | N  | N  |
+|   push0_stg1_reg    | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+|  cmd2_en_stg2_reg   | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|  cmd1_en_stg2_reg   | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|   push0_stg0_reg    | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+|  cmd2_en_stg1_reg   | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+|  cmd1_en_stg1_reg   | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+|  cmd0_en_stg1_reg   | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+|  cmd0_en_stg2_reg   | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+| cmd0_en_stg2_d_reg  | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+| cmd1_en_stg2_d_reg  | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+|   push0_stg2_reg    | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine sfilt line 71 in file
+		'/home/so/soun0694/Work/287-250Mhz/sfilt.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|    out0_stg0_reg    | Flip-flop |  64   |  Y  | N  | Y  | N  | N  | N  | N  |
+|    out0_stg2_reg    | Flip-flop |  64   |  Y  | N  | Y  | N  | N  | N  | N  |
+|    out0_stg1_reg    | Flip-flop |  64   |  Y  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine sfilt line 110 in file
+		'/home/so/soun0694/Work/287-250Mhz/sfilt.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|    out1_stg0_reg    | Flip-flop |  64   |  Y  | N  | Y  | N  | N  | N  | N  |
+|    out1_stg2_reg    | Flip-flop |  64   |  Y  | N  | Y  | N  | N  | N  | N  |
+|    out1_stg1_reg    | Flip-flop |  64   |  Y  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine sfilt line 146 in file
+		'/home/so/soun0694/Work/287-250Mhz/sfilt.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|     roundit_reg     | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|     h0_stg0_reg     | Flip-flop |   7   |  Y  | N  | Y  | N  | N  | N  | N  |
+|     h0_stg1_reg     | Flip-flop |   7   |  Y  | N  | Y  | N  | N  | N  | N  |
+|    out2_stg2_reg    | Flip-flop |  64   |  Y  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine sfilt line 202 in file
+		'/home/so/soun0694/Work/287-250Mhz/sfilt.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|      cmd0_reg       | Flip-flop |   2   |  Y  | N  | Y  | N  | N  | N  | N  |
+|    _pushout_reg     | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+|      push0_reg      | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+|       acc_reg       | Flip-flop |  64   |  Y  | N  | Y  | N  | N  | N  | N  |
+|       q0_reg        | Flip-flop |  32   |  Y  | N  | Y  | N  | N  | N  | N  |
+|       h0_reg        | Flip-flop |  32   |  Y  | N  | Y  | N  | N  | N  | N  |
+|      dout_reg       | Flip-flop |  32   |  Y  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+Presto compilation completed successfully.
+Current design is now '/home/so/soun0694/Work/287-250Mhz/sfilt.db:sfilt'
+Loaded 1 design.
+Current design is 'sfilt'.
+sfilt
+create_clock clk -name clk -period 3.0
+1
+set_propagated_clock clk
+Information: set_input_delay values are added to the propagated clock skew. (TIM-113)
+1
+set_clock_uncertainty 0.25 clk
+1
+set_propagated_clock clk
+Information: set_input_delay values are added to the propagated clock skew. (TIM-113)
+1
+set_output_delay 0.5 -clock clk [all_outputs]
+1
+set all_inputs_wo_rst_clk [remove_from_collection [remove_from_collection [all_inputs] [get_port clk]] [get_port rst]]
+{pushin cmd[1] cmd[0] q[31] q[30] q[29] q[28] q[27] q[26] q[25] q[24] q[23] q[22] q[21] q[20] q[19] q[18] q[17] q[16] q[15] q[14] q[13] q[12] q[11] q[10] q[9] q[8] q[7] q[6] q[5] q[4] q[3] q[2] q[1] q[0] h[31] h[30] h[29] h[28] h[27] h[26] h[25] h[24] h[23] h[22] h[21] h[20] h[19] h[18] h[17] h[16] h[15] h[14] h[13] h[12] h[11] h[10] h[9] h[8] h[7] h[6] h[5] h[4] h[3] h[2] h[1] h[0]}
+set_driving_cell -lib_cell CND2X1 $all_inputs_wo_rst_clk
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+1
+set_input_delay 0.6 -clock clk $all_inputs_wo_rst_clk
+1
+set_output_delay 0.6 -clock clk [all_outputs]
+1
+set_fix_hold [ get_clocks clk ]
+1
+set_output_delay 0.3 -clock clk [all_outputs]
+1
+compile -map_effort high
+Information: Checking out the license 'DesignWare'. (SEC-104)
+Information: Evaluating DesignWare library utilization. (UISN-27)
+
+============================================================================
+| DesignWare Building Block Library  |         Version         | Available |
+============================================================================
+| Basic DW Building Blocks           | I-2013.12-DWBB_201312.5 |     *     |
+| Licensed DW Building Blocks        | I-2013.12-DWBB_201312.5 |     *     |
+============================================================================
+
+
+Information: There are 3 potential problems in your design. Please run 'check_design' for more information. (LINT-99)
+
+
+
+  Beginning Pass 1 Mapping
+  ------------------------
+  Processing 'sfilt'
+
+  Updating timing information
+Information: Updating design information... (UID-85)
+Information: Input delay ('fall') on clock port 'clk' will be added to the clock's propagated skew. (TIM-112)
+Information: Input delay ('rise') on clock port 'clk' will be added to the clock's propagated skew. (TIM-112)
+
+  Beginning Implementation Selection
+  ----------------------------------
+  Processing 'sfilt_DW01_add_0'
+  Mapping 'DW_rightsh'
+Information: Added key list 'DesignWare' to design 'sfilt'. (DDB-72)
+  Processing 'sfilt_DW01_add_1'
+Information: Input delay ('fall') on clock port 'clk' will be added to the clock's propagated skew. (TIM-112)
+Information: Input delay ('rise') on clock port 'clk' will be added to the clock's propagated skew. (TIM-112)
+  Mapping 'sfilt_DW_mult_tc_0'
+Information: Input delay ('fall') on clock port 'clk' will be added to the clock's propagated skew. (TIM-112)
+Information: Input delay ('rise') on clock port 'clk' will be added to the clock's propagated skew. (TIM-112)
+
+  Beginning Mapping Optimizations  (High effort)
+  -------------------------------
+  Mapping Optimization (Phase 1)
+
+                                  TOTAL                                                
+   ELAPSED            WORST NEG   SETUP    DESIGN                             MIN DELAY
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT            COST   
+  --------- --------- --------- --------- --------- ------------------------- ---------
+    0:00:08   17495.5      1.46     151.5       0.0                                0.00
+    0:00:08   17495.5      1.46     151.5       0.0                                0.00
+    0:00:08   17495.5      1.46     151.5       0.0                                0.00
+    0:00:08   17495.5      1.46     151.5       0.0                                0.00
+    0:00:08   17495.5      1.46     151.5       0.0                                0.00
+    0:00:10   13149.5      2.27     236.7       0.0                                0.00
+    0:00:10   13163.5      2.02     196.5       0.0                                0.00
+    0:00:10   13146.0      1.83     178.1       0.0                                0.00
+    0:00:10   13165.5      1.71     168.0       0.0                                0.00
+    0:00:11   13160.0      1.70     168.6       0.0                                0.00
+    0:00:11   13166.0      1.78     173.7       0.0                                0.00
+    0:00:11   13157.5      1.68     166.9       0.0                                0.00
+    0:00:11   13167.0      1.66     165.6       0.0                                0.00
+    0:00:11   13162.5      1.65     165.0       0.0                                0.00
+    0:00:11   13174.5      1.64     163.0       0.0                                0.00
+    0:00:11   13177.0      1.64     163.0       0.0                                0.00
+    0:00:11   13182.0      1.65     163.7       0.0                                0.00
+    0:00:11   13186.0      1.63     161.5       0.0                                0.00
+    0:00:11   13186.0      1.63     161.5       0.0                                0.00
+    0:00:11   13186.0      1.63     161.5       0.0                                0.00
+    0:00:11   13186.0      1.63     161.5       0.0                                0.00
+    0:00:11   13186.0      1.63     161.5       0.0                                0.00
+    0:00:11   13186.0      1.63     161.5       0.0                                0.00
+    0:00:11   13186.0      1.63     161.5       0.0                                0.00
+    0:00:12   13282.5      1.49     148.5       0.0 out0_stg0_reg[53]/D            0.00
+    0:00:12   13295.0      1.46     145.1       0.0                                0.00
+
+
+
+  Beginning Delay Optimization Phase
+  ----------------------------------
+
+                                  TOTAL                                                
+   ELAPSED            WORST NEG   SETUP    DESIGN                             MIN DELAY
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT            COST   
+  --------- --------- --------- --------- --------- ------------------------- ---------
+    0:00:12   13295.0      1.46     145.1       0.0                                0.00
+    0:00:12   13339.5      1.43     143.0       0.0 out0_stg0_reg[62]/D            0.00
+    0:00:12   13376.0      1.41     142.4       0.0 out0_stg0_reg[62]/D            0.00
+    0:00:12   13397.0      1.40     141.3       0.0 out0_stg0_reg[62]/D            0.00
+    0:00:12   13449.0      1.37     138.8       0.0 out0_stg0_reg[62]/D            0.00
+    0:00:13   13472.5      1.34     136.2       0.0 out0_stg0_reg[54]/D            0.00
+    0:00:13   13506.0      1.33     135.4       0.0 out0_stg0_reg[62]/D            0.00
+    0:00:13   13539.5      1.33     134.8       0.0 out0_stg0_reg[62]/D            0.00
+    0:00:13   13571.0      1.32     134.4       0.0 out0_stg0_reg[62]/D            0.00
+    0:00:13   13583.0      1.32     133.5       0.0 out0_stg0_reg[62]/D            0.00
+    0:00:13   13620.0      1.31     132.6       0.0 out0_stg0_reg[62]/D            0.00
+    0:00:13   13638.0      1.30     132.0       0.0 out0_stg0_reg[62]/D            0.00
+    0:00:13   13672.5      1.29     131.2       0.0 out0_stg0_reg[62]/D            0.00
+    0:00:14   13685.0      1.29     130.4       0.0 out0_stg0_reg[62]/D            0.00
+    0:00:14   13713.0      1.28     129.7       0.0 out0_stg0_reg[62]/D            0.00
+    0:00:14   13729.0      1.27     128.8       0.0 out0_stg0_reg[62]/D            0.00
+    0:00:14   13732.0      1.27     127.7       0.0 out0_stg0_reg[62]/D            0.00
+    0:00:14   13744.0      1.26     127.4       0.0 out0_stg0_reg[62]/D            0.00
+    0:00:14   13751.5      1.26     127.0       0.0 out0_stg0_reg[62]/D            0.00
+    0:00:14   13763.0      1.25     126.8       0.0 out0_stg0_reg[62]/D            0.00
+    0:00:14   13793.5      1.25     126.8       0.0 out0_stg0_reg[62]/D            0.00
+    0:00:15   13822.0      1.24     126.5       0.0 out0_stg0_reg[62]/D            0.00
+    0:00:15   13829.5      1.24     126.3       0.0 out0_stg0_reg[62]/D            0.00
+    0:00:15   13832.0      1.24     126.2       0.0 out0_stg0_reg[62]/D            0.00
+    0:00:15   13839.0      1.24     126.1       0.0 out0_stg0_reg[62]/D            0.00
+    0:00:15   13854.5      1.23     125.7       0.0 out0_stg0_reg[62]/D            0.00
+    0:00:15   13859.5      1.23     126.9       0.0 out0_stg0_reg[62]/D            0.00
+    0:00:15   13865.0      1.23     126.8       0.0 out0_stg0_reg[62]/D            0.00
+    0:00:15   13886.5      1.22     126.1       0.0 out0_stg0_reg[62]/D            0.00
+    0:00:15   13906.0      1.22     126.1       0.0 out0_stg0_reg[62]/D            0.00
+    0:00:16   13934.0      1.20     123.7       0.0 out0_stg0_reg[62]/D            0.00
+    0:00:16   13964.5      1.19     123.2       0.0 out0_stg0_reg[62]/D            0.00
+    0:00:16   13988.0      1.19     122.7       0.0 out0_stg0_reg[62]/D            0.00
+    0:00:16   14000.5      1.18     121.8       0.0 out0_stg0_reg[62]/D            0.00
+    0:00:16   14018.0      1.18     121.7       0.0 out0_stg0_reg[62]/D            0.00
+    0:00:16   14017.5      1.17     121.4       0.0 out0_stg0_reg[54]/D            0.00
+    0:00:16   14029.5      1.17     120.9       0.0 out0_stg0_reg[54]/D            0.00
+    0:00:16   14026.0      1.16     120.5       0.0 out0_stg0_reg[62]/D            0.00
+    0:00:17   14045.0      1.16     120.1       0.0 out0_stg0_reg[62]/D            0.00
+    0:00:17   14043.5      1.15     120.1       0.0 out0_stg0_reg[48]/D            0.00
+    0:00:17   14067.5      1.15     119.7       0.0 out1_stg0_reg[37]/D            0.00
+    0:00:17   14090.5      1.15     119.6       0.0 out0_stg0_reg[54]/D            0.00
+    0:00:17   14134.5      1.15     119.5       0.0 out0_stg0_reg[62]/D            0.00
+    0:00:17   14146.5      1.15     119.2       0.0 out0_stg0_reg[62]/D            0.00
+    0:00:17   14158.5      1.14     118.6       0.0 out0_stg0_reg[62]/D            0.00
+    0:00:17   14161.5      1.14     118.5       0.0 out0_stg0_reg[62]/D            0.00
+    0:00:17   14162.5      1.14     118.5       0.0 out0_stg0_reg[62]/D            0.00
+    0:00:18   14166.5      1.14     118.4       0.0 out0_stg0_reg[62]/D            0.00
+    0:00:18   14172.0      1.14     118.2       0.0 out0_stg0_reg[54]/D            0.00
+    0:00:18   14172.0      1.14     118.1       0.0 out0_stg0_reg[62]/D            0.00
+    0:00:18   14178.5      1.13     117.8       0.0 out0_stg0_reg[54]/D            0.00
+    0:00:18   14181.0      1.13     117.8       0.0 out0_stg0_reg[54]/D            0.00
+    0:00:18   14182.0      1.13     117.5       0.0 out0_stg0_reg[62]/D            0.00
+    0:00:18   14188.5      1.13     117.3       0.0 out0_stg0_reg[57]/D            0.00
+    0:00:18   14195.0      1.13     117.2       0.0 out0_stg0_reg[60]/D            0.00
+    0:00:18   14195.5      1.12     117.1       0.0 out0_stg0_reg[62]/D            0.00
+    0:00:18   14201.0      1.12     116.9       0.0 out0_stg0_reg[57]/D            0.00
+    0:00:18   14209.0      1.12     116.8       0.0 out0_stg0_reg[62]/D            0.00
+    0:00:18   14202.5      1.12     116.6       0.0 out0_stg0_reg[62]/D            0.00
+    0:00:18   14201.5      1.12     116.6       0.0 out0_stg0_reg[62]/D            0.00
+    0:00:19   14205.5      1.12     117.2       0.0 out0_stg0_reg[62]/D            0.00
+    0:00:19   14212.5      1.12     116.6       0.0 out0_stg0_reg[62]/D            0.00
+    0:00:19   14210.0      1.11     116.4       0.0 out0_stg0_reg[62]/D            0.00
+    0:00:19   14214.5      1.11     116.4       0.0 out0_stg0_reg[62]/D            0.00
+    0:00:19   14216.5      1.11     116.3       0.0 out0_stg0_reg[62]/D            0.00
+    0:00:19   14223.0      1.11     116.1       0.0 out0_stg0_reg[62]/D            0.00
+    0:00:19   14227.0      1.11     116.0       0.0 out0_stg0_reg[58]/D            0.00
+    0:00:19   14224.5      1.11     116.0       0.0 out0_stg0_reg[58]/D            0.00
+    0:00:19   14224.5      1.11     115.9       0.0 out0_stg0_reg[62]/D            0.00
+    0:00:19   14223.5      1.11     115.7       0.0 out0_stg0_reg[62]/D            0.00
+    0:00:19   14215.0      1.10     115.5       0.0 out0_stg0_reg[62]/D            0.00
+    0:00:19   14217.5      1.10     115.3       0.0 out0_stg0_reg[62]/D            0.00
+    0:00:19   14224.0      1.10     115.2       0.0 out0_stg0_reg[62]/D            0.00
+    0:00:20   14228.5      1.10     115.1       0.0 out0_stg0_reg[62]/D            0.00
+    0:00:20   14227.5      1.10     115.1       0.0 out0_stg0_reg[62]/D            0.00
+    0:00:25   14227.5      1.10     115.1       0.0 out0_stg0_reg[62]/D            0.00
+    0:00:25   14230.0      1.10     115.1       0.0 out0_stg0_reg[62]/D            0.00
+    0:00:25   14244.5      1.10     115.1       0.0 out0_stg0_reg[62]/D            0.00
+    0:00:26   14254.0      1.10     114.9       0.0 out0_stg0_reg[60]/D            0.00
+    0:00:26   14260.0      1.10     114.9       0.0 out0_stg0_reg[62]/D            0.00
+    0:00:26   14289.0      1.09     114.7       0.0 out0_stg0_reg[60]/D            0.00
+    0:00:26   14301.0      1.09     114.4       0.0 out0_stg0_reg[62]/D            0.00
+    0:00:26   14310.0      1.09     114.3       0.0 out0_stg0_reg[62]/D            0.00
+    0:00:26   14312.5      1.09     114.3       0.0 out0_stg0_reg[62]/D            0.00
+    0:00:26   14318.0      1.09     114.1       0.0 out0_stg0_reg[57]/D            0.00
+    0:00:26   14334.0      1.09     113.5       0.0 out0_stg0_reg[62]/D            0.00
+    0:00:26   14338.5      1.08     113.3       0.0 out0_stg0_reg[62]/D            0.00
+    0:00:26   14352.0      1.08     113.2       0.0 out0_stg0_reg[62]/D            0.00
+    0:00:27   14354.0      1.08     113.0       0.0 out0_stg0_reg[62]/D            0.00
+    0:00:27   14354.5      1.08     112.9       0.0 out0_stg0_reg[62]/D            0.00
+    0:00:27   14376.5      1.08     112.6       0.0 out0_stg0_reg[62]/D            0.00
+    0:00:27   14388.5      1.07     112.1       0.0 out0_stg0_reg[62]/D            0.00
+    0:00:27   14394.5      1.07     111.9       0.0 out0_stg0_reg[62]/D            0.00
+    0:00:27   14403.0      1.07     111.9       0.0 out0_stg0_reg[62]/D            0.00
+    0:00:27   14397.0      1.07     111.7       0.0 out0_stg0_reg[60]/D            0.00
+    0:00:27   14404.0      1.07     111.7       0.0 out0_stg0_reg[62]/D            0.00
+    0:00:27   14389.0      1.07     111.7       0.0 out0_stg0_reg[62]/D            0.00
+    0:00:27   14395.5      1.07     111.5       0.0 out0_stg0_reg[57]/D            0.00
+    0:00:27   14400.0      1.07     111.5       0.0 out0_stg0_reg[62]/D            0.00
+    0:00:28   14401.5      1.07     111.5       0.0 out0_stg0_reg[62]/D            0.00
+    0:00:28   14401.5      1.07     111.5       0.0 out0_stg0_reg[62]/D            0.00
+    0:00:28   14396.0      1.07     111.4       0.0 out0_stg0_reg[62]/D            0.00
+    0:00:28   14400.5      1.07     111.4       0.0 out0_stg0_reg[60]/D            0.00
+    0:00:30   14412.0      1.06     111.1       0.0 out0_stg0_reg[62]/D            0.00
+    0:00:30   14419.0      1.06     111.1       0.0 out0_stg0_reg[62]/D            0.00
+    0:00:30   14422.0      1.06     110.9       0.0 out0_stg0_reg[60]/D            0.00
+    0:00:30   14428.5      1.06     111.0       0.0 out0_stg0_reg[62]/D            0.00
+    0:00:30   14424.0      1.06     110.9       0.0 out0_stg0_reg[62]/D            0.00
+    0:00:30   14426.0      1.06     110.9       0.0 out0_stg0_reg[62]/D            0.00
+    0:00:30   14430.0      1.06     110.7       0.0 out0_stg0_reg[62]/D            0.00
+    0:00:31   14432.0      1.06     110.6       0.0 out0_stg0_reg[62]/D            0.00
+    0:00:31   14433.0      1.06     110.6       0.0 out0_stg0_reg[62]/D            0.00
+    0:00:31   14436.0      1.06     110.6       0.0 out0_stg0_reg[60]/D            0.00
+    0:00:31   14437.0      1.06     110.5       0.0 out0_stg0_reg[62]/D            0.00
+    0:00:31   14444.5      1.05     110.4       0.0 out0_stg0_reg[62]/D            0.00
+    0:00:32   14445.0      1.05     110.4       0.0 out0_stg0_reg[57]/D            0.00
+    0:00:32   14444.5      1.05     110.4       0.0 out0_stg0_reg[62]/D            0.00
+    0:00:32   14447.0      1.05     111.0       0.0 out0_stg0_reg[62]/D            0.00
+    0:00:32   14449.0      1.05     111.0       0.0 out0_stg0_reg[62]/D            0.00
+    0:00:32   14450.5      1.05     110.8       0.0 out0_stg0_reg[62]/D            0.00
+    0:00:33   14451.0      1.05     110.8       0.0 out0_stg0_reg[60]/D            0.00
+    0:00:33   14470.5      1.05     110.8       0.0 out0_stg0_reg[62]/D            0.00
+    0:00:35   14470.0      1.05     110.8       0.0                                0.00
+    0:00:35   14445.0      1.05     162.9     379.6                                0.00
+
+
+  Beginning Design Rule Fixing  (min_path)  (max_capacitance)
+  ----------------------------
+
+                                  TOTAL                                                
+   ELAPSED            WORST NEG   SETUP    DESIGN                             MIN DELAY
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT            COST   
+  --------- --------- --------- --------- --------- ------------------------- ---------
+    0:00:36   14445.0      1.05     162.9     379.6                              -35.15
+    0:00:36   14502.5      1.05     127.8       0.0 out0_stg1_reg[56]/D          -30.92
+    0:00:36   14560.5      1.05     127.8       0.0 out0_stg1_reg[37]/D          -26.79
+    0:00:36   14619.5      1.05     127.8       0.0 out0_stg1_reg[17]/D          -22.49
+    0:00:36   14675.5      1.05     127.8       0.0 dout_reg[28]/D               -18.59
+    0:00:36   14712.0      1.05     127.8       0.0 out1_stg1_reg[63]/D          -16.31
+    0:00:36   14769.5      1.05     127.8       0.0 out1_stg1_reg[46]/D          -12.20
+    0:00:37   14827.5      1.05     127.8       0.0 out1_stg1_reg[27]/D           -8.07
+    0:00:37   14886.5      1.05     127.8       0.0 out1_stg1_reg[7]/D            -3.80
+    0:00:37   14926.0      1.05     127.8       0.0 out0_stg2_reg[34]/D           -1.88
+    0:00:37   14950.0      1.05     127.8       0.0 out2_stg2_reg[28]/D           -1.52
+    0:00:37   14978.5      1.05     127.8       0.0 out0_stg0_reg[62]/D            0.00
+    0:00:37   14998.0      1.05     127.8       0.0 out0_stg0_reg[62]/D            0.00
+    0:00:37   15010.0      1.05     127.7       0.0 out0_stg0_reg[60]/D            0.00
+    0:00:38   15023.5      1.05     127.6       0.0 out0_stg0_reg[60]/D            0.00
+    0:00:38   15025.0      1.05     127.5       0.0 out0_stg0_reg[62]/D            0.00
+    0:00:38   15029.0      1.04     127.3       0.0 out0_stg0_reg[62]/D            0.00
+    0:00:38   15036.0      1.04     127.2       0.0 out0_stg0_reg[62]/D            0.00
+    0:00:38   15052.5      1.04     127.1       0.0 out0_stg0_reg[62]/D            0.00
+    0:00:38   15061.5      1.04     127.1       0.0 out0_stg0_reg[62]/D            0.00
+    0:00:38   15062.0      1.04     127.1       0.0 out0_stg0_reg[60]/D            0.00
+    0:00:38   15081.0      1.04     126.8       0.0 out0_stg0_reg[57]/D            0.00
+    0:00:38   15103.5      1.04     126.7       0.0 out0_stg0_reg[62]/D            0.00
+    0:00:39   15100.5      1.03     126.6       0.0 out0_stg0_reg[60]/D            0.00
+    0:00:39   15115.5      1.03     126.5       0.0 out0_stg0_reg[62]/D            0.00
+    0:00:39   15113.5      1.03     126.4       0.0 out0_stg0_reg[62]/D            0.00
+    0:00:39   15122.5      1.03     126.2       0.0 out0_stg0_reg[62]/D            0.00
+    0:00:39   15120.0      1.03     126.1       0.0 out0_stg0_reg[57]/D            0.00
+    0:00:39   15131.0      1.03     126.1       0.0 out0_stg0_reg[62]/D            0.00
+    0:00:39   15150.5      1.03     126.1       0.0 out0_stg0_reg[56]/D            0.00
+    0:00:39   15150.5      1.03     125.9       0.0 out0_stg0_reg[62]/D            0.00
+    0:00:40   15151.0      1.03     125.9       0.0 out0_stg0_reg[62]/D            0.00
+    0:00:40   15151.0      1.03     125.9       0.0                                0.00
+    0:00:40   15151.0      1.03     125.9       0.0                                0.00
+    0:00:40   15151.0      1.03     125.2       0.0                                0.00
+    0:00:40   15149.0      1.03     125.1       0.0                                0.00
+    0:00:40   15148.0      1.03     125.0       0.0                                0.00
+    0:00:40   15149.0      1.03     124.9       0.0                                0.00
+    0:00:40   15151.0      1.03     124.9       0.0                                0.00
+    0:00:40   15154.5      1.03     124.6       0.0                                0.00
+    0:00:40   15155.0      1.03     124.6       0.0                                0.00
+
+
+  Beginning Area-Recovery Phase  (cleanup)
+  -----------------------------
+
+                                  TOTAL                                                
+   ELAPSED            WORST NEG   SETUP    DESIGN                             MIN DELAY
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT            COST   
+  --------- --------- --------- --------- --------- ------------------------- ---------
+    0:00:40   15155.0      1.03     124.6       0.0                                0.00
+    0:00:40   15155.0      1.03     124.6       0.0                                0.00
+    0:00:41   15078.0      1.03     124.5       0.0                                0.00
+    0:00:41   15066.0      1.03     121.8       0.0                                0.00
+    0:00:41   15063.0      1.03     120.6       0.0                                0.00
+    0:00:41   15061.0      1.03     114.1       0.0                                0.00
+    0:00:41   15059.0      1.03     114.1       0.0                                0.00
+    0:00:41   15059.0      1.03     114.1       0.0                                0.00
+    0:00:41   15059.0      1.03     114.1       0.0                                0.00
+    0:00:41   14977.5      1.19     122.3       0.0                                0.00
+    0:00:41   14973.5      1.19     122.3       0.0                                0.00
+    0:00:41   14972.5      1.19     122.3       0.0                                0.00
+    0:00:41   14972.5      1.19     122.3       0.0                                0.00
+    0:00:41   14972.5      1.19     122.3       0.0                                0.00
+    0:00:41   14972.5      1.19     122.3       0.0                                0.00
+    0:00:41   14972.5      1.19     122.3       0.0                                0.00
+    0:00:41   14972.5      1.19     122.3       0.0                                0.00
+    0:00:42   14977.0      1.03     114.2       0.0 out0_stg0_reg[62]/D            0.00
+    0:00:42   14989.5      1.03     114.1       0.0 out0_stg0_reg[60]/D           -0.02
+    0:00:42   15009.5      1.02     115.7       0.0 out0_stg0_reg[62]/D           -0.02
+    0:00:42   15009.0      1.02     115.6       0.0 out0_stg0_reg[54]/D           -0.02
+    0:00:42   15033.0      1.02     115.2       0.0 out0_stg0_reg[62]/D           -0.02
+    0:00:42   15035.5      1.02     114.9       0.0 out0_stg0_reg[62]/D           -0.02
+    0:00:42   15042.5      1.02     115.0       0.0 out0_stg0_reg[61]/D           -0.02
+    0:00:42   15063.5      1.02     114.7       0.0 out0_stg0_reg[60]/D           -0.02
+    0:00:43   15077.5      1.01     114.6       0.0 out0_stg0_reg[62]/D           -0.02
+    0:00:43   15078.0      1.01     114.6       0.0 out0_stg0_reg[60]/D           -0.02
+    0:00:43   15099.0      1.01     114.5       0.0 out0_stg0_reg[62]/D           -0.02
+    0:00:43   15099.0      1.01     114.5       0.0 out0_stg0_reg[62]/D           -0.02
+    0:00:43   15104.5      1.01     114.4       0.0 out0_stg0_reg[60]/D           -0.02
+    0:00:43   15109.0      1.01     113.7       0.0 out0_stg0_reg[60]/D           -0.02
+    0:00:43   15114.0      1.01     113.7       0.0 out0_stg0_reg[56]/D           -0.02
+    0:00:43   15121.0      1.01     114.2       0.0 out0_stg0_reg[62]/D           -0.02
+    0:00:43   15137.0      1.00     113.9       0.0 out0_stg0_reg[62]/D           -0.02
+    0:00:43   15146.5      1.00     113.4       0.0 out0_stg0_reg[60]/D           -0.02
+    0:00:44   15157.5      0.99     113.2       0.0 out0_stg0_reg[62]/D           -0.02
+    0:00:44   15173.5      0.99     113.0       0.0 out0_stg0_reg[62]/D           -0.02
+    0:00:44   15194.5      0.99     112.9       0.0 out0_stg0_reg[48]/D           -0.02
+    0:00:44   15196.0      0.99     112.9       0.0 out0_stg0_reg[60]/D           -0.02
+    0:00:44   15211.0      0.99     112.8       0.0 out0_stg0_reg[62]/D           -0.02
+    0:00:44   15225.5      0.99     112.8       0.0 out0_stg0_reg[60]/D           -0.02
+    0:00:44   15230.5      0.99     112.7       0.0 out0_stg0_reg[62]/D           -0.02
+    0:00:44   15230.0      0.99     112.6       0.0 out0_stg0_reg[62]/D           -0.02
+    0:00:44   15240.5      0.99     112.2       0.0 out0_stg0_reg[62]/D           -0.02
+    0:00:44   15239.0      0.99     112.1       0.0 out0_stg0_reg[62]/D           -0.02
+    0:00:45   15246.5      0.98     112.1       0.0 out0_stg0_reg[62]/D           -0.02
+    0:00:45   15248.5      0.98     112.0       0.0 out0_stg0_reg[62]/D           -0.02
+    0:00:45   15261.5      0.98     112.0       0.0 out0_stg0_reg[62]/D           -0.02
+    0:00:45   15279.0      0.98     111.9       0.0 out0_stg0_reg[61]/D           -0.02
+    0:00:45   15274.5      0.98     111.8       0.0 out0_stg0_reg[62]/D           -0.02
+    0:00:45   15277.0      0.98     111.8       0.0 out0_stg0_reg[62]/D           -0.05
+    0:00:45   15288.5      0.98     111.7       0.0 out0_stg0_reg[60]/D           -0.05
+    0:00:45   15297.0      0.98     111.7       0.0 out0_stg0_reg[62]/D           -0.05
+    0:00:45   15301.0      0.98     111.6       0.0 out0_stg0_reg[61]/D           -0.05
+    0:00:45   15300.0      0.98     111.6       0.0 out0_stg0_reg[61]/D           -0.05
+    0:00:46   15300.0      0.98     111.6       0.0 out0_stg0_reg[62]/D           -0.05
+    0:00:46   15309.5      0.98     111.5       0.0 out0_stg0_reg[62]/D           -0.05
+    0:00:46   15317.0      0.98     111.5       0.0 out0_stg0_reg[56]/D           -0.05
+    0:00:46   15319.0      0.98     111.4       0.0 out0_stg0_reg[60]/D           -0.05
+    0:00:46   15319.0      0.98     111.4       0.0 out0_stg0_reg[60]/D           -0.05
+    0:00:46   15327.5      0.98     111.4       0.0 out0_stg0_reg[60]/D           -0.05
+    0:00:46   15340.0      0.98     111.4       0.0 out0_stg0_reg[62]/D           -0.05
+    0:00:46   15348.5      0.98     111.3       0.0 out0_stg0_reg[62]/D           -0.05
+    0:00:46   15355.0      0.98     111.2       0.0 out0_stg0_reg[62]/D           -0.05
+    0:00:47   15358.0      0.98     111.2       0.0 out0_stg0_reg[60]/D           -0.05
+    0:00:47   15359.5      0.98     111.2       0.0 out0_stg0_reg[60]/D           -0.05
+    0:00:47   15369.0      0.97     111.1       0.0 out0_stg0_reg[62]/D           -0.05
+    0:00:47   15372.5      0.97     110.7       0.0 out0_stg0_reg[60]/D           -0.05
+    0:00:47   15376.5      0.97     110.6       0.0 out0_stg0_reg[60]/D           -0.05
+    0:00:47   15377.0      0.97     110.6       0.0 out0_stg0_reg[62]/D           -0.05
+    0:00:47   15382.0      0.97     110.6       0.0 out0_stg0_reg[56]/D           -0.05
+    0:00:47   15399.5      0.97     110.5       0.0 out0_stg0_reg[60]/D           -0.05
+    0:00:47   15400.5      0.97     110.4       0.0 out0_stg0_reg[60]/D           -0.05
+    0:00:47   15403.5      0.97     110.3       0.0 out0_stg0_reg[61]/D           -0.05
+    0:00:48   15406.5      0.97     110.2       0.0 out0_stg0_reg[61]/D           -0.05
+    0:00:48   15402.5      0.97     110.2       0.0 out0_stg0_reg[61]/D           -0.05
+    0:00:48   15398.5      0.97     110.2       0.0 out0_stg0_reg[62]/D           -0.05
+    0:00:48   15425.5      0.96     110.0       0.0 out0_stg0_reg[58]/D           -0.05
+    0:00:48   15427.5      0.96     109.9       0.0 out0_stg0_reg[62]/D           -0.05
+    0:00:48   15422.5      0.96     109.9       0.0 out0_stg0_reg[61]/D           -0.05
+    0:00:48   15427.5      0.96     109.8       0.0 out0_stg0_reg[62]/D           -0.05
+    0:00:48   15431.5      0.96     109.7       0.0 out0_stg0_reg[56]/D           -0.05
+    0:00:48   15438.0      0.96     109.6       0.0 out0_stg0_reg[60]/D           -0.05
+    0:00:48   15436.5      0.96     109.6       0.0 out0_stg0_reg[62]/D           -0.05
+    0:00:49   15443.5      0.96     109.5       0.0 out0_stg0_reg[62]/D           -0.05
+    0:00:49   15444.0      0.96     109.3       0.0 out0_stg0_reg[60]/D           -0.05
+    0:00:49   15444.0      0.96     109.3       0.0 out0_stg0_reg[56]/D           -0.05
+    0:00:49   15442.0      0.96     109.2       0.0 out0_stg0_reg[50]/D           -0.05
+    0:00:49   15452.0      0.96     109.8       0.0 out0_stg0_reg[61]/D           -0.05
+    0:00:49   15461.5      0.96     109.8       0.0 out0_stg0_reg[62]/D           -0.05
+    0:00:49   15462.5      0.96     109.7       0.0 out0_stg0_reg[60]/D           -0.05
+    0:00:49   15472.5      0.95     109.6       0.0 out0_stg0_reg[62]/D           -0.05
+    0:00:49   15484.0      0.95     109.6       0.0 out0_stg0_reg[62]/D           -0.05
+    0:00:49   15482.5      0.95     109.6       0.0 out0_stg0_reg[60]/D           -0.05
+    0:00:49   15502.5      0.95     109.6       0.0 out0_stg0_reg[62]/D           -0.05
+    0:00:49   15510.5      0.95     109.6       0.0 out0_stg0_reg[62]/D           -0.05
+    0:00:50   15514.0      0.95     109.5       0.0 out0_stg0_reg[50]/D           -0.05
+    0:00:50   15521.5      0.95     109.0       0.0 out0_stg0_reg[60]/D           -0.05
+    0:00:50   15542.5      0.95     108.9       0.0 out0_stg0_reg[62]/D           -0.05
+    0:00:50   15546.0      0.95     108.8       0.0 out0_stg0_reg[62]/D           -0.05
+    0:00:50   15541.0      0.95     108.8       0.0 out0_stg0_reg[60]/D           -0.05
+    0:00:50   15537.5      0.95     108.8       0.0 out0_stg0_reg[56]/D           -0.05
+    0:00:50   15542.5      0.95     108.8       0.0 out0_stg0_reg[50]/D           -0.05
+    0:00:50   15548.5      0.95     108.7       0.0 out0_stg0_reg[62]/D           -0.05
+    0:00:50   15567.5      0.95     108.7       0.0 out0_stg0_reg[62]/D           -0.05
+    0:00:51   15571.0      0.95     108.6       0.0 out0_stg0_reg[60]/D           -0.05
+    0:00:51   15571.5      0.95     108.6       0.0 out0_stg0_reg[62]/D           -0.05
+    0:00:51   15581.5      0.95     108.6       0.0 out0_stg0_reg[62]/D           -0.05
+    0:00:51   15578.5      0.95     108.5       0.0 out0_stg0_reg[62]/D           -0.05
+    0:00:51   15593.5      0.95     108.5       0.0 out0_stg0_reg[62]/D           -0.05
+    0:00:51   15603.0      0.95     108.4       0.0 out0_stg0_reg[62]/D           -0.05
+    0:00:51   15604.0      0.95     108.6       0.0 out0_stg0_reg[62]/D           -0.05
+    0:00:51   15603.5      0.94     108.3       0.0 out0_stg0_reg[56]/D           -0.05
+    0:00:51   15606.0      0.94     108.4       0.0 out0_stg0_reg[61]/D           -0.05
+    0:00:51   15631.0      0.94     108.5       0.0 out0_stg0_reg[61]/D           -0.05
+    0:00:52   15646.5      0.94     108.6       0.0 out0_stg0_reg[61]/D           -0.05
+    0:00:52   15650.0      0.93     108.2       0.0 out0_stg0_reg[58]/D           -0.05
+    0:00:52   15652.0      0.93     108.2       0.0 out1_stg0_reg[41]/D           -0.05
+    0:00:52   15655.5      0.93     107.9       0.0 out0_stg0_reg[58]/D           -0.05
+    0:00:52   15659.0      0.93     107.9       0.0 out0_stg0_reg[50]/D           -0.05
+    0:00:52   15664.0      0.93     107.8       0.0 out0_stg0_reg[62]/D           -0.05
+    0:00:52   15668.0      0.93     107.7       0.0 out0_stg0_reg[50]/D           -0.05
+    0:00:52   15686.0      0.93     107.7       0.0 out0_stg0_reg[61]/D           -0.05
+    0:00:52   15687.5      0.92     107.4       0.0 out0_stg0_reg[61]/D           -0.05
+    0:00:53   15697.5      0.92     107.2       0.0 out1_stg0_reg[41]/D           -0.05
+    0:00:53   15733.5      0.92     107.0       0.0 out1_stg0_reg[41]/D           -0.05
+    0:00:53   15736.0      0.91     106.8       0.0 out1_stg0_reg[41]/D           -0.05
+    0:00:53   15740.0      0.91     106.6       0.0 out0_stg0_reg[50]/D           -0.05
+    0:00:53   15759.5      0.91     106.6       0.0 out0_stg0_reg[60]/D           -0.05
+    0:00:53   15759.5      0.91     106.5       0.0 out0_stg0_reg[60]/D           -0.05
+    0:00:53   15768.5      0.91     106.5       0.0 out0_stg0_reg[60]/D           -0.05
+    0:00:53   15771.0      0.91     107.2       0.0 out1_stg0_reg[41]/D           -0.05
+    0:00:53   15763.5      0.91     107.0       0.0 out1_stg0_reg[41]/D           -0.05
+    0:00:54   15771.5      0.91     106.9       0.0 out1_stg0_reg[41]/D           -0.05
+    0:00:54   15776.0      0.91     106.9       0.0 out0_stg0_reg[62]/D           -0.05
+    0:00:54   15793.5      0.91     106.8       0.0 out0_stg0_reg[50]/D           -0.05
+    0:00:54   15795.5      0.90     106.8       0.0 out0_stg0_reg[60]/D           -0.05
+    0:00:54   15805.5      0.90     106.7       0.0 out0_stg0_reg[60]/D           -0.05
+    0:00:54   15809.5      0.90     106.5       0.0 out0_stg0_reg[56]/D           -0.05
+    0:00:54   15812.5      0.90     106.5       0.0 out0_stg0_reg[50]/D           -0.05
+    0:00:54   15818.5      0.90     106.4       0.0 out0_stg0_reg[60]/D           -0.05
+    0:00:54   15819.5      0.90     106.4       0.0 out0_stg0_reg[60]/D           -0.05
+    0:00:54   15818.0      0.90     106.4       0.0 out0_stg0_reg[60]/D           -0.05
+    0:00:55   15823.5      0.90     106.4       0.0 out0_stg0_reg[62]/D           -0.05
+    0:00:55   15824.5      0.90     106.3       0.0 out0_stg0_reg[56]/D           -0.05
+    0:00:55   15831.5      0.90     106.4       0.0 out0_stg0_reg[58]/D           -0.05
+    0:00:55   15835.5      0.90     106.3       0.0 out0_stg0_reg[56]/D           -0.05
+    0:00:55   15840.5      0.90     106.2       0.0 out0_stg0_reg[62]/D           -0.05
+    0:00:55   15857.0      0.90     106.2       0.0 out0_stg0_reg[56]/D           -0.05
+    0:00:55   15856.5      0.90     106.1       0.0 out0_stg0_reg[60]/D           -0.05
+    0:00:55   15857.5      0.89     106.0       0.0 out0_stg0_reg[60]/D           -0.05
+    0:00:55   15867.0      0.89     106.0       0.0 out0_stg0_reg[60]/D           -0.05
+    0:00:55   15869.0      0.89     106.0       0.0 out0_stg0_reg[60]/D           -0.05
+    0:00:56   15873.0      0.89     105.9       0.0 out0_stg0_reg[60]/D           -0.05
+    0:00:56   15873.0      0.89     106.0       0.0 out0_stg0_reg[60]/D           -0.05
+    0:00:56   15872.5      0.89     105.9       0.0 out0_stg0_reg[60]/D           -0.05
+    0:00:56   15872.0      0.89     105.9       0.0 out0_stg0_reg[60]/D           -0.05
+    0:00:56   15874.0      0.89     105.9       0.0 out0_stg0_reg[60]/D           -0.05
+    0:00:56   15878.0      0.89     105.8       0.0 out0_stg0_reg[56]/D           -0.05
+    0:00:56   15841.5      0.89     104.1       0.0                               -0.05
+    0:00:56   15827.5      0.89     104.1       0.0                               -0.05
+    0:00:56   15825.5      0.89     104.1       0.0                               -0.05
+    0:00:56   15812.0      0.89     103.4       0.0                                0.00
+    0:00:56   15808.5      0.89     103.4       0.0                                0.00
+    0:00:57   15811.0      0.89     103.4       0.0                                0.00
+    0:00:57   15819.0      0.89     103.3       0.0                                0.00
+    0:00:57   15814.0      0.89     103.2       0.0                                0.00
+    0:00:57   15815.0      0.89     103.2       0.0                                0.00
+    0:00:57   15816.0      0.89     103.2       0.0                                0.00
+    0:00:57   15817.0      0.89     103.2       0.0                                0.00
+    0:00:57   15817.0      0.89     103.1       0.0                                0.00
+    0:00:57   15817.5      0.89     103.1       0.0                                0.00
+    0:00:57   15817.5      0.89     103.1       0.0                                0.00
+    0:00:57   15815.5      0.89     103.1       0.0                                0.00
+    0:00:57   15816.5      0.89     103.1       0.0                                0.00
+    0:00:58   15814.0      0.89     103.0       0.0                                0.00
+    0:00:58   15812.5      0.89     103.0       0.0                                0.00
+    0:00:58   15813.5      0.89     103.0       0.0                                0.00
+    0:00:58   15810.0      0.89     102.9       0.0                                0.00
+    0:00:58   15810.0      0.89     102.9       0.0                                0.00
+    0:00:58   15811.0      0.89     102.0       0.0                                0.00
+    0:00:58   15814.0      0.89     102.0       0.0 out0_stg0_reg[60]/D            0.00
+    0:00:58   15825.5      0.89     103.2       0.0 out0_stg0_reg[60]/D            0.00
+    0:00:58   15838.0      0.89     103.0       0.0 out0_stg0_reg[60]/D            0.00
+    0:00:58   15833.0      0.89     102.9       0.0 out0_stg0_reg[60]/D            0.00
+    0:00:58   15839.5      0.89     102.9       0.0 out0_stg0_reg[60]/D            0.00
+    0:00:58   15855.0      0.89     102.9       0.0 out0_stg0_reg[60]/D            0.00
+    0:00:59   15874.0      0.88     102.8       0.0 out0_stg0_reg[60]/D            0.00
+    0:00:59   15881.0      0.88     102.6       0.0 out0_stg0_reg[60]/D            0.00
+    0:00:59   15891.5      0.88     102.6       0.0 out0_stg0_reg[62]/D            0.00
+    0:00:59   15894.0      0.88     102.5       0.0 out0_stg0_reg[60]/D            0.00
+    0:00:59   15898.0      0.88     102.5       0.0 out0_stg0_reg[60]/D            0.00
+    0:00:59   15900.5      0.88     102.5       0.0 out0_stg0_reg[60]/D            0.00
+    0:00:59   15902.0      0.88     102.5       0.0 out0_stg0_reg[60]/D            0.00
+    0:00:59   15906.0      0.88     103.3       0.0 out0_stg0_reg[62]/D            0.00
+    0:00:59   15916.5      0.88     103.1       0.0 out0_stg0_reg[60]/D            0.00
+    0:00:59   15917.5      0.88     103.1       0.0 out0_stg0_reg[60]/D            0.00
+    0:00:59   15917.0      0.88     103.0       0.0 out0_stg0_reg[62]/D            0.00
+    0:01:00   15917.0      0.88     103.0       0.0 out0_stg0_reg[62]/D            0.00
+    0:01:00   15919.5      0.88     103.0       0.0 out0_stg0_reg[62]/D            0.00
+    0:01:00   15925.5      0.88     102.9       0.0 out0_stg0_reg[62]/D            0.00
+    0:01:00   15926.5      0.88     102.9       0.0 out0_stg0_reg[62]/D            0.00
+    0:01:00   15928.5      0.88     102.9       0.0 out0_stg0_reg[60]/D            0.00
+    0:01:00   15928.0      0.88     102.8       0.0 out0_stg0_reg[62]/D            0.00
+    0:01:00   15930.5      0.88     102.7       0.0 out0_stg0_reg[62]/D            0.00
+    0:01:00   15934.0      0.88     103.8       0.0 out0_stg0_reg[56]/D            0.00
+    0:01:00   15936.5      0.88     103.7       0.0 out0_stg0_reg[62]/D            0.00
+    0:01:00   15936.0      0.88     103.7       0.0 out0_stg0_reg[60]/D            0.00
+    0:01:00   15937.0      0.88     103.7       0.0 out0_stg0_reg[62]/D            0.00
+    0:01:01   15939.5      0.87     103.6       0.0 out0_stg0_reg[62]/D            0.00
+    0:01:01   15941.5      0.87     103.6       0.0 out0_stg0_reg[60]/D            0.00
+Loading db file '/apps/toshiba/sjsu/synopsys/tc240c/tc240c.db_NOMIN25'
+
+  Optimization Complete
+  ---------------------
+1
+create_clock clk -name clk -period 4.0
+1
+update_timing
+Information: Updating design information... (UID-85)
+1
+report_timing -max_paths 3
+ 
+****************************************
+Report : timing
+        -path full
+        -delay max
+        -max_paths 3
+Design : sfilt
+Version: I-2013.12-SP5
+Date   : Tue Feb 17 14:23:12 2015
+****************************************
+
+Operating Conditions: NOMIN25   Library: tc240c
+Wire Load Model Mode: top
+
+  Startpoint: q0_reg[13] (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: out0_stg0_reg[42]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  q0_reg[13]/CP (CFD2QX1)                                 0.00       0.00 r
+  q0_reg[13]/Q (CFD2QX1)                                  0.27       0.27 r
+  r304/a[13] (sfilt_DW_mult_tc_1)                         0.00       0.27 r
+  r304/U5530/Z (CIVX2)                                    0.06       0.33 f
+  r304/U5112/Z1 (CIVDX2)                                  0.15       0.48 f
+  r304/U4584/Z (CIVX3)                                    0.11       0.59 r
+  r304/U4811/Z (CENXL)                                    0.20       0.80 r
+  r304/U1934/Z (COND2X1)                                  0.17       0.97 f
+  r304/U1021/S (CFA1X1)                                   0.40       1.37 r
+  r304/U1018/CO (CFA1X1)                                  0.21       1.57 r
+  r304/U2895/Z (CEO3X2)                                   0.42       1.99 f
+  r304/U2896/Z (CENX2)                                    0.14       2.13 f
+  r304/U2985/Z (CENX1)                                    0.14       2.27 f
+  r304/U5064/Z (CND2XL)                                   0.08       2.36 r
+  r304/U3411/Z (CND3X1)                                   0.16       2.51 f
+  r304/U4544/Z (CNR2X2)                                   0.08       2.59 r
+  r304/U4200/Z (COND1X1)                                  0.10       2.69 f
+  r304/U4217/Z (CANR1X1)                                  0.14       2.83 r
+  r304/U3118/Z (COND1X1)                                  0.13       2.96 f
+  r304/U3227/Z (CANR1X2)                                  0.21       3.16 r
+  r304/U462/Z (COND1X1)                                   0.11       3.27 f
+  r304/U5029/Z (CENXL)                                    0.13       3.41 f
+  r304/product[42] (sfilt_DW_mult_tc_1)                   0.00       3.41 f
+  out0_stg0_reg[42]/D (CFD2QXL)                           0.00       3.41 f
+  data arrival time                                                  3.41
+
+  clock clk (rise edge)                                   4.00       4.00
+  clock network delay (ideal)                             0.00       4.00
+  clock uncertainty                                      -0.25       3.75
+  out0_stg0_reg[42]/CP (CFD2QXL)                          0.00       3.75 r
+  library setup time                                     -0.22       3.53
+  data required time                                                 3.53
+  --------------------------------------------------------------------------
+  data required time                                                 3.53
+  data arrival time                                                 -3.41
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.13
+
+
+  Startpoint: q0_reg[13] (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: out0_stg0_reg[44]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  q0_reg[13]/CP (CFD2QX1)                                 0.00       0.00 r
+  q0_reg[13]/Q (CFD2QX1)                                  0.27       0.27 r
+  r304/a[13] (sfilt_DW_mult_tc_1)                         0.00       0.27 r
+  r304/U5530/Z (CIVX2)                                    0.06       0.33 f
+  r304/U5112/Z1 (CIVDX2)                                  0.15       0.48 f
+  r304/U4584/Z (CIVX3)                                    0.11       0.59 r
+  r304/U4811/Z (CENXL)                                    0.20       0.80 r
+  r304/U1934/Z (COND2X1)                                  0.17       0.97 f
+  r304/U1021/S (CFA1X1)                                   0.40       1.37 r
+  r304/U1018/CO (CFA1X1)                                  0.21       1.57 r
+  r304/U2895/Z (CEO3X2)                                   0.42       1.99 f
+  r304/U2896/Z (CENX2)                                    0.14       2.13 f
+  r304/U2985/Z (CENX1)                                    0.14       2.27 f
+  r304/U5064/Z (CND2XL)                                   0.08       2.36 r
+  r304/U3411/Z (CND3X1)                                   0.16       2.51 f
+  r304/U4544/Z (CNR2X2)                                   0.08       2.59 r
+  r304/U4200/Z (COND1X1)                                  0.10       2.69 f
+  r304/U4217/Z (CANR1X1)                                  0.14       2.83 r
+  r304/U3118/Z (COND1X1)                                  0.13       2.96 f
+  r304/U3227/Z (CANR1X2)                                  0.21       3.16 r
+  r304/U432/Z (COND1X1)                                   0.11       3.27 f
+  r304/U5030/Z (CENXL)                                    0.13       3.41 f
+  r304/product[44] (sfilt_DW_mult_tc_1)                   0.00       3.41 f
+  out0_stg0_reg[44]/D (CFD2QXL)                           0.00       3.41 f
+  data arrival time                                                  3.41
+
+  clock clk (rise edge)                                   4.00       4.00
+  clock network delay (ideal)                             0.00       4.00
+  clock uncertainty                                      -0.25       3.75
+  out0_stg0_reg[44]/CP (CFD2QXL)                          0.00       3.75 r
+  library setup time                                     -0.22       3.53
+  data required time                                                 3.53
+  --------------------------------------------------------------------------
+  data required time                                                 3.53
+  data arrival time                                                 -3.41
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.13
+
+
+  Startpoint: q0_reg[13] (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: out0_stg0_reg[46]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  q0_reg[13]/CP (CFD2QX1)                                 0.00       0.00 r
+  q0_reg[13]/Q (CFD2QX1)                                  0.27       0.27 r
+  r304/a[13] (sfilt_DW_mult_tc_1)                         0.00       0.27 r
+  r304/U5530/Z (CIVX2)                                    0.06       0.33 f
+  r304/U5112/Z1 (CIVDX2)                                  0.15       0.48 f
+  r304/U4584/Z (CIVX3)                                    0.11       0.59 r
+  r304/U4811/Z (CENXL)                                    0.20       0.80 r
+  r304/U1934/Z (COND2X1)                                  0.17       0.97 f
+  r304/U1021/S (CFA1X1)                                   0.40       1.37 r
+  r304/U1018/CO (CFA1X1)                                  0.21       1.57 r
+  r304/U2895/Z (CEO3X2)                                   0.42       1.99 f
+  r304/U2896/Z (CENX2)                                    0.14       2.13 f
+  r304/U2985/Z (CENX1)                                    0.14       2.27 f
+  r304/U5064/Z (CND2XL)                                   0.08       2.36 r
+  r304/U3411/Z (CND3X1)                                   0.16       2.51 f
+  r304/U4544/Z (CNR2X2)                                   0.08       2.59 r
+  r304/U4200/Z (COND1X1)                                  0.10       2.69 f
+  r304/U4217/Z (CANR1X1)                                  0.14       2.83 r
+  r304/U3118/Z (COND1X1)                                  0.13       2.96 f
+  r304/U3227/Z (CANR1X2)                                  0.21       3.16 r
+  r304/U402/Z (COND1X1)                                   0.11       3.27 f
+  r304/U5031/Z (CENXL)                                    0.13       3.41 f
+  r304/product[46] (sfilt_DW_mult_tc_1)                   0.00       3.41 f
+  out0_stg0_reg[46]/D (CFD2QXL)                           0.00       3.41 f
+  data arrival time                                                  3.41
+
+  clock clk (rise edge)                                   4.00       4.00
+  clock network delay (ideal)                             0.00       4.00
+  clock uncertainty                                      -0.25       3.75
+  out0_stg0_reg[46]/CP (CFD2QXL)                          0.00       3.75 r
+  library setup time                                     -0.22       3.53
+  data required time                                                 3.53
+  --------------------------------------------------------------------------
+  data required time                                                 3.53
+  data arrival time                                                 -3.41
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.13
+
+
+1
+write -hierarchy -format verilog -output sfilt_gates.v
+Writing verilog file '/home/so/soun0694/Work/287-250Mhz/sfilt_gates.v'.
+Warning: Verilog 'assign' or 'tran' statements are written out. (VO-4)
+1
+quit
+
+Thank you...

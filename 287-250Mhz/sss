@@ -1,0 +1,4 @@
+#!/usr/bin/csh
+source design_ssc.csh
+which dc_shell
+dc_shell -f synthesis.script | tee synres.txt
