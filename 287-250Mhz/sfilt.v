@@ -24,10 +24,10 @@ reg signed [6:0]  h0_stg0, h0_stg1;
 
 //Generating enables using generate
 generate
-	genvar stage;
-	for (stage=0; stage<4; stage=stage+1)
+	genvar i;
+	for (i=0; i<4; i=i+1)
 		begin
-			assign cmd[stage]_en_stg0 = ((cmd0==2'd[stage])&&push0);
+			assign cmd[i]_en_stg0 = ((cmd0==2'd[i])&&push0);
 		end
  endgenerate
 
