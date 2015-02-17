@@ -16,25 +16,30 @@ reg push0,push0_stg0,push0_stg1,push0_stg2;;
 reg _pushout,_pushout_d;
 reg [1:0] cmd0,cmd0_stg0,cmd0_stg1,cmd0_stg2;
 reg roundit;
-//reg cmd0_en_stg0,cmd1_en_stg0,cmd2_en_stg0,cmd3_en_stg0;
+
 wire cmd0_en_stg0,cmd1_en_stg0,cmd2_en_stg0,cmd3_en_stg0,cmd1_en_stg2_pulse;
 reg cmd0_en_stg1,cmd0_en_stg2,cmd0_en_stg2_d,cmd1_en_stg1,cmd1_en_stg2,cmd1_en_stg2_d,cmd2_en_stg1,cmd2_en_stg2,cmd3_en_stg1,cmd3_en_stg2;
 reg signed [63:0] out0_stg0,out0_stg1,out0_stg2,out1_stg0,out1_stg1,out1_stg2,out2_stg2,out3_stg2,acc_cmd2,acc_cmd1;
-reg signed [6:0]  h0_stg0,h0_stg1;
- 
+reg signed [6:0]  h0_stg0, h0_stg1;
+
+//Generating enables using generate
+generate
+	genvar stage;
+	for (stage=0; stage<4; stage=stage+1)
+		begin
+			assign cmd[stage]_en_stg0 = (cmd0==2'd[stage])&&push0;
+		end
+ endgenerate
+
 //Generating enables for each command type
-assign cmd0_en_stg0 = (cmd0 == 2'd0) && push0;
-assign cmd1_en_stg0 = (cmd0 == 2'd1) && push0;
-assign cmd2_en_stg0 = (cmd0 == 2'd2) && push0;
-assign cmd3_en_stg0 = (cmd0 == 2'd3) && push0;
+// assign cmd0_en_stg0 = (cmd0 == 2'd0) && push0;
+// assign cmd1_en_stg0 = (cmd0 == 2'd1) && push0;
+// assign cmd2_en_stg0 = (cmd0 == 2'd2) && push0;
+// assign cmd3_en_stg0 = (cmd0 == 2'd3) && push0;
 
 //Propogating cmd, cmd enables, push signals to all pipeline stages
 always @(posedge(clk) or posedge(rst))
 	if(rst) begin
-	 //cmd0_en_stg0   <= #1 1'b0;
-	 //cmd1_en_stg0   <= #1 1'b0;
-	 //cmd2_en_stg0   <= #1 1'b0;
-	 //cmd3_en_stg0   <= #1 1'b0;
 	 cmd0_en_stg1   <= #1 1'b0;
 	 cmd1_en_stg1   <= #1 1'b0;
 	 cmd2_en_stg1   <= #1 1'b0;
