@@ -1,0 +1,38 @@
+/apps/synopsys/VCSMX_NEW/bin/vcs
+
+Warning-[LNX_OS_VERUN] Unsupported Linux version
+  Linux version 'Fedora release 20 (Heisenbug)' is not supported on 'x86_64' 
+  officially, assuming linux compatibility by default. Set VCS_ARCH_OVERRIDE 
+  to linux or suse32 to override.
+  Please refer to release notes for information on supported platforms.
+
+
+Warning-[LINX_KRNL] Unsupported Linux kernel
+  Linux kernel '3.16.7-200.fc20.x86_64' is not supported.
+  Supported versions are 2.4* or 2.6*.
+
+                         Chronologic VCS (TM)
+           Version I-2014.03-2 -- Tue Feb 17 13:59:52 2015
+               Copyright (c) 1991-2014 by Synopsys Inc.
+                         ALL RIGHTS RESERVED
+
+This program is proprietary and confidential information of Synopsys Inc.
+and may be used and disclosed only as authorized in a license agreement
+controlling such use and disclosure.
+
+Parsing design file 'tbsfilt.sv'
+Parsing design file 'sfilt.v'
+
+Error-[SE] Syntax error
+  Following verilog source has syntax error :
+  	Token 'cmd' not recognized as a type. Please check whether it is 
+  misspelled, not visible/valid in the current context, or not properly 
+  imported/exported. This is occurring in a context where a variable 
+  declaration, a statement, or a sequence expression is expected. Either the 
+  declaration type is not known or this is incorrect syntax.
+  "sfilt.v", 30: token is '_en_stg0'
+  			assign cmd[i]_en_stg0 = ((cmd0==2'd[i])&&push0);
+                                               ^
+
+1 error
+CPU time: .042 seconds to compile

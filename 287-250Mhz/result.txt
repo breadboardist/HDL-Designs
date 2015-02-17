@@ -1,0 +1,8 @@
+sfilt script run started on Tue Feb 17 13:59:51 2015
+run on machine eecad25.engr.sjsu.edu
+
+Run with a clock period of 4.0
+student names
+  Prem Bharath Soundararajan  0694
+options syn False gates False
+VCS FAILED TO WORK
