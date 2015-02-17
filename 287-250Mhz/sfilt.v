@@ -27,7 +27,7 @@ generate
 	genvar stage;
 	for (stage=0; stage<4; stage=stage+1)
 		begin
-			assign cmd[stage]_en_stg0 = (cmd0==2'd[stage])&&push0;
+			assign cmd[stage]_en_stg0 = ((cmd0==2'd[stage])&&push0);
 		end
  endgenerate
 
