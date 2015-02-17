@@ -19,7 +19,7 @@ reg roundit;
 
 reg [3:0] en_stg0_cmd;
 
-wire en_stg0_cmd0,en_stg0_cmd1,en_stg0_cmd2,en_stg0_cmd3,cmd1_en_stg2_pulse;
+wire cmd1_en_stg2_pulse;
 reg cmd0_en_stg1,cmd0_en_stg2,cmd0_en_stg2_d,cmd1_en_stg1,cmd1_en_stg2,cmd1_en_stg2_d,cmd2_en_stg1,cmd2_en_stg2,cmd3_en_stg1,cmd3_en_stg2;
 reg signed [63:0] out0_stg0,out0_stg1,out0_stg2,out1_stg0,out1_stg1,out1_stg2,out2_stg2,out3_stg2,acc_cmd2,acc_cmd1;
 reg signed [6:0]  h0_stg0, h0_stg1;
