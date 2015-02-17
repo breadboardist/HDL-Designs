@@ -16,32 +16,25 @@ reg push0,push0_stg0,push0_stg1,push0_stg2;;
 reg _pushout,_pushout_d;
 reg [1:0] cmd0,cmd0_stg0,cmd0_stg1,cmd0_stg2;
 reg roundit;
-
-reg [3:0] en_stg0_cmd;
-
-wire cmd1_en_stg2_pulse;
+//reg cmd0_en_stg0,cmd1_en_stg0,cmd2_en_stg0,cmd3_en_stg0;
+wire cmd0_en_stg0,cmd1_en_stg0,cmd2_en_stg0,cmd3_en_stg0,cmd1_en_stg2_pulse;
 reg cmd0_en_stg1,cmd0_en_stg2,cmd0_en_stg2_d,cmd1_en_stg1,cmd1_en_stg2,cmd1_en_stg2_d,cmd2_en_stg1,cmd2_en_stg2,cmd3_en_stg1,cmd3_en_stg2;
 reg signed [63:0] out0_stg0,out0_stg1,out0_stg2,out1_stg0,out1_stg1,out1_stg2,out2_stg2,out3_stg2,acc_cmd2,acc_cmd1;
-reg signed [6:0]  h0_stg0, h0_stg1;
-
-//Generating enables using generate
-generate
-	genvar i;
-	for (i=0; i<4; i=i+1)
-		begin
-			en_stg0_cmd[i] = (cmd0 == 2'd[i]) && push0;
-		end
- endgenerate
-
+reg signed [6:0]  h0_stg0,h0_stg1;
+ 
 //Generating enables for each command type
-// assign en_stg0_cmd0 = (cmd0 == 2'd0) && push0;
-// assign en_stg0_cmd1 = (cmd0 == 2'd1) && push0;
-// assign en_stg0_cmd2 = (cmd0 == 2'd2) && push0;
-// assign en_stg0_cmd3 = (cmd0 == 2'd3) && push0;
+assign cmd0_en_stg0 = (cmd0 == 2'd0) && push0;
+assign cmd1_en_stg0 = (cmd0 == 2'd1) && push0;
+assign cmd2_en_stg0 = (cmd0 == 2'd2) && push0;
+assign cmd3_en_stg0 = (cmd0 == 2'd3) && push0;
 
 //Propogating cmd, cmd enables, push signals to all pipeline stages
 always @(posedge(clk) or posedge(rst))
 	if(rst) begin
+	 //cmd0_en_stg0   <= #1 1'b0;
+	 //cmd1_en_stg0   <= #1 1'b0;
+	 //cmd2_en_stg0   <= #1 1'b0;
+	 //cmd3_en_stg0   <= #1 1'b0;
 	 cmd0_en_stg1   <= #1 1'b0;
 	 cmd1_en_stg1   <= #1 1'b0;
 	 cmd2_en_stg1   <= #1 1'b0;
@@ -56,10 +49,10 @@ always @(posedge(clk) or posedge(rst))
 	 cmd0_stg2      <= #1 2'd0;
 	end
 	else begin
-	 cmd0_en_stg1   <= #1 en_stg0_cmd0;
-	 cmd1_en_stg1   <= #1 en_stg0_cmd1;
-	 cmd2_en_stg1   <= #1 en_stg0_cmd2;
-	 cmd3_en_stg1   <= #1 en_stg0_cmd3;
+	 cmd0_en_stg1   <= #1 cmd0_en_stg0;
+	 cmd1_en_stg1   <= #1 cmd1_en_stg0;
+	 cmd2_en_stg1   <= #1 cmd2_en_stg0;
+	 cmd3_en_stg1   <= #1 cmd3_en_stg0;
 	 cmd0_en_stg2   <= #1 cmd0_en_stg1;
 	 cmd1_en_stg2   <= #1 cmd1_en_stg1;
 	 cmd2_en_stg2   <= #1 cmd2_en_stg1;
@@ -158,7 +151,7 @@ begin
 		out2_stg2 <= #1 64'd0;
 	end
 	else begin
-		if(en_stg0_cmd2 == 1'b1) begin
+		if(cmd2_en_stg0 == 1'b1) begin
 			h0_stg0 <= #1 h0[6:0];
 		end
 
