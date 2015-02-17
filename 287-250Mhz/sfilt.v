@@ -29,7 +29,7 @@ generate
 	genvar i;
 	for (i=0; i<4; i=i+1)
 		begin
-			assign en_stg0_cmd[i] = (cmd0 == 2'd[i]) && push0;
+			en_stg0_cmd[i] = (cmd0 == 2'd[i]) && push0;
 		end
  endgenerate
 
