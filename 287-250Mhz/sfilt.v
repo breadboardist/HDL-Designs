@@ -1,6 +1,6 @@
 // This is a sample example for a serial filter block
 // This will be used for the pipelining problem
-//
+
 `timescale 1ns/10ps
 // cmd codes
 // 0 = first mult
@@ -22,13 +22,13 @@ reg cmd0_en_1,cmd0_en_2,cmd0_en_2_d,cmd1_en_1,cmd1_en_2,cmd1_en_2_d,cmd2_en_1,cm
 reg signed [63:0] out0_0,out0_1,out0_2,out1_0,out1_1,out1_2,out2_2,out3_2,acc_cmd2,acc_cmd1;
 reg signed [6:0]  h0_0,h0_1;
  
-//Generating enables for each command type
+
 assign cmd0_en_0 = (cmd0 == 2'd0) && push0;
 assign cmd1_en_0 = (cmd0 == 2'd1) && push0;
 assign cmd2_en_0 = (cmd0 == 2'd2) && push0;
 assign cmd3_en_0 = (cmd0 == 2'd3) && push0;
 
-//Propogating cmd, cmd enables, push signals to all pipeline stages
+
 always @(posedge(clk) or posedge(rst))
 	if(rst) begin
 	 cmd0_en_1   <= #1 1'b0;
@@ -63,7 +63,7 @@ always @(posedge(clk) or posedge(rst))
 	 cmd0_2      <= #1 cmd0_1;
 	end
 
-//Pipelining the cmd0 - 3 Stages
+
 always @(posedge(clk) or posedge(rst))
 begin
 	if(rst) begin
@@ -80,11 +80,11 @@ begin
 	end
 end
 
-//Pulse generated to detect previous cmd
+
 
 assign cmd1_en_2_pulse = (cmd1_en_2 == 1'b1) && (cmd1_en_2_d == 1'b0);
 
-//Logic to take data from cmd0 or from accumulator
+
 
 always @ (*)
 begin
@@ -101,7 +101,7 @@ begin
 	end
 end
 
-//Pipelining Multiply & Accumulate - 3 Stages - cmd1
+
 
 always @(posedge(clk) or posedge(rst))
 begin
@@ -119,7 +119,7 @@ begin
 	end
 end
 
-//Logic to take output from cmd1 or accumulator
+
 always @ (*)
 begin
 	if(cmd2_en_2 == 1'b1) begin
@@ -138,7 +138,7 @@ begin
 	end
 end
 
-//Pipelining the shift factor for cmd2
+
 always @(posedge(clk) or posedge(rst))
 begin
 	if(rst) begin
@@ -194,7 +194,7 @@ end
 assign pushout = _pushout;
 assign z = dout;
 
-//Registering input and output signals
+
 always @(posedge(clk) or posedge(rst))
 	if(rst) begin
 		push0 <= #1 0;
