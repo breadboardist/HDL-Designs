@@ -12,7 +12,7 @@ module sfilt(input clk, input rst, input pushin, input [1:0] cmd,
 	output pushout, output [31:0] z);
 reg signed [63:0] acc,acc_d;
 integer q0,q0_d,h0,h0_d,dout,dout_d;
-reg push0,push0_0,push0_1,push0_2;;
+reg push0,push0_0,push0_1,push0_2;
 reg _pushout,_pushout_d;
 reg [1:0] cmd0,cmd0_0,cmd0_1,cmd0_2;
 reg roundit;
