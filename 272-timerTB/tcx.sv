@@ -1,4 +1,4 @@
-// Design with error number 1
+// Design with error number 0
 // The timer counter described in the atmel document
 `timescale 1ns/10ps
 
@@ -62,7 +62,7 @@ assign ai.interrupt_request=irq;
 always @(*) begin
   ai.rdata=8'bX;
   if(ai.read) case(ai.addr)
-    8'h66,8'h46: ai.rdata = tcnt;
+    8'h26,8'h46: ai.rdata = tcnt;
     8'h27,8'h47: ai.rdata = ocra;
     8'h28,8'h48: ai.rdata = ocrb;
     8'h24,8'h44: ai.rdata = tccra;
