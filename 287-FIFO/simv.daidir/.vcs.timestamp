@@ -25,7 +25,7 @@ sysc_uni_pwd=/home/so/soun0694/Work/287-FIFO
 XSCH_PARAM_NAME=/usr/lib64/alliance/etc/xsch.par
 XPAT_PARAM_NAME=/usr/lib64/alliance/etc/xpat.par
 XFSM_PARAM_NAME=/usr/lib64/alliance/etc/xfsm.par
-XDG_SESSION_ID=511
+XDG_SESSION_ID=563
 XDG_RUNTIME_DIR=/run/user/70884
 VMR_MODE_FLAG=32
 VH_PATSFX=pat
@@ -45,9 +45,9 @@ TPD_LOCAL=/home/so/soun0694
 TPD_GLOBAL=/usr/share/toped/
 TOOL_HOME=/apps/synopsys/VCSMX_NEW/linux
 TK_LIBRARY=/apps/synopsys/VCSMX_NEW/etc/auxx/tcllib/tk8.4/library
-SSH_TTY=/dev/pts/7
-SSH_CONNECTION=130.65.150.15 38601 130.65.179.190 22
-SSH_CLIENT=130.65.150.15 38601 22
+SSH_TTY=/dev/pts/2
+SSH_CONNECTION=130.65.150.15 35306 130.65.179.151 22
+SSH_CLIENT=130.65.150.15 35306 22
 SNPSLMS_LICENSE_FILE=27000@innersanctum.engr.sjsu.edu:/apps/synopsys/license/current-license-key
 SFLM_SERVER=innersanctum
 SELINUX_USE_CURRENT_RANGE=
@@ -96,12 +96,12 @@ ARCH=linux
 ALLIANCE_TOP=/usr/lib64/alliance
 0
 3
-1424482243 bits.v
-1424482279 tbits.sv
-1424482279 files.f
+1424486382 bits.v
+1424486402 tbits.sv
+1424486402 files.f
 4
 0 
 1410372690 /apps/synopsys/VCSMX_NEW/linux/lib/libvirsim.so
 1410372633 /apps/synopsys/VCSMX_NEW/linux/lib/librterrorinf.so
 1410372654 /apps/synopsys/VCSMX_NEW/linux/lib/libsnpsmalloc.so
-1424482281 simv.daidir
+1424486405 simv.daidir

@@ -21,7 +21,7 @@ int bitsleft;
 
 reg running=0;
 
-reg debug=1;
+reg debug=0;
 
 default clocking tclk @(posedge(clk)) ;
   
