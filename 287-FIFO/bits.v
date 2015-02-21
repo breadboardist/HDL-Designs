@@ -3,12 +3,12 @@ module bits (
 	input clk,
 	input rst,
 	input pushin,
-	input datain,
+	input [31:0] datain,
 	input reqin,
-	input reqlen,
+	input [3:0] reqlen,
 	output pushout,
-	output lenout,
-	output dataout
+	output [3:0] lenout,
+	output [14:0] dataout
 		
 );
 
