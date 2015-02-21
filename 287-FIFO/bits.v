@@ -11,8 +11,6 @@ module bits (
 		
 );
 
-reg pushout;
-
 always @(posedge (clk))
 	begin
 		pushout<=0;
