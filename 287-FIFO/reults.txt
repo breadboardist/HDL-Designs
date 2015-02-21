@@ -1,8 +1,0 @@
-bits script run started on Wed Feb 18 19:09:01 2015
-run on machine eecad4.engr.sjsu.edu
-
-Run with a clock period of 5.0
-student names
-  Prem Bharath Soundararajan  0694
-options syn False gates False
-VCS FAILED TO WORK
