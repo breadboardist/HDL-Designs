@@ -2,19 +2,15 @@ module bits (clock, reset, pushin, datain, reqin, reqlen, pushout, lenout, datao
 
 	input clock, reset;
 	input pushin;
-	input [INWIDTH-1:0] datain;
+	input [31:0] datain;
 	input reqin;
-	input [OUTADDRESSWIDTH-1:0] reqlen;
+	input [3:0] reqlen;
 	output pushout;
-	output [OUTADDRESSWIDTH-1:0] lenout;
-	output [OUTWIDTH-1:0] dataout;
-
-	parameter INWIDTH = 32;
-	parameter OUTWIDTH = 15;
-	parameter OUTADDRESSWIDTH = 4;
+	output [14:0] lenout;
+	output [3:0] dataout;
 
 	reg fifofull;
-	reg [INWIDTH-1:0] dataInput;
+	reg [31:0] dataInput;
 	reg pushout;
 
 	fifo mainFIFO(clock, reset, dataInput, pushin, pushout, dataout, fifofull);
