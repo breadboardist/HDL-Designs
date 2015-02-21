@@ -38,24 +38,28 @@ endmodule
 module fifo(clock, reset, inData, new_data, out_data, outData, full);
 	
 	input clock, reset;
-	input [WIDTH-1:0] inData;
+	input [31:0] inData;
+	//input [WIDTH-1:0] inData;
 	input new_data;
 	input out_data;
 
-	parameter WIDTH = 32;
-	parameter DEPTH = 32;
-	parameter ADDRESSWIDTH = 5;
+	// parameter WIDTH = 32;
+	// parameter DEPTH = 32;
+	// parameter ADDRESSWIDTH = 5;
 
 	integer k;
 
-	output [WIDTH-1:0] outData;
+	// output [WIDTH-1:0] outData;
+	output [31:0] outData;
 	output full;
 
 	reg full;
 	wire fullD;
 
-	reg [ADDRESSWIDTH-1:0] rear;
-	reg [ADDRESSWIDTH-1:0] front;
+	// reg [ADDRESSWIDTH-1:0] rear;
+	// reg [ADDRESSWIDTH-1:0] front;
+	reg [4:0] rear;
+	reg [4:0] front;
 
 	//Rear Pointer Holder Flops
 	always@(posedge clock)
@@ -63,7 +67,7 @@ module fifo(clock, reset, inData, new_data, out_data, outData, full);
 		if(!reset) rear <= 0;
 		else if (new_data)
 		begin
-			if(rear == DEPTH) rear <= 0;
+			if(rear == 32) rear <= 0;
 			else rear <= rear + 1;
 		end
 	end
@@ -74,7 +78,7 @@ module fifo(clock, reset, inData, new_data, out_data, outData, full);
 		if(!reset) front <= 0;
 		else if(out_data)
 		begin
-			if(front == DEPTH) front <= 0;
+			if(front == 32) front <= 0;
 			else front <= front + 1;
 		end
 	end
@@ -86,7 +90,7 @@ module fifo(clock, reset, inData, new_data, out_data, outData, full);
 		else full <= fullD;
 	end
 
-	assign fullD = (front == ((rear == DEPTH) ? 0: (rear + 1)));
+	assign fullD = (front == ((rear == 32) ? 0: (rear + 1)));
 
 	regfile u1(clock, reset, new_data, rear, front, inData, outData);
 
