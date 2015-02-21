@@ -1,9 +1,8 @@
-`timescale 1ns/10ps
 module bits (
 	input clk,
 	input rst,
 	input pushin,
-	input datain,
+	input [31:0] datain,
 	input reqin,
 	input reqlen,
 	output pushout,
