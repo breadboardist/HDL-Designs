@@ -1,4 +1,4 @@
-bits script run started on Fri Feb 20 20:31:45 2015
+bits script run started on Sat Feb 21 15:55:35 2015
 run on machine eecad13.engr.sjsu.edu
 
 Run with a clock period of 5.0
