@@ -1,3 +1,4 @@
+`timescale 1ns/10ps
 module bits (
 	input clk,
 	input rst,
@@ -11,7 +12,7 @@ module bits (
 		
 );
 
-reg pushout
+reg pushout;
 
 always @(posedge (clk))
 	begin
