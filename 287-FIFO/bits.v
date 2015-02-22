@@ -13,23 +13,23 @@ module bits (clock, reset, pushin, datain, reqin, reqlen, pushout, lenout, datao
 
 	reg fifo_full;
 	reg [31:0] fifo_input;
-	reg fifo_pushout, fifo_pushin;
-	wire [31:0] fifo_dataout;
-	reg [31:0] fifo_output;
+	reg fifo_pop, fifo_push;
+	wire [31:0] fifo_output;
+	reg [31:0] fifo_output_reg;
 
-	fifo mainFIFO(clock, reset, fifo_input, fifo_pushin, fifo_pushout, fifo_dataout, fifo_full);
+	fifo mainFIFO(clock, reset, fifo_input, fifo_push, fifo_pop, fifo_output, fifo_full);
 
 	always@(posedge clock)
 	begin
 		if(pushin)
 		begin
 			fifo_input = datain;
-			fifo_pushin = pushin;
+			fifo_push = pushin;
 		end
 		else
 		begin
 			fifo_input = 0;
-			fifo_pushin = 0;
+			fifo_push = 0;
 		end
 	end
 
@@ -37,12 +37,12 @@ module bits (clock, reset, pushin, datain, reqin, reqlen, pushout, lenout, datao
 	begin
 		if(reqin)
 		begin
-			fifo_pushout = clock;
-			fifo_output = fifo_dataout;
+			fifo_pop = reqin;
+			fifo_output_reg = fifo_output;
 		end
 		else
 		begin
-			fifo_pushout = 0;
+			fifo_pop = 0;
 			fifo_output = 0;
 		end
 	end
