@@ -149,7 +149,7 @@ assign FIFODataIn = Data_In;
                rd_ptr      <= 0;
                wr_ptr      <= 0;
            end
-           else beginx`
+           else begin
 
                if(!WriteN && F_FullN)
                    wr_ptr <= wr_ptr + 1;
