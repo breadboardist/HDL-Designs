@@ -43,7 +43,7 @@ module bits (clock, reset, pushin, datain, reqin, reqlen, pushout, lenout, datao
 		else
 		begin
 			fifo_pop = 0;
-			fifo_output = 0;
+			fifo_output_reg = 0;
 		end
 	end
 
