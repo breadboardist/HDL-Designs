@@ -1,5 +1,5 @@
-bits script run started on Sat Feb 21 15:55:35 2015
-run on machine eecad13.engr.sjsu.edu
+bits script run started on Sat Feb 21 16:13:09 2015
+run on machine eecad50.engr.sjsu.edu
 
 Run with a clock period of 5.0
 student names

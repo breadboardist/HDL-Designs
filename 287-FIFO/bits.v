@@ -36,6 +36,11 @@ module bits (clock, reset, pushin, datain, reqin, reqlen, pushout, lenout, datao
 		end
 	end
 
+always@(posedge clock)
+begin
+pushout<=0;
+end
+
 
 
 endmodule
