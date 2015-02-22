@@ -20,13 +20,19 @@
 -picarchive
 -sverilog
 /apps/synopsys/VCSMX_NEW/linux/bin/vcs1
-73
+97
 sysc_uni_pwd=/home/so/soun0694/Work/287-FIFO
 XSCH_PARAM_NAME=/usr/lib64/alliance/etc/xsch.par
 XPAT_PARAM_NAME=/usr/lib64/alliance/etc/xpat.par
 XFSM_PARAM_NAME=/usr/lib64/alliance/etc/xfsm.par
-XDG_SESSION_ID=709
+XDM_MANAGED=method=classic
+XDG_SESSION_ID=413
 XDG_RUNTIME_DIR=/run/user/70884
+XDG_MENU_PREFIX=kde4-
+XDG_DATA_DIRS=/usr/share/kde-settings/kde-profile/default/share:/usr/local/share:/usr/share
+XDG_CURRENT_DESKTOP=KDE
+XCURSOR_THEME=Adwaita
+XAUTHORITY=/tmp/kde-soun0694/xauth-70884-_1
 VMR_MODE_FLAG=32
 VH_PATSFX=pat
 VH_MAXERR=10
@@ -45,24 +51,24 @@ TPD_LOCAL=/home/so/soun0694
 TPD_GLOBAL=/usr/share/toped/
 TOOL_HOME=/apps/synopsys/VCSMX_NEW/linux
 TK_LIBRARY=/apps/synopsys/VCSMX_NEW/etc/auxx/tcllib/tk8.4/library
-SSH_TTY=/dev/pts/4
-SSH_CONNECTION=130.65.150.15 60215 130.65.179.153 22
-SSH_CLIENT=130.65.150.15 60215 22
+SSH_AUTH_SOCK=/tmp/ssh-DRY67BR6NaMe/agent.16923
+SSH_ASKPASS=/usr/bin/ksshaskpass
+SSH_AGENT_PID=16977
 SNPSLMS_LICENSE_FILE=27000@innersanctum.engr.sjsu.edu:/apps/synopsys/license/current-license-key
+SHELL_SESSION_ID=2003477a76b4400099798f36993a26ff
 SFLM_SERVER=innersanctum
-SELINUX_USE_CURRENT_RANGE=
-SELINUX_ROLE_REQUESTED=
-SELINUX_LEVEL_REQUESTED=
+SESSION_MANAGER=local/unix:@/tmp/.ICE-unix/17143,unix/unix:/tmp/.ICE-unix/17143
 SCRNAME=vcs
 SCRIPT_NAME=vcs
-REMOTEHOST=vnc2.engr.sjsu.edu
 RDS_TECHNO_NAME=/usr/lib64/alliance/etc/cmos.rds
 RDS_OUT=cif
 RDS_IN=cif
+QT_PLUGIN_PATH=/home/so/soun0694/.kde/lib64/kde4/plugins/:/usr/lib64/kde4/plugins/
 QT_GRAPHICSSYSTEM_CHECKED=1
 QTLIB=/usr/lib64/qt-3.3/lib
 QTINC=/usr/lib64/qt-3.3/include
 QTDIR=/usr/lib64/qt-3.3
+PROFILEHOME=
 OVA_UUM=0
 OSTYPE=linux
 MBK_WORK_LIB=.
@@ -80,15 +86,33 @@ MBK_CATAL_NAME=CATAL
 MBK_C4_LIB=./cellsC4
 LESSOPEN=||/usr/bin/lesspipe.sh %s
 LC_ALL=C
+KONSOLE_PROFILE_NAME=Shell
+KONSOLE_DBUS_WINDOW=/Windows/1
+KONSOLE_DBUS_SESSION=/Sessions/1
+KONSOLE_DBUS_SERVICE=:1.51
+KDE_SESSION_VERSION=4
+KDE_SESSION_UID=70884
+KDE_MULTIHEAD=false
+KDE_FULL_SESSION=true
 KDEDIRS=/usr
 HOSTTYPE=x86_64-linux
 HISTCONTROL=ignoredups
+GTK_RC_FILES=/etc/gtk/gtkrc:/home/so/soun0694/.gtkrc:/home/so/soun0694/.kde/share/config/gtkrc
+GTK2_RC_FILES=/etc/gtk-2.0/gtkrc:/home/so/soun0694/.gtkrc-2.0:/home/so/soun0694/.gtkrc-2.0-kde4:/home/so/soun0694/.kde/share/config/gtkrc-2.0
+GS_LIB=
 GROUP=Users
 GRAAL_TECHNO_NAME=/usr/lib64/alliance/etc/cmos.graal
+GPG_AGENT_INFO=/home/so/soun0694/.gnupg/S.gpg-agent:17014:1
+GNOME_KEYRING_PID=16915
+GNOME_KEYRING_CONTROL=/run/user/70884/keyring-IbFrlQ
 GENVIEW_TECHNO_NAME=/usr/lib64/alliance/etc/cmos.genview
 ELP_TECHNO_NAME=/usr/lib64/alliance/etc/prol.elp
 DREAL_TECHNO_NAME=/usr/lib64/alliance/etc/cmos.dreal
+DM_CONTROL=/var/run/xdmctl
+DESKTOP_SESSION=default
+DBUS_SESSION_BUS_ADDRESS=unix:abstract=/tmp/dbus-oa6jCM9yHD,guid=1f6b04ae35acd1d4aa05b6f254e94e3d
 CVS_RSH=ssh
+COLORFGBG=15;0
 CDS_LIC_FILE=5280@innersanctum:/apps/cadence/license-current
 CDSLMD_LICENSE_FILE=5280@innersanctum:/apps/cadence/license-current
 CCACHE_HASHDIR=
@@ -96,12 +120,12 @@ ARCH=linux
 ALLIANCE_TOP=/usr/lib64/alliance
 0
 3
-1424564935 bits.v
-1424564942 tbits.sv
-1424564942 files.f
+1424576173 bits.v
+1424576206 tbits.sv
+1424576206 files.f
 4
 0 
 1410372690 /apps/synopsys/VCSMX_NEW/linux/lib/libvirsim.so
 1410372633 /apps/synopsys/VCSMX_NEW/linux/lib/librterrorinf.so
 1410372654 /apps/synopsys/VCSMX_NEW/linux/lib/libsnpsmalloc.so
-1424564945 simv.daidir
+1424576210 simv.daidir
