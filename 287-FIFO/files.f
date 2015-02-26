@@ -1,2 +1,2 @@
 tbits.sv
-bits_gates.v
+bits.v
