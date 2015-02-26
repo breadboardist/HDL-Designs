@@ -1,4 +1,4 @@
-// Design with error number 25
+// Design with error number 40
 // The timer counter described in the atmel document
 `timescale 1ns/10ps
 
@@ -102,7 +102,7 @@ always @(*) begin
     3: timer_event=clkdiv[5:0]==0;
     4: timer_event=clkdiv[7:0]==0;
     5: timer_event=clkdiv[9:0]==0;
-    6: timer_event= ~t0b&(t0a);
+    6: timer_event= t0b&(~t0a);
     7: timer_event= (~t0b)&t0a;
   endcase
   clkdiv_d = clkdiv+1;
@@ -141,7 +141,7 @@ always @(*) begin
            end
            tov = (tcnt_d == 8'hff);
            ocra_wk_d = ocra;
-           ocrb_wk_d = ocrb;
+           ocrb_wk_d = ocra;
          end
       3: begin
            tcnt_d = tcnt + 1;
