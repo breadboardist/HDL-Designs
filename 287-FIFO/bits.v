@@ -30,13 +30,13 @@ module bits (clock, reset, pushin, datain, reqin, reqlen, pushout, lenout, datao
 	begin
 		if(pushin)
 		begin
-			fifo_input = datain;
-			fifo_push = pushin;
+			fifo_input <= #1 datain;
+			fifo_push <= #1 pushin;
 		end
 		else
 		begin
-			fifo_input = 0;
-			fifo_push = 0;
+			fifo_input <= #1 0;
+			fifo_push <= #1 0;
 		end
 	end
 
@@ -44,13 +44,13 @@ module bits (clock, reset, pushin, datain, reqin, reqlen, pushout, lenout, datao
 	begin
 		if(reqin)
 		begin
-			fifo_pop = reqin;
-			fifo_output_reg = fifo_output;
+			fifo_pop <= #1 reqin;
+			fifo_output_reg <= #1 fifo_output;
 		end
 		else
 		begin
-			fifo_pop = 0;
-			fifo_output_reg = 0;
+			fifo_pop <= #1 0;
+			fifo_output_reg <= #1 0;
 		end
 	end
 
