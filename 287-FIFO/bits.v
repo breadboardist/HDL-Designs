@@ -80,23 +80,23 @@ module bits (input clk, input  rst, input pushin, input [31:0] datain,
 					// 			dataout_flop<= #1 0;
 					// 	end
 					case (reqlen)
-						0: dataout_flop <= #1 0;
-						1: dataout_flop <= #1 buf_fifo[rd_ptr+:1];
-						2: dataout_flop <= #1 buf_fifo[rd_ptr+:2];
-						3: dataout_flop <= #1 buf_fifo[rd_ptr+:3];
-						4: dataout_flop <= #1 buf_fifo[rd_ptr+:4];
-						5: dataout_flop <= #1 buf_fifo[rd_ptr+:5];
-						6: dataout_flop <= #1 buf_fifo[rd_ptr+:6];
-						7: dataout_flop <= #1 buf_fifo[rd_ptr+:7];
-						8: dataout_flop <= #1 buf_fifo[rd_ptr+:8];
-						9: dataout_flop <= #1 buf_fifo[rd_ptr+:9];
-						10: dataout_flop <= #1 buf_fifo[rd_ptr+:10];
-						11: dataout_flop <= #1 buf_fifo[rd_ptr+:11];
-						12: dataout_flop <= #1 buf_fifo[rd_ptr+:12];
-						13: dataout_flop <= #1 buf_fifo[rd_ptr+:13];
-						14: dataout_flop <= #1 buf_fifo[rd_ptr+:14];
-						15: dataout_flop <= #1 buf_fifo[rd_ptr+:15];
-						default: dataout <= #1 0;
+						0: dataout_flop = 0;
+						1: dataout_flop = buf_fifo[rd_ptr+:1];
+						2: dataout_flop = buf_fifo[rd_ptr+:2];
+						3: dataout_flop = buf_fifo[rd_ptr+:3];
+						4: dataout_flop = buf_fifo[rd_ptr+:4];
+						5: dataout_flop = buf_fifo[rd_ptr+:5];
+						6: dataout_flop = buf_fifo[rd_ptr+:6];
+						7: dataout_flop = buf_fifo[rd_ptr+:7];
+						8: dataout_flop = buf_fifo[rd_ptr+:8];
+						9: dataout_flop = buf_fifo[rd_ptr+:9];
+						10: dataout_flop = buf_fifo[rd_ptr+:10];
+						11: dataout_flop = buf_fifo[rd_ptr+:11];
+						12: dataout_flop = buf_fifo[rd_ptr+:12];
+						13: dataout_flop = buf_fifo[rd_ptr+:13];
+						14: dataout_flop = buf_fifo[rd_ptr+:14];
+						15: dataout_flop = buf_fifo[rd_ptr+:15];
+						default: dataout = 0;
 					endcase
 					// else if(reqlen==1)
 					// 	begin
