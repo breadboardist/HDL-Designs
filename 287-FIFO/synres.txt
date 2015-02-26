@@ -42,88 +42,553 @@ Detecting input file type automatically (-rtl or -netlist).
 Reading with Presto HDL Compiler (equivalent to -rtl option).
 Running PRESTO HDLC
 Compiling source file /home/so/soun0694/Work/287-FIFO/bits.v
-Error:  /home/so/soun0694/Work/287-FIFO/bits.v:68: Variable 'dataout_flop' is the target of both blocking and nonblocking assignments in the same always block. (VER-134)
-*** Presto compilation terminated with 1 errors. ***
-Error: Can't read 'verilog' file '/home/so/soun0694/Work/287-FIFO/bits.v'. (UID-59)
-No designs were read
+
+Statistics for case statements in always block at line 68 in file
+	'/home/so/soun0694/Work/287-FIFO/bits.v'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|            82            |    auto/auto     |
+===============================================
+
+Inferred memory devices in process
+	in routine bits line 35 in file
+		'/home/so/soun0694/Work/287-FIFO/bits.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|     wrt_ptr_reg     | Flip-flop |   5   |  Y  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine bits line 48 in file
+		'/home/so/soun0694/Work/287-FIFO/bits.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|    lenout_d1_reg    | Flip-flop |   4   |  Y  | N  | Y  | N  | N  | N  | N  |
+|   pushout_d1_reg    | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+|    dataout2_reg     | Flip-flop |  15   |  Y  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine bits line 68 in file
+		'/home/so/soun0694/Work/287-FIFO/bits.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|    buf_fifo_reg     | Flip-flop |   9   |  Y  | N  | N  | N  | N  | N  | N  |
+|    buf_fifo_reg     | Flip-flop |   5   |  Y  | N  | N  | N  | N  | N  | N  |
+|    buf_fifo_reg     | Flip-flop |  32   |  Y  | N  | N  | N  | N  | N  | N  |
+|    buf_fifo_reg     | Flip-flop |  12   |  Y  | N  | N  | N  | N  | N  | N  |
+|    buf_fifo_reg     | Flip-flop |  20   |  Y  | N  | N  | N  | N  | N  | N  |
+|    buf_fifo_reg     | Flip-flop |  29   |  Y  | N  | N  | N  | N  | N  | N  |
+|    buf_fifo_reg     | Flip-flop |   3   |  Y  | N  | N  | N  | N  | N  | N  |
+|    buf_fifo_reg     | Flip-flop |  32   |  Y  | N  | N  | N  | N  | N  | N  |
+|    buf_fifo_reg     | Flip-flop |  14   |  Y  | N  | N  | N  | N  | N  | N  |
+|    buf_fifo_reg     | Flip-flop |  18   |  Y  | N  | N  | N  | N  | N  | N  |
+|    buf_fifo_reg     | Flip-flop |  31   |  Y  | N  | N  | N  | N  | N  | N  |
+|    buf_fifo_reg     | Flip-flop |  32   |  Y  | N  | N  | N  | N  | N  | N  |
+|    buf_fifo_reg     | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|    buf_fifo_reg     | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|    buf_fifo_reg     | Flip-flop |  32   |  Y  | N  | N  | N  | N  | N  | N  |
+|    buf_fifo_reg     | Flip-flop |  31   |  Y  | N  | N  | N  | N  | N  | N  |
+|    buf_fifo_reg     | Flip-flop |  18   |  Y  | N  | N  | N  | N  | N  | N  |
+|    buf_fifo_reg     | Flip-flop |  14   |  Y  | N  | N  | N  | N  | N  | N  |
+|    buf_fifo_reg     | Flip-flop |  32   |  Y  | N  | N  | N  | N  | N  | N  |
+|    buf_fifo_reg     | Flip-flop |   3   |  Y  | N  | N  | N  | N  | N  | N  |
+|    buf_fifo_reg     | Flip-flop |  29   |  Y  | N  | N  | N  | N  | N  | N  |
+|    buf_fifo_reg     | Flip-flop |  20   |  Y  | N  | N  | N  | N  | N  | N  |
+|    buf_fifo_reg     | Flip-flop |  12   |  Y  | N  | N  | N  | N  | N  | N  |
+|    buf_fifo_reg     | Flip-flop |  32   |  Y  | N  | N  | N  | N  | N  | N  |
+|    buf_fifo_reg     | Flip-flop |   5   |  Y  | N  | N  | N  | N  | N  | N  |
+|    buf_fifo_reg     | Flip-flop |  27   |  Y  | N  | N  | N  | N  | N  | N  |
+|    buf_fifo_reg     | Flip-flop |  22   |  Y  | N  | N  | N  | N  | N  | N  |
+|    buf_fifo_reg     | Flip-flop |  10   |  Y  | N  | N  | N  | N  | N  | N  |
+|    buf_fifo_reg     | Flip-flop |  32   |  Y  | N  | N  | N  | N  | N  | N  |
+|    buf_fifo_reg     | Flip-flop |   7   |  Y  | N  | N  | N  | N  | N  | N  |
+|    buf_fifo_reg     | Flip-flop |  25   |  Y  | N  | N  | N  | N  | N  | N  |
+|    buf_fifo_reg     | Flip-flop |  24   |  Y  | N  | N  | N  | N  | N  | N  |
+|    buf_fifo_reg     | Flip-flop |   8   |  Y  | N  | N  | N  | N  | N  | N  |
+|    buf_fifo_reg     | Flip-flop |  32   |  Y  | N  | N  | N  | N  | N  | N  |
+|    buf_fifo_reg     | Flip-flop |   9   |  Y  | N  | N  | N  | N  | N  | N  |
+|    buf_fifo_reg     | Flip-flop |  23   |  Y  | N  | N  | N  | N  | N  | N  |
+|    buf_fifo_reg     | Flip-flop |  26   |  Y  | N  | N  | N  | N  | N  | N  |
+|    buf_fifo_reg     | Flip-flop |   6   |  Y  | N  | N  | N  | N  | N  | N  |
+|    buf_fifo_reg     | Flip-flop |  32   |  Y  | N  | N  | N  | N  | N  | N  |
+|    buf_fifo_reg     | Flip-flop |  11   |  Y  | N  | N  | N  | N  | N  | N  |
+|    buf_fifo_reg     | Flip-flop |  21   |  Y  | N  | N  | N  | N  | N  | N  |
+|    buf_fifo_reg     | Flip-flop |  28   |  Y  | N  | N  | N  | N  | N  | N  |
+|    buf_fifo_reg     | Flip-flop |   4   |  Y  | N  | N  | N  | N  | N  | N  |
+|    buf_fifo_reg     | Flip-flop |  32   |  Y  | N  | N  | N  | N  | N  | N  |
+|    buf_fifo_reg     | Flip-flop |  13   |  Y  | N  | N  | N  | N  | N  | N  |
+|    buf_fifo_reg     | Flip-flop |  19   |  Y  | N  | N  | N  | N  | N  | N  |
+|    buf_fifo_reg     | Flip-flop |  30   |  Y  | N  | N  | N  | N  | N  | N  |
+|    buf_fifo_reg     | Flip-flop |   2   |  Y  | N  | N  | N  | N  | N  | N  |
+|    buf_fifo_reg     | Flip-flop |  32   |  Y  | N  | N  | N  | N  | N  | N  |
+|    buf_fifo_reg     | Flip-flop |  15   |  Y  | N  | N  | N  | N  | N  | N  |
+|    buf_fifo_reg     | Flip-flop |  17   |  Y  | N  | N  | N  | N  | N  | N  |
+|    buf_fifo_reg     | Flip-flop |  32   |  Y  | N  | N  | N  | N  | N  | N  |
+|    buf_fifo_reg     | Flip-flop |   2   |  N  | N  | N  | N  | N  | N  | N  |
+|  dataout_flop_reg   | Flip-flop |  15   |  Y  | N  | N  | N  | N  | N  | N  |
+|     rd_ptr_reg      | Flip-flop |  10   |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine bits line 267 in file
+		'/home/so/soun0694/Work/287-FIFO/bits.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|    lenout_d2_reg    | Flip-flop |   4   |  Y  | N  | N  | N  | N  | N  | N  |
+|   pushout_d2_reg    | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+Presto compilation completed successfully.
+Current design is now '/home/so/soun0694/Work/287-FIFO/bits.db:bits'
+Loaded 1 design.
+Current design is 'bits'.
+bits
 create_clock clk -name clk -period 3.75
-Error: Current design is not defined. (UID-4)
-Error: Can't find object 'clk'. (UID-109)
-Error: Value for list 'source_objects' must have 1 elements. (CMD-036)
-0
+1
 set_propagated_clock clk
-Error: Current design is not defined. (UID-4)
-Error: Can't find object 'clk'. (UID-109)
-Error: Value for list 'object_list' must have 1 elements. (CMD-036)
-0
+Information: set_input_delay values are added to the propagated clock skew. (TIM-113)
+1
 set_clock_uncertainty 0.25 clk
-Error: Current design is not defined. (UID-4)
-Error: Can't find object 'clk'. (UID-109)
-Error: Value for list 'object_list' must have 1 elements. (CMD-036)
-0
+1
 set_propagated_clock clk
-Error: Current design is not defined. (UID-4)
-Error: Can't find object 'clk'. (UID-109)
-Error: Value for list 'object_list' must have 1 elements. (CMD-036)
-0
+Information: set_input_delay values are added to the propagated clock skew. (TIM-113)
+1
 set_output_delay 0.5 -clock clk [all_outputs]
-Error: Current design is not defined. (UID-4)
-Error: Current design is not defined. (UID-4)
-Error: Can't find clock 'clk'. (UID-109)
-Error: Value for list '-clock' must have 1 elements. (CMD-036)
-Error: Value for list 'port_pin_list' must have 1 elements. (CMD-036)
-0
+1
 set all_inputs_wo_rst_clk [remove_from_collection [remove_from_collection [all_inputs] [get_port clk]] [get_port rst]]
-Error: Current design is not defined. (UID-4)
-Error: Current design is not defined. (UID-4)
-Error: Can't find port 'clk'. (UID-109)
-Error: Current design is not defined. (UID-4)
-Error: Can't find port 'rst'. (UID-109)
+{pushin datain[31] datain[30] datain[29] datain[28] datain[27] datain[26] datain[25] datain[24] datain[23] datain[22] datain[21] datain[20] datain[19] datain[18] datain[17] datain[16] datain[15] datain[14] datain[13] datain[12] datain[11] datain[10] datain[9] datain[8] datain[7] datain[6] datain[5] datain[4] datain[3] datain[2] datain[1] datain[0] reqin reqlen[3] reqlen[2] reqlen[1] reqlen[0]}
 set_driving_cell -lib_cell CND2X1 $all_inputs_wo_rst_clk
-Error: Value for list 'port_list' must have 1 elements. (CMD-036)
-0
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+1
 set_input_delay 0.6 -clock clk $all_inputs_wo_rst_clk
-Error: Current design is not defined. (UID-4)
-Error: Can't find clock 'clk'. (UID-109)
-Error: Value for list '-clock' must have 1 elements. (CMD-036)
-Error: Value for list 'port_pin_list' must have 1 elements. (CMD-036)
-0
+1
 set_output_delay 0.6 -clock clk [all_outputs]
-Error: Current design is not defined. (UID-4)
-Error: Current design is not defined. (UID-4)
-Error: Can't find clock 'clk'. (UID-109)
-Error: Value for list '-clock' must have 1 elements. (CMD-036)
-Error: Value for list 'port_pin_list' must have 1 elements. (CMD-036)
-0
+1
 set_fix_hold [ get_clocks clk ]
-Error: Current design is not defined. (UID-4)
-Error: Can't find clock 'clk'. (UID-109)
-Error: Value for list '<clock_list>' must have 1 elements. (CMD-036)
-0
+1
 set_output_delay 0.3 -clock clk [all_outputs]
-Error: Current design is not defined. (UID-4)
-Error: Current design is not defined. (UID-4)
-Error: Can't find clock 'clk'. (UID-109)
-Error: Value for list '-clock' must have 1 elements. (CMD-036)
-Error: Value for list 'port_pin_list' must have 1 elements. (CMD-036)
-0
+1
 compile -map_effort high
-Error: Current design is not defined. (UID-4)
-0
+Information: Checking out the license 'DesignWare'. (SEC-104)
+Information: Evaluating DesignWare library utilization. (UISN-27)
+
+============================================================================
+| DesignWare Building Block Library  |         Version         | Available |
+============================================================================
+| Basic DW Building Blocks           | I-2013.12-DWBB_201312.5 |     *     |
+| Licensed DW Building Blocks        | I-2013.12-DWBB_201312.5 |     *     |
+============================================================================
+
+
+Information: There are 2 potential problems in your design. Please run 'check_design' for more information. (LINT-99)
+
+
+
+  Beginning Pass 1 Mapping
+  ------------------------
+  Processing 'bits'
+
+  Updating timing information
+Information: Updating design information... (UID-85)
+Information: Input delay ('fall') on clock port 'clk' will be added to the clock's propagated skew. (TIM-112)
+Information: Input delay ('rise') on clock port 'clk' will be added to the clock's propagated skew. (TIM-112)
+
+  Beginning Implementation Selection
+  ----------------------------------
+  Processing 'bits_DW01_add_0'
+  Processing 'bits_DW01_inc_0'
+Information: Input delay ('fall') on clock port 'clk' will be added to the clock's propagated skew. (TIM-112)
+Information: Input delay ('rise') on clock port 'clk' will be added to the clock's propagated skew. (TIM-112)
+Information: Input delay ('fall') on clock port 'clk' will be added to the clock's propagated skew. (TIM-112)
+Information: Input delay ('rise') on clock port 'clk' will be added to the clock's propagated skew. (TIM-112)
+
+  Beginning Mapping Optimizations  (High effort)
+  -------------------------------
+
+                                  TOTAL                                                
+   ELAPSED            WORST NEG   SETUP    DESIGN                             MIN DELAY
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT            COST   
+  --------- --------- --------- --------- --------- ------------------------- ---------
+    0:00:16   17684.0      0.00       0.0       0.0                                0.00
+    0:00:16   17684.0      0.00       0.0       0.0                                0.00
+    0:00:16   17684.0      0.00       0.0       0.0                                0.00
+    0:00:16   17684.0      0.00       0.0       0.0                                0.00
+    0:00:16   17684.0      0.00       0.0       0.0                                0.00
+    0:00:18   10961.0      0.00       0.0       0.0                                0.00
+    0:00:18   10949.0      0.06       0.2       0.0                                0.00
+    0:00:18   10952.5      0.00       0.0       0.0                                0.00
+    0:00:19   10950.5      0.00       0.0       0.0                                0.00
+    0:00:19   10950.5      0.00       0.0       0.0                                0.00
+    0:00:19   10950.5      0.00       0.0       0.0                                0.00
+    0:00:19   10950.5      0.00       0.0       0.0                                0.00
+    0:00:19   10950.5      0.00       0.0       0.0                                0.00
+    0:00:19   10950.5      0.00       0.0       0.0                                0.00
+    0:00:19   10950.5      0.00       0.0       0.0                                0.00
+    0:00:19   10950.5      0.00       0.0       0.0                                0.00
+
+
+
+  Beginning Delay Optimization Phase
+  ----------------------------------
+
+                                  TOTAL                                                
+   ELAPSED            WORST NEG   SETUP    DESIGN                             MIN DELAY
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT            COST   
+  --------- --------- --------- --------- --------- ------------------------- ---------
+    0:00:19   10950.5      0.00       0.0       0.0                                0.00
+    0:00:19   10950.5      0.00       0.0       0.0                                0.00
+    0:00:19   10050.5      0.00       0.0       0.0                                0.00
+
+
+  Beginning Design Rule Fixing  (min_path)
+  ----------------------------
+
+                                  TOTAL                                                
+   ELAPSED            WORST NEG   SETUP    DESIGN                             MIN DELAY
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT            COST   
+  --------- --------- --------- --------- --------- ------------------------- ---------
+    0:00:19   10050.5      0.00       0.0       0.0                              -98.20
+    0:00:20   10098.0      0.00       0.0       0.0 buf_fifo_reg[653]/D          -94.13
+    0:00:20   10122.0      0.00       0.0       0.0 buf_fifo_reg[1016]/D         -92.83
+    0:00:21   10162.0      0.00       0.0       0.0 buf_fifo_reg[990]/D          -90.79
+    0:00:21   10202.0      0.00       0.0       0.0 buf_fifo_reg[967]/D          -88.77
+    0:00:22   10242.0      0.00       0.0       0.0 buf_fifo_reg[940]/D          -86.73
+    0:00:22   10282.0      0.00       0.0       0.0 buf_fifo_reg[915]/D          -84.69
+    0:00:23   10322.0      0.00       0.0       0.0 buf_fifo_reg[875]/D          -82.64
+    0:00:23   10362.0      0.00       0.0       0.0 buf_fifo_reg[843]/D          -80.59
+    0:00:23   10402.0      0.00       0.0       0.0 buf_fifo_reg[809]/D          -78.53
+    0:00:24   10442.0      0.00       0.0       0.0 buf_fifo_reg[765]/D          -76.48
+    0:00:24   10482.0      0.00       0.0       0.0 buf_fifo_reg[745]/D          -74.35
+    0:00:25   10522.0      0.00       0.0       0.0 buf_fifo_reg[721]/D          -72.30
+    0:00:25   10562.0      0.00       0.0       0.0 buf_fifo_reg[694]/D          -70.24
+    0:00:26   10602.0      0.00       0.0       0.0 buf_fifo_reg[667]/D          -68.16
+    0:00:26   10642.0      0.00       0.0       0.0 buf_fifo_reg[630]/D          -66.10
+    0:00:27   10682.0      0.00       0.0       0.0 buf_fifo_reg[600]/D          -64.09
+    0:00:27   10722.0      0.00       0.0       0.0 buf_fifo_reg[566]/D          -62.07
+    0:00:28   10762.0      0.00       0.0       0.0 buf_fifo_reg[534]/D          -60.05
+    0:00:28   10802.0      0.00       0.0       0.0 buf_fifo_reg[497]/D          -58.04
+    0:00:29   10842.0      0.00       0.0       0.0 buf_fifo_reg[471]/D          -55.97
+    0:00:29   10882.0      0.00       0.0       0.0 buf_fifo_reg[443]/D          -53.95
+    0:00:30   10922.0      0.00       0.0       0.0 buf_fifo_reg[422]/D          -51.94
+    0:00:30   10962.0      0.00       0.0       0.0 buf_fifo_reg[383]/D          -49.91
+    0:00:30   11002.0      0.00       0.0       0.0 buf_fifo_reg[357]/D          -47.87
+    0:00:31   11042.0      0.00       0.0       0.0 buf_fifo_reg[318]/D          -45.86
+    0:00:31   11082.0      0.00       0.0       0.0 buf_fifo_reg[285]/D          -43.82
+    0:00:32   11122.0      0.00       0.0       0.0 buf_fifo_reg[247]/D          -41.73
+    0:00:32   11162.0      0.00       0.0       0.0 buf_fifo_reg[219]/D          -39.68
+    0:00:33   11202.0      0.00       0.0       0.0 buf_fifo_reg[191]/D          -37.62
+    0:00:33   11242.0      0.00       0.0       0.0 buf_fifo_reg[170]/D          -35.57
+    0:00:34   11282.0      0.00       0.0       0.0 buf_fifo_reg[145]/D          -33.51
+    0:00:34   11322.0      0.00       0.0       0.0 buf_fifo_reg[103]/D          -31.43
+    0:00:35   11362.0      0.00       0.0       0.0 buf_fifo_reg[69]/D           -29.38
+    0:00:35   11402.0      0.00       0.0       0.0 buf_fifo_reg[31]/D           -27.32
+    0:00:35   11432.5      0.00       0.0       0.0 buf_fifo_reg[395]/D          -25.81
+    0:00:36   11464.5      0.00       0.0       0.0 buf_fifo_reg[943]/D          -24.40
+    0:00:36   11504.5      0.00       0.0       0.0 buf_fifo_reg[847]/D          -22.33
+    0:00:37   11544.5      0.00       0.0       0.0 buf_fifo_reg[802]/D          -20.26
+    0:00:37   11584.5      0.00       0.0       0.0 buf_fifo_reg[674]/D          -18.16
+    0:00:38   11624.5      0.00       0.0       0.0 buf_fifo_reg[584]/D          -16.13
+    0:00:38   11664.5      0.00       0.0       0.0 buf_fifo_reg[532]/D          -14.09
+    0:00:39   11704.5      0.00       0.0       0.0 buf_fifo_reg[416]/D          -12.08
+    0:00:39   11744.5      0.00       0.0       0.0 buf_fifo_reg[328]/D          -10.06
+    0:00:40   11784.5      0.00       0.0       0.0 buf_fifo_reg[282]/D           -8.04
+    0:00:40   11824.5      0.00       0.0       0.0 buf_fifo_reg[162]/D           -5.99
+    0:00:40   11864.5      0.00       0.0       0.0 buf_fifo_reg[76]/D            -3.94
+    0:00:41   11904.5      0.00       0.0       0.0 buf_fifo_reg[32]/D            -1.88
+    0:00:41   11933.0      0.00       0.0       0.0 dataout2_reg[10]/D            -0.50
+    0:00:41   11939.0      0.00       0.0       0.0                                0.00
+
+
+  Beginning Area-Recovery Phase  (cleanup)
+  -----------------------------
+
+                                  TOTAL                                                
+   ELAPSED            WORST NEG   SETUP    DESIGN                             MIN DELAY
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT            COST   
+  --------- --------- --------- --------- --------- ------------------------- ---------
+    0:00:41   11939.0      0.00       0.0       0.0                                0.00
+    0:00:41   11939.0      0.00       0.0       0.0                                0.00
+    0:00:42   11898.5      0.00       0.0       0.0                                0.00
+    0:00:42   11861.0      0.00       0.0       0.0                                0.00
+    0:00:42   11825.5      0.00       0.0       0.0                                0.00
+    0:00:42   11789.5      0.00       0.0       0.0                                0.00
+    0:00:42   11754.5      0.00       0.0       0.0                                0.00
+    0:00:42   11720.5      0.00       0.0       0.0                                0.00
+    0:00:43   11717.5      0.00       0.0       0.0                                0.00
+    0:00:43   11717.5      0.00       0.0       0.0                                0.00
+    0:00:43   11717.5      0.00       0.0       0.0                                0.00
+    0:00:43   11713.0      0.00       0.0       0.0                               -0.00
+    0:00:43   11713.0      0.00       0.0       0.0                               -0.00
+    0:00:43   11713.0      0.00       0.0       0.0                               -0.00
+    0:00:43   11713.0      0.00       0.0       0.0                               -0.00
+    0:00:43   11713.0      0.00       0.0       0.0                               -0.00
+    0:00:43   11713.0      0.00       0.0       0.0                               -0.00
+    0:00:43   11714.0      0.00       0.0       0.0                                0.00
+Loading db file '/apps/toshiba/sjsu/synopsys/tc240c/tc240c.db_NOMIN25'
+
+  Optimization Complete
+  ---------------------
+Warning: Design 'bits' contains 1 high-fanout nets. A fanout number of 1000 will be used for delay calculations involving these nets. (TIM-134)
+     Net 'clk': 1093 load(s), 1 driver(s)
+1
 create_clock clk -name clk -period 5.0
-Error: Current design is not defined. (UID-4)
-Error: Can't find object 'clk'. (UID-109)
-Error: Value for list 'source_objects' must have 1 elements. (CMD-036)
-0
+1
 update_timing
-Error: Current design is not defined. (UID-4)
-0
+Information: Updating design information... (UID-85)
+Warning: Design 'bits' contains 1 high-fanout nets. A fanout number of 1000 will be used for delay calculations involving these nets. (TIM-134)
+1
 report_timing -max_paths 3
-Error: Current design is not defined. (UID-4)
-0
+ 
+****************************************
+Report : timing
+        -path full
+        -delay max
+        -max_paths 3
+Design : bits
+Version: I-2013.12-SP5
+Date   : Thu Feb 26 13:30:33 2015
+****************************************
+
+ # A fanout number of 1000 was used for high fanout net computations.
+
+Operating Conditions: NOMIN25   Library: tc240c
+Wire Load Model Mode: top
+
+  Startpoint: rd_ptr_reg[8]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: dataout_flop_reg[5]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock clk (rise edge)                    0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  rd_ptr_reg[8]/CP (CFD1QX1)               0.00 #     0.00 r
+  rd_ptr_reg[8]/Q (CFD1QX1)                0.29       0.29 r
+  U7560/Z (CNR2X1)                         0.15       0.44 f
+  U3321/Z (CND2X1)                         0.08       0.52 r
+  U8294/Z (CIVX1)                          0.06       0.58 f
+  U8293/Z (CIVXL)                          0.30       0.88 r
+  U7516/Z (COND2X1)                        0.19       1.07 f
+  U3322/Z (COR3X1)                         0.25       1.31 f
+  U5258/Z (CNR2X1)                         0.08       1.39 r
+  U5259/Z (COND2XL)                        0.11       1.50 f
+  U5803/Z (CANR1XL)                        0.17       1.67 r
+  U7632/Z (COND3X1)                        0.15       1.82 f
+  U5653/Z (COND11X1)                       0.20       2.02 r
+  U7538/Z (COND4CX1)                       0.15       2.18 f
+  U5268/Z (CIVX1)                          0.05       2.22 r
+  U5251/Z (COND1XL)                        0.15       2.38 f
+  U6062/Z (CIVX2)                          0.06       2.44 r
+  U7565/Z (CANR2X1)                        0.08       2.52 f
+  U5250/Z (CANR1XL)                        0.15       2.67 r
+  U5619/Z (COND11X1)                       0.15       2.82 f
+  U7563/Z (COND4CX1)                       0.11       2.92 r
+  U7562/Z (COND11X1)                       0.11       3.03 f
+  U150/Z (CAOR1X1)                         0.19       3.22 f
+  dataout_flop_reg[5]/D (CFD1QXL)          0.00       3.22 f
+  data arrival time                                   3.22
+
+  clock clk (rise edge)                    5.00       5.00
+  clock network delay (ideal)              0.00       5.00
+  clock uncertainty                       -0.25       4.75
+  dataout_flop_reg[5]/CP (CFD1QXL)         0.00       4.75 r
+  library setup time                      -0.27       4.48
+  data required time                                  4.48
+  -----------------------------------------------------------
+  data required time                                  4.48
+  data arrival time                                  -3.22
+  -----------------------------------------------------------
+  slack (MET)                                         1.26
+
+
+  Startpoint: rd_ptr_reg[8]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: dataout_flop_reg[12]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock clk (rise edge)                    0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  rd_ptr_reg[8]/CP (CFD1QX1)               0.00 #     0.00 r
+  rd_ptr_reg[8]/Q (CFD1QX1)                0.29       0.29 r
+  U7560/Z (CNR2X1)                         0.15       0.44 f
+  U3321/Z (CND2X1)                         0.08       0.52 r
+  U8294/Z (CIVX1)                          0.06       0.58 f
+  U8293/Z (CIVXL)                          0.30       0.88 r
+  U7516/Z (COND2X1)                        0.19       1.07 f
+  U3322/Z (COR3X1)                         0.25       1.31 f
+  U5258/Z (CNR2X1)                         0.08       1.39 r
+  U5259/Z (COND2XL)                        0.11       1.50 f
+  U5803/Z (CANR1XL)                        0.17       1.67 r
+  U7632/Z (COND3X1)                        0.15       1.82 f
+  U5653/Z (COND11X1)                       0.20       2.02 r
+  U7538/Z (COND4CX1)                       0.15       2.18 f
+  U5268/Z (CIVX1)                          0.05       2.22 r
+  U7163/Z (COND1XL)                        0.14       2.37 f
+  U7171/Z (COND2X1)                        0.12       2.49 r
+  U7613/Z (CANR4CX1)                       0.10       2.59 f
+  U7547/Z (COND4CX1)                       0.10       2.69 r
+  U7546/Z (CIVX1)                          0.07       2.76 f
+  U7332/Z (CANR11X1)                       0.18       2.94 r
+  U8340/Z (CIVX2)                          0.06       3.00 f
+  U5221/Z (CAOR2X2)                        0.22       3.22 f
+  dataout_flop_reg[12]/D (CFD1QXL)         0.00       3.22 f
+  data arrival time                                   3.22
+
+  clock clk (rise edge)                    5.00       5.00
+  clock network delay (ideal)              0.00       5.00
+  clock uncertainty                       -0.25       4.75
+  dataout_flop_reg[12]/CP (CFD1QXL)        0.00       4.75 r
+  library setup time                      -0.27       4.48
+  data required time                                  4.48
+  -----------------------------------------------------------
+  data required time                                  4.48
+  data arrival time                                  -3.22
+  -----------------------------------------------------------
+  slack (MET)                                         1.26
+
+
+  Startpoint: rd_ptr_reg[8]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: dataout_flop_reg[4]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock clk (rise edge)                    0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  rd_ptr_reg[8]/CP (CFD1QX1)               0.00 #     0.00 r
+  rd_ptr_reg[8]/Q (CFD1QX1)                0.29       0.29 r
+  U7560/Z (CNR2X1)                         0.15       0.44 f
+  U3321/Z (CND2X1)                         0.08       0.52 r
+  U8294/Z (CIVX1)                          0.06       0.58 f
+  U8293/Z (CIVXL)                          0.30       0.88 r
+  U7516/Z (COND2X1)                        0.19       1.07 f
+  U3322/Z (COR3X1)                         0.25       1.31 f
+  U5258/Z (CNR2X1)                         0.08       1.39 r
+  U5259/Z (COND2XL)                        0.11       1.50 f
+  U5803/Z (CANR1XL)                        0.17       1.67 r
+  U7632/Z (COND3X1)                        0.15       1.82 f
+  U5653/Z (COND11X1)                       0.20       2.02 r
+  U7538/Z (COND4CX1)                       0.15       2.18 f
+  U5268/Z (CIVX1)                          0.05       2.22 r
+  U5251/Z (COND1XL)                        0.15       2.38 f
+  U6062/Z (CIVX2)                          0.06       2.44 r
+  U7565/Z (CANR2X1)                        0.08       2.52 f
+  U7630/Z (COND4CX1)                       0.12       2.64 r
+  U7591/Z (COAN1XL)                        0.17       2.80 r
+  U7625/Z (CND2X1)                         0.07       2.87 f
+  U7622/Z (CND2XL)                         0.05       2.92 r
+  U7624/Z (CND2XL)                         0.08       3.00 f
+  U167/Z (CAOR1X1)                         0.19       3.20 f
+  dataout_flop_reg[4]/D (CFD1QXL)          0.00       3.20 f
+  data arrival time                                   3.20
+
+  clock clk (rise edge)                    5.00       5.00
+  clock network delay (ideal)              0.00       5.00
+  clock uncertainty                       -0.25       4.75
+  dataout_flop_reg[4]/CP (CFD1QXL)         0.00       4.75 r
+  library setup time                      -0.27       4.48
+  data required time                                  4.48
+  -----------------------------------------------------------
+  data required time                                  4.48
+  data arrival time                                  -3.20
+  -----------------------------------------------------------
+  slack (MET)                                         1.28
+
+
+1
 write -hierarchy -format verilog -output bits_gates.v
-Error: No files or designs were specified. (UID-22)
-0
+Writing verilog file '/home/so/soun0694/Work/287-FIFO/bits_gates.v'.
+1
 quit
 
 Thank you...

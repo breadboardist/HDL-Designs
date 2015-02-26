@@ -7,9 +7,9 @@ module bits ( clk, rst, pushin, datain, reqin, reqlen, pushout, lenout,
   output [14:0] dataout;
   input clk, rst, pushin, reqin;
   output pushout;
-  wire   N111, N112, N113, N114, pushout_d2, N16536, N16537, N16538, N16539,
-         N16540, N16541, N16542, N16543, N16544, N16545, N18733, N18734,
-         N18735, N18736, n4, n5, n6, n8, n9, n11, n12, n13, n17, n20, n22, n23,
+  wire   N111, N112, N113, N114, pushout_d2, N16582, N16583, N16584, N16585,
+         N16586, N16587, N16588, N16589, N16590, N16591, N18779, N18780,
+         N18781, N18782, n4, n5, n6, n8, n9, n11, n12, n13, n17, n20, n22, n23,
          n24, n25, n26, n27, n28, n30, n31, n32, n34, n36, n38, n39, n40, n41,
          n42, n43, n44, n45, n46, n47, n48, n49, n51, n53, n55, n57, n58, n59,
          n60, n61, n62, n63, n64, n65, n66, n67, n69, n70, n71, n72, n75, n78,
@@ -625,19 +625,19 @@ module bits ( clk, rst, pushin, datain, reqin, reqlen, pushout, lenout,
          n8247, n8248, n8249, n8250, n8251, n8252, n8253, n8254, n8255, n8256,
          n8257, n8258, n8259, n8260, n8261, n8262, n8263, n8264, n8265, n8266,
          n8267, n8268, n8269, n8270;
-  wire   [4:0] wr_p;
+  wire   [4:0] wrt_ptr;
   wire   [14:0] dataout_flop;
   wire   [3:0] lenout_d2;
   wire   [1037:0] buf_fifo;
-  wire   [9:0] r_p;
-  wire   [9:1] \add_137/carry ;
-  wire   [4:2] \add_38/carry ;
+  wire   [9:0] rd_ptr;
+  wire   [9:1] \add_161/carry ;
+  wire   [4:2] \add_41/carry ;
 
-  CAOR2X1 U3 ( .A(wr_p[4]), .B(n7138), .C(pushin), .D(N114), .Z(n3165) );
-  CAOR2X1 U4 ( .A(wr_p[3]), .B(n7138), .C(N113), .D(pushin), .Z(n3166) );
-  CAOR2X1 U6 ( .A(wr_p[2]), .B(n7138), .C(N112), .D(pushin), .Z(n3167) );
-  CAOR2X1 U7 ( .A(wr_p[1]), .B(n7138), .C(N111), .D(pushin), .Z(n3168) );
-  CAOR2X1 U8 ( .A(wr_p[0]), .B(n7138), .C(n7180), .D(pushin), .Z(n3169) );
+  CAOR2X1 U3 ( .A(wrt_ptr[4]), .B(n7138), .C(pushin), .D(N114), .Z(n3165) );
+  CAOR2X1 U4 ( .A(wrt_ptr[3]), .B(n7138), .C(N113), .D(pushin), .Z(n3166) );
+  CAOR2X1 U6 ( .A(wrt_ptr[2]), .B(n7138), .C(N112), .D(pushin), .Z(n3167) );
+  CAOR2X1 U7 ( .A(wrt_ptr[1]), .B(n7138), .C(N111), .D(pushin), .Z(n3168) );
+  CAOR2X1 U8 ( .A(wrt_ptr[0]), .B(n7138), .C(n7180), .D(pushin), .Z(n3169) );
   CAOR2X1 U9 ( .A(n6065), .B(n7029), .C(n5), .D(n6), .Z(n3176) );
   CAOR2X1 U19 ( .A(n36), .B(n7130), .C(n38), .D(n39), .Z(n30) );
   CAOR2X1 U22 ( .A(n44), .B(n45), .C(n46), .D(n47), .Z(n24) );
@@ -649,7 +649,7 @@ module bits ( clk, rst, pushin, datain, reqin, reqlen, pushout, lenout,
   CAOR1X1 U88 ( .A(n6069), .B(n7030), .C(n166), .Z(n3181) );
   CAOR2X1 U107 ( .A(n6062), .B(n7029), .C(n194), .D(n195), .Z(n3182) );
   CAOR2X1 U112 ( .A(n193), .B(n7136), .C(n198), .D(n7135), .Z(n194) );
-  COAN1X1 U116 ( .A(r_p[3]), .B(n7212), .C(n203), .Z(n13) );
+  COAN1X1 U116 ( .A(rd_ptr[3]), .B(n7212), .C(n203), .Z(n13) );
   CAOR2X1 U123 ( .A(n6061), .B(n4), .C(n6101), .D(n214), .Z(n3183) );
   CAOR2X1 U124 ( .A(n198), .B(n7136), .C(n215), .D(n7135), .Z(n214) );
   CAOR1X1 U136 ( .A(n6068), .B(n4), .C(n231), .Z(n3184) );
@@ -762,32 +762,36 @@ module bits ( clk, rst, pushin, datain, reqin, reqlen, pushout, lenout,
   COR4X1 U1038 ( .A(n1935), .B(n1936), .C(n1937), .D(n1938), .Z(n1934) );
   COR4X1 U1043 ( .A(n1947), .B(n1948), .C(n1949), .D(n1950), .Z(n1933) );
   COR4X1 U1061 ( .A(n1967), .B(n1968), .C(n1969), .D(n1970), .Z(n36) );
-  CAOR2X1 U1112 ( .A(N16542), .B(n3174), .C(n7030), .D(r_p[6]), .Z(n3194) );
-  CAOR2X1 U1113 ( .A(N16541), .B(n6102), .C(n7029), .D(r_p[5]), .Z(n3195) );
-  CAOR2X1 U1114 ( .A(N16540), .B(n6103), .C(n4), .D(r_p[4]), .Z(n3196) );
-  CAOR2X1 U1115 ( .A(N16539), .B(n3174), .C(n7030), .D(r_p[3]), .Z(n3197) );
-  CAOR2X1 U1116 ( .A(N16538), .B(n6102), .C(n7029), .D(r_p[2]), .Z(n3198) );
-  CAOR2X1 U1117 ( .A(N16537), .B(n6103), .C(n4), .D(r_p[1]), .Z(n3199) );
-  CAOR2X1 U1118 ( .A(N16536), .B(n3174), .C(n7030), .D(r_p[0]), .Z(n3200) );
-  CFD1QX2 \r_p_reg[9]  ( .D(n6072), .CP(clk), .Q(r_p[9]) );
-  CAN3X2 U2700 ( .A(pushin), .B(n7182), .C(wr_p[4]), .Z(n2155) );
-  CAN3X2 U3034 ( .A(n7180), .B(n7181), .C(wr_p[2]), .Z(n2082) );
-  CAN3X2 U3101 ( .A(wr_p[2]), .B(n7181), .C(wr_p[0]), .Z(n2085) );
-  CAN3X2 U3169 ( .A(wr_p[2]), .B(n7180), .C(wr_p[1]), .Z(n2088) );
-  CAN3X2 U3255 ( .A(wr_p[1]), .B(wr_p[2]), .C(wr_p[0]), .Z(n2093) );
-  CAN3X2 U3256 ( .A(wr_p[4]), .B(pushin), .C(wr_p[3]), .Z(n2189) );
-  CFA1X1 \add_137/U1_1  ( .A(r_p[1]), .B(reqlen[1]), .CI(\add_137/carry [1]), 
-        .CO(\add_137/carry [2]), .S(N16537) );
-  CFA1X1 \add_137/U1_2  ( .A(r_p[2]), .B(n6100), .CI(\add_137/carry [2]), .CO(
-        \add_137/carry [3]), .S(N16538) );
-  CFA1X1 \add_137/U1_3  ( .A(r_p[3]), .B(n6101), .CI(\add_137/carry [3]), .CO(
-        \add_137/carry [4]), .S(N16539) );
-  CHA1X1 \add_38/U1_1_1  ( .A(wr_p[1]), .B(wr_p[0]), .CO(\add_38/carry [2]), 
-        .S(N111) );
-  CHA1X1 \add_38/U1_1_2  ( .A(wr_p[2]), .B(\add_38/carry [2]), .CO(
-        \add_38/carry [3]), .S(N112) );
-  CHA1X1 \add_38/U1_1_3  ( .A(wr_p[3]), .B(\add_38/carry [3]), .CO(
-        \add_38/carry [4]), .S(N113) );
+  CAOR2X1 U1112 ( .A(N16588), .B(n3174), .C(n7030), .D(rd_ptr[6]), .Z(n3194)
+         );
+  CAOR2X1 U1113 ( .A(N16587), .B(n6102), .C(n7029), .D(rd_ptr[5]), .Z(n3195)
+         );
+  CAOR2X1 U1114 ( .A(N16586), .B(n6103), .C(n4), .D(rd_ptr[4]), .Z(n3196) );
+  CAOR2X1 U1115 ( .A(N16585), .B(n3174), .C(n7030), .D(rd_ptr[3]), .Z(n3197)
+         );
+  CAOR2X1 U1116 ( .A(N16584), .B(n6102), .C(n7029), .D(rd_ptr[2]), .Z(n3198)
+         );
+  CAOR2X1 U1117 ( .A(N16583), .B(n6103), .C(n4), .D(rd_ptr[1]), .Z(n3199) );
+  CAOR2X1 U1118 ( .A(N16582), .B(n3174), .C(n7030), .D(rd_ptr[0]), .Z(n3200)
+         );
+  CFD1QX2 \rd_ptr_reg[9]  ( .D(n6072), .CP(clk), .Q(rd_ptr[9]) );
+  CAN3X2 U2700 ( .A(pushin), .B(n7182), .C(wrt_ptr[4]), .Z(n2155) );
+  CAN3X2 U3034 ( .A(n7180), .B(n7181), .C(wrt_ptr[2]), .Z(n2082) );
+  CAN3X2 U3101 ( .A(wrt_ptr[2]), .B(n7181), .C(wrt_ptr[0]), .Z(n2085) );
+  CAN3X2 U3169 ( .A(wrt_ptr[2]), .B(n7180), .C(wrt_ptr[1]), .Z(n2088) );
+  CAN3X2 U3255 ( .A(wrt_ptr[1]), .B(wrt_ptr[2]), .C(wrt_ptr[0]), .Z(n2093) );
+  CAN3X2 U3256 ( .A(wrt_ptr[4]), .B(pushin), .C(wrt_ptr[3]), .Z(n2189) );
+  CFA1X1 \add_161/U1_1  ( .A(rd_ptr[1]), .B(reqlen[1]), .CI(\add_161/carry [1]), .CO(\add_161/carry [2]), .S(N16583) );
+  CFA1X1 \add_161/U1_2  ( .A(rd_ptr[2]), .B(n6100), .CI(\add_161/carry [2]), 
+        .CO(\add_161/carry [3]), .S(N16584) );
+  CFA1X1 \add_161/U1_3  ( .A(rd_ptr[3]), .B(n6101), .CI(\add_161/carry [3]), 
+        .CO(\add_161/carry [4]), .S(N16585) );
+  CHA1X1 \add_41/U1_1_1  ( .A(wrt_ptr[1]), .B(wrt_ptr[0]), .CO(
+        \add_41/carry [2]), .S(N111) );
+  CHA1X1 \add_41/U1_1_2  ( .A(wrt_ptr[2]), .B(\add_41/carry [2]), .CO(
+        \add_41/carry [3]), .S(N112) );
+  CHA1X1 \add_41/U1_1_3  ( .A(wrt_ptr[3]), .B(\add_41/carry [3]), .CO(
+        \add_41/carry [4]), .S(N113) );
   CFD1QXL \dataout_flop_reg[9]  ( .D(n3181), .CP(clk), .Q(dataout_flop[9]) );
   CFD1QXL \dataout_flop_reg[6]  ( .D(n3184), .CP(clk), .Q(dataout_flop[6]) );
   CFD1QXL \dataout_flop_reg[5]  ( .D(n3185), .CP(clk), .Q(dataout_flop[5]) );
@@ -1590,13 +1594,18 @@ module bits ( clk, rst, pushin, datain, reqin, reqlen, pushout, lenout,
   CFD1QXL \buf_fifo_reg[772]  ( .D(n3973), .CP(clk), .Q(buf_fifo[772]) );
   CFD1QXL \buf_fifo_reg[770]  ( .D(n3971), .CP(clk), .Q(buf_fifo[770]) );
   CFD1QXL \buf_fifo_reg[768]  ( .D(n3969), .CP(clk), .Q(buf_fifo[768]) );
-  CFD2QXL \wr_p_reg[3]  ( .D(n3166), .CP(clk), .CD(n7137), .Q(wr_p[3]) );
-  CFD1QXL \r_p_reg[2]  ( .D(n3198), .CP(clk), .Q(r_p[2]) );
-  CFD2QXL \wr_p_reg[4]  ( .D(n3165), .CP(clk), .CD(n7137), .Q(wr_p[4]) );
-  CFD1QXL \r_p_reg[1]  ( .D(n3199), .CP(clk), .Q(r_p[1]) );
-  CFD2QXL \wr_p_reg[1]  ( .D(n3168), .CP(clk), .CD(n7137), .Q(wr_p[1]) );
-  CFD2QXL \wr_p_reg[0]  ( .D(n3169), .CP(clk), .CD(n7137), .Q(wr_p[0]) );
-  CFD2QXL \wr_p_reg[2]  ( .D(n3167), .CP(clk), .CD(n7137), .Q(wr_p[2]) );
+  CFD2QXL \wrt_ptr_reg[3]  ( .D(n3166), .CP(clk), .CD(n7137), .Q(wrt_ptr[3])
+         );
+  CFD1QXL \rd_ptr_reg[2]  ( .D(n3198), .CP(clk), .Q(rd_ptr[2]) );
+  CFD2QXL \wrt_ptr_reg[4]  ( .D(n3165), .CP(clk), .CD(n7137), .Q(wrt_ptr[4])
+         );
+  CFD1QXL \rd_ptr_reg[1]  ( .D(n3199), .CP(clk), .Q(rd_ptr[1]) );
+  CFD2QXL \wrt_ptr_reg[1]  ( .D(n3168), .CP(clk), .CD(n7137), .Q(wrt_ptr[1])
+         );
+  CFD2QXL \wrt_ptr_reg[0]  ( .D(n3169), .CP(clk), .CD(n7137), .Q(wrt_ptr[0])
+         );
+  CFD2QXL \wrt_ptr_reg[2]  ( .D(n3167), .CP(clk), .CD(n7137), .Q(wrt_ptr[2])
+         );
   CFD1XL \buf_fifo_reg[1004]  ( .D(n4729), .CP(clk), .QN(n7241) );
   CFD1XL \buf_fifo_reg[996]  ( .D(n4727), .CP(clk), .QN(n7252) );
   CFD1XL \buf_fifo_reg[994]  ( .D(n4725), .CP(clk), .QN(n7254) );
@@ -1857,13 +1866,13 @@ module bits ( clk, rst, pushin, datain, reqin, reqlen, pushout, lenout,
   CFD1QXL \buf_fifo_reg[128]  ( .D(n3329), .CP(clk), .Q(buf_fifo[128]) );
   CFD1XL \buf_fifo_reg[655]  ( .D(n3856), .CP(clk), .Q(n2851) );
   CFD1XL \buf_fifo_reg[911]  ( .D(n4112), .CP(clk), .Q(n2852) );
-  CFD1QXL \r_p_reg[5]  ( .D(n3195), .CP(clk), .Q(r_p[5]) );
-  CFD1QXL \r_p_reg[0]  ( .D(n3200), .CP(clk), .Q(r_p[0]) );
-  CFD1QXL \r_p_reg[6]  ( .D(n3194), .CP(clk), .Q(r_p[6]) );
-  CFD1QXL \lenout_d2_reg[3]  ( .D(N18736), .CP(clk), .Q(lenout_d2[3]) );
-  CFD1QXL \lenout_d2_reg[2]  ( .D(N18735), .CP(clk), .Q(lenout_d2[2]) );
-  CFD1QXL \lenout_d2_reg[1]  ( .D(N18734), .CP(clk), .Q(lenout_d2[1]) );
-  CFD1QXL \lenout_d2_reg[0]  ( .D(N18733), .CP(clk), .Q(lenout_d2[0]) );
+  CFD1QXL \rd_ptr_reg[5]  ( .D(n3195), .CP(clk), .Q(rd_ptr[5]) );
+  CFD1QXL \rd_ptr_reg[0]  ( .D(n3200), .CP(clk), .Q(rd_ptr[0]) );
+  CFD1QXL \rd_ptr_reg[6]  ( .D(n3194), .CP(clk), .Q(rd_ptr[6]) );
+  CFD1QXL \lenout_d2_reg[3]  ( .D(N18782), .CP(clk), .Q(lenout_d2[3]) );
+  CFD1QXL \lenout_d2_reg[2]  ( .D(N18781), .CP(clk), .Q(lenout_d2[2]) );
+  CFD1QXL \lenout_d2_reg[1]  ( .D(N18780), .CP(clk), .Q(lenout_d2[1]) );
+  CFD1QXL \lenout_d2_reg[0]  ( .D(N18779), .CP(clk), .Q(lenout_d2[0]) );
   CFD1QXL pushout_d2_reg ( .D(n6103), .CP(clk), .Q(pushout_d2) );
   CFD2QXL \dataout2_reg[14]  ( .D(n4256), .CP(clk), .CD(n7137), .Q(dataout[14]) );
   CFD2QXL \dataout2_reg[13]  ( .D(n4255), .CP(clk), .CD(n7137), .Q(dataout[13]) );
@@ -1891,25 +1900,27 @@ module bits ( clk, rst, pushin, datain, reqin, reqlen, pushout, lenout,
   CFD2QXL \dataout2_reg[0]  ( .D(n6075), .CP(clk), .CD(n7137), .Q(dataout[0])
          );
   CFD2QXL pushout_d1_reg ( .D(n6073), .CP(clk), .CD(n7137), .Q(pushout) );
-  CFD1QXL \r_p_reg[4]  ( .D(n3196), .CP(clk), .Q(r_p[4]) );
-  CFD1QXL \r_p_reg[3]  ( .D(n3197), .CP(clk), .Q(r_p[3]) );
+  CFD1QXL \rd_ptr_reg[4]  ( .D(n3196), .CP(clk), .Q(rd_ptr[4]) );
+  CFD1QXL \rd_ptr_reg[3]  ( .D(n3197), .CP(clk), .Q(rd_ptr[3]) );
   CFD1XL \buf_fifo_reg[779]  ( .D(n6087), .CP(clk), .Q(n7470), .QN(n3171) );
   CFD1XL \buf_fifo_reg[523]  ( .D(n6085), .CP(clk), .Q(n7726), .QN(n3172) );
   CFD1XL \buf_fifo_reg[267]  ( .D(n6083), .CP(clk), .Q(n7982), .QN(n3173) );
   CFD1XL \buf_fifo_reg[1035]  ( .D(n6081), .CP(clk), .QN(n3170) );
-  CFD1QX1 \r_p_reg[7]  ( .D(n6071), .CP(clk), .Q(r_p[7]) );
-  CFD1QX1 \r_p_reg[8]  ( .D(n6070), .CP(clk), .Q(r_p[8]) );
-  CAOR2X4 U3311 ( .A(N16545), .B(n3174), .C(n7030), .D(r_p[9]), .Z(n3191) );
-  CNR2X2 U3312 ( .A(n8270), .B(r_p[9]), .Z(n383) );
-  CAOR2X2 U3313 ( .A(N16544), .B(n6103), .C(n7029), .D(r_p[8]), .Z(n3192) );
+  CFD1QX1 \rd_ptr_reg[7]  ( .D(n6071), .CP(clk), .Q(rd_ptr[7]) );
+  CFD1QX1 \rd_ptr_reg[8]  ( .D(n6070), .CP(clk), .Q(rd_ptr[8]) );
+  CAOR2X4 U3311 ( .A(N16591), .B(n3174), .C(n7030), .D(rd_ptr[9]), .Z(n3191)
+         );
+  CNR2X2 U3312 ( .A(n8270), .B(rd_ptr[9]), .Z(n383) );
+  CAOR2X2 U3313 ( .A(N16590), .B(n6103), .C(n7029), .D(rd_ptr[8]), .Z(n3192)
+         );
   CIVX2 U3314 ( .A(n4244), .Z(n7130) );
   COR2X1 U3315 ( .A(n8267), .B(n8264), .Z(n4239) );
-  COR2X1 U3316 ( .A(r_p[5]), .B(r_p[6]), .Z(n4240) );
-  CAN2X1 U3317 ( .A(n385), .B(r_p[7]), .Z(n4241) );
+  COR2X1 U3316 ( .A(rd_ptr[5]), .B(rd_ptr[6]), .Z(n4240) );
+  CAN2X1 U3317 ( .A(n385), .B(rd_ptr[7]), .Z(n4241) );
   CAN2X1 U3318 ( .A(n383), .B(n8269), .Z(n4242) );
-  COR2X1 U3319 ( .A(n8267), .B(r_p[5]), .Z(n4243) );
-  COR2X1 U3320 ( .A(n8264), .B(r_p[6]), .Z(n4244) );
-  CND2X1 U3321 ( .A(n384), .B(r_p[7]), .Z(n396) );
+  COR2X1 U3319 ( .A(n8267), .B(rd_ptr[5]), .Z(n4243) );
+  COR2X1 U3320 ( .A(n8264), .B(rd_ptr[6]), .Z(n4244) );
+  CND2X1 U3321 ( .A(n384), .B(rd_ptr[7]), .Z(n396) );
   COR3X1 U3322 ( .A(n504), .B(n503), .C(n505), .Z(n4245) );
   CNIVX1 U3323 ( .A(n6066), .Z(n4246) );
   CNIVX1 U3324 ( .A(n6067), .Z(n4247) );
@@ -1922,13 +1933,13 @@ module bits ( clk, rst, pushin, datain, reqin, reqlen, pushout, lenout,
   CNIVX1 U3331 ( .A(n6064), .Z(n4254) );
   CNIVX1 U3332 ( .A(n6060), .Z(n4255) );
   CNIVX1 U3333 ( .A(n6065), .Z(n4256) );
-  CAOR2X4 U3334 ( .A(n6103), .B(n6099), .C(lenout[0]), .D(n2235), .Z(N18733)
+  CAOR2X4 U3334 ( .A(n6103), .B(n6099), .C(lenout[0]), .D(n2235), .Z(N18779)
          );
   CAOR2X4 U3335 ( .A(n6103), .B(reqlen[1]), .C(lenout[1]), .D(n2235), .Z(
-        N18734) );
-  CAOR2X4 U3336 ( .A(n3174), .B(n6100), .C(lenout[2]), .D(n2235), .Z(N18735)
+        N18780) );
+  CAOR2X4 U3336 ( .A(n3174), .B(n6100), .C(lenout[2]), .D(n2235), .Z(N18781)
          );
-  CAOR2X4 U3337 ( .A(n6103), .B(n6101), .C(lenout[3]), .D(n2235), .Z(N18736)
+  CAOR2X4 U3337 ( .A(n6103), .B(n6101), .C(lenout[3]), .D(n2235), .Z(N18782)
          );
   CIVX3 U3338 ( .A(buf_fifo[128]), .Z(n8121) );
   CIVX3 U3339 ( .A(buf_fifo[129]), .Z(n8120) );
@@ -3820,7 +3831,7 @@ module bits ( clk, rst, pushin, datain, reqin, reqlen, pushout, lenout,
   CNIVX1 U5225 ( .A(dataout_flop[6]), .Z(n6068) );
   CNIVX1 U5226 ( .A(dataout_flop[9]), .Z(n6069) );
   CNIVX1 U5227 ( .A(n3192), .Z(n6070) );
-  CAOR2XL U5228 ( .A(N16543), .B(n6103), .C(n4), .D(r_p[7]), .Z(n3193) );
+  CAOR2XL U5228 ( .A(N16589), .B(n6103), .C(n4), .D(rd_ptr[7]), .Z(n3193) );
   CNIVX1 U5229 ( .A(n3193), .Z(n6071) );
   CNIVX1 U5230 ( .A(n3191), .Z(n6072) );
   CIVDXL U5231 ( .A(pushout_d2), .Z1(n6074) );
@@ -3861,19 +3872,19 @@ module bits ( clk, rst, pushin, datain, reqin, reqlen, pushout, lenout,
   COND3XL U5266 ( .A(n379), .B(n7605), .C(n999), .D(n1000), .Z(n271) );
   COND3XL U5267 ( .A(n379), .B(n7607), .C(n600), .D(n601), .Z(n313) );
   CIVX1 U5268 ( .A(n483), .Z(n7215) );
-  COND1XL U5269 ( .A(r_p[3]), .B(n282), .C(n283), .Z(n151) );
-  CND2X1 U5270 ( .A(r_p[9]), .B(n8270), .Z(n379) );
-  COND1XL U5271 ( .A(r_p[1]), .B(n346), .C(n348), .Z(n342) );
-  COND1XL U5272 ( .A(r_p[1]), .B(n324), .C(n326), .Z(n321) );
-  CIVX2 U5273 ( .A(r_p[8]), .Z(n8270) );
-  CIVX2 U5274 ( .A(r_p[7]), .Z(n8269) );
-  COND1XL U5275 ( .A(r_p[3]), .B(n327), .C(n328), .Z(n201) );
-  CNR3XL U5276 ( .A(wr_p[1]), .B(wr_p[2]), .C(n7180), .Z(n2057) );
-  CNR3XL U5277 ( .A(wr_p[0]), .B(wr_p[2]), .C(n7181), .Z(n2061) );
-  CNR3XL U5278 ( .A(n7181), .B(wr_p[2]), .C(n7180), .Z(n2064) );
-  CNR3XL U5279 ( .A(wr_p[1]), .B(wr_p[2]), .C(wr_p[0]), .Z(n2110) );
-  CNR3X1 U5280 ( .A(wr_p[3]), .B(wr_p[4]), .C(n7138), .Z(n2058) );
-  CNR3X1 U5281 ( .A(n7138), .B(wr_p[4]), .C(n7182), .Z(n2109) );
+  COND1XL U5269 ( .A(rd_ptr[3]), .B(n282), .C(n283), .Z(n151) );
+  CND2X1 U5270 ( .A(rd_ptr[9]), .B(n8270), .Z(n379) );
+  COND1XL U5271 ( .A(rd_ptr[1]), .B(n346), .C(n348), .Z(n342) );
+  COND1XL U5272 ( .A(rd_ptr[1]), .B(n324), .C(n326), .Z(n321) );
+  CIVX2 U5273 ( .A(rd_ptr[8]), .Z(n8270) );
+  CIVX2 U5274 ( .A(rd_ptr[7]), .Z(n8269) );
+  COND1XL U5275 ( .A(rd_ptr[3]), .B(n327), .C(n328), .Z(n201) );
+  CNR3XL U5276 ( .A(wrt_ptr[1]), .B(wrt_ptr[2]), .C(n7180), .Z(n2057) );
+  CNR3XL U5277 ( .A(wrt_ptr[0]), .B(wrt_ptr[2]), .C(n7181), .Z(n2061) );
+  CNR3XL U5278 ( .A(n7181), .B(wrt_ptr[2]), .C(n7180), .Z(n2064) );
+  CNR3XL U5279 ( .A(wrt_ptr[1]), .B(wrt_ptr[2]), .C(wrt_ptr[0]), .Z(n2110) );
+  CNR3X1 U5280 ( .A(wrt_ptr[3]), .B(wrt_ptr[4]), .C(n7138), .Z(n2058) );
+  CNR3X1 U5281 ( .A(n7138), .B(wrt_ptr[4]), .C(n7182), .Z(n2109) );
   CIVX3 U5282 ( .A(rst), .Z(n7137) );
   CNR2X1 U5283 ( .A(n7036), .B(n4239), .Z(n43) );
   CIVX2 U5284 ( .A(n4239), .Z(n7068) );
@@ -5740,34 +5751,35 @@ module bits ( clk, rst, pushin, datain, reqin, reqlen, pushout, lenout,
   CND2X1 U7145 ( .A(n7137), .B(n6113), .Z(n6115) );
   CND2X1 U7146 ( .A(n7137), .B(n6112), .Z(n6116) );
   CND2X1 U7147 ( .A(n8258), .B(n8260), .Z(n1198) );
-  CANR2X1 U7148 ( .A(n7224), .B(r_p[3]), .C(n793), .D(n8258), .Z(n791) );
-  COND2X1 U7149 ( .A(n7234), .B(n8260), .C(r_p[4]), .D(n795), .Z(n793) );
+  CANR2X1 U7148 ( .A(n7224), .B(rd_ptr[3]), .C(n793), .D(n8258), .Z(n791) );
+  COND2X1 U7149 ( .A(n7234), .B(n8260), .C(rd_ptr[4]), .D(n795), .Z(n793) );
   COND3X1 U7150 ( .A(n379), .B(n7601), .C(n900), .D(n901), .Z(n187) );
-  COND2X1 U7151 ( .A(n7214), .B(n8256), .C(r_p[2]), .D(n368), .Z(n346) );
+  COND2X1 U7151 ( .A(n7214), .B(n8256), .C(rd_ptr[2]), .D(n368), .Z(n346) );
   CANR2X1 U7152 ( .A(n70), .B(n204), .C(n45), .D(n205), .Z(n203) );
   CND4X1 U7153 ( .A(n206), .B(n207), .C(n208), .D(n209), .Z(n204) );
   CANR2X1 U7154 ( .A(buf_fifo[519]), .B(n40), .C(buf_fifo[263]), .D(n7034), 
         .Z(n209) );
-  CNR2X1 U7155 ( .A(n4239), .B(r_p[7]), .Z(n39) );
-  COND2X1 U7156 ( .A(n280), .B(n8256), .C(r_p[2]), .D(n1396), .Z(n324) );
-  CANR1XL U7157 ( .A(n7219), .B(r_p[3]), .C(n1398), .Z(n1396) );
+  CNR2X1 U7155 ( .A(n4239), .B(rd_ptr[7]), .Z(n39) );
+  COND2X1 U7156 ( .A(n280), .B(n8256), .C(rd_ptr[2]), .D(n1396), .Z(n324) );
+  CANR1XL U7157 ( .A(n7219), .B(rd_ptr[3]), .C(n1398), .Z(n1396) );
   CANR2X1 U7158 ( .A(n7032), .B(n7470), .C(n7031), .D(n7726), .Z(n1501) );
   CANR2X1 U7159 ( .A(n2715), .B(n7033), .C(n386), .D(n7982), .Z(n1544) );
   CND4X1 U7160 ( .A(n1092), .B(n1093), .C(n1094), .D(n1095), .Z(n1091) );
   CANR2X1 U7161 ( .A(buf_fifo[780]), .B(n7032), .C(n3164), .D(n7031), .Z(n1093) );
-  CANR4CX1 U7162 ( .A(n1096), .B(n1097), .C(n7069), .D(r_p[4]), .Z(n1095) );
-  COND1XL U7163 ( .A(r_p[3]), .B(n7215), .C(n220), .Z(n102) );
+  CANR4CX1 U7162 ( .A(n1096), .B(n1097), .C(n7069), .D(rd_ptr[4]), .Z(n1095)
+         );
+  COND1XL U7163 ( .A(rd_ptr[3]), .B(n7215), .C(n220), .Z(n102) );
   CANR2X1 U7164 ( .A(n70), .B(n221), .C(n45), .D(n222), .Z(n220) );
   CND4X1 U7165 ( .A(n223), .B(n224), .C(n225), .D(n226), .Z(n221) );
   CANR2X1 U7166 ( .A(buf_fifo[518]), .B(n40), .C(buf_fifo[262]), .D(n7034), 
         .Z(n226) );
-  COND2X1 U7167 ( .A(n1099), .B(n8267), .C(r_p[6]), .D(n1101), .Z(n92) );
+  COND2X1 U7167 ( .A(n1099), .B(n8267), .C(rd_ptr[6]), .D(n1101), .Z(n92) );
   CNR4X1 U7168 ( .A(n1102), .B(n1103), .C(n1104), .D(n1105), .Z(n1101) );
   CNR4X1 U7169 ( .A(n1114), .B(n1115), .C(n1116), .D(n1117), .Z(n1099) );
   COND2X1 U7170 ( .A(n7105), .B(n7693), .C(n7095), .D(n7437), .Z(n1105) );
-  COND2X1 U7171 ( .A(r_p[2]), .B(n102), .C(n8256), .D(n104), .Z(n57) );
+  COND2X1 U7171 ( .A(rd_ptr[2]), .B(n102), .C(n8256), .D(n104), .Z(n57) );
   CND2X1 U7172 ( .A(n6090), .B(n4), .Z(n295) );
-  CANR2X1 U7173 ( .A(n8256), .B(n280), .C(r_p[2]), .D(n7200), .Z(n238) );
+  CANR2X1 U7173 ( .A(n8256), .B(n280), .C(rd_ptr[2]), .D(n7200), .Z(n238) );
   CANR3X1 U7174 ( .A(buf_fifo[396]), .B(n4242), .C(n78), .D(n79), .Z(n75) );
   COND2X1 U7175 ( .A(n7100), .B(n7597), .C(n7091), .D(n7340), .Z(n78) );
   COND2X1 U7176 ( .A(n7122), .B(n8109), .C(n7121), .D(n7185), .Z(n79) );
@@ -5789,13 +5801,13 @@ module bits ( clk, rst, pushin, datain, reqin, reqlen, pushout, lenout,
   CANR2X1 U7190 ( .A(buf_fifo[521]), .B(n40), .C(buf_fifo[265]), .D(n7034), 
         .Z(n165) );
   COND3X1 U7191 ( .A(n278), .B(n8255), .C(n1192), .D(n1193), .Z(n344) );
-  COND4CX1 U7192 ( .A(n7222), .B(r_p[3]), .C(n1195), .D(n124), .Z(n1193) );
-  CND2X1 U7193 ( .A(r_p[1]), .B(n324), .Z(n1192) );
+  COND4CX1 U7192 ( .A(n7222), .B(rd_ptr[3]), .C(n1195), .D(n124), .Z(n1193) );
+  CND2X1 U7193 ( .A(rd_ptr[1]), .B(n324), .Z(n1192) );
   COND2X1 U7194 ( .A(n7232), .B(n8259), .C(n1197), .D(n1198), .Z(n1195) );
   COND2X1 U7195 ( .A(n67), .B(n8259), .C(n69), .D(n8257), .Z(n62) );
   CANR3X1 U7196 ( .A(n3163), .B(n7034), .C(n71), .D(n72), .Z(n69) );
   COND2X1 U7197 ( .A(n8263), .B(n7725), .C(n75), .D(n4239), .Z(n72) );
-  COND1XL U7198 ( .A(r_p[5]), .B(n7240), .C(n90), .Z(n71) );
+  COND1XL U7198 ( .A(rd_ptr[5]), .B(n7240), .C(n90), .Z(n71) );
   CANR2X1 U7199 ( .A(n2658), .B(n7033), .C(n3163), .D(n386), .Z(n1094) );
   CANR2X1 U7200 ( .A(n386), .B(buf_fifo[261]), .C(n7032), .D(buf_fifo[773]), 
         .Z(n1810) );
@@ -5833,7 +5845,7 @@ module bits ( clk, rst, pushin, datain, reqin, reqlen, pushout, lenout,
         .Z(n26) );
   CANR2X1 U7217 ( .A(buf_fifo[525]), .B(n40), .C(buf_fifo[269]), .D(n7034), 
         .Z(n27) );
-  CANR2X1 U7218 ( .A(n7077), .B(n91), .C(r_p[5]), .D(n92), .Z(n1092) );
+  CANR2X1 U7218 ( .A(n7077), .B(n91), .C(rd_ptr[5]), .D(n92), .Z(n1092) );
   CANR2X1 U7219 ( .A(buf_fifo[513]), .B(n40), .C(buf_fifo[257]), .D(n7034), 
         .Z(n333) );
   CANR2X1 U7220 ( .A(buf_fifo[1025]), .B(n7035), .C(buf_fifo[769]), .D(n43), 
@@ -5852,17 +5864,17 @@ module bits ( clk, rst, pushin, datain, reqin, reqlen, pushout, lenout,
   CND4X1 U7230 ( .A(n894), .B(n895), .C(n896), .D(n897), .Z(n893) );
   CANR2X1 U7231 ( .A(buf_fifo[264]), .B(n386), .C(buf_fifo[776]), .D(n7032), 
         .Z(n896) );
-  CANR3X1 U7232 ( .A(n2293), .B(n7033), .C(r_p[4]), .D(n898), .Z(n897) );
+  CANR3X1 U7232 ( .A(n2293), .B(n7033), .C(rd_ptr[4]), .D(n898), .Z(n897) );
   COND1XL U7233 ( .A(n8260), .B(n156), .C(n1296), .Z(n327) );
   CND4X1 U7234 ( .A(n7246), .B(n1298), .C(n1299), .D(n1300), .Z(n1296) );
   CANR2X1 U7235 ( .A(n386), .B(buf_fifo[265]), .C(n7032), .D(buf_fifo[777]), 
         .Z(n1299) );
-  CANR3X1 U7236 ( .A(n3048), .B(n7033), .C(r_p[4]), .D(n1301), .Z(n1300) );
+  CANR3X1 U7236 ( .A(n3048), .B(n7033), .C(rd_ptr[4]), .D(n1301), .Z(n1300) );
   CANR2X1 U7237 ( .A(n22), .B(n222), .C(n47), .D(n372), .Z(n371) );
   CND4X1 U7238 ( .A(n373), .B(n374), .C(n375), .D(n376), .Z(n372) );
   CANR2X1 U7239 ( .A(buf_fifo[262]), .B(n386), .C(buf_fifo[774]), .D(n7032), 
         .Z(n375) );
-  COND1XL U7240 ( .A(r_p[3]), .B(n349), .C(n350), .Z(n218) );
+  COND1XL U7240 ( .A(rd_ptr[3]), .B(n349), .C(n350), .Z(n218) );
   CANR2X1 U7241 ( .A(n45), .B(n180), .C(n70), .D(n179), .Z(n350) );
   COND2X1 U7242 ( .A(n8249), .B(n7048), .C(n6104), .D(n7170), .Z(n3201) );
   COND2X1 U7243 ( .A(n8248), .B(n7048), .C(n6105), .D(n7169), .Z(n3202) );
@@ -5883,7 +5895,7 @@ module bits ( clk, rst, pushin, datain, reqin, reqlen, pushout, lenout,
   CANR2X1 U7258 ( .A(n377), .B(n355), .C(n2236), .D(n7033), .Z(n799) );
   CANR2X1 U7259 ( .A(n7031), .B(buf_fifo[513]), .C(n7074), .D(n335), .Z(n1200)
          );
-  COND3X1 U7260 ( .A(r_p[1]), .B(n57), .C(n58), .D(n59), .Z(n49) );
+  COND3X1 U7260 ( .A(rd_ptr[1]), .B(n57), .C(n58), .D(n59), .Z(n49) );
   CND2X1 U7261 ( .A(n60), .B(n61), .Z(n59) );
   COND1XL U7262 ( .A(n62), .B(n63), .C(n64), .Z(n58) );
   COND3X1 U7263 ( .A(n108), .B(n8259), .C(n109), .D(n110), .Z(n48) );
@@ -5914,15 +5926,15 @@ module bits ( clk, rst, pushin, datain, reqin, reqlen, pushout, lenout,
         .Z(n1961) );
   CANR2X1 U7282 ( .A(n377), .B(n38), .C(n2966), .D(n7033), .Z(n1962) );
   COND3X1 U7283 ( .A(reqlen[1]), .B(n363), .C(n8250), .D(n7131), .Z(n362) );
-  COND4CX1 U7284 ( .A(n346), .B(r_p[1]), .C(n367), .D(n3174), .Z(n366) );
+  COND4CX1 U7284 ( .A(n346), .B(rd_ptr[1]), .C(n367), .D(n3174), .Z(n366) );
   CND4X1 U7285 ( .A(n242), .B(n243), .C(n244), .D(n245), .Z(n23) );
   CANR2X1 U7286 ( .A(buf_fifo[517]), .B(n40), .C(buf_fifo[261]), .D(n7034), 
         .Z(n245) );
   CANR2X1 U7287 ( .A(buf_fifo[1029]), .B(n7035), .C(buf_fifo[773]), .D(n43), 
         .Z(n244) );
   CANR2X1 U7288 ( .A(n7130), .B(n248), .C(n7069), .D(n249), .Z(n242) );
-  COR2X1 U7289 ( .A(n379), .B(r_p[7]), .Z(n84) );
-  COND1XL U7290 ( .A(r_p[5]), .B(n7242), .C(n121), .Z(n113) );
+  COR2X1 U7289 ( .A(n379), .B(rd_ptr[7]), .Z(n84) );
+  COND1XL U7290 ( .A(rd_ptr[5]), .B(n7242), .C(n121), .Z(n113) );
   CANR2X1 U7291 ( .A(n39), .B(n122), .C(n7130), .D(n123), .Z(n121) );
   COND3X1 U7292 ( .A(n379), .B(n7600), .C(n1303), .D(n1304), .Z(n163) );
   COND3X1 U7293 ( .A(n8), .B(n145), .C(n146), .D(n147), .Z(n3180) );
@@ -5933,7 +5945,7 @@ module bits ( clk, rst, pushin, datain, reqin, reqlen, pushout, lenout,
   CANR2X1 U7297 ( .A(buf_fifo[1026]), .B(n7035), .C(buf_fifo[770]), .D(n43), 
         .Z(n311) );
   CANR2X1 U7298 ( .A(n39), .B(n313), .C(n7076), .D(n314), .Z(n310) );
-  COND2X1 U7299 ( .A(n1516), .B(n8267), .C(r_p[6]), .D(n1517), .Z(n1515) );
+  COND2X1 U7299 ( .A(n1516), .B(n8267), .C(rd_ptr[6]), .D(n1517), .Z(n1515) );
   CNR4X1 U7300 ( .A(n1518), .B(n1519), .C(n1520), .D(n1521), .Z(n1517) );
   CNR4X1 U7301 ( .A(n1530), .B(n1531), .C(n1532), .D(n1533), .Z(n1516) );
   CANR2X1 U7302 ( .A(buf_fifo[256]), .B(n386), .C(buf_fifo[768]), .D(n7032), 
@@ -5961,20 +5973,20 @@ module bits ( clk, rst, pushin, datain, reqin, reqlen, pushout, lenout,
   CND4X1 U7320 ( .A(n1604), .B(n1605), .C(n1606), .D(n1607), .Z(n1603) );
   CANR2X1 U7321 ( .A(n386), .B(buf_fifo[263]), .C(n7032), .D(buf_fifo[775]), 
         .Z(n1606) );
-  CENX1 U7322 ( .A(r_p[9]), .B(n6092), .Z(N16545) );
-  CND2X1 U7323 ( .A(\add_137/carry [8]), .B(r_p[8]), .Z(n6092) );
+  CENX1 U7322 ( .A(rd_ptr[9]), .B(n6092), .Z(N16591) );
+  CND2X1 U7323 ( .A(\add_161/carry [8]), .B(rd_ptr[8]), .Z(n6092) );
   COAN1X1 U7324 ( .A(n8258), .B(n264), .C(n992), .Z(n303) );
   CANR2X1 U7325 ( .A(n22), .B(n66), .C(n47), .D(n993), .Z(n992) );
   CND4X1 U7326 ( .A(n994), .B(n995), .C(n996), .D(n997), .Z(n993) );
   CANR2X1 U7327 ( .A(buf_fifo[260]), .B(n386), .C(buf_fifo[772]), .D(n7032), 
         .Z(n996) );
-  CANR2X1 U7328 ( .A(n238), .B(r_p[1]), .C(n107), .D(n201), .Z(n279) );
+  CANR2X1 U7328 ( .A(n238), .B(rd_ptr[1]), .C(n107), .D(n201), .Z(n279) );
   CNIVX1 U7329 ( .A(reqlen[0]), .Z(n6099) );
   CNIVX1 U7330 ( .A(reqlen[2]), .Z(n6100) );
   COND1XL U7331 ( .A(n7174), .B(n7179), .C(n168), .Z(n195) );
   CANR11X1 U7332 ( .A(n7136), .B(n55), .C(n95), .D(n7133), .Z(n94) );
   CANR4CX1 U7333 ( .A(n7184), .B(n8), .C(n9), .D(n7177), .Z(n5) );
-  COND3X1 U7334 ( .A(n11), .B(n12), .C(n6102), .D(r_p[0]), .Z(n9) );
+  COND3X1 U7334 ( .A(n11), .B(n12), .C(n6102), .D(rd_ptr[0]), .Z(n9) );
   COND2X1 U7335 ( .A(n7175), .B(n8), .C(n233), .D(n234), .Z(n231) );
   COND4CX1 U7336 ( .A(n235), .B(n6100), .C(n6101), .D(n215), .Z(n234) );
   COND11X1 U7337 ( .A(n8), .B(n7192), .C(n168), .D(n169), .Z(n166) );
@@ -5985,13 +5997,13 @@ module bits ( clk, rst, pushin, datain, reqin, reqlen, pushout, lenout,
   COND2X1 U7342 ( .A(n233), .B(n342), .C(n7211), .D(n8), .Z(n340) );
   CANR3X1 U7343 ( .A(n318), .B(n7135), .C(n319), .D(n320), .Z(n317) );
   CAN2X1 U7344 ( .A(dataout_flop[2]), .B(n7030), .Z(n320) );
-  CNR2X1 U7345 ( .A(n8258), .B(r_p[4]), .Z(n45) );
-  CNR2X1 U7346 ( .A(r_p[1]), .B(r_p[2]), .Z(n124) );
-  CNR2X1 U7347 ( .A(r_p[3]), .B(r_p[4]), .Z(n47) );
-  CNR2X1 U7348 ( .A(n8260), .B(r_p[3]), .Z(n22) );
-  CNR2X1 U7349 ( .A(n8256), .B(r_p[1]), .Z(n107) );
+  CNR2X1 U7345 ( .A(n8258), .B(rd_ptr[4]), .Z(n45) );
+  CNR2X1 U7346 ( .A(rd_ptr[1]), .B(rd_ptr[2]), .Z(n124) );
+  CNR2X1 U7347 ( .A(rd_ptr[3]), .B(rd_ptr[4]), .Z(n47) );
+  CNR2X1 U7348 ( .A(n8260), .B(rd_ptr[3]), .Z(n22) );
+  CNR2X1 U7349 ( .A(n8256), .B(rd_ptr[1]), .Z(n107) );
   CNR2X1 U7350 ( .A(n6103), .B(rst), .Z(n7030) );
-  CNR2X1 U7351 ( .A(n8253), .B(r_p[2]), .Z(n60) );
+  CNR2X1 U7351 ( .A(n8253), .B(rd_ptr[2]), .Z(n60) );
   COND2X1 U7352 ( .A(n8242), .B(n7047), .C(n6105), .D(n7163), .Z(n3208) );
   COND2X1 U7353 ( .A(n8241), .B(n7047), .C(n6104), .D(n7162), .Z(n3209) );
   COND2X1 U7354 ( .A(n8240), .B(n7047), .C(n6105), .D(n7161), .Z(n3210) );
@@ -6110,8 +6122,8 @@ module bits ( clk, rst, pushin, datain, reqin, reqlen, pushout, lenout,
   COND2X1 U7467 ( .A(n7183), .B(n7045), .C(n6107), .D(n7157), .Z(n4238) );
   CAN2X1 U7468 ( .A(reqin), .B(n7137), .Z(n6103) );
   CAN2X1 U7469 ( .A(reqin), .B(n7137), .Z(n6102) );
-  CIVX2 U7470 ( .A(r_p[4]), .Z(n8260) );
-  CND2X1 U7471 ( .A(r_p[0]), .B(n6103), .Z(n233) );
+  CIVX2 U7470 ( .A(rd_ptr[4]), .Z(n8260) );
+  CND2X1 U7471 ( .A(rd_ptr[0]), .B(n6103), .Z(n233) );
   CNIVX1 U7472 ( .A(reqlen[3]), .Z(n6101) );
   CNR2X1 U7473 ( .A(n6102), .B(rst), .Z(n4) );
   CNR2X1 U7474 ( .A(n3174), .B(rst), .Z(n7029) );
@@ -6160,7 +6172,7 @@ module bits ( clk, rst, pushin, datain, reqin, reqlen, pushout, lenout,
   CANR2X1 U7517 ( .A(n60), .B(n176), .C(n124), .D(n218), .Z(n217) );
   COND2X1 U7518 ( .A(n7082), .B(n7957), .C(n7126), .D(n8213), .Z(n1013) );
   COND2X1 U7519 ( .A(n7080), .B(n7925), .C(n7126), .D(n8181), .Z(n1025) );
-  COR2X1 U7520 ( .A(r_p[3]), .B(n264), .Z(n6093) );
+  COR2X1 U7520 ( .A(rd_ptr[3]), .B(n264), .Z(n6093) );
   COND1XL U7521 ( .A(n8260), .B(n65), .C(n1091), .Z(n264) );
   COND2X1 U7522 ( .A(n7083), .B(n7974), .C(n7124), .D(n8230), .Z(n1459) );
   COND2X1 U7523 ( .A(n7083), .B(n7878), .C(n7124), .D(n8134), .Z(n1485) );
@@ -6169,7 +6181,7 @@ module bits ( clk, rst, pushin, datain, reqin, reqlen, pushout, lenout,
   COND2X1 U7526 ( .A(n7083), .B(n7894), .C(n7124), .D(n8150), .Z(n1431) );
   COND2X1 U7527 ( .A(n7083), .B(n7958), .C(n7124), .D(n8214), .Z(n1419) );
   COND2X1 U7528 ( .A(n7083), .B(n7926), .C(n7124), .D(n8182), .Z(n1407) );
-  CEOXL U7529 ( .A(r_p[8]), .B(\add_137/carry [8]), .Z(N16544) );
+  CEOXL U7529 ( .A(rd_ptr[8]), .B(\add_161/carry [8]), .Z(N16590) );
   CND2XL U7530 ( .A(n107), .B(n130), .Z(n216) );
   COND2XL U7531 ( .A(n7087), .B(n7969), .C(n7127), .D(n8225), .Z(n954) );
   COND2X1 U7532 ( .A(n7086), .B(n7873), .C(n7126), .D(n8129), .Z(n980) );
@@ -6200,12 +6212,12 @@ module bits ( clk, rst, pushin, datain, reqin, reqlen, pushout, lenout,
   CND2X1 U7557 ( .A(n385), .B(n8269), .Z(n86) );
   CND2X1 U7558 ( .A(n384), .B(n8269), .Z(n80) );
   CIVXL U7559 ( .A(n257), .Z(n7197) );
-  CNR2X1 U7560 ( .A(r_p[8]), .B(r_p[9]), .Z(n384) );
-  CAN2X2 U7561 ( .A(r_p[9]), .B(r_p[8]), .Z(n385) );
+  CNR2X1 U7560 ( .A(rd_ptr[8]), .B(rd_ptr[9]), .Z(n384) );
+  CAN2X2 U7561 ( .A(rd_ptr[9]), .B(rd_ptr[8]), .Z(n385) );
   COND11X1 U7562 ( .A(n8), .B(n252), .C(n253), .D(n254), .Z(n251) );
   COND4CX1 U7563 ( .A(n255), .B(n7197), .C(n250), .D(n7136), .Z(n254) );
   COND2XL U7564 ( .A(n7214), .B(n8254), .C(n7204), .D(n8255), .Z(n260) );
-  CANR2X1 U7565 ( .A(n8256), .B(n7214), .C(r_p[2]), .D(n7204), .Z(n263) );
+  CANR2X1 U7565 ( .A(n8256), .B(n7214), .C(rd_ptr[2]), .D(n7204), .Z(n263) );
   CNR2X1 U7566 ( .A(n8251), .B(n7204), .Z(n302) );
   CANR2XL U7567 ( .A(buf_fifo[397]), .B(n383), .C(buf_fifo[141]), .D(n384), 
         .Z(n1965) );
@@ -6240,7 +6252,7 @@ module bits ( clk, rst, pushin, datain, reqin, reqlen, pushout, lenout,
   COND2X1 U7584 ( .A(n7089), .B(n7883), .C(n7129), .D(n8139), .Z(n515) );
   COND2X1 U7585 ( .A(n7089), .B(n7947), .C(n7129), .D(n8203), .Z(n521) );
   COND2X1 U7586 ( .A(n7089), .B(n7895), .C(n7128), .D(n8151), .Z(n602) );
-  CND2X1 U7587 ( .A(r_p[7]), .B(n383), .Z(n394) );
+  CND2X1 U7587 ( .A(rd_ptr[7]), .B(n383), .Z(n394) );
   COND3X1 U7588 ( .A(n8266), .B(n7978), .C(n1713), .D(n1714), .Z(n1705) );
   CANR2XL U7589 ( .A(n7210), .B(n64), .C(n303), .D(n60), .Z(n348) );
   COND2XL U7590 ( .A(n303), .B(n8255), .C(n791), .D(n8254), .Z(n367) );
@@ -6283,7 +6295,7 @@ module bits ( clk, rst, pushin, datain, reqin, reqlen, pushout, lenout,
   CIVX2 U7627 ( .A(n233), .Z(n7136) );
   CANR3X1 U7628 ( .A(n301), .B(n60), .C(n302), .D(n300), .Z(n297) );
   CND3XL U7629 ( .A(n6100), .B(n7203), .C(n6099), .Z(n299) );
-  COND4CX1 U7630 ( .A(n263), .B(r_p[1]), .C(n300), .D(n255), .Z(n298) );
+  COND4CX1 U7630 ( .A(n263), .B(rd_ptr[1]), .C(n300), .D(n255), .Z(n298) );
   CNIVX1 U7631 ( .A(n84), .Z(n7109) );
   COND3X1 U7632 ( .A(n8266), .B(n7979), .C(n497), .D(n498), .Z(n488) );
   CIVX1 U7633 ( .A(n6115), .Z(n6117) );
@@ -6981,17 +6993,21 @@ module bits ( clk, rst, pushin, datain, reqin, reqlen, pushout, lenout,
   CIVXL U8325 ( .A(n4241), .Z(n7119) );
   CIVXL U8326 ( .A(n4241), .Z(n7120) );
   CIVXL U8327 ( .A(n4241), .Z(n7121) );
-  CAN2X1 U8328 ( .A(\add_137/carry [7]), .B(r_p[7]), .Z(\add_137/carry [8]) );
-  CEOX1 U8329 ( .A(r_p[7]), .B(\add_137/carry [7]), .Z(N16543) );
-  CAN2X1 U8330 ( .A(\add_137/carry [6]), .B(r_p[6]), .Z(\add_137/carry [7]) );
-  CEOX1 U8331 ( .A(r_p[6]), .B(\add_137/carry [6]), .Z(N16542) );
-  CAN2X1 U8332 ( .A(\add_137/carry [5]), .B(r_p[5]), .Z(\add_137/carry [6]) );
-  CEOX1 U8333 ( .A(r_p[5]), .B(\add_137/carry [5]), .Z(N16541) );
-  CAN2X1 U8334 ( .A(\add_137/carry [4]), .B(r_p[4]), .Z(\add_137/carry [5]) );
-  CEOX1 U8335 ( .A(r_p[4]), .B(\add_137/carry [4]), .Z(N16540) );
-  CAN2X1 U8336 ( .A(r_p[0]), .B(n6099), .Z(\add_137/carry [1]) );
-  CEOX1 U8337 ( .A(n6099), .B(r_p[0]), .Z(N16536) );
-  CEOX1 U8338 ( .A(\add_38/carry [4]), .B(wr_p[4]), .Z(N114) );
+  CAN2X1 U8328 ( .A(\add_161/carry [7]), .B(rd_ptr[7]), .Z(\add_161/carry [8])
+         );
+  CEOX1 U8329 ( .A(rd_ptr[7]), .B(\add_161/carry [7]), .Z(N16589) );
+  CAN2X1 U8330 ( .A(\add_161/carry [6]), .B(rd_ptr[6]), .Z(\add_161/carry [7])
+         );
+  CEOX1 U8331 ( .A(rd_ptr[6]), .B(\add_161/carry [6]), .Z(N16588) );
+  CAN2X1 U8332 ( .A(\add_161/carry [5]), .B(rd_ptr[5]), .Z(\add_161/carry [6])
+         );
+  CEOX1 U8333 ( .A(rd_ptr[5]), .B(\add_161/carry [5]), .Z(N16587) );
+  CAN2X1 U8334 ( .A(\add_161/carry [4]), .B(rd_ptr[4]), .Z(\add_161/carry [5])
+         );
+  CEOX1 U8335 ( .A(rd_ptr[4]), .B(\add_161/carry [4]), .Z(N16586) );
+  CAN2X1 U8336 ( .A(rd_ptr[0]), .B(n6099), .Z(\add_161/carry [1]) );
+  CEOX1 U8337 ( .A(n6099), .B(rd_ptr[0]), .Z(N16582) );
+  CEOX1 U8338 ( .A(\add_41/carry [4]), .B(wrt_ptr[4]), .Z(N114) );
   CIVX2 U8339 ( .A(n366), .Z(n7131) );
   CIVX2 U8340 ( .A(n94), .Z(n7132) );
   CIVX2 U8341 ( .A(n317), .Z(n7134) );
@@ -7005,9 +7021,9 @@ module bits ( clk, rst, pushin, datain, reqin, reqlen, pushout, lenout,
   CIVX2 U8349 ( .A(n235), .Z(n7177) );
   CIVX2 U8350 ( .A(reqlen[1]), .Z(n7178) );
   CIVX2 U8351 ( .A(n6099), .Z(n7179) );
-  CIVX2 U8352 ( .A(wr_p[0]), .Z(n7180) );
-  CIVX2 U8353 ( .A(wr_p[1]), .Z(n7181) );
-  CIVX2 U8354 ( .A(wr_p[3]), .Z(n7182) );
+  CIVX2 U8352 ( .A(wrt_ptr[0]), .Z(n7180) );
+  CIVX2 U8353 ( .A(wrt_ptr[1]), .Z(n7181) );
+  CIVX2 U8354 ( .A(wrt_ptr[3]), .Z(n7182) );
   CIVX2 U8355 ( .A(n49), .Z(n7184) );
   CIVX2 U8356 ( .A(n48), .Z(n7186) );
   CIVX2 U8357 ( .A(n17), .Z(n7189) );
@@ -7104,22 +7120,22 @@ module bits ( clk, rst, pushin, datain, reqin, reqlen, pushout, lenout,
   CIVX2 U8448 ( .A(n2568), .Z(n8247) );
   CIVX2 U8449 ( .A(n3137), .Z(n8248) );
   CIVX2 U8450 ( .A(n2236), .Z(n8249) );
-  CIVX2 U8451 ( .A(r_p[0]), .Z(n8250) );
+  CIVX2 U8451 ( .A(rd_ptr[0]), .Z(n8250) );
   CIVX2 U8452 ( .A(n64), .Z(n8251) );
   CIVX2 U8453 ( .A(n60), .Z(n8252) );
-  CIVX2 U8454 ( .A(r_p[1]), .Z(n8253) );
+  CIVX2 U8454 ( .A(rd_ptr[1]), .Z(n8253) );
   CIVX2 U8455 ( .A(n124), .Z(n8254) );
   CIVX2 U8456 ( .A(n107), .Z(n8255) );
-  CIVX2 U8457 ( .A(r_p[2]), .Z(n8256) );
+  CIVX2 U8457 ( .A(rd_ptr[2]), .Z(n8256) );
   CIVX2 U8458 ( .A(n70), .Z(n8257) );
-  CIVX2 U8459 ( .A(r_p[3]), .Z(n8258) );
+  CIVX2 U8459 ( .A(rd_ptr[3]), .Z(n8258) );
   CIVX2 U8460 ( .A(n22), .Z(n8259) );
   CIVX2 U8461 ( .A(n7035), .Z(n8261) );
   CIVX2 U8462 ( .A(n43), .Z(n8262) );
   CIVX2 U8463 ( .A(n40), .Z(n8263) );
-  CIVX2 U8464 ( .A(r_p[5]), .Z(n8264) );
+  CIVX2 U8464 ( .A(rd_ptr[5]), .Z(n8264) );
   CIVX2 U8465 ( .A(n377), .Z(n8265) );
   CIVX2 U8466 ( .A(n386), .Z(n8266) );
-  CIVX2 U8467 ( .A(r_p[6]), .Z(n8267) );
+  CIVX2 U8467 ( .A(rd_ptr[6]), .Z(n8267) );
 endmodule
 

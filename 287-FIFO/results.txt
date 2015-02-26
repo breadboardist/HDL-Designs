@@ -1,4 +1,4 @@
-bits script run started on Thu Feb 26 13:24:05 2015
+bits script run started on Thu Feb 26 13:29:30 2015
 run on machine eecad1.engr.sjsu.edu
 
 Run with a clock period of 5.0
@@ -7,4 +7,6 @@ student names
 options syn False gates False
 VCS simulation worked
 NCverilog simulation worked
-///// Synthesis failed /////
+Synthesis finished OK
+Gate level simulation worked
+Completed the bits run
