@@ -75,10 +75,6 @@ module bits (input clk, input  rst, input pushin, input [31:0] datain,
 				end
 			else if(reqin)
 				begin
-					// if(reqlen==0)
-					// 	begin 
-					// 			dataout_flop<= #1 0;
-					// 	end
 					case (reqlen)
 						0: dataout_flop <= #1 0;
 						1: dataout_flop <= #1 buf_fifo[rd_ptr+:1];
@@ -98,178 +94,62 @@ module bits (input clk, input  rst, input pushin, input [31:0] datain,
 						15: dataout_flop <= #1 buf_fifo[rd_ptr+:15];
 						default: dataout_flop <= #1 0;
 					endcase
-					// else if(reqlen==1)
-					// 	begin
-					// 		dataout_flop<= #1 buf_fifo[rd_ptr+:1];
-					// 	end
-					// else if(reqlen==2)
-					// 	begin
-					// 		dataout_flop<= #1 buf_fifo[rd_ptr+:2];
-					// 	end
-					// else if(reqlen ==3)
-					// 	begin
-					// 		dataout_flop<= #1 buf_fifo[rd_ptr+:3];
-					// 	end
-					// else if(reqlen==4)
-					// 	begin
-					// 		dataout_flop<= #1 buf_fifo[rd_ptr+:4];
-					// 	end
-					// else if(reqlen==5)
-					// 	begin
-					// 		dataout_flop<= #1 buf_fifo[rd_ptr+:5];
-					// 	end
-					// else if(reqlen==6)
-					// 	begin
-					// 		dataout_flop<= #1 buf_fifo[rd_ptr+:6];
-					// 	end
-					// else if(reqlen==7)
-					// 	begin
-					// 		dataout_flop<= #1 buf_fifo[rd_ptr+:7];
-					// 	end
-					// else if(reqlen==8)
-					// 	begin
-					// 		dataout_flop<= #1 buf_fifo[rd_ptr+:8];
-					// 	end
-					// else if(reqlen==9)
-					// 	begin
-					// 		dataout_flop<= #1 buf_fifo[rd_ptr+:9];
-					// 	end
-					// else if(reqlen==10)
-					// 	begin
-					// 		dataout_flop<=#1 buf_fifo[rd_ptr+:10];
-					// 	end
-					// else if(reqlen==11)
-					// 	begin
-					// 		dataout_flop<=#1 buf_fifo[rd_ptr+:11];
-					// 	end
-					// else if(reqlen==12)
-					// 	begin
-					// 		dataout_flop<=#1 buf_fifo[rd_ptr+:12];
-					// 	end
-					// else if(reqlen==13)
-					// 	begin
-					// 		dataout_flop<= #1 buf_fifo[rd_ptr+:13];
-					// 	end
-					// else if(reqlen==14)
-					// 	begin
-					// 		dataout_flop<= #1 buf_fifo[rd_ptr+:14];
-					// 	end
-					// else if(reqlen==15)
-					// 	begin
-					// 		dataout_flop<= #1 buf_fifo[rd_ptr+:15];
-					// 	end
 					rd_ptr <= rd_ptr + reqlen;
 				end
-
-			if(pushin) begin
-				if(wrt_ptr == 0) begin
-					buf_fifo[31:0] <= datain;
-					buf_fifo[1055:1024]<=datain;
-				end
-			else if (wrt_ptr==1) begin
-				buf_fifo[63:32]<=datain;
+			if(pushin) 
+				begin
+					case (wrt_ptr)
+						0: begin
+							buf_fifo[31:0] <= #1 datain;
+							buf_fifo[1055:1024] <= #1 datain;
+						   end
+						1: buf_fifo[63:32] <= #1 datain;
+						2: buf_fifo[95:64] <= #1 datain;
+						3: buf_fifo[127:96] <= #1 datain;
+						4: buf_fifo[159:128] <= #1 datain;
+						5: buf_fifo[191:160] <= #1 datain;
+						6: buf_fifo[223:192] <= #1 datain;
+						7: buf_fifo[255:224] <= #1 datain;
+						8: buf_fifo[287:256] <= #1 datain;
+						9: buf_fifo[319:288] <= #1 datain;
+						10: buf_fifo[351:320] <= #1 datain;
+						11: buf_fifo[383:352] <= #1 datain;
+						12: buf_fifo[415:384] <= #1 datain;
+						13: buf_fifo[447:416] <= #1 datain;
+						14: buf_fifo[479:448] <= #1 datain;
+						15: buf_fifo[511:480] <= #1 datain;
+						16: buf_fifo[543:512] <= #1 datain;
+						17: buf_fifo[575:544] <= #1 datain;
+						18: buf_fifo[607:576] <= #1 datain;
+						19: buf_fifo[639:608] <= #1 datain;
+						20: buf_fifo[671:640] <= #1 datain;
+						21: buf_fifo[703:672] <= #1 datain;
+						22: buf_fifo[735:704] <= #1 datain;
+						23: buf_fifo[767:736] <= #1 datain;
+						24: buf_fifo[799:768] <= #1 datain;
+						25: buf_fifo[831:800] <= #1 datain;
+						26: buf_fifo[863:832] <= #1 datain;
+						27: buf_fifo[895:864] <= #1 datain;
+						28: buf_fifo[927:896] <= #1 datain;
+						29: buf_fifo[959:928] <= #1 datain;
+						30: buf_fifo[991:960] <= #1 datain;
+						31: buf_fifo[1023:992] <= #1 datain;
+						default : begin
+							buf_fifo[31:0] <= #1 datain;
+							buf_fifo[1055:1024] <= #1 datain;
+						   end
+					endcase
 			end
-			else if(wrt_ptr==2) begin
-				buf_fifo[95:64]<=datain;
-			end
-			else if(wrt_ptr==3) begin
-				buf_fifo[127:96]<=datain;
-			end
-			else if(wrt_ptr==4) begin
-				buf_fifo[159:128]<=datain;
-			end
-			else if(wrt_ptr==5) begin
-				buf_fifo[191:160]<=datain;
-			end
-			else if(wrt_ptr==6) begin
-				buf_fifo[223:192]<=datain;
-			end
-			else if(wrt_ptr==7) begin
-				buf_fifo[255:224]<=datain;
-			end
-			else if(wrt_ptr==8) begin
-				buf_fifo[287:256]<=datain;
-			end
-			else if(wrt_ptr==9) begin
-				buf_fifo[319:288]<=datain;
-			end
-			else if(wrt_ptr==10) begin
-				buf_fifo[351:320]<=datain;
-			end
-			else if(wrt_ptr==11) begin
-				buf_fifo[383:352]<=datain;
-			end
-			else if(wrt_ptr==12) begin
-				buf_fifo[415:384]<=datain;
-			end
-			else if(wrt_ptr==13) begin
-				buf_fifo[447:416]<=datain;
-			end
-			else if(wrt_ptr==14) begin
-				buf_fifo[479:448]<=datain;
-			end
-			else if(wrt_ptr==15) begin
-				buf_fifo[511:480]<=datain;
-			end
-			else if(wrt_ptr==16) begin
-				buf_fifo[543:512]<=datain;
-			end
-			else if(wrt_ptr==17) begin
-				buf_fifo[575:544]<=datain;
-			end
-			else if(wrt_ptr==18) begin
-				buf_fifo[607:576]<=datain;
-			end
-			else if(wrt_ptr==19) begin
-				buf_fifo[639:608]<=datain;
-			end
-			else if(wrt_ptr==20) begin
-				buf_fifo[671:640]<=datain;
-			end
-			else if(wrt_ptr==21) begin
-				buf_fifo[703:672]<=datain;
-			end
-			else if(wrt_ptr==22) begin
-				buf_fifo[735:704]<=datain;
-			end
-			else if(wrt_ptr==23) begin
-				buf_fifo[767:736]<=datain;
-			end
-			else if(wrt_ptr==24) begin
-				buf_fifo[799:768]<=datain;
-			end
-			else if(wrt_ptr==25) begin
-				buf_fifo[831:800]<=datain;
-			end
-			else if(wrt_ptr==26) begin
-				buf_fifo[863:832]<=datain;
-			end
-			else if(wrt_ptr==27) begin
-				buf_fifo[895:864]<=datain;
-			end
-			else if(wrt_ptr==28) begin
-				buf_fifo[927:896]<=datain;
-			end
-			else if(wrt_ptr==29) begin
-				buf_fifo[959:928]<=datain;
-			end
-			else if(wrt_ptr==30) begin
-				buf_fifo[991:960]<=datain;
-			end
-			else if(wrt_ptr==31) begin
-				buf_fifo[1023:992]<=datain;
-			end
-
-		end
 
 	end
-//-----------------------output---------------//
+	///////////////////////
+	//Output Flip-Flops //
+	///////////////////////
 	always @(posedge clk)
 		begin
 			if(rst)
-
 				begin 
-						pushout_d2<=#1 0;
+					pushout_d2<=#1 0;
 					lenout_d2<=#1 0;
 				end 
 			else if(reqin)
