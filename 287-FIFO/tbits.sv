@@ -144,7 +144,7 @@ bits b(clk,rst,pushin, datain, reqin, reqlen, pushout, lenout, dataout);
 
 initial begin
 clk=0;
-forever #5.0 clk=~clk;
+forever #6.25 clk=~clk;
 end
 
 initial begin
@@ -167,7 +167,7 @@ rst=1;
 rst=0;
 ##1 ;
 running=1;
-repeat(50000) begin
+repeat(500) begin
   t.randomize;
   t.apply;
 end
