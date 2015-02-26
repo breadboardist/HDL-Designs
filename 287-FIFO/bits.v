@@ -279,7 +279,10 @@ module FIFO_v #(parameter ADDR_W = 5, DATA_W = 32, BUFF_L = 32, ALMST_F = 3, ALM
       almst_full = almst_f_ff;
       data_count = q_reg;
     end
-      
+  initial 
+    begin
+     $monitor("fifo memory:%b",mem_array[wr_ptr]);
+    end
 endmodule
 
 
