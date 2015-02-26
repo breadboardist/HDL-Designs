@@ -7,27 +7,28 @@ module bits (input clk, input  rst, input pushin, input [31:0] datain,
 	/////////////////////
 	//Internal Signals //
 	/////////////////////
-	reg pushout_d1;
-	reg pushout_d2;
-	reg [3:0] lenout_d1;
-	reg [3:0] lenout_d2;
+	reg pushout_stg_1;
+	reg pushout_stg_2;
+	reg [3:0] lenout_stg_1;
+	reg [3:0] lenout_stg_2;
+	
 
 	reg [4:0]  wrt_ptr;
 	reg [9:0]  rd_ptr;
-	reg [15:0] dataout_flop;
-	reg [15:0] dataout2;
+	reg [15:0] dataout_stg_1;
+	reg [15:0] dataout_stg_2;
 
 	///////////
 	//Buffer //
 	///////////
-	reg [1055:0] buf_fifo;
+	reg [1055:0] buffer;
 
 	/////////////////
 	//Reg->Output //
 	/////////////////
-	assign pushout = pushout_d1;
-	assign dataout = dataout2;
-	assign lenout = lenout_d1;
+	assign pushout = pushout_stg_2;
+	assign dataout = dataout_stg_2;
+	assign lenout = lenout_stg_2;
 
 	/////////////////////////
 	//Write Pointer Logic //
@@ -49,15 +50,15 @@ module bits (input clk, input  rst, input pushin, input [31:0] datain,
 		begin
 			if(rst)
 				begin
-					dataout2 <= #1 0;
-					lenout_d1 <= #1 0;
-					pushout_d1 <= #1 0;
+					dataout_stg_2 <= #1 0;
+					lenout_stg_2 <= #1 0;
+					pushout_stg_2 <= #1 0;
 				end
 			else 
 				begin
-					pushout_d1 <= #1 pushout_d2;
-					dataout2 <= #1 dataout_flop;
-					lenout_d1 <= #1 lenout_d2;
+					pushout_stg_2 <= #1 pushout_stg_1;
+					dataout_stg_2 <= #1 dataout_stg_1;
+					lenout_stg_2 <= #1 lenout_stg_1;
 				end 
 	end
 
@@ -69,30 +70,30 @@ module bits (input clk, input  rst, input pushin, input [31:0] datain,
 		begin
 			if (rst)
 				begin
-					buf_fifo <= #1 0;
-					dataout_flop <= #1 0;
+					buffer <= #1 0;
+					dataout_stg_1 <= #1 0;
 					rd_ptr <= #1 0;
 				end
 			else if(reqin)
 				begin
 					case (reqlen)
-						0: dataout_flop <= #1 0;
-						1: dataout_flop <= #1 buf_fifo[rd_ptr+:1];
-						2: dataout_flop <= #1 buf_fifo[rd_ptr+:2];
-						3: dataout_flop <= #1 buf_fifo[rd_ptr+:3];
-						4: dataout_flop <= #1 buf_fifo[rd_ptr+:4];
-						5: dataout_flop <= #1 buf_fifo[rd_ptr+:5];
-						6: dataout_flop <= #1 buf_fifo[rd_ptr+:6];
-						7: dataout_flop <= #1 buf_fifo[rd_ptr+:7];
-						8: dataout_flop <= #1 buf_fifo[rd_ptr+:8];
-						9: dataout_flop <= #1 buf_fifo[rd_ptr+:9];
-						10: dataout_flop <= #1 buf_fifo[rd_ptr+:10];
-						11: dataout_flop <= #1 buf_fifo[rd_ptr+:11];
-						12: dataout_flop <= #1 buf_fifo[rd_ptr+:12];
-						13: dataout_flop <= #1 buf_fifo[rd_ptr+:13];
-						14: dataout_flop <= #1 buf_fifo[rd_ptr+:14];
-						15: dataout_flop <= #1 buf_fifo[rd_ptr+:15];
-						default: dataout_flop <= #1 0;
+						0: dataout_stg_1 <= #1 0;
+						1: dataout_stg_1 <= #1 buffer[rd_ptr+:1];
+						2: dataout_stg_1 <= #1 buffer[rd_ptr+:2];
+						3: dataout_stg_1 <= #1 buffer[rd_ptr+:3];
+						4: dataout_stg_1 <= #1 buffer[rd_ptr+:4];
+						5: dataout_stg_1 <= #1 buffer[rd_ptr+:5];
+						6: dataout_stg_1 <= #1 buffer[rd_ptr+:6];
+						7: dataout_stg_1 <= #1 buffer[rd_ptr+:7];
+						8: dataout_stg_1 <= #1 buffer[rd_ptr+:8];
+						9: dataout_stg_1 <= #1 buffer[rd_ptr+:9];
+						10: dataout_stg_1 <= #1 buffer[rd_ptr+:10];
+						11: dataout_stg_1 <= #1 buffer[rd_ptr+:11];
+						12: dataout_stg_1 <= #1 buffer[rd_ptr+:12];
+						13: dataout_stg_1 <= #1 buffer[rd_ptr+:13];
+						14: dataout_stg_1 <= #1 buffer[rd_ptr+:14];
+						15: dataout_stg_1 <= #1 buffer[rd_ptr+:15];
+						default: dataout_stg_1 <= #1 0;
 					endcase
 					rd_ptr <= rd_ptr + reqlen;
 				end
@@ -100,43 +101,43 @@ module bits (input clk, input  rst, input pushin, input [31:0] datain,
 				begin
 					case (wrt_ptr)
 						0: begin
-							buf_fifo[31:0] <= #1 datain;
-							buf_fifo[1055:1024] <= #1 datain;
+							buffer[31:0] <= #1 datain;
+							buffer[1055:1024] <= #1 datain;
 						   end
-						1: buf_fifo[63:32] <= #1 datain;
-						2: buf_fifo[95:64] <= #1 datain;
-						3: buf_fifo[127:96] <= #1 datain;
-						4: buf_fifo[159:128] <= #1 datain;
-						5: buf_fifo[191:160] <= #1 datain;
-						6: buf_fifo[223:192] <= #1 datain;
-						7: buf_fifo[255:224] <= #1 datain;
-						8: buf_fifo[287:256] <= #1 datain;
-						9: buf_fifo[319:288] <= #1 datain;
-						10: buf_fifo[351:320] <= #1 datain;
-						11: buf_fifo[383:352] <= #1 datain;
-						12: buf_fifo[415:384] <= #1 datain;
-						13: buf_fifo[447:416] <= #1 datain;
-						14: buf_fifo[479:448] <= #1 datain;
-						15: buf_fifo[511:480] <= #1 datain;
-						16: buf_fifo[543:512] <= #1 datain;
-						17: buf_fifo[575:544] <= #1 datain;
-						18: buf_fifo[607:576] <= #1 datain;
-						19: buf_fifo[639:608] <= #1 datain;
-						20: buf_fifo[671:640] <= #1 datain;
-						21: buf_fifo[703:672] <= #1 datain;
-						22: buf_fifo[735:704] <= #1 datain;
-						23: buf_fifo[767:736] <= #1 datain;
-						24: buf_fifo[799:768] <= #1 datain;
-						25: buf_fifo[831:800] <= #1 datain;
-						26: buf_fifo[863:832] <= #1 datain;
-						27: buf_fifo[895:864] <= #1 datain;
-						28: buf_fifo[927:896] <= #1 datain;
-						29: buf_fifo[959:928] <= #1 datain;
-						30: buf_fifo[991:960] <= #1 datain;
-						31: buf_fifo[1023:992] <= #1 datain;
+						1: buffer[63:32] <= #1 datain;
+						2: buffer[95:64] <= #1 datain;
+						3: buffer[127:96] <= #1 datain;
+						4: buffer[159:128] <= #1 datain;
+						5: buffer[191:160] <= #1 datain;
+						6: buffer[223:192] <= #1 datain;
+						7: buffer[255:224] <= #1 datain;
+						8: buffer[287:256] <= #1 datain;
+						9: buffer[319:288] <= #1 datain;
+						10: buffer[351:320] <= #1 datain;
+						11: buffer[383:352] <= #1 datain;
+						12: buffer[415:384] <= #1 datain;
+						13: buffer[447:416] <= #1 datain;
+						14: buffer[479:448] <= #1 datain;
+						15: buffer[511:480] <= #1 datain;
+						16: buffer[543:512] <= #1 datain;
+						17: buffer[575:544] <= #1 datain;
+						18: buffer[607:576] <= #1 datain;
+						19: buffer[639:608] <= #1 datain;
+						20: buffer[671:640] <= #1 datain;
+						21: buffer[703:672] <= #1 datain;
+						22: buffer[735:704] <= #1 datain;
+						23: buffer[767:736] <= #1 datain;
+						24: buffer[799:768] <= #1 datain;
+						25: buffer[831:800] <= #1 datain;
+						26: buffer[863:832] <= #1 datain;
+						27: buffer[895:864] <= #1 datain;
+						28: buffer[927:896] <= #1 datain;
+						29: buffer[959:928] <= #1 datain;
+						30: buffer[991:960] <= #1 datain;
+						31: buffer[1023:992] <= #1 datain;
 						default : begin
-							buf_fifo[31:0] <= #1 datain;
-							buf_fifo[1055:1024] <= #1 datain;
+							buffer[31:0] <= #1 datain;
+							buffer[1055:1024] <= #1 datain;
 						   end
 					endcase
 			end
@@ -149,18 +150,18 @@ module bits (input clk, input  rst, input pushin, input [31:0] datain,
 		begin
 			if(rst)
 				begin 
-					pushout_d2<=#1 0;
-					lenout_d2<=#1 0;
+					pushout_stg_1 <= #1 0;
+					lenout_stg_1 <= #1 0;
 				end 
 			else if(reqin)
 				begin
-					pushout_d2<=#1  1;
-					lenout_d2<= #1 reqlen;
+					pushout_stg_1 <= #1  1;
+					lenout_stg_1 <= #1 reqlen;
 				end
 			else
 				begin
-					pushout_d2<=#1  0;
-					lenout_d2<= #1 lenout_d1;
+					pushout_stg_1 <= #1  0;
+					lenout_stg_1 <= #1 lenout_stg_2;
 				end
 		end
 
