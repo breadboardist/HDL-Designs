@@ -96,7 +96,7 @@ module bits (input clk, input  rst, input pushin, input [31:0] datain,
 						13: dataout_flop = buf_fifo[rd_ptr+:13];
 						14: dataout_flop = buf_fifo[rd_ptr+:14];
 						15: dataout_flop = buf_fifo[rd_ptr+:15];
-						default: dataout = 0;
+						default: dataout_flop = 0;
 					endcase
 					// else if(reqlen==1)
 					// 	begin
