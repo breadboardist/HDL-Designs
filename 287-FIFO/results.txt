@@ -1,12 +1,15 @@
-bits script run started on Thu Feb 26 13:29:30 2015
-run on machine eecad1.engr.sjsu.edu
+bits script run started on Thu Feb 26 14:39:15 2015
+run on machine eecad48.engr.sjsu.edu
 
 Run with a clock period of 5.0
 student names
   Prem Bharath Soundararajan  0694
 options syn False gates False
+debug True 
 VCS simulation worked
+debug True 
 NCverilog simulation worked
 Synthesis finished OK
+debug True
 Gate level simulation worked
 Completed the bits run

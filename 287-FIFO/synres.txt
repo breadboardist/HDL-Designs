@@ -48,7 +48,8 @@ Statistics for case statements in always block at line 68 in file
 ===============================================
 |           Line           |  full/ parallel  |
 ===============================================
-|            82            |    auto/auto     |
+|            78            |    auto/auto     |
+|           101            |    auto/auto     |
 ===============================================
 
 Inferred memory devices in process
@@ -135,7 +136,7 @@ Inferred memory devices in process
 ===============================================================================
 
 Inferred memory devices in process
-	in routine bits line 267 in file
+	in routine bits line 148 in file
 		'/home/so/soun0694/Work/287-FIFO/bits.v'.
 ===============================================================================
 |    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
@@ -289,22 +290,24 @@ Information: Input delay ('rise') on clock port 'clk' will be added to the clock
    ELAPSED            WORST NEG   SETUP    DESIGN                             MIN DELAY
     TIME      AREA      SLACK     COST    RULE COST         ENDPOINT            COST   
   --------- --------- --------- --------- --------- ------------------------- ---------
-    0:00:16   17684.0      0.00       0.0       0.0                                0.00
-    0:00:16   17684.0      0.00       0.0       0.0                                0.00
-    0:00:16   17684.0      0.00       0.0       0.0                                0.00
-    0:00:16   17684.0      0.00       0.0       0.0                                0.00
-    0:00:16   17684.0      0.00       0.0       0.0                                0.00
-    0:00:18   10961.0      0.00       0.0       0.0                                0.00
-    0:00:18   10949.0      0.06       0.2       0.0                                0.00
-    0:00:18   10952.5      0.00       0.0       0.0                                0.00
-    0:00:19   10950.5      0.00       0.0       0.0                                0.00
-    0:00:19   10950.5      0.00       0.0       0.0                                0.00
-    0:00:19   10950.5      0.00       0.0       0.0                                0.00
-    0:00:19   10950.5      0.00       0.0       0.0                                0.00
-    0:00:19   10950.5      0.00       0.0       0.0                                0.00
-    0:00:19   10950.5      0.00       0.0       0.0                                0.00
-    0:00:19   10950.5      0.00       0.0       0.0                                0.00
-    0:00:19   10950.5      0.00       0.0       0.0                                0.00
+    0:00:13   17477.5      0.00       0.0       0.0                                0.00
+    0:00:13   17477.5      0.00       0.0       0.0                                0.00
+    0:00:13   17477.5      0.00       0.0       0.0                                0.00
+    0:00:13   17477.5      0.00       0.0       0.0                                0.00
+    0:00:13   17477.5      0.00       0.0       0.0                                0.00
+    0:00:14   10920.0      0.31       2.1       0.0                                0.00
+    0:00:15   10925.5      0.19       1.5       0.0                                0.00
+    0:00:15   10930.0      0.16       0.8       0.0                                0.00
+    0:00:15   10930.5      0.04       0.0       0.0                                0.00
+    0:00:15   10929.0      0.03       0.0       0.0                                0.00
+    0:00:15   10930.5      0.00       0.0       0.0                                0.00
+    0:00:15   10930.5      0.00       0.0       0.0                                0.00
+    0:00:15   10930.5      0.00       0.0       0.0                                0.00
+    0:00:15   10930.5      0.00       0.0       0.0                                0.00
+    0:00:15   10930.5      0.00       0.0       0.0                                0.00
+    0:00:15   10930.5      0.00       0.0       0.0                                0.00
+    0:00:15   10930.5      0.00       0.0       0.0                                0.00
+    0:00:15   10930.5      0.00       0.0       0.0                                0.00
 
 
 
@@ -315,9 +318,9 @@ Information: Input delay ('rise') on clock port 'clk' will be added to the clock
    ELAPSED            WORST NEG   SETUP    DESIGN                             MIN DELAY
     TIME      AREA      SLACK     COST    RULE COST         ENDPOINT            COST   
   --------- --------- --------- --------- --------- ------------------------- ---------
-    0:00:19   10950.5      0.00       0.0       0.0                                0.00
-    0:00:19   10950.5      0.00       0.0       0.0                                0.00
-    0:00:19   10050.5      0.00       0.0       0.0                                0.00
+    0:00:15   10930.5      0.00       0.0       0.0                                0.00
+    0:00:15   10930.5      0.00       0.0       0.0                                0.00
+    0:00:16    9998.5      0.00       0.0       0.0                                0.00
 
 
   Beginning Design Rule Fixing  (min_path)
@@ -327,56 +330,58 @@ Information: Input delay ('rise') on clock port 'clk' will be added to the clock
    ELAPSED            WORST NEG   SETUP    DESIGN                             MIN DELAY
     TIME      AREA      SLACK     COST    RULE COST         ENDPOINT            COST   
   --------- --------- --------- --------- --------- ------------------------- ---------
-    0:00:19   10050.5      0.00       0.0       0.0                              -98.20
-    0:00:20   10098.0      0.00       0.0       0.0 buf_fifo_reg[653]/D          -94.13
-    0:00:20   10122.0      0.00       0.0       0.0 buf_fifo_reg[1016]/D         -92.83
-    0:00:21   10162.0      0.00       0.0       0.0 buf_fifo_reg[990]/D          -90.79
-    0:00:21   10202.0      0.00       0.0       0.0 buf_fifo_reg[967]/D          -88.77
-    0:00:22   10242.0      0.00       0.0       0.0 buf_fifo_reg[940]/D          -86.73
-    0:00:22   10282.0      0.00       0.0       0.0 buf_fifo_reg[915]/D          -84.69
-    0:00:23   10322.0      0.00       0.0       0.0 buf_fifo_reg[875]/D          -82.64
-    0:00:23   10362.0      0.00       0.0       0.0 buf_fifo_reg[843]/D          -80.59
-    0:00:23   10402.0      0.00       0.0       0.0 buf_fifo_reg[809]/D          -78.53
-    0:00:24   10442.0      0.00       0.0       0.0 buf_fifo_reg[765]/D          -76.48
-    0:00:24   10482.0      0.00       0.0       0.0 buf_fifo_reg[745]/D          -74.35
-    0:00:25   10522.0      0.00       0.0       0.0 buf_fifo_reg[721]/D          -72.30
-    0:00:25   10562.0      0.00       0.0       0.0 buf_fifo_reg[694]/D          -70.24
-    0:00:26   10602.0      0.00       0.0       0.0 buf_fifo_reg[667]/D          -68.16
-    0:00:26   10642.0      0.00       0.0       0.0 buf_fifo_reg[630]/D          -66.10
-    0:00:27   10682.0      0.00       0.0       0.0 buf_fifo_reg[600]/D          -64.09
-    0:00:27   10722.0      0.00       0.0       0.0 buf_fifo_reg[566]/D          -62.07
-    0:00:28   10762.0      0.00       0.0       0.0 buf_fifo_reg[534]/D          -60.05
-    0:00:28   10802.0      0.00       0.0       0.0 buf_fifo_reg[497]/D          -58.04
-    0:00:29   10842.0      0.00       0.0       0.0 buf_fifo_reg[471]/D          -55.97
-    0:00:29   10882.0      0.00       0.0       0.0 buf_fifo_reg[443]/D          -53.95
-    0:00:30   10922.0      0.00       0.0       0.0 buf_fifo_reg[422]/D          -51.94
-    0:00:30   10962.0      0.00       0.0       0.0 buf_fifo_reg[383]/D          -49.91
-    0:00:30   11002.0      0.00       0.0       0.0 buf_fifo_reg[357]/D          -47.87
-    0:00:31   11042.0      0.00       0.0       0.0 buf_fifo_reg[318]/D          -45.86
-    0:00:31   11082.0      0.00       0.0       0.0 buf_fifo_reg[285]/D          -43.82
-    0:00:32   11122.0      0.00       0.0       0.0 buf_fifo_reg[247]/D          -41.73
-    0:00:32   11162.0      0.00       0.0       0.0 buf_fifo_reg[219]/D          -39.68
-    0:00:33   11202.0      0.00       0.0       0.0 buf_fifo_reg[191]/D          -37.62
-    0:00:33   11242.0      0.00       0.0       0.0 buf_fifo_reg[170]/D          -35.57
-    0:00:34   11282.0      0.00       0.0       0.0 buf_fifo_reg[145]/D          -33.51
-    0:00:34   11322.0      0.00       0.0       0.0 buf_fifo_reg[103]/D          -31.43
-    0:00:35   11362.0      0.00       0.0       0.0 buf_fifo_reg[69]/D           -29.38
-    0:00:35   11402.0      0.00       0.0       0.0 buf_fifo_reg[31]/D           -27.32
-    0:00:35   11432.5      0.00       0.0       0.0 buf_fifo_reg[395]/D          -25.81
-    0:00:36   11464.5      0.00       0.0       0.0 buf_fifo_reg[943]/D          -24.40
-    0:00:36   11504.5      0.00       0.0       0.0 buf_fifo_reg[847]/D          -22.33
-    0:00:37   11544.5      0.00       0.0       0.0 buf_fifo_reg[802]/D          -20.26
-    0:00:37   11584.5      0.00       0.0       0.0 buf_fifo_reg[674]/D          -18.16
-    0:00:38   11624.5      0.00       0.0       0.0 buf_fifo_reg[584]/D          -16.13
-    0:00:38   11664.5      0.00       0.0       0.0 buf_fifo_reg[532]/D          -14.09
-    0:00:39   11704.5      0.00       0.0       0.0 buf_fifo_reg[416]/D          -12.08
-    0:00:39   11744.5      0.00       0.0       0.0 buf_fifo_reg[328]/D          -10.06
-    0:00:40   11784.5      0.00       0.0       0.0 buf_fifo_reg[282]/D           -8.04
-    0:00:40   11824.5      0.00       0.0       0.0 buf_fifo_reg[162]/D           -5.99
-    0:00:40   11864.5      0.00       0.0       0.0 buf_fifo_reg[76]/D            -3.94
-    0:00:41   11904.5      0.00       0.0       0.0 buf_fifo_reg[32]/D            -1.88
-    0:00:41   11933.0      0.00       0.0       0.0 dataout2_reg[10]/D            -0.50
-    0:00:41   11939.0      0.00       0.0       0.0                                0.00
+    0:00:16    9998.5      0.00       0.0       0.0                             -113.52
+    0:00:17   10040.5      0.00       0.0       0.0 buf_fifo_reg[164]/D         -111.07
+    0:00:17   10080.5      0.00       0.0       0.0 buf_fifo_reg[885]/D         -108.64
+    0:00:17   10120.5      0.00       0.0       0.0 buf_fifo_reg[851]/D         -106.23
+    0:00:18   10160.5      0.00       0.0       0.0 buf_fifo_reg[876]/D         -103.85
+    0:00:18   10201.5      0.00       0.0       0.0 buf_fifo_reg[972]/D         -101.40
+    0:00:18   10241.5      0.00       0.0       0.0 buf_fifo_reg[1015]/D         -98.92
+    0:00:19   10281.5      0.00       0.0       0.0 buf_fifo_reg[249]/D          -96.60
+    0:00:19   10321.5      0.00       0.0       0.0 buf_fifo_reg[951]/D          -94.16
+    0:00:19   10361.5      0.00       0.0       0.0 buf_fifo_reg[930]/D          -91.81
+    0:00:20   10401.5      0.00       0.0       0.0 buf_fifo_reg[878]/D          -89.44
+    0:00:20   10441.5      0.00       0.0       0.0 buf_fifo_reg[185]/D          -87.13
+    0:00:20   10481.5      0.00       0.0       0.0 buf_fifo_reg[814]/D          -84.79
+    0:00:21   10521.5      0.00       0.0       0.0 buf_fifo_reg[986]/D          -82.43
+    0:00:21   10561.5      0.00       0.0       0.0 buf_fifo_reg[962]/D          -80.10
+    0:00:22   10601.5      0.00       0.0       0.0 buf_fifo_reg[861]/D          -77.64
+    0:00:22   10642.5      0.00       0.0       0.0 buf_fifo_reg[836]/D          -75.18
+    0:00:22   10682.5      0.00       0.0       0.0 buf_fifo_reg[196]/D          -72.80
+    0:00:23   10723.5      0.00       0.0       0.0 buf_fifo_reg[570]/D          -70.39
+    0:00:23   10763.5      0.00       0.0       0.0 buf_fifo_reg[550]/D          -68.10
+    0:00:23   10803.5      0.00       0.0       0.0 buf_fifo_reg[538]/D          -65.82
+    0:00:24   10843.5      0.00       0.0       0.0 buf_fifo_reg[308]/D          -63.54
+    0:00:24   10883.5      0.00       0.0       0.0 buf_fifo_reg[379]/D          -61.47
+    0:00:24   10923.5      0.00       0.0       0.0 buf_fifo_reg[240]/D          -59.24
+    0:00:25   10963.5      0.00       0.0       0.0 buf_fifo_reg[314]/D          -57.08
+    0:00:25   11003.5      0.00       0.0       0.0 buf_fifo_reg[289]/D          -54.85
+    0:00:25   11043.5      0.00       0.0       0.0 buf_fifo_reg[55]/D           -52.67
+    0:00:26   11083.5      0.00       0.0       0.0 buf_fifo_reg[404]/D          -50.44
+    0:00:26   11123.5      0.00       0.0       0.0 buf_fifo_reg[273]/D          -48.35
+    0:00:27   11163.5      0.00       0.0       0.0 buf_fifo_reg[706]/D          -46.10
+    0:00:27   11203.5      0.00       0.0       0.0 buf_fifo_reg[350]/D          -43.81
+    0:00:27   11243.5      0.00       0.0       0.0 buf_fifo_reg[326]/D          -41.61
+    0:00:28   11283.5      0.00       0.0       0.0 buf_fifo_reg[27]/D           -39.41
+    0:00:28   11323.5      0.00       0.0       0.0 buf_fifo_reg[432]/D          -37.22
+    0:00:28   11363.5      0.00       0.0       0.0 buf_fifo_reg[494]/D          -34.96
+    0:00:29   11403.5      0.00       0.0       0.0 buf_fifo_reg[446]/D          -32.51
+    0:00:29   11443.5      0.00       0.0       0.0 buf_fifo_reg[441]/D          -30.17
+    0:00:30   11483.5      0.00       0.0       0.0 buf_fifo_reg[469]/D          -27.89
+    0:00:30   11523.5      0.00       0.0       0.0 buf_fifo_reg[462]/D          -25.67
+    0:00:30   11563.5      0.00       0.0       0.0 buf_fifo_reg[658]/D          -23.30
+    0:00:31   11603.5      0.00       0.0       0.0 buf_fifo_reg[596]/D          -20.85
+    0:00:31   11643.5      0.00       0.0       0.0 buf_fifo_reg[702]/D          -18.45
+    0:00:31   11683.5      0.00       0.0       0.0 buf_fifo_reg[695]/D          -16.06
+    0:00:32   11723.5      0.00       0.0       0.0 buf_fifo_reg[667]/D          -13.67
+    0:00:32   11763.5      0.00       0.0       0.0 buf_fifo_reg[747]/D          -11.16
+    0:00:33   11803.5      0.00       0.0       0.0 buf_fifo_reg[727]/D           -8.80
+    0:00:33   11843.5      0.00       0.0       0.0 buf_fifo_reg[243]/D           -6.52
+    0:00:33   11888.0      0.00       0.0       0.0 buf_fifo_reg[1037]/D          -3.12
+    0:00:34   11908.0      0.00       0.0       0.0 buf_fifo_reg[140]/D           -1.83
+    0:00:34   11926.0      0.00       0.0       0.0 buf_fifo_reg[898]/D           -1.14
+    0:00:34   11949.0      0.00       0.0       0.0 dataout2_reg[11]/D            -0.49
+    0:00:34   11955.0      0.00       0.0       0.0                                0.00
 
 
   Beginning Area-Recovery Phase  (cleanup)
@@ -386,24 +391,25 @@ Information: Input delay ('rise') on clock port 'clk' will be added to the clock
    ELAPSED            WORST NEG   SETUP    DESIGN                             MIN DELAY
     TIME      AREA      SLACK     COST    RULE COST         ENDPOINT            COST   
   --------- --------- --------- --------- --------- ------------------------- ---------
-    0:00:41   11939.0      0.00       0.0       0.0                                0.00
-    0:00:41   11939.0      0.00       0.0       0.0                                0.00
-    0:00:42   11898.5      0.00       0.0       0.0                                0.00
-    0:00:42   11861.0      0.00       0.0       0.0                                0.00
-    0:00:42   11825.5      0.00       0.0       0.0                                0.00
-    0:00:42   11789.5      0.00       0.0       0.0                                0.00
-    0:00:42   11754.5      0.00       0.0       0.0                                0.00
-    0:00:42   11720.5      0.00       0.0       0.0                                0.00
-    0:00:43   11717.5      0.00       0.0       0.0                                0.00
-    0:00:43   11717.5      0.00       0.0       0.0                                0.00
-    0:00:43   11717.5      0.00       0.0       0.0                                0.00
-    0:00:43   11713.0      0.00       0.0       0.0                               -0.00
-    0:00:43   11713.0      0.00       0.0       0.0                               -0.00
-    0:00:43   11713.0      0.00       0.0       0.0                               -0.00
-    0:00:43   11713.0      0.00       0.0       0.0                               -0.00
-    0:00:43   11713.0      0.00       0.0       0.0                               -0.00
-    0:00:43   11713.0      0.00       0.0       0.0                               -0.00
-    0:00:43   11714.0      0.00       0.0       0.0                                0.00
+    0:00:34   11955.0      0.00       0.0       0.0                                0.00
+    0:00:34   11955.0      0.00       0.0       0.0                                0.00
+    0:00:34   11916.5      0.00       0.0       0.0                               -0.00
+    0:00:35   11881.5      0.00       0.0       0.0                                0.00
+    0:00:35   11849.0      0.00       0.0       0.0                                0.00
+    0:00:35   11815.0      0.00       0.0       0.0                                0.00
+    0:00:35   11781.0      0.00       0.0       0.0                                0.00
+    0:00:35   11747.0      0.00       0.0       0.0                                0.00
+    0:00:35   11744.0      0.00       0.0       0.0                                0.00
+    0:00:35   11744.0      0.00       0.0       0.0                                0.00
+    0:00:35   11744.0      0.00       0.0       0.0                                0.00
+    0:00:35   11734.5      0.07       0.1       0.0                                0.00
+    0:00:35   11734.0      0.07       0.1       0.0                                0.00
+    0:00:35   11734.0      0.07       0.1       0.0                                0.00
+    0:00:35   11734.0      0.07       0.1       0.0                                0.00
+    0:00:35   11734.0      0.07       0.1       0.0                                0.00
+    0:00:35   11734.0      0.07       0.1       0.0                                0.00
+    0:00:35   11734.0      0.07       0.1       0.0                                0.00
+    0:00:35   11737.0      0.00       0.0       0.0                                0.00
 Loading db file '/apps/toshiba/sjsu/synopsys/tc240c/tc240c.db_NOMIN25'
 
   Optimization Complete
@@ -426,7 +432,7 @@ Report : timing
         -max_paths 3
 Design : bits
 Version: I-2013.12-SP5
-Date   : Thu Feb 26 13:30:33 2015
+Date   : Thu Feb 26 14:40:09 2015
 ****************************************
 
  # A fanout number of 1000 was used for high fanout net computations.
@@ -434,9 +440,9 @@ Date   : Thu Feb 26 13:30:33 2015
 Operating Conditions: NOMIN25   Library: tc240c
 Wire Load Model Mode: top
 
-  Startpoint: rd_ptr_reg[8]
+  Startpoint: rd_ptr_reg[9]
               (rising edge-triggered flip-flop clocked by clk)
-  Endpoint: dataout_flop_reg[5]
+  Endpoint: dataout_flop_reg[0]
             (rising edge-triggered flip-flop clocked by clk)
   Path Group: clk
   Path Type: max
@@ -445,96 +451,46 @@ Wire Load Model Mode: top
   -----------------------------------------------------------
   clock clk (rise edge)                    0.00       0.00
   clock network delay (ideal)              0.00       0.00
-  rd_ptr_reg[8]/CP (CFD1QX1)               0.00 #     0.00 r
-  rd_ptr_reg[8]/Q (CFD1QX1)                0.29       0.29 r
-  U7560/Z (CNR2X1)                         0.15       0.44 f
-  U3321/Z (CND2X1)                         0.08       0.52 r
-  U8294/Z (CIVX1)                          0.06       0.58 f
-  U8293/Z (CIVXL)                          0.30       0.88 r
-  U7516/Z (COND2X1)                        0.19       1.07 f
-  U3322/Z (COR3X1)                         0.25       1.31 f
-  U5258/Z (CNR2X1)                         0.08       1.39 r
-  U5259/Z (COND2XL)                        0.11       1.50 f
-  U5803/Z (CANR1XL)                        0.17       1.67 r
-  U7632/Z (COND3X1)                        0.15       1.82 f
-  U5653/Z (COND11X1)                       0.20       2.02 r
-  U7538/Z (COND4CX1)                       0.15       2.18 f
-  U5268/Z (CIVX1)                          0.05       2.22 r
-  U5251/Z (COND1XL)                        0.15       2.38 f
-  U6062/Z (CIVX2)                          0.06       2.44 r
-  U7565/Z (CANR2X1)                        0.08       2.52 f
-  U5250/Z (CANR1XL)                        0.15       2.67 r
-  U5619/Z (COND11X1)                       0.15       2.82 f
-  U7563/Z (COND4CX1)                       0.11       2.92 r
-  U7562/Z (COND11X1)                       0.11       3.03 f
-  U150/Z (CAOR1X1)                         0.19       3.22 f
-  dataout_flop_reg[5]/D (CFD1QXL)          0.00       3.22 f
+  rd_ptr_reg[9]/CP (CFD1QXL)               0.00 #     0.00 r
+  rd_ptr_reg[9]/Q (CFD1QXL)                0.42       0.42 r
+  U3316/Z (CNR2X1)                         0.18       0.59 f
+  U7619/Z (CND2X1)                         0.12       0.72 r
+  U5734/Z (CNIVX1)                         0.20       0.92 r
+  U7638/Z (COND2X1)                        0.15       1.06 f
+  U5722/Z (CNR2X2)                         0.08       1.14 r
+  U5723/Z (CIVX1)                          0.05       1.18 f
+  U3318/Z (CNR3XL)                         0.22       1.41 r
+  U5341/Z (COND2X1)                        0.14       1.55 f
+  U5336/Z (CANR1XL)                        0.17       1.72 r
+  U7673/Z (COND3X1)                        0.15       1.88 f
+  U6041/Z (COND11X1)                       0.20       2.08 r
+  U7691/Z (COND4CX1)                       0.17       2.24 f
+  U8442/Z (CIVX2)                          0.04       2.29 r
+  U3321/Z (COND1XL)                        0.12       2.40 f
+  U7319/Z (CANR2X1)                        0.11       2.51 r
+  U5370/Z (COR2X1)                         0.13       2.64 r
+  U7667/Z (COND3X1)                        0.14       2.78 f
+  U6204/Z (CND2X1)                         0.08       2.86 r
+  U7371/Z (COND1XL)                        0.11       2.98 f
+  U7370/Z (CANR2X1)                        0.12       3.10 r
+  U7621/Z (COND3X1)                        0.13       3.22 f
+  dataout_flop_reg[0]/D (CFD1QXL)          0.00       3.22 f
   data arrival time                                   3.22
 
   clock clk (rise edge)                    5.00       5.00
   clock network delay (ideal)              0.00       5.00
   clock uncertainty                       -0.25       4.75
-  dataout_flop_reg[5]/CP (CFD1QXL)         0.00       4.75 r
+  dataout_flop_reg[0]/CP (CFD1QXL)         0.00       4.75 r
   library setup time                      -0.27       4.48
   data required time                                  4.48
   -----------------------------------------------------------
   data required time                                  4.48
   data arrival time                                  -3.22
   -----------------------------------------------------------
-  slack (MET)                                         1.26
+  slack (MET)                                         1.25
 
 
-  Startpoint: rd_ptr_reg[8]
-              (rising edge-triggered flip-flop clocked by clk)
-  Endpoint: dataout_flop_reg[12]
-            (rising edge-triggered flip-flop clocked by clk)
-  Path Group: clk
-  Path Type: max
-
-  Point                                    Incr       Path
-  -----------------------------------------------------------
-  clock clk (rise edge)                    0.00       0.00
-  clock network delay (ideal)              0.00       0.00
-  rd_ptr_reg[8]/CP (CFD1QX1)               0.00 #     0.00 r
-  rd_ptr_reg[8]/Q (CFD1QX1)                0.29       0.29 r
-  U7560/Z (CNR2X1)                         0.15       0.44 f
-  U3321/Z (CND2X1)                         0.08       0.52 r
-  U8294/Z (CIVX1)                          0.06       0.58 f
-  U8293/Z (CIVXL)                          0.30       0.88 r
-  U7516/Z (COND2X1)                        0.19       1.07 f
-  U3322/Z (COR3X1)                         0.25       1.31 f
-  U5258/Z (CNR2X1)                         0.08       1.39 r
-  U5259/Z (COND2XL)                        0.11       1.50 f
-  U5803/Z (CANR1XL)                        0.17       1.67 r
-  U7632/Z (COND3X1)                        0.15       1.82 f
-  U5653/Z (COND11X1)                       0.20       2.02 r
-  U7538/Z (COND4CX1)                       0.15       2.18 f
-  U5268/Z (CIVX1)                          0.05       2.22 r
-  U7163/Z (COND1XL)                        0.14       2.37 f
-  U7171/Z (COND2X1)                        0.12       2.49 r
-  U7613/Z (CANR4CX1)                       0.10       2.59 f
-  U7547/Z (COND4CX1)                       0.10       2.69 r
-  U7546/Z (CIVX1)                          0.07       2.76 f
-  U7332/Z (CANR11X1)                       0.18       2.94 r
-  U8340/Z (CIVX2)                          0.06       3.00 f
-  U5221/Z (CAOR2X2)                        0.22       3.22 f
-  dataout_flop_reg[12]/D (CFD1QXL)         0.00       3.22 f
-  data arrival time                                   3.22
-
-  clock clk (rise edge)                    5.00       5.00
-  clock network delay (ideal)              0.00       5.00
-  clock uncertainty                       -0.25       4.75
-  dataout_flop_reg[12]/CP (CFD1QXL)        0.00       4.75 r
-  library setup time                      -0.27       4.48
-  data required time                                  4.48
-  -----------------------------------------------------------
-  data required time                                  4.48
-  data arrival time                                  -3.22
-  -----------------------------------------------------------
-  slack (MET)                                         1.26
-
-
-  Startpoint: rd_ptr_reg[8]
+  Startpoint: rd_ptr_reg[9]
               (rising edge-triggered flip-flop clocked by clk)
   Endpoint: dataout_flop_reg[4]
             (rising edge-triggered flip-flop clocked by clk)
@@ -545,32 +501,31 @@ Wire Load Model Mode: top
   -----------------------------------------------------------
   clock clk (rise edge)                    0.00       0.00
   clock network delay (ideal)              0.00       0.00
-  rd_ptr_reg[8]/CP (CFD1QX1)               0.00 #     0.00 r
-  rd_ptr_reg[8]/Q (CFD1QX1)                0.29       0.29 r
-  U7560/Z (CNR2X1)                         0.15       0.44 f
-  U3321/Z (CND2X1)                         0.08       0.52 r
-  U8294/Z (CIVX1)                          0.06       0.58 f
-  U8293/Z (CIVXL)                          0.30       0.88 r
-  U7516/Z (COND2X1)                        0.19       1.07 f
-  U3322/Z (COR3X1)                         0.25       1.31 f
-  U5258/Z (CNR2X1)                         0.08       1.39 r
-  U5259/Z (COND2XL)                        0.11       1.50 f
-  U5803/Z (CANR1XL)                        0.17       1.67 r
-  U7632/Z (COND3X1)                        0.15       1.82 f
-  U5653/Z (COND11X1)                       0.20       2.02 r
-  U7538/Z (COND4CX1)                       0.15       2.18 f
-  U5268/Z (CIVX1)                          0.05       2.22 r
-  U5251/Z (COND1XL)                        0.15       2.38 f
-  U6062/Z (CIVX2)                          0.06       2.44 r
-  U7565/Z (CANR2X1)                        0.08       2.52 f
-  U7630/Z (COND4CX1)                       0.12       2.64 r
-  U7591/Z (COAN1XL)                        0.17       2.80 r
-  U7625/Z (CND2X1)                         0.07       2.87 f
-  U7622/Z (CND2XL)                         0.05       2.92 r
-  U7624/Z (CND2XL)                         0.08       3.00 f
-  U167/Z (CAOR1X1)                         0.19       3.20 f
-  dataout_flop_reg[4]/D (CFD1QXL)          0.00       3.20 f
-  data arrival time                                   3.20
+  rd_ptr_reg[9]/CP (CFD1QXL)               0.00 #     0.00 r
+  rd_ptr_reg[9]/Q (CFD1QXL)                0.42       0.42 r
+  U3316/Z (CNR2X1)                         0.18       0.59 f
+  U7619/Z (CND2X1)                         0.12       0.72 r
+  U5734/Z (CNIVX1)                         0.20       0.92 r
+  U7638/Z (COND2X1)                        0.15       1.06 f
+  U5722/Z (CNR2X2)                         0.08       1.14 r
+  U5723/Z (CIVX1)                          0.05       1.18 f
+  U3318/Z (CNR3XL)                         0.22       1.41 r
+  U5341/Z (COND2X1)                        0.14       1.55 f
+  U5336/Z (CANR1XL)                        0.17       1.72 r
+  U7673/Z (COND3X1)                        0.15       1.88 f
+  U6041/Z (COND11X1)                       0.20       2.08 r
+  U7691/Z (COND4CX1)                       0.17       2.24 f
+  U8442/Z (CIVX2)                          0.04       2.29 r
+  U3321/Z (COND1XL)                        0.12       2.40 f
+  U5380/Z (COND2XL)                        0.10       2.51 r
+  U5342/Z (COND1XL)                        0.11       2.62 f
+  U5346/Z (CAN2XL)                         0.12       2.74 f
+  U6036/Z (CANR11X1)                       0.17       2.91 r
+  U5343/Z (CIVX1)                          0.07       2.98 f
+  U7377/Z (CANR2X1)                        0.11       3.10 r
+  U7716/Z (COND3X1)                        0.13       3.22 f
+  dataout_flop_reg[4]/D (CFD1QXL)          0.00       3.22 f
+  data arrival time                                   3.22
 
   clock clk (rise edge)                    5.00       5.00
   clock network delay (ideal)              0.00       5.00
@@ -580,9 +535,57 @@ Wire Load Model Mode: top
   data required time                                  4.48
   -----------------------------------------------------------
   data required time                                  4.48
-  data arrival time                                  -3.20
+  data arrival time                                  -3.22
   -----------------------------------------------------------
-  slack (MET)                                         1.28
+  slack (MET)                                         1.25
+
+
+  Startpoint: rd_ptr_reg[9]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: dataout_flop_reg[9]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock clk (rise edge)                    0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  rd_ptr_reg[9]/CP (CFD1QXL)               0.00 #     0.00 r
+  rd_ptr_reg[9]/Q (CFD1QXL)                0.42       0.42 r
+  U3316/Z (CNR2X1)                         0.18       0.59 f
+  U3327/Z (CAN2X1)                         0.17       0.77 f
+  U8399/Z (CIVXL)                          0.28       1.05 r
+  U7618/Z (COND2X1)                        0.18       1.22 f
+  U6011/Z (CNR4X1)                         0.17       1.39 r
+  U6109/Z (COND2XL)                        0.14       1.53 f
+  U6108/Z (CANR1XL)                        0.17       1.70 r
+  U7655/Z (COND3X1)                        0.15       1.85 f
+  U6039/Z (COND11X1)                       0.20       2.05 r
+  U7696/Z (COND4CX1)                       0.17       2.22 f
+  U8444/Z (CIVX2)                          0.05       2.27 r
+  U7307/Z (COND1X1)                        0.09       2.36 f
+  U6034/Z (CANR2X1)                        0.14       2.50 r
+  U6033/Z (COND3X1)                        0.16       2.66 f
+  U5788/Z (CND2X1)                         0.08       2.75 r
+  U8421/Z (CIVX2)                          0.05       2.79 f
+  U7414/Z (COND4CX1)                       0.10       2.89 r
+  U5373/Z (CND2X1)                         0.08       2.97 f
+  U85/Z (CAOR1X1)                          0.19       3.17 f
+  dataout_flop_reg[9]/D (CFD1QXL)          0.00       3.17 f
+  data arrival time                                   3.17
+
+  clock clk (rise edge)                    5.00       5.00
+  clock network delay (ideal)              0.00       5.00
+  clock uncertainty                       -0.25       4.75
+  dataout_flop_reg[9]/CP (CFD1QXL)         0.00       4.75 r
+  library setup time                      -0.27       4.48
+  data required time                                  4.48
+  -----------------------------------------------------------
+  data required time                                  4.48
+  data arrival time                                  -3.17
+  -----------------------------------------------------------
+  slack (MET)                                         1.32
 
 
 1
