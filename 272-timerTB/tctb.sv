@@ -1,4 +1,3 @@
-// This is a test bench file for the simple timer counter...
 `timescale 1ns/10ps
 
 
@@ -323,17 +322,13 @@ begin
   wreg(A_tifr,8'h07);
   wreg(A_timsk,8'h07);
   wreg(A_tcnt,8'h00);
-  //ai.status_reg_interrupt_enable=1;
   ai.addr=A_tcnt;
   ai.read=1;
   ##10 #1;
   test7_running=1;
-  //ai.status_reg_interrupt_enable=1;
   ##4000 #1;
   test7_running=0;
   ##1480 #1;
-  //ai.addr=8'h46;
-  //ai.wdata=1;
   ai.read=0;
  
 end
@@ -657,7 +652,6 @@ assert property( test6_running |=> ##[1:(64*32)] ai.interrupt_request)
 assert property( test6_running && $rose(ai.interrupt_request) |->
     ##[1:(64*32)] $rose(ai.interrupt_request)) else die("Wrong interrupt rate");
 assert property( test6_running |=> ##[1:(64*32)] ai.rdata==2 ##64 ai.rdata==3) else die("Not counting right");
-//assert property( seq6 |-> (##(32*64) ai.rdata==0)) else die("didn't cycle in 48 clocks");
 assert property( seq6 |-> (##64 ai.rdata==1)) else die("Didn't increment in 8 cycles");
 assert property( seq61 |-> ##64 ai.rdata==16 ##64 ai.rdata==17) else die("Didn't wrap right");
 
@@ -672,7 +666,7 @@ assert property( test7_running |=> ##[1:(256*64)] ai.interrupt_request)
 else die("No interrupt seen (ocra) ");
 assert property( test7_running && $rose(ai.interrupt_request) |->
 ##[1:(64*32)] $rose(ai.interrupt_request)) else die("Wrong interrupt rate");
-//assert property( test7_running |=> ##[1:(128*32)] ai.rdata==2 ##256 ai.rdata==3) else die("Not counting right");
+
 assert property( seq7 |-> (##(64) ai.rdata==1)) else die("didn't cycle in 48 clocks");
 assert property( seq7 |-> (##(64) ai.rdata==0)) else die("Didn't increment in 8 cycles");
 assert property( seq71 |-> ##256 ai.rdata==9 ##256 ai.rdata==10) else die("Didn't wrap right");
@@ -697,44 +691,20 @@ sequence seq1_1;
 test11_running==1 && $rose(ai.rdata==0);
 endsequence
 
-
-//assert property( test11_running |=> ##[1:(256*64)] ai.interrupt_request)
-//else die("No interrupt seen (ocra) ");
-//assert property( test11_running && $rose(ai.interrupt_request) |->
-//    ##[1:(256*64)] $rose(ai.interrupt_request)) else die("Wrong interrupt rate");
 assert property( test11_running && $rose(ai.rdata == 0) |-> ##256 ai.rdata==0 ) else die("Not counting right");
 assert property( test11_running && $rose(ai.rdata == 0) |-> ##256 ai.interrupt_request==1 ) else die("Not counting right");
-//assert property( seq1_1 |-> (##(255) ai.rdata==255)) else die("!!!!");
-//assert property( seq1_1 |-> (##(256) ai.interrupt_request==0)) else die("!!!!");
-//assert property( seq1_1 |-> (##(256*64) ai.rdata==1)) else die("Didn't increment in 8 cycles");
-//assert property( seq11_1 |-> ##256 ai.rdata==5 ##256 ai.rdata==6) else die("Didn't wrap right");
 
 sequence seq1_2;
  test12_running==1 && $rose(ai.rdata==0);
 endsequence
 
-
-//assert property( test12_running |=> ##[1:(256*64)] ai.interrupt_request)
-//    else die("No interrupt seen (ocra) ");
-//assert property( test12_running && $rose(ai.interrupt_request) |->
-//    ##[1:(256*64)] $rose(ai.interrupt_request)) else die("Wrong interrupt rate");
 assert property( test12_running && $rose(ai.rdata == 8'hff)|=> ##255 ai.rdata==1) else die("Not counting right");
-//assert property( seq1_2 |-> (##(255) ai.rdata==255)) else die("!!!!");
-//assert property( seq1_2 |-> (##(256*64) ai.rdata==1)) else die("Didn't increment in 8 cycles");
-//assert property( seq11_2 |-> ##256 ai.rdata==5 ##256 ai.rdata==6) else die("Didn't wrap right");
 
 sequence seq1_3;
  test13_running==1 && $rose(ai.rdata==0);
 endsequence
 
-
-//assert property( test12_running |=> ##[1:(256*64)] ai.interrupt_request)
-//    else die("No interrupt seen (ocra) ");
-//assert property( test12_running && $rose(ai.interrupt_request) |->
-//    ##[1:(256*64)] $rose(ai.interrupt_request)) else die("Wrong interrupt rate");
 assert property( test13_running && $rose(ai.rdata[1]) && $rose(ai.rdata[2]) |=> ( ai.rdata[2] != ai.rdata[1]) ) else die("Not counting right");
-//assert property( seq1_2 |-> (##(255) ai.rdata==255)) else die("!!!!");
-//assert property( seq1_2 |-> (##(256*64) ai.rdata==1)) else die("Didn't increment in 8 cycles");
-//assert property( seq11_2 |-> ##256 ai.rdata==5 ##256 ai.rdata==6) else die("Didn't wrap right");
+
 
 endmodule
