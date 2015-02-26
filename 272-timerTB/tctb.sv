@@ -21,7 +21,7 @@ interface tci ;
     output ocb_data,input status_reg_interrupt_enable,
     output interrupt_request,input interrupt_executed);
 
-endinterface: tci
+endinterface
 
 module top();
 
@@ -32,10 +32,15 @@ reg test2_running=0;
 reg test3_running=0;
 reg test4_running=0;
 reg test5_running=0;
+reg test6_running=0;
+reg test7_running=0;
+reg test8_running=0;
+reg test9_running=0;
 
 int death;
 
 tci ai();
+
 
 default clocking defclk @(posedge(ai.clk));
 endclocking
@@ -65,12 +70,18 @@ initial begin
   forever #5 ai.clk = ~ai.clk;
 end
 
-initial begin
+/*initial begin
+ai.t0=0;
+forever #10 ai.t0=~ai.t0; 
+end*/
+
+
+/*initial begin
   if(debug) begin
     $dumpfile("tc.vcd");
     $dumpvars(9,top);
   end
-end
+end*/
 
 task die(input string str);
 begin
@@ -123,12 +134,12 @@ begin
   rreg(A_ocra,8'h05);
   rreg(A_tccra,8'h2);
   rreg(A_tccrb,8'h2);
-  rreg(A_ocra1,8'h5);
+  rreg(A_ocra1,8'h05);
   rreg(A_tccra1,8'h2);
   rreg(A_tccrb1,8'h2);
-  rreg(A_tifr,0);
+  rreg(A_tifr,6);
   rreg(A_timsk,7);
-  rreg(A_tifr1,0);
+  rreg(A_tifr1,6);
   rreg(A_ocrb,8'h77);
   rreg(A_ocrb1,8'h77);
   ai.status_reg_interrupt_enable=1;
@@ -140,7 +151,7 @@ begin
   test=tname;
   easyplay();
   // Check the basic counting
-  ai.addr=A_tcnt;
+  ai.addr=A_tcnt1;
   ai.read=1;
   ##10 #1;
   test1_running=1;
@@ -154,14 +165,14 @@ endtask
 task test2(input string tname);
 begin
   test=tname;
-  wreg(A_ocra1,8'h15);
+  wreg(A_ocra1,8'h1d);
   wreg(A_ocrb,8'h77);
   wreg(A_tccra1,8'h2);
   wreg(A_tccrb1,8'h2);
-  rreg(A_ocra,8'h15);
+  rreg(A_ocra,8'h1d);
   rreg(A_tccra,8'h2);
   rreg(A_tccrb,8'h2);
-  rreg(A_ocra1,8'h15);
+  rreg(A_ocra1,8'h1d);
   rreg(A_tccra1,8'h2);
   rreg(A_tccrb1,8'h2);
   rreg(A_ocrb,8'h77);
@@ -183,14 +194,14 @@ endtask
 task test3(input string tname);
 begin
   test=tname;
-  wreg(A_ocra1,8'h18);
+  wreg(A_ocra1,8'h1c);
   wreg(A_ocrb,8'h16);
   wreg(A_tccra1,8'h2);
   wreg(A_tccrb1,8'h2);
-  rreg(A_ocra,8'h18);
+  rreg(A_ocra,8'h1c);
   rreg(A_tccra,8'h2);
   rreg(A_tccrb,8'h2);
-  rreg(A_ocra1,8'h18);
+  rreg(A_ocra1,8'h1c);
   rreg(A_tccra1,8'h2);
   rreg(A_tccrb1,8'h2);
   rreg(A_ocrb,8'h16);
@@ -212,14 +223,14 @@ endtask
 task test4(input string tname);
 begin
   test=tname;
-  wreg(A_ocra1,8'h18);
+  wreg(A_ocra1,8'h1c);
   wreg(A_ocrb,8'h16);
   wreg(A_tccra1,8'h2);
   wreg(A_tccrb1,8'h2);
-  rreg(A_ocra,8'h18);
+  rreg(A_ocra,8'h1c);
   rreg(A_tccra,8'h2);
   rreg(A_tccrb,8'h2);
-  rreg(A_ocra1,8'h18);
+  rreg(A_ocra1,8'h1c);
   rreg(A_tccra1,8'h2);
   rreg(A_tccrb1,8'h2);
   rreg(A_ocrb,8'h16);
@@ -241,14 +252,14 @@ endtask
 task test5(input string tname);
 begin
   test=tname;
-  wreg(A_ocra1,8'h18);
+  wreg(A_ocra1,8'h1c);
   wreg(A_ocrb,8'h16);
   wreg(A_tccra1,8'h2);
   wreg(A_tccrb1,8'h2);
-  rreg(A_ocra,8'h18);
+  rreg(A_ocra,8'h1c);
   rreg(A_tccra,8'h2);
   rreg(A_tccrb,8'h2);
-  rreg(A_ocra1,8'h18);
+  rreg(A_ocra1,8'h1c);
   rreg(A_tccra1,8'h2);
   rreg(A_tccrb1,8'h2);
   rreg(A_ocrb,8'h16);
@@ -267,6 +278,137 @@ begin
 end
 endtask
 
+task test6(input string tname);
+begin
+  test=tname;
+  wreg(A_ocra1,8'h0c);
+  wreg(A_ocrb,8'h16);
+  wreg(A_tccra1,8'h2);
+  wreg(A_tccrb1,8'h3);
+  rreg(A_ocra,8'h0c);
+  rreg(A_tccra,8'h2);
+  rreg(A_tccrb,8'h3);
+  rreg(A_ocra1,8'h0c);
+  rreg(A_tccra1,8'h2);
+  rreg(A_tccrb1,8'h3);
+  rreg(A_ocrb,8'h16);
+  rreg(A_ocrb1,8'h16);
+  wreg(A_tifr,8'h07);
+  wreg(A_timsk,8'h07);
+  ai.addr=A_tcnt;
+  ai.read=1;
+  ##10 #1;
+  test6_running=1;
+  ##4000 #1;
+  test6_running=0;
+  ##2000 #1;
+  ai.read=0;  
+end
+endtask
+
+task test7(input string tname);
+begin
+  test=tname;
+  wreg(A_ocra1,8'h0c);
+  wreg(A_ocrb,8'h16);
+  wreg(A_tccra1,8'h2);
+  wreg(A_tccrb1,8'h4);
+  rreg(A_ocra,8'h0c);
+  rreg(A_tccra,8'h2);
+  rreg(A_tccrb,8'h4);
+  rreg(A_ocra1,8'h0c);
+  rreg(A_tccra1,8'h2);
+  rreg(A_tccrb1,8'h4);
+  rreg(A_ocrb,8'h16);
+  rreg(A_ocrb1,8'h16);
+  wreg(A_tifr,8'h07);
+  wreg(A_timsk,8'h07);
+  ai.addr=A_tcnt1;
+  ai.read=1;
+  ##10 #1;
+  test7_running=1;
+  ##4000 #1;
+  test7_running=0;
+  ##2000 #1;
+  ai.read=0;  
+end
+endtask
+
+task test8(input string tname);
+begin
+  test=tname;
+  wreg(A_ocra1,8'h0c);
+  wreg(A_ocrb,8'h16);
+  wreg(A_tccra1,8'h2);
+  wreg(A_tccrb1,8'h5);
+  rreg(A_ocra,8'h0c);
+  rreg(A_tccra,8'h2);
+  rreg(A_tccrb,8'h5);
+  rreg(A_ocra1,8'h0c);
+  rreg(A_tccra1,8'h2);
+  rreg(A_tccrb1,8'h5);
+  rreg(A_ocrb,8'h16);
+  rreg(A_ocrb1,8'h16);
+  wreg(A_tifr,8'h07);
+  wreg(A_timsk,8'h07);
+  ai.addr=A_tcnt1;
+  ai.read=1;
+  ##10 #1;
+  test8_running=1;
+  ##4000 #1;
+  test8_running=0;
+  ##2000 #1;
+  ai.read=0;  
+end
+endtask
+
+task test9(input string tname);
+begin
+  test=tname;
+  
+ 
+  
+  wreg(A_ocra1,8'h0c);
+  wreg(A_ocrb,8'h16);
+  wreg(A_tccra1,8'h2);
+  wreg(A_tccrb1,8'h6);
+  rreg(A_ocra,8'h0c);
+  rreg(A_tccra,8'h2);
+  rreg(A_tccrb,8'h6);
+  rreg(A_ocra1,8'h0c);
+  rreg(A_tccra1,8'h2);
+  rreg(A_tccrb1,8'h6);
+  rreg(A_ocrb,8'h16);
+  rreg(A_ocrb1,8'h16);
+  wreg(A_tifr,8'h07);
+  wreg(A_timsk,8'h07);
+  
+  ai.addr=A_tcnt;
+  ai.read=1;
+   #10 ai.t0=1;
+  #10 ai.t0=0;
+  
+   #10 ai.t0=1;
+  #10 ai.t0=0;
+  
+   #10 ai.t0=1;
+  #10 ai.t0=0;
+  
+   #10 ai.t0=1;
+  #10 ai.t0=0;
+  
+   #10 ai.t0=1;
+  #10 ai.t0=0;
+  
+  if(ai.rdata==11) die ("falling edge");
+  ##10 #1;
+  /*test9_running=1;
+  ##4000 #1;
+  test9_running=0;
+  ##2000 #1;*/
+  ai.read=0;  
+end
+endtask
 
 initial begin
   ai.write=0;
@@ -285,11 +427,15 @@ initial begin
   test3("test3");
   test4("test4");
   test5("test5");
-  
+  test6("test6");
+  test7("test7");
+  test8("test8");
+  test9("test9");
   ##2000;
   $finish;
 
 end
+
 
 
 always @(posedge(ai.clk)) begin
@@ -326,13 +472,13 @@ sequence seq21;
  test2_running==1 && $rose(ai.rdata==15);
 endsequence
 
-assert property( test2_running |-> ##[1:(22*8)] ai.rdata==5 ##8 ai.rdata==6)
+assert property( test2_running |-> ##[1:256] ai.rdata==5 ##8 ai.rdata==6)
 	else die("Not counting right");
-assert property( seq2 |-> ( ##(8*22) ai.rdata==0)) else die("Didn't cycle to zero");
+assert property( seq2 |-> ( ##0 ai.rdata==0)) else die("Didn't cycle to zero");
 assert property( seq2 |-> ( ##(8*3) ai.rdata== 3)) else die("Didn't get 3");
 assert property( seq21 |->  ##8 ai.rdata==16 ##8 ai.rdata==17) else die("Inc error");
 assert property( test2_running && $rose(ai.interrupt_request) |->
-	##(22*8) $rose(ai.interrupt_request)) else die("Wrong interrupt rate");
+	##0 $rose(ai.interrupt_request)) else die("Wrong interrupt rate");
 
 
 sequence seq3;
@@ -342,13 +488,13 @@ sequence seq31;
  test3_running==1 && $rose(ai.rdata==15);
 endsequence
 
-assert property( test3_running |-> ##[1:(25*8)] ai.rdata==5 ##8 ai.rdata==6)
+assert property( test3_running |-> ##[1:256] ai.rdata==5 ##8 ai.rdata==6)
 	else die("Not counting right");
-assert property( seq3 |-> ( ##(8*25) ai.rdata==0)) else die("Didn't cycle to zero");
+assert property( seq3 |-> ( ##0 ai.rdata==0)) else die("Didn't cycle to zero");
 assert property( seq3 |-> ( ##(8*3) ai.rdata== 3)) else die("Didn't get 3");
 assert property( seq31 |->  ##8 ai.rdata==16 ##8 ai.rdata==17) else die("Inc error");
 assert property( test3_running && $rose(ai.interrupt_request) |->
-	##(25*8) $rose(ai.interrupt_request)) else die("Wrong interrupt rate");
+	##0 $rose(ai.interrupt_request)) else die("Wrong interrupt rate");
 
 sequence seq4;
  test4_running==1 && $rose(ai.rdata==0);
@@ -357,13 +503,13 @@ sequence seq41;
  test4_running==1 && $rose(ai.rdata==15);
 endsequence
 
-assert property( test4_running |-> ##[1:(25*8)] ai.rdata==5 ##8 ai.rdata==6)
+assert property( test4_running |-> ##[1:256] ai.rdata==5 ##8 ai.rdata==6)
 	else die("Not counting right");
-assert property( seq4 |-> ( ##(8*25) ai.rdata==0)) else die("Didn't cycle to zero");
+assert property( seq4 |-> ( ##0 ai.rdata==0)) else die("Didn't cycle to zero");
 assert property( seq4 |-> ( ##(8*3) ai.rdata== 3)) else die("Didn't get 3");
 assert property( seq41 |->  ##8 ai.rdata==16 ##8 ai.rdata==17) else die("Inc error");
 assert property( test4_running && $rose(ai.interrupt_request) |->
-	##(25*8) $rose(ai.interrupt_request)) else die("Wrong interrupt rate");
+	##0 $rose(ai.interrupt_request)) else die("Wrong interrupt rate");
 	
 sequence seq5;
  test5_running==1 && $rose(ai.rdata==0);
@@ -372,17 +518,72 @@ sequence seq51;
  test5_running==1 && $rose(ai.rdata==15);
 endsequence
 
-assert property( test5_running |-> ##[1:(25*8)] ai.rdata==5 ##8 ai.rdata==6)
+assert property( test5_running |-> ##[1:256] ai.rdata==5 ##8 ai.rdata==6)
 	else die("Not counting right");
-assert property( seq5 |-> ( ##(8*25) ai.rdata==0)) else die("Didn't cycle to zero");
+assert property( seq5 |-> ( ##0 ai.rdata==0)) else die("Didn't cycle to zero");
 assert property( seq5 |-> ( ##(8*3) ai.rdata== 3)) else die("Didn't get 3");
 assert property( seq51 |->  ##8 ai.rdata==16 ##8 ai.rdata==17) else die("Inc error");
 assert property( test5_running && $rose(ai.interrupt_request) |->
 	(##(16) $rose(ai.interrupt_request) or
-	 ##(23*8) $rose(ai.interrupt_request) )
+	 ##0 $rose(ai.interrupt_request) )
 	
 	 ) else die("Wrong interrupt sequence");
 
+	 
+sequence seq6;
+ test6_running==1 && $rose(ai.rdata==0);
+endsequence
 
+assert property( test6_running |-> ##[1:(25*64)] ai.rdata==5 ##64 ai.rdata==6)
+	else die("Not counting right");
+	
+	
+sequence seq7;
+ test7_running==1 && $rose(ai.rdata==0);
+endsequence
+sequence seq71;
+ test7_running==1 && $rose(ai.rdata==15);
+endsequence
 
-endmodule;
+assert property( test7_running |-> ##[1:(25*256)] ai.rdata==5 ##256 ai.rdata==6)
+	else die("Not counting right");
+assert property( seq7 |-> ( ##0 ai.rdata==0)) else die("Didn't cycle to zero");
+assert property( seq7 |-> ( ##(256*3) ai.rdata== 3)) else die("Didn't get 3");
+assert property( seq71 |->  ##256 ai.rdata==16 ##256 ai.rdata==17) else die("Inc error");
+assert property( test7_running && $rose(ai.interrupt_request) |->
+	(##(16) $rose(ai.interrupt_request) or
+	 ##0 $rose(ai.interrupt_request) )
+	
+	 ) else die("Wrong interrupt sequence");
+
+sequence seq8;
+ test8_running==1 && $rose(ai.rdata==0);
+endsequence
+sequence seq81;
+ test8_running==1 && $rose(ai.rdata==15);
+endsequence
+
+assert property( test8_running |-> ##[1:(25*1024)] ai.rdata==5 ##1024 ai.rdata==6)
+	else die("Not counting right");
+assert property( seq8 |-> ( ##0 ai.rdata==0)) else die("Didn't cycle to zero");
+assert property( seq8 |-> ( ##(1024*3) ai.rdata== 3)) else die("Didn't get 3");
+assert property( seq81 |->  ##1024 ai.rdata==16 ##1024 ai.rdata==17) else die("Inc error");
+assert property( test8_running && $rose(ai.interrupt_request) |->
+	(##(16) $rose(ai.interrupt_request) or
+	 ##0 $rose(ai.interrupt_request) )
+	
+	 ) else die("Wrong interrupt sequence"); 
+	 
+	 
+/*sequence seq9;
+ test9_running==1 && $rose(ai.rdata==0);
+endsequence
+/*sequence seq81;
+ test9_running==1 && $rose(ai.rdata==15);
+endsequence
+
+assert property( test9_running |-> ##[1:256] ai.rdata==5 ##0 ai.rdata==6)
+	else die("Not counting right");*/
+	 
+	 
+endmodule
