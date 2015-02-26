@@ -1,3 +1,5 @@
+`timescale 1ns/10ps
+
 module bits (clock, reset, pushin, datain, reqin, reqlen, pushout, lenout, dataout);
 
 	input clock, reset;
@@ -12,20 +14,24 @@ module bits (clock, reset, pushin, datain, reqin, reqlen, pushout, lenout, datao
 	reg pushout;
 
 	//FIFO Signals
-	reg fifo_full, fifo_empty, fifo_last, fifo_slast, fifo_first, fifo_clear;
+	reg fifo_full, fifo_empty, fifo_afull, fifo_aempty, fifo_error;
 	reg [31:0] fifo_input;
 	reg fifo_pop, fifo_push;
 	reg [31:0] fifo_output;
 	reg [31:0] fifo_output_reg;
+  reg [5:0] fifo_count;
 
-	FIFO fifo1(clock, reset, fifo_input, fifo_clear, fifo_push, fifo_pop, fifo_output, fifo_full, fifo_last, fifo_slast, fifo_first, fifo_empty);
+	FIFO_v fifo1(.clk(clock), .p_reset(reset), .data_in(fifo_input),
+               .wr_en(fifo_push), .rd_en(fifo_pop), .err(fifo_error), .almst_full(fifo_afull),
+               .almst_empty(fifo_aempty), .empty(fifo_empty), .full(fifo_full), .data_count(fifo_count)
+               .data_out(fifo_output) );
 
 	always@(posedge clock)
 	begin
 		if(pushin)
 		begin
 			fifo_input = datain;
-			fifo_push = ~pushin;
+			fifo_push = pushin;
 		end
 		else
 		begin
@@ -38,7 +44,7 @@ module bits (clock, reset, pushin, datain, reqin, reqlen, pushout, lenout, datao
 	begin
 		if(reqin)
 		begin
-			fifo_pop = ~reqin;
+			fifo_pop = reqin;
 			fifo_output_reg = fifo_output;
 		end
 		else
@@ -57,292 +63,223 @@ module bits (clock, reset, pushin, datain, reqin, reqlen, pushout, lenout, datao
 
 endmodule
 
-///////////////////
-//FIFO Contoller //
-///////////////////
+//////////////////////////
+//FIFO and Memory Block //
+//////////////////////////
 
-`define  FWIDTH     32           // Width of the FIFO.
-`define  FDEPTH     32           // Depth of the FIFO.
-`define  FCWIDTH    5            // Counter Width of the FIFO 2 to power
-                                 // FCWIDTH = FDEPTH.
-module FIFO(  Clk,
-              RstN,
-              Data_In,
-              FClrN,
-              FInN,
-              FOutN,
-
-              F_Data,
-              F_FullN,
-              F_LastN,
-              F_SLastN,
-              F_FirstN,
-              F_EmptyN
-           );
-
-
-
-input                       Clk;      // CLK signal.
-input                       RstN;     // Reset signal.
-input [(`FWIDTH-1):0]       Data_In;  // Data into FIFO.
-input                       FInN;     // Write into FIFO Signal.
-input                       FClrN;    // Clear signal to FIFO.
-input                       FOutN;    // Read from FIFO signal.
-
-output [(`FWIDTH-1):0]      F_Data;   // FIFO data out.
-output                      F_FullN;  // FIFO full indicating signal.
-output                      F_EmptyN; // FIFO empty indicating signal.
-output                      F_LastN;  // FIFO Last but one signal.
-output                      F_SLastN; // FIFO SLast but one signal.
-output                      F_FirstN; // Signal indicating only one
-                                      // word in FIFO.
+module FIFO_v #(parameter ADDR_W = 5, DATA_W = 32, BUFF_L = 32, ALMST_F = 3, ALMST_E = 3)   // buffer length must be less than or equal to address space as in  BUFF_L <or= 2^(ADDR_W)-1
+      (
+      output  reg    [DATA_W- 1  : 0]         data_out,
+      output  reg    [ADDR_W   : 0]           data_count,
+      output  reg                             empty,
+      output  reg                             full,
+      output  reg                             almst_empty,
+      output  reg                             almst_full,
+      output  reg                             err,
+      input   wire  [DATA_W -1  : 0]          data_in,
+      input   wire                            wr_en,
+      input   wire                            rd_en,
+      input   wire                            p_reset,
+      input   wire                            clk
+      );
+      
+      
+////--------------- internal variables ---------------------------------------------------------      
+      
+      reg         [DATA_W-1 : 0]  mem_array [0 : (2**ADDR_W)-1];
+      reg         [ADDR_W-1 : 0]  rd_ptr, wr_ptr;
+      reg         [ADDR_W-1 : 0]  rd_ptr_nxt, wr_ptr_nxt;
+      reg                           full_ff, empty_ff;
+      reg                           full_ff_nxt, empty_ff_nxt;
+      reg                           almst_f_ff, almst_e_ff;
+      reg                           almst_f_ff_nxt, almst_e_ff_nxt;
+      reg         [ADDR_W : 0]    q_reg, q_nxt;
+      reg                           q_add, q_sub;
+//// ------------------------------------------------------------------------------------------------
 
 
-reg                F_FullN;
-reg                F_EmptyN;
-reg                F_LastN;
-reg                F_SLastN;
-reg                F_FirstN;
-
-reg    [`FCWIDTH:0]      fcounter; //counter indicates num of data in FIFO
-reg    [(`FCWIDTH-1):0]   rd_ptr;      // Current read pointer.
-reg    [(`FCWIDTH-1):0]   wr_ptr;      // Current write pointer.
-wire   [(`FWIDTH-1):0]    FIFODataOut; // Data out from FIFO MemBlk
-wire   [(`FWIDTH-1):0]    FIFODataIn;  // Data into FIFO MemBlk
-
-wire   ReadN  = FOutN;
-wire   WriteN = FInN;
-
-assign F_Data     = FIFODataOut;
-assign FIFODataIn = Data_In;
-
-
-    FIFO_MEM_BLK memblk(.clk(Clk),
-                        .writeN(WriteN),
-                        .rd_addr(rd_ptr),
-                        .wr_addr(wr_ptr),
-                        .data_in(FIFODataIn),
-                        .data_out(FIFODataOut)
-                       );
-
+//// Always block to update the states
+//// ------------------------------------------------------------------------------------------------
+  always @ (posedge clk)
+    begin : reg_update
+      if(p_reset == 1'b 1)
+        begin
+          rd_ptr <= {(ADDR_W-1){1'b 0}};
+          wr_ptr <= {(ADDR_W-1){1'b 0}};
+          full_ff <= 1'b 0;
+          empty_ff <= 1'b 1;
+          almst_f_ff <= 1'b 0;
+          almst_e_ff <= 1'b 1;
+          q_reg <= {(ADDR_W){1'b 0}};
+        end
+      else
+        begin
+          rd_ptr <= rd_ptr_nxt;
+          wr_ptr <= wr_ptr_nxt;
+          full_ff <= full_ff_nxt;
+          empty_ff <= empty_ff_nxt;
+          almst_f_ff <= almst_f_ff_nxt;
+          almst_e_ff <= almst_e_ff_nxt;
+          q_reg <= q_nxt;
+         end
+    end // end of always
 
 
-    // Control circuitry for FIFO. If reset or clr signal is asserted,
-    // all the counters are set to 0. If write only the write counter
-    // is incremented else if read only read counter is incremented
-    // else if both, read and write counters are incremented.
-    // fcounter indicates the num of items in the FIFO. Write only
-    // increments the fcounter, read only decrements the counter, and
-    // read && write doesn't change the counter value.
-    always @(posedge Clk or posedge RstN)
+//// Control for almost full and almost emptly flags
+//// ------------------------------------------------------------------------------------------------
+  always @ ( almst_e_ff, almst_f_ff, q_reg)
+    begin : Wtr_Mrk_Cont
+      almst_e_ff_nxt = almst_e_ff;
+      almst_f_ff_nxt = almst_f_ff;        
+       //// check to see if wr_ptr is ALMST_E away from rd_ptr (aka almost empty)     
+      if(q_reg < ALMST_E)
+        almst_e_ff_nxt = 1'b 1;
+      else
+        almst_e_ff_nxt = 1'b 0;
+
+      if(q_reg > BUFF_L-ALMST_F)
+        almst_f_ff_nxt = 1'b 1;
+      else
+        almst_f_ff_nxt = 1'b 0;
+        
+    end // end of always
+      
+//// Control for read and write pointers and empty/full flip flops      
+  always @ (wr_en, rd_en, wr_ptr, rd_ptr, empty_ff, full_ff, q_reg)
     begin
-
-       if(RstN) begin
-           fcounter    <= 0;
-           rd_ptr      <= 0;
-           wr_ptr      <= 0;
-       end
-       else begin
-
-           if(!FClrN ) begin
-               fcounter    <= 0;
-               rd_ptr      <= 0;
-               wr_ptr      <= 0;
-           end
-           else begin
-
-               if(!WriteN && F_FullN)
-                   wr_ptr <= wr_ptr + 1;
-
-               if(!ReadN && F_EmptyN)
-                   rd_ptr <= rd_ptr + 1;
-
-               if(!WriteN && ReadN && F_FullN)
-                   fcounter <= fcounter + 1;
-
-               else if(WriteN && !ReadN && F_EmptyN)
-                   fcounter <= fcounter - 1;
-          end
-       end
-    end
-
-
-
-    // All the FIFO status signals depends on the value of fcounter.
-    // If the fcounter is equal to fdepth, indicates FIFO is full.
-    // If the fcounter is equal to zero, indicates the FIFO is empty.
-
-
-
-    // F_EmptyN signal indicates FIFO Empty Status. By default it is
-    // asserted, indicating the FIFO is empty. After the First Data is
-    // put into the FIFO the signal is deasserted.
-    always @(posedge Clk or posedge RstN)
-    begin
-
-       if(RstN)
-          F_EmptyN <= 1'b0;
-
-       else begin
-          if(FClrN==1'b1) begin
-
-             if(F_EmptyN==1'b0 && WriteN==1'b0)
-
-                 F_EmptyN <= 1'b1;
-
-             else if(F_FirstN==1'b0 && ReadN==1'b0 && WriteN==1'b1)
-
-                 F_EmptyN <= 1'b0;
-          end
+      
+      wr_ptr_nxt = wr_ptr ;                     //// no change to pointers
+      rd_ptr_nxt = rd_ptr;
+      full_ff_nxt = full_ff;
+      empty_ff_nxt = empty_ff;
+      q_add = 1'b 0;
+      q_sub = 1'b 0;
+    ////---------- check if fifo is full during a write attempt, after a write increment counter
+    ////----------------------------------------------------      
+      if(wr_en == 1'b 1 & rd_en == 1'b 0)
+        begin
+          if(full_ff == 1'b 0)
+            begin
+              if(wr_ptr < BUFF_L-1)                 
+                begin
+                  q_add = 1'b 1;
+                  wr_ptr_nxt = wr_ptr + 1;
+                  empty_ff_nxt = 1'b 0;
+                end
+              else
+                begin
+                  wr_ptr_nxt = {(ADDR_W-1){1'b 0}};
+                  empty_ff_nxt = 1'b 0;
+                end
+              //// check if fifo is full
+              if( (wr_ptr+1 == rd_ptr) || ((wr_ptr == BUFF_L-1) && (rd_ptr == 1'b 0)))   
+                full_ff_nxt = 1'b 1;
+            end
+        end
+          
+    ////---------- check to see if fifo is empty during a read attempt, after a read decrement counter
+    ////---------------------------------------------------------------
+      if( (wr_en == 1'b 0) && (rd_en == 1'b 1))
+        begin         
+          if(empty_ff == 1'b 0) 
+            begin
+              if(rd_ptr < BUFF_L-1 )                          
+                begin
+                  if(q_reg > 0)
+                    q_sub = 1'b 1;
+                  else
+                    q_sub = 1'b 0;
+                  rd_ptr_nxt = rd_ptr + 1;
+                  full_ff_nxt = 1'b 0;
+                end
+              else  
+                begin
+                  rd_ptr_nxt = {(ADDR_W-1){1'b 0}}; 
+                  full_ff_nxt = 1'b 0;    
+                end
+      
+              //// check if fifo is empty
+              if( (rd_ptr  + 1 == wr_ptr) || ((rd_ptr == BUFF_L -1) && (wr_ptr == 1'b 0 )))  
+                empty_ff_nxt = 1'b 1;
+            end
+        end
+      
+    //// -----------------------------------------------------------------
+      if( (wr_en == 1'b 1) && (rd_en == 1'b 1)) 
+        begin
+          if(wr_ptr < BUFF_L -1) 
+            wr_ptr_nxt = wr_ptr  + 1; 
+          else                      
+            wr_ptr_nxt =  {(ADDR_W-1){1'b 0}}; 
+          
+          if(rd_ptr < BUFF_L -1) 
+            rd_ptr_nxt = rd_ptr + 1;    
           else
-             F_EmptyN <= 1'b0;
-       end
-    end
+            rd_ptr_nxt = {(ADDR_W-1){1'b 0}}; 
+        end
+      
+    end  // end of always
 
-    // F_FirstN signal indicates that there is only one datum sitting
-    // in the FIFO. When the FIFO is empty and a write to FIFO occurs,
-    // this signal gets asserted.
-    always @(posedge Clk or posedge RstN)
+
+//// Control for memory array writing and reading
+//// ----------------------------------------------------------------------
+  always @ (posedge clk)
+    begin   :   mem_cont
+      if( p_reset == 1'b 1)
+        begin
+          mem_array[rd_ptr] <=  {(DATA_W-1){1'b 0}}; 
+          data_out <= {(DATA_W-1){1'b 0}}; 
+          err <= 1'b 0;
+        end
+      else
+        begin
+          ////  if write enable and not full then latch in data and increment wright pointer  
+          if( (wr_en == 1'b 1) && (full_ff == 1'b 0) )
+            begin
+              mem_array[wr_ptr] <=  data_in;
+              err <= 1'b 0;           
+            end
+          else if( (wr_en == 1'b 1) && (full_ff == 1'b 1))      ////  check if full and trying to write
+            err <= 1'b 1;
+            
+          //// if read enable and fifo not empty then latch data out and increment read pointer
+          if( (rd_en == 1'b 1) && (empty_ff == 1'b 0))
+            begin
+              data_out <= mem_array[rd_ptr];
+              err <= 1'b 0;
+            end
+          else if( (rd_en == 1'b 1) && (empty_ff == 1'b 1))
+            err <= 1'b 1;
+            
+        end // end else
+    end // end always
+            
+      
+//// Combo Counter with Control Flags
+//// ------------------------------------------------------------------------------------------------
+  always @ ( q_sub, q_add, q_reg)
+    begin : Counter
+      case( {q_sub , q_add} )
+        2'b 01 :
+            q_nxt = q_reg + 1;
+        2'b 10 :
+            q_nxt = q_reg - 1;
+        default :
+            q_nxt = q_reg;
+      endcase   
+    end // end of always    
+      
+//// Connect internal regs to ouput ports
+//// ------------------------------------------------------------------------------------------------
+  always @ (full_ff, empty_ff, almst_e_ff, almst_f_ff, q_reg)
     begin
-
-       if(RstN)
-
-          F_FirstN <= 1'b1;
-
-       else begin
-          if(FClrN==1'b1) begin
-
-             if((F_EmptyN==1'b0 && WriteN==1'b0) ||
-                (fcounter==2 && ReadN==1'b0 && WriteN==1'b1))
-
-                 F_FirstN <= 1'b0;
-
-             else if (F_FirstN==1'b0 && (WriteN ^ ReadN))
-                 F_FirstN <= 1'b1;
-          end
-          else begin
-
-             F_FirstN <= 1'b1;
-          end
-       end
+      full = full_ff;
+      empty = empty_ff;
+      almst_empty = almst_e_ff; 
+      almst_full = almst_f_ff;
+      data_count = q_reg;
     end
-
-
-    // F_SLastN indicates that there is space for only two data words
-    //in the FIFO.
-    always @(posedge Clk or posedge RstN)
-    begin
-
-       if(RstN)
-
-          F_SLastN <= 1'b1;
-
-       else begin
-
-          if(FClrN==1'b1) begin
-
-             if( (F_LastN==1'b0 && ReadN==1'b0 && WriteN==1'b1) ||
-                 (fcounter == (`FDEPTH-3) && WriteN==1'b0 && ReadN==1'b1))
-
-                 F_SLastN <= 1'b0;
-
-
-             else if(F_SLastN==1'b0 && (ReadN ^ WriteN) )
-                 F_SLastN <= 1'b1;
-
-          end
-          else
-             F_SLastN <= 1'b1;
-
-       end
-    end
-
-    // F_LastN indicates that there is one space for only one data
-    // word in the FIFO.
-    always @(posedge Clk or posedge RstN)
-    begin
-
-       if(RstN)
-
-          F_LastN <= 1'b1;
-
-       else begin
-          if(FClrN==1'b1) begin
-
-             if ((F_FullN==1'b0 && ReadN==1'b0)  ||
-                 (fcounter == (`FDEPTH-2) && WriteN==1'b0 && ReadN==1'b1))
-
-                 F_LastN <= 1'b0;
-
-             else if(F_LastN==1'b0 && (ReadN ^ WriteN) )
-                 F_LastN <= 1'b1;
-          end
-          else
-             F_LastN <= 1'b1;
-       end
-    end
-
-
-    // F_FullN indicates that the FIFO is full.
-    always @(posedge Clk or posedge RstN)
-    begin
-
-       if(RstN)
-
-           F_FullN <= 1'b1;
-
-       else begin
-           if(FClrN==1'b1)  begin
-
-               if (F_LastN==1'b0 && WriteN==1'b0 && ReadN==1'b1)
-
-                    F_FullN <= 1'b0;
-
-               else if(F_FullN==1'b0 && ReadN==1'b0)
-
-                    F_FullN <= 1'b1;
-           end
-           else
-               F_FullN <= 1'b1;
-
-       end
-    end
-
+      
 endmodule
 
 
-
-///////////////////////////////////
-//Memory array for use with FIFO //
-///////////////////////////////////
-module FIFO_MEM_BLK( clk,
-                     writeN,
-                     wr_addr,
-                     rd_addr,
-                     data_in,
-                     data_out
-                   );
-
-
-input                    clk;       // input clk.
-input  writeN;  // Write Signal to put data into fifo.
-input  [(`FCWIDTH-1):0]  wr_addr;   // Write Address.
-input  [(`FCWIDTH-1):0]  rd_addr;   // Read Address.
-input  [(`FWIDTH-1):0]   data_in;   // DataIn in to Memory Block
-
-output [(`FWIDTH-1):0]   data_out;  // Data Out from the Memory
-                                    // Block(FIFO)
-
-wire   [(`FWIDTH-1):0] data_out;
-
-reg    [(`FWIDTH-1):0] FIFO[0:(`FDEPTH-1)];
-assign data_out  = FIFO[rd_addr];
-
-always @(posedge clk)
-begin
-
-   if(writeN==1'b0)
-      FIFO[wr_addr] <= data_in;
-end
-
-endmodule
