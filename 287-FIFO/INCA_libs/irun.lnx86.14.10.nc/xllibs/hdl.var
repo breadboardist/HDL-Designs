@@ -1,6 +1,0 @@
-define VIEW_MAP ( $VIEW_MAP \
-, .tsbvlibp => tsbvlibp \
-)
-define LIB_MAP ( $LIB_MAP \
-, ../../../../../../../../apps/toshiba/sjsu/verilog/tc240c => tc240c \
-)
