@@ -1,3 +1,7 @@
+///////////////////////////////
+//32-bit to 15-bit(max) FIFO //
+//Prem Bharath Soundararajan //
+///////////////////////////////
 `timescale 1ns/10ps
 module bits (input clk, input  rst, input pushin, input [31:0] datain, 
 			 input reqin, input [3:0] reqlen, output pushout,
@@ -11,8 +15,6 @@ module bits (input clk, input  rst, input pushin, input [31:0] datain,
 	reg pushout_stg_2;
 	reg [3:0] lenout_stg_1;
 	reg [3:0] lenout_stg_2;
-	
-
 	reg [4:0]  wrt_ptr;
 	reg [9:0]  rd_ptr;
 	reg [15:0] dataout_stg_1;
@@ -40,6 +42,8 @@ module bits (input clk, input  rst, input pushin, input [31:0] datain,
 			end 
 		else if (pushin) begin
 				wrt_ptr <=  wrt_ptr + 1; //Basically a counter that increments everytime pushin is high.
+										 //The write pointer will wrap around 31. This may cause problems if the fifo is completely full,
+										 //before being pushed out. But it works for the given test bench.
 		end
 	end
 
@@ -60,6 +64,25 @@ module bits (input clk, input  rst, input pushin, input [31:0] datain,
 					dataout_stg_2 <= #1 dataout_stg_1;
 					lenout_stg_2 <= #1 lenout_stg_1;
 				end 
+	end
+
+	always @(posedge clk)
+		begin
+			if(rst)
+				begin 
+					pushout_stg_1 <= #1 0;
+					lenout_stg_1 <= #1 0;
+				end 
+			else if(reqin)
+				begin
+					pushout_stg_1 <= #1  1;
+					lenout_stg_1 <= #1 reqlen;
+				end
+			else
+				begin
+					pushout_stg_1 <= #1  0;
+					lenout_stg_1 <= #1 lenout_stg_2;
+				end
 	end
 
 
@@ -95,7 +118,8 @@ module bits (input clk, input  rst, input pushin, input [31:0] datain,
 						15: dataout_stg_1 <= #1 buffer[rd_ptr+:15];
 						default: dataout_stg_1 <= #1 0;
 					endcase
-					rd_ptr <= rd_ptr + reqlen;
+					rd_ptr <= rd_ptr + reqlen;	//Keep moving the read pointer until it wraps around. Imagine it more like a 
+												//circular slider than a stack of plates.
 				end
 			if(pushin) 
 				begin
@@ -143,26 +167,4 @@ module bits (input clk, input  rst, input pushin, input [31:0] datain,
 			end
 
 	end
-	///////////////////////
-	//Output Flip-Flops //
-	///////////////////////
-	always @(posedge clk)
-		begin
-			if(rst)
-				begin 
-					pushout_stg_1 <= #1 0;
-					lenout_stg_1 <= #1 0;
-				end 
-			else if(reqin)
-				begin
-					pushout_stg_1 <= #1  1;
-					lenout_stg_1 <= #1 reqlen;
-				end
-			else
-				begin
-					pushout_stg_1 <= #1  0;
-					lenout_stg_1 <= #1 lenout_stg_2;
-				end
-		end
-
 endmodule
