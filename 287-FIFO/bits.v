@@ -23,7 +23,7 @@ module bits (clock, reset, pushin, datain, reqin, reqlen, pushout, lenout, datao
 
 	FIFO_v fifo1(.clk(clock), .p_reset(reset), .data_in(fifo_input),
                .wr_en(fifo_push), .rd_en(fifo_pop), .err(fifo_error), .almst_full(fifo_afull),
-               .almst_empty(fifo_aempty), .empty(fifo_empty), .full(fifo_full), .data_count(fifo_count)
+               .almst_empty(fifo_aempty), .empty(fifo_empty), .full(fifo_full), .data_count(fifo_count),
                .data_out(fifo_output) );
 
 	always@(posedge clock)
