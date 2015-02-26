@@ -1,6 +1,6 @@
-1424991883 /home/so/soun0694/Work/287-FIFO/tbits.sv
-1424991658 /home/so/soun0694/Work/287-FIFO/bits.v
-1424991883 /home/so/soun0694/Work/287-FIFO/bits_gates.v
+1424994018 /home/so/soun0694/Work/287-FIFO/tbits.sv
+1424993874 /home/so/soun0694/Work/287-FIFO/bits.v
+1424994017 /home/so/soun0694/Work/287-FIFO/bits_gates.v
 1008898044 /apps/toshiba/sjsu/verilog/tc240c/CAOR2X1.tsbvlibp
 1008898044 /apps/toshiba/sjsu/verilog/tc240c/CAOR1X1.tsbvlibp
 1008898045 /apps/toshiba/sjsu/verilog/tc240c/COAN1X1.tsbvlibp
@@ -26,10 +26,10 @@
 1008898045 /apps/toshiba/sjsu/verilog/tc240c/CND3XL.tsbvlibp
 1008898044 /apps/toshiba/sjsu/verilog/tc240c/CAN2X1.tsbvlibp
 1008898045 /apps/toshiba/sjsu/verilog/tc240c/CNIVXL.tsbvlibp
+1008898045 /apps/toshiba/sjsu/verilog/tc240c/CIVDXL.tsbvlibp
 1008898044 /apps/toshiba/sjsu/verilog/tc240c/CAOR2X4.tsbvlibp
 1008898045 /apps/toshiba/sjsu/verilog/tc240c/CIVX3.tsbvlibp
 1008898045 /apps/toshiba/sjsu/verilog/tc240c/COND2XL.tsbvlibp
-1008898045 /apps/toshiba/sjsu/verilog/tc240c/CIVDXL.tsbvlibp
 1008898044 /apps/toshiba/sjsu/verilog/tc240c/CAOR2X2.tsbvlibp
 1008898044 /apps/toshiba/sjsu/verilog/tc240c/CANR1XL.tsbvlibp
 1008898045 /apps/toshiba/sjsu/verilog/tc240c/CIVX1.tsbvlibp

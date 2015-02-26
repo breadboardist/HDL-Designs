@@ -1,5 +1,5 @@
 ncverilog: 14.10-p001: (c) Copyright 1995-2014 Cadence Design Systems, Inc.
-TOOL:	ncverilog	14.10-p001: Started on Feb 26, 2015 at 15:05:13 PST
+TOOL:	ncverilog	14.10-p001: Started on Feb 26, 2015 at 15:40:48 PST
 ncverilog
 	+libext+.tsbvlibp
 	+access+r
@@ -93,6 +93,9 @@ file: /apps/toshiba/sjsu/verilog/tc240c/CAN2X1.tsbvlibp
 file: /apps/toshiba/sjsu/verilog/tc240c/CNIVXL.tsbvlibp
 	module tc240c.CNIVXL:tsbvlibp
 		errors: 0, warnings: 0
+file: /apps/toshiba/sjsu/verilog/tc240c/CIVDXL.tsbvlibp
+	module tc240c.CIVDXL:tsbvlibp
+		errors: 0, warnings: 0
 file: /apps/toshiba/sjsu/verilog/tc240c/CAOR2X4.tsbvlibp
 	module tc240c.CAOR2X4:tsbvlibp
 		errors: 0, warnings: 0
@@ -101,9 +104,6 @@ file: /apps/toshiba/sjsu/verilog/tc240c/CIVX3.tsbvlibp
 		errors: 0, warnings: 0
 file: /apps/toshiba/sjsu/verilog/tc240c/COND2XL.tsbvlibp
 	module tc240c.COND2XL:tsbvlibp
-		errors: 0, warnings: 0
-file: /apps/toshiba/sjsu/verilog/tc240c/CIVDXL.tsbvlibp
-	module tc240c.CIVDXL:tsbvlibp
 		errors: 0, warnings: 0
 file: /apps/toshiba/sjsu/verilog/tc240c/CAOR2X2.tsbvlibp
 	module tc240c.CAOR2X2:tsbvlibp
@@ -4740,29 +4740,29 @@ ncelab: (/apps/toshiba/sjsu/verilog/tc240c/CFD1XL.tsbvlibp,7): Q
 ncelab: *W,CUVWSP (./bits_gates.v,1912|24): 1 output port was not connected:
 ncelab: (/apps/toshiba/sjsu/verilog/tc240c/CFD1XL.tsbvlibp,7): Q
 
+  CIVDXL U3337 ( .A(pushout_stg_1), .Z1(n4253) );
+             |
+ncelab: *W,CUVWSP (./bits_gates.v,1949|13): 1 output port was not connected:
+ncelab: (/apps/toshiba/sjsu/verilog/tc240c/CIVDXL.tsbvlibp,12): Z0
+
   CIVDXL U3438 ( .A(lenout_stg_1[0]), .Z1(n4255) );
              |
-ncelab: *W,CUVWSP (./bits_gates.v,2054|13): 1 output port was not connected:
+ncelab: *W,CUVWSP (./bits_gates.v,2050|13): 1 output port was not connected:
 ncelab: (/apps/toshiba/sjsu/verilog/tc240c/CIVDXL.tsbvlibp,12): Z0
 
   CIVDXL U3440 ( .A(lenout_stg_1[1]), .Z1(n4257) );
              |
-ncelab: *W,CUVWSP (./bits_gates.v,2056|13): 1 output port was not connected:
+ncelab: *W,CUVWSP (./bits_gates.v,2052|13): 1 output port was not connected:
 ncelab: (/apps/toshiba/sjsu/verilog/tc240c/CIVDXL.tsbvlibp,12): Z0
 
   CIVDXL U3442 ( .A(lenout_stg_1[2]), .Z1(n4259) );
              |
-ncelab: *W,CUVWSP (./bits_gates.v,2058|13): 1 output port was not connected:
+ncelab: *W,CUVWSP (./bits_gates.v,2054|13): 1 output port was not connected:
 ncelab: (/apps/toshiba/sjsu/verilog/tc240c/CIVDXL.tsbvlibp,12): Z0
 
   CIVDXL U3444 ( .A(lenout_stg_1[3]), .Z1(n4261) );
              |
-ncelab: *W,CUVWSP (./bits_gates.v,2060|13): 1 output port was not connected:
-ncelab: (/apps/toshiba/sjsu/verilog/tc240c/CIVDXL.tsbvlibp,12): Z0
-
-  CIVDXL U3468 ( .A(pushout_stg_1), .Z1(n4282) );
-             |
-ncelab: *W,CUVWSP (./bits_gates.v,2084|13): 1 output port was not connected:
+ncelab: *W,CUVWSP (./bits_gates.v,2056|13): 1 output port was not connected:
 ncelab: (/apps/toshiba/sjsu/verilog/tc240c/CIVDXL.tsbvlibp,12): Z0
 
 	Building instance overlay tables: .................... Done
@@ -4836,7 +4836,7 @@ ncelab: (/apps/toshiba/sjsu/verilog/tc240c/CIVDXL.tsbvlibp,12): Z0
 		tc240c.tsbCFD2QXL:tsbvlibp <0x2cef90ab>
 			streams:   0, words:     0
 		worklib.test:sv <0x096dd7a0>
-			streams:  23, words: 25627
+			streams:  23, words: 25620
 	Building instance specific data structures.
 	Loading native compiled code:     .................... Done
 	Design hierarchy summary:
@@ -4861,339 +4861,6 @@ Loading snapshot worklib.test:sv .................... Done
 SVSEED default: 1
 ncsim> source /apps/cadence/INCISIV141/tools/inca/files/ncsimrc
 ncsim> run
-requesting  0 bits, expecting 0000
-requesting  0 bits, expecting 0000
-requesting  0 bits, expecting 0000
-requesting  0 bits, expecting 0000
-requesting  0 bits, expecting 0000
-requesting  0 bits, expecting 0000
-requesting  0 bits, expecting 0000
-requesting  0 bits, expecting 0000
-requesting  0 bits, expecting 0000
-requesting  0 bits, expecting 0000
-requesting  0 bits, expecting 0000
-requesting  0 bits, expecting 0000
-requesting  0 bits, expecting 0000
-Pushing 48d22bd2
-requesting  0 bits, expecting 0000
-requesting 12 bits, expecting 0bd2
-Pushing 46e41118
-requesting 10 bits, expecting 0122
-requesting  8 bits, expecting 0023
-requesting 13 bits, expecting 0461
-Pushing fd9d3232
-requesting  5 bits, expecting 0002
-Pushing c4ec505c
-requesting  2 bits, expecting 0000
-requesting 12 bits, expecting 01b9
-requesting 13 bits, expecting 08c9
-Pushing 36d364d3
-Pushing 0f2006aa
-requesting 11 bits, expecting 03a6
-requesting  0 bits, expecting 0000
-requesting  7 bits, expecting 0076
-requesting  6 bits, expecting 0027
-requesting 12 bits, expecting 0a0b
-requesting  6 bits, expecting 0018
-requesting 13 bits, expecting 1e27
-requesting  5 bits, expecting 0014
-requesting 15 bits, expecting 26c9
-requesting  3 bits, expecting 0003
-requesting  9 bits, expecting 011b
-requesting  6 bits, expecting 002a
-requesting 14 bits, expecting 2006
-requesting  3 bits, expecting 0004
-requesting  3 bits, expecting 0007
-requesting  1 bits, expecting 0000
-requesting  0 bits, expecting 0000
-requesting  3 bits, expecting 0000
-requesting  0 bits, expecting 0000
-requesting  0 bits, expecting 0000
-requesting  0 bits, expecting 0000
-requesting  0 bits, expecting 0000
-Pushing 56530320
-requesting 14 bits, expecting 0320
-Pushing 9de87bd9
-requesting  9 bits, expecting 014c
-Pushing 1b5ad4af
-requesting  1 bits, expecting 0000
-requesting 13 bits, expecting 1956
-requesting  5 bits, expecting 001e
-Pushing 61c1d974
-requesting  5 bits, expecting 001e
-requesting  9 bits, expecting 01d0
-Pushing 04a9e1d6
-requesting 12 bits, expecting 0f9d
-Pushing 8ec60fdf
-requesting 15 bits, expecting 2d4a
-Pushing 7f0f3866
-requesting  4 bits, expecting 000b
-requesting  8 bits, expecting 0036
-requesting 10 bits, expecting 02e8
-requesting  5 bits, expecting 000c
-requesting 11 bits, expecting 0707
-requesting 10 bits, expecting 0330
-requesting 11 bits, expecting 043a
-requesting  5 bits, expecting 0007
-Pushing 6c167b1d
-requesting 14 bits, expecting 2095
-requesting 14 bits, expecting 07ef
-requesting 15 bits, expecting 1d8c
-Pushing 4b65269a
-requesting  3 bits, expecting 0002
-Pushing 03b0a220
-requesting 14 bits, expecting 1c33
-requesting 12 bits, expecting 0e1e
-requesting  0 bits, expecting 0000
-requesting  6 bits, expecting 002f
-requesting 11 bits, expecting 058e
-Pushing 1fa078e6
-requesting  7 bits, expecting 0067
-requesting  5 bits, expecting 0002
-requesting  7 bits, expecting 006c
-requesting  8 bits, expecting 0034
-requesting  5 bits, expecting 000d
-requesting  1 bits, expecting 0000
-requesting 15 bits, expecting 5b29
-Pushing 426f1fa2
-requesting  1 bits, expecting 0000
-requesting  9 bits, expecting 0102
-Pushing 976ff5b8
-requesting  1 bits, expecting 0000
-requesting  0 bits, expecting 0000
-requesting  0 bits, expecting 0000
-Pushing 2b7bd5b3
-requesting 15 bits, expecting 6144
-requesting 14 bits, expecting 180e
-Pushing 33105bda
-Pushing 4212dc04
-requesting  3 bits, expecting 0006
-requesting 14 bits, expecting 00f1
-requesting  9 bits, expecting 00fd
-Pushing bd38a7b2
-Pushing 3b5df5da
-Pushing 7a34ae60
-requesting 11 bits, expecting 0688
-requesting  1 bits, expecting 0001
-requesting  8 bits, expecting 00c7
-Pushing ada19636
-Pushing 452b3d83
-Pushing 65d77283
-Pushing 8e94ea07
-Pushing 72b83c29
-Pushing 550b0fab
-Pushing d2320d13
-Pushing b8ff922e
-Pushing c026912a
-Pushing 0cf6ecf3
-Pushing 9b6b963a
-Pushing 4ddb84b4
-Pushing 77039016
-Pushing df9f32f4
-Pushing 404ae51d
-Pushing 830e945c
-Pushing 8299788e
-Pushing 0af02347
-Pushing 65fcf745
-Pushing f594a06f
-Pushing 9730d0bf
-Pushing 3b5ddca4
-Pushing 17bcfda8
-requesting 10 bits, expecting 009b
-requesting 11 bits, expecting 0384
-requesting 11 bits, expecting 07eb
-Pushing 3e117f05
-requesting 14 bits, expecting 25db
-requesting 11 bits, expecting 05b3
-requesting 11 bits, expecting 077a
-requesting  1 bits, expecting 0001
-Pushing a3aa0615
-requesting  4 bits, expecting 0006
-requesting  8 bits, expecting 0045
-requesting 15 bits, expecting 0b7b
-requesting 10 bits, expecting 00c4
-requesting 13 bits, expecting 0043
-requesting 12 bits, expecting 096e
-requesting  5 bits, expecting 0010
-requesting 13 bits, expecting 0c90
-Pushing 041ca1ef
-requesting  5 bits, expecting 000f
-Pushing 5602d9a5
-requesting  4 bits, expecting 000a
-requesting 15 bits, expecting 3d38
-requesting  6 bits, expecting 0035
-requesting 12 bits, expecting 0fae
-requesting  3 bits, expecting 0006
-requesting  3 bits, expecting 0005
-Pushing d652d98d
-requesting  1 bits, expecting 0000
-requesting 12 bits, expecting 003b
-requesting  0 bits, expecting 0000
-requesting 15 bits, expecting 4ae6
-requesting  1 bits, expecting 0000
-requesting  9 bits, expecting 01a3
-requesting 12 bits, expecting 01b3
-requesting 10 bits, expecting 00cb
-Pushing f40c64c4
-requesting 15 bits, expecting 75b4
-Pushing d6e38871
-requesting  4 bits, expecting 0000
-Pushing 8c75ce42
-requesting 12 bits, expecting 0cf6
-Pushing 6d3e6cb6
-requesting  9 bits, expecting 014a
-requesting 12 bits, expecting 0068
-requesting 10 bits, expecting 02e5
-Pushing 1418bddb
-requesting  6 bits, expecting 002b
-requesting 15 bits, expecting 0ecb
-requesting  3 bits, expecting 0000
-requesting  0 bits, expecting 0000
-requesting  1 bits, expecting 0001
-requesting 10 bits, expecting 013a
-requesting  7 bits, expecting 0069
-Pushing efd4f112
-requesting  0 bits, expecting 0000
-requesting  1 bits, expecting 0001
-requesting 15 bits, expecting 4298
-requesting  8 bits, expecting 0007
-requesting 14 bits, expecting 2e57
-requesting 13 bits, expecting 07d5
-Pushing f23294de
-requesting 11 bits, expecting 042c
-Pushing b6fa7e22
-requesting  8 bits, expecting 00aa
-Pushing 0879026f
-requesting  3 bits, expecting 0001
-requesting 13 bits, expecting 00d1
-requesting  3 bits, expecting 0001
-requesting  0 bits, expecting 0000
-requesting 12 bits, expecting 0d23
-requesting 14 bits, expecting 122e
-requesting  7 bits, expecting 007e
-requesting 15 bits, expecting 55c7
-requesting 10 bits, expecting 0112
-requesting  6 bits, expecting 001a
-requesting  6 bits, expecting 0002
-requesting  9 bits, expecting 00f0
-requesting  4 bits, expecting 000e
-requesting 14 bits, expecting 2dd9
-Pushing 9e8d1151
-requesting  9 bits, expecting 0067
-requesting  2 bits, expecting 0000
-requesting 11 bits, expecting 063a
-requesting  1 bits, expecting 0000
-Pushing babfbdd5
-requesting 14 bits, expecting 36b9
-Pushing 716616c6
-requesting 12 bits, expecting 0d26
-requesting  8 bits, expecting 0012
-requesting  3 bits, expecting 0006
-Pushing 508d2427
-requesting  7 bits, expecting 006d
-requesting 15 bits, expecting 164d
-requesting 15 bits, expecting 0720
-requesting 15 bits, expecting 51dc
-requesting  0 bits, expecting 0000
-Pushing 32159ebb
-requesting 13 bits, expecting 1997
-requesting 12 bits, expecting 07e7
-requesting  0 bits, expecting 0000
-Pushing d2c3cf8d
-requesting  8 bits, expecting 0077
-requesting 14 bits, expecting 2b94
-requesting 12 bits, expecting 0404
-requesting 10 bits, expecting 005c
-requesting  2 bits, expecting 0001
-requesting  0 bits, expecting 0000
-requesting  1 bits, expecting 0001
-requesting  6 bits, expecting 0034
-Pushing 8c6f88c5
-requesting 14 bits, expecting 1061
-requesting  5 bits, expecting 0007
-requesting 12 bits, expecting 05e2
-requesting  5 bits, expecting 0006
-Pushing 3420defb
-requesting 10 bits, expecting 0305
-requesting  2 bits, expecting 0003
-requesting  9 bits, expecting 0068
-requesting  1 bits, expecting 0000
-requesting 14 bits, expecting 1781
-requesting 10 bits, expecting 00a1
-Pushing 4d642671
-requesting  5 bits, expecting 001a
-Pushing 5ac32756
-requesting  8 bits, expecting 003d
-requesting  5 bits, expecting 001f
-requesting  8 bits, expecting 00cb
-requesting 12 bits, expecting 00de
-requesting 15 bits, expecting 3294
-requesting 13 bits, expecting 0ffd
-requesting  2 bits, expecting 0001
-requesting 14 bits, expecting 1868
-requesting  7 bits, expecting 002e
-Pushing 88e1e81a
-requesting 13 bits, expecting 1292
-requesting 10 bits, expecting 03bb
-requesting 13 bits, expecting 01da
-Pushing e1c14561
-requesting  9 bits, expecting 016a
-requesting 10 bits, expecting 039f
-requesting  8 bits, expecting 00bd
-requesting  7 bits, expecting 0028
-Pushing d675dd39
-requesting  5 bits, expecting 0010
-requesting  9 bits, expecting 00bf
-Pushing dfef2cef
-requesting 13 bits, expecting 0f84
-requesting  8 bits, expecting 002a
-Pushing 4caba470
-requesting  8 bits, expecting 000c
-requesting  2 bits, expecting 0000
-requesting 13 bits, expecting 11d5
-requesting  9 bits, expecting 01be
-Pushing c9823ff7
-Pushing e374b46d
-requesting  4 bits, expecting 0003
-Pushing fbb0c7bb
-requesting  2 bits, expecting 0000
-Pushing 6254e1c7
-requesting 12 bits, expecting 00e5
-requesting  5 bits, expecting 0002
-requesting 14 bits, expecting 2694
-Pushing 3a498055
-requesting  8 bits, expecting 002d
-requesting 11 bits, expecting 0560
-requesting 15 bits, expecting 331a
-requesting  7 bits, expecting 004b
-Pushing 1cf2a4a8
-requesting  2 bits, expecting 0002
-requesting 14 bits, expecting 09ac
-requesting 11 bits, expecting 0326
-requesting  3 bits, expecting 0004
-requesting  6 bits, expecting 0001
-requesting 10 bits, expecting 00fa
-requesting  5 bits, expecting 000e
-requesting  0 bits, expecting 0000
-requesting  9 bits, expecting 0188
-requesting 14 bits, expecting 2b71
-requesting  8 bits, expecting 0085
-requesting  8 bits, expecting 009c
-requesting  4 bits, expecting 000b
-requesting  8 bits, expecting 008e
-requesting 15 bits, expecting 16d1
-Pushing 23ae4c59
-requesting 15 bits, expecting 4f9b
-requesting  3 bits, expecting 0006
-Pushing aaab2fff
-requesting  4 bits, expecting 0006
-Pushing 79d0afdd
-requesting  0 bits, expecting 0000
-requesting  3 bits, expecting 0003
-requesting 11 bits, expecting 07bb
-Pushing 187a2f5a
-requesting  4 bits, expecting 0002
-requesting 15 bits, expecting 0506
  
  
 all done with a smile
@@ -5202,4 +4869,4 @@ all done with a smile
 Simulation complete via $finish(1) at time 6594750 PS + 0
 ./tbits.sv:184 $finish();
 ncsim> exit
-TOOL:	ncverilog	14.10-p001: Exiting on Feb 26, 2015 at 15:05:20 PST  (total: 00:00:07)
+TOOL:	ncverilog	14.10-p001: Exiting on Feb 26, 2015 at 15:40:54 PST  (total: 00:00:06)
