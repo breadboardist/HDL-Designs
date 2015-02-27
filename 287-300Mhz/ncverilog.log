@@ -1,5 +1,5 @@
 ncverilog: 14.10-p001: (c) Copyright 1995-2014 Cadence Design Systems, Inc.
-TOOL:	ncverilog	14.10-p001: Started on Feb 15, 2015 at 19:32:12 PST
+TOOL:	ncverilog	14.10-p001: Started on Feb 26, 2015 at 16:35:29 PST
 ncverilog
 	+sv
 	+access+r
@@ -22,8 +22,8 @@ file: sfilt.v
 	Elaborating the design hierarchy:
 	Building instance overlay tables: .................... Done
 	Generating native compiled code:
-		worklib.sfilt:v <0x560796f4>
-			streams:  42, words: 21912
+		worklib.sfilt:v <0x549a80fc>
+			streams:  38, words: 20587
 		worklib.tbsfilt:sv <0x3f3d82f5>
 			streams:  29, words: 24060
 	Building instance specific data structures.
@@ -34,7 +34,7 @@ file: sfilt.v
 		Registers:                   62      71
 		Scalar wires:                 9       -
 		Vectored wires:               4       -
-		Always blocks:               11      11
+		Always blocks:                9       9
 		Initial blocks:               4       4
 		Clocking blocks:              1       1
 		Cont. assignments:            2       7
@@ -57,4 +57,4 @@ We passed the test, happy happy :)
 Simulation complete via $finish(1) at time 18250650 NS + 0
 ./tbsfilt.sv:169   $finish;
 ncsim> exit
-TOOL:	ncverilog	14.10-p001: Exiting on Feb 15, 2015 at 19:32:28 PST  (total: 00:00:16)
+TOOL:	ncverilog	14.10-p001: Exiting on Feb 26, 2015 at 16:35:52 PST  (total: 00:00:23)

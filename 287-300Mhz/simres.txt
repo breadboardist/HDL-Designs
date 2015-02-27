@@ -15,8 +15,8 @@ file: sfilt.v
 	Elaborating the design hierarchy:
 	Building instance overlay tables: .................... Done
 	Generating native compiled code:
-		worklib.sfilt:v <0x560796f4>
-			streams:  42, words: 21912
+		worklib.sfilt:v <0x549a80fc>
+			streams:  38, words: 20587
 		worklib.tbsfilt:sv <0x3f3d82f5>
 			streams:  29, words: 24060
 	Building instance specific data structures.
@@ -27,7 +27,7 @@ file: sfilt.v
 		Registers:                   62      71
 		Scalar wires:                 9       -
 		Vectored wires:               4       -
-		Always blocks:               11      11
+		Always blocks:                9       9
 		Initial blocks:               4       4
 		Clocking blocks:              1       1
 		Cont. assignments:            2       7
