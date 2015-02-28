@@ -75,45 +75,44 @@ module tc (tci ai);
 					R_timsk<=8'h8; 
 			end
 
-		else if (R_timsk==8 && ai.read==1) begin
-			if (ai.addr==8'h27) ai.rdata <= R_ocra1;
-			if (ai.addr==8'h24) ai.rdata <= R_tccra;
-			if (ai.addr==8'h47) ai.rdata <= R_ocra1;
-			if (ai.addr==8'h44) ai.rdata <= R_tccra;
-			if (ai.addr==8'h28) ai.rdata <= R_ocrb;
-			if (ai.addr==8'h26) begin
-				ai.rdata <= 5;
-				repeat(4) @(posedge (ai.clk)); ai.rdata <= 6;
-				ai.interrupt_request <= 1;
-			end
-			if (ai.addr==8'h46) begin
-				ai.rdata <= 5;
-				repeat(4) @(posedge (ai.clk)); ai.rdata <= 6;
-				ai.interrupt_request <= 1;
-			end
-			if (ai.addr==8'h25 && R_tccrb1==8'h3) ai.rdata <= R_tccrb1;
-			if (ai.addr==8'h45 && R_tccrb1==8'h3) ai.rdata <= R_tccrb1;
-			if (ai.addr==8'h27 && R_tccrb1==8'h3) ai.rdata <= R_ocra1;
-			if (ai.addr==8'h26 && R_tccrb1==8'h3) begin
-				ai.rdata <= 2;
-				repeat(4) @(posedge (ai.clk)); ai.rdata <= 3;
-			end
-			if (ai.addr==8'h25 && R_tccrb1==8'h4) ai.rdata <= R_tccrb1;
-			if (ai.addr==8'h45 && R_tccrb1==8'h4) ai.rdata <= R_tccrb1;
-			if (ai.addr==8'h15 && R_tccrb1==8'h4) ai.rdata <= R_timsk;
-			if (ai.addr==8'h25 && R_tccrb1==8'h5) ai.rdata <= R_tccrb1;
-			if (ai.addr==8'h45 && R_tccrb1==8'h5) ai.rdata <= R_tccrb1;
-			if (ai.addr==8'h25 && R_tccrb1==8'h6) ai.rdata <= R_tccrb1;
-			if (ai.addr==8'h45 && R_tccrb1==8'h6) ai.rdata <= R_tccrb1;
-			if (ai.addr==8'h26 && R_tccrb1==8'h6) ai.rdata <= 8'h04; 
-			if (ai.addr==8'h25 && R_tccrb1==8'h7 && R_ocra1==8'h18) ai.rdata <= R_tccrb1;
-			if (ai.addr==8'h45 && R_tccrb1==8'h7 && R_ocra1==8'h18) ai.rdata <= R_tccrb1;
-			if (ai.addr==8'h26 && R_tccrb1==8'h7 && R_ocra1==8'h18) ai.rdata <= 8'h04;
-			if (ai.addr==8'h45 && R_tccrb1==8'h8 && R_ocra1==8'h19) ai.rdata <= R_tccrb1;
-
-			if (ai.addr==8'h45 && R_tccrb1==8'h9) ai.rdata <= R_tccrb1;
-			if (ai.addr==8'h27 && R_tccrb1==8'h9) ai.rdata <= 8'h20;
-			if (ai.addr==8'h47 && R_tccrb1==8'h9) ai.rdata <= 8'h20;
+			else if (R_timsk==8 && ai.read==1) begin
+					if (ai.addr==8'h27) ai.rdata <= R_ocra1;
+					if (ai.addr==8'h24) ai.rdata <= R_tccra;
+					if (ai.addr==8'h47) ai.rdata <= R_ocra1;
+					if (ai.addr==8'h44) ai.rdata <= R_tccra;
+					if (ai.addr==8'h28) ai.rdata <= R_ocrb;
+					if (ai.addr==8'h26) begin
+											ai.rdata <= 5;
+											repeat(4) @(posedge (ai.clk)); ai.rdata <= 6;
+											ai.interrupt_request <= 1;
+										end
+					if (ai.addr==8'h46) begin
+											ai.rdata <= 5;
+											repeat(4) @(posedge (ai.clk)); ai.rdata <= 6;
+											ai.interrupt_request <= 1;
+										end
+					if (ai.addr==8'h25 && R_tccrb1==8'h3) ai.rdata <= R_tccrb1;
+					if (ai.addr==8'h45 && R_tccrb1==8'h3) ai.rdata <= R_tccrb1;
+					if (ai.addr==8'h27 && R_tccrb1==8'h3) ai.rdata <= R_ocra1;
+					if (ai.addr==8'h26 && R_tccrb1==8'h3) begin
+															ai.rdata <= 2;
+															repeat(4) @(posedge (ai.clk)); ai.rdata <= 3;
+														end
+					if (ai.addr==8'h25 && R_tccrb1==8'h4) ai.rdata <= R_tccrb1;
+					if (ai.addr==8'h45 && R_tccrb1==8'h4) ai.rdata <= R_tccrb1;
+					if (ai.addr==8'h15 && R_tccrb1==8'h4) ai.rdata <= R_timsk;
+					if (ai.addr==8'h25 && R_tccrb1==8'h5) ai.rdata <= R_tccrb1;
+					if (ai.addr==8'h45 && R_tccrb1==8'h5) ai.rdata <= R_tccrb1;
+					if (ai.addr==8'h25 && R_tccrb1==8'h6) ai.rdata <= R_tccrb1;
+					if (ai.addr==8'h45 && R_tccrb1==8'h6) ai.rdata <= R_tccrb1;
+					if (ai.addr==8'h26 && R_tccrb1==8'h6) ai.rdata <= 8'h04; 
+					if (ai.addr==8'h25 && R_tccrb1==8'h7 && R_ocra1==8'h18) ai.rdata <= R_tccrb1;
+					if (ai.addr==8'h45 && R_tccrb1==8'h7 && R_ocra1==8'h18) ai.rdata <= R_tccrb1;
+					if (ai.addr==8'h26 && R_tccrb1==8'h7 && R_ocra1==8'h18) ai.rdata <= 8'h04;
+					if (ai.addr==8'h45 && R_tccrb1==8'h8 && R_ocra1==8'h19) ai.rdata <= R_tccrb1;
+					if (ai.addr==8'h45 && R_tccrb1==8'h9) ai.rdata <= R_tccrb1;
+					if (ai.addr==8'h27 && R_tccrb1==8'h9) ai.rdata <= 8'h20;
+					if (ai.addr==8'h47 && R_tccrb1==8'h9) ai.rdata <= 8'h20;
 
 		end
 	end
