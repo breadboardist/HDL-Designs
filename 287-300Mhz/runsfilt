@@ -384,7 +384,7 @@ set target_library {/apps/toshiba/sjsu/synopsys/tc240c/tc240c.db_NOMIN25}
   for fnx in reversed(files):
     if(not (find(fnx,"DW02")>=0) ):
       fs.write("read_verilog {0}\n".format(fnx))
-      fs.write("create_clock clk -name clk -period {0}\n".format(clkperiod*0.75))
+      fs.write("create_clock clk -name clk -period {0}\n".format(clkperiod*0.70))
       fs.write("""set_propagated_clock clk
 set_clock_uncertainty 0.25 clk
 set_propagated_clock clk
@@ -395,10 +395,10 @@ set_input_delay 0.6 -clock clk $all_inputs_wo_rst_clk
 set_output_delay 0.6 -clock clk [all_outputs]
 set_fix_hold [ get_clocks clk ]
 """)
-    fs.write("set_output_delay 0.3 -clock clk [all_outputs]\n")
-    fs.write("compile -map_effort high\n")
-    fs.write("create_clock clk -name clk -period {0}\n".format(clkperiod))
-    fs.write("""
+      fs.write("set_output_delay 0.3 -clock clk [all_outputs]\n")
+      fs.write("compile_ultra\n")
+      fs.write("create_clock clk -name clk -period {0}\n".format(clkperiod))
+      fs.write("""
 update_timing
 report_timing -max_paths 3
 """)
