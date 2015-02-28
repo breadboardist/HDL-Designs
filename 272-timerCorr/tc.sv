@@ -17,7 +17,9 @@ module tc (tci ai);
 
 	always @ (posedge(ai.rst) or posedge(ai.clk))
 		begin
-			//Reset everything on getting reset pulse
+			////////////////////////////////////////////
+			//Reset everything on getting reset pulse //
+			////////////////////////////////////////////
 			if (ai.rst) begin
 					R_tccra <= 0;
 					R_tccra1 <= 0;
@@ -33,7 +35,9 @@ module tc (tci ai);
 					R_tcnt <= 0;
 					R_tcnt1 <= 0;
 			end
-			//Write data
+			///////////////
+			//Write data //
+			///////////////
 			else if (R_tcnt==0 && ai.write==1) begin
 				case (ai.addr)
 					8'h27: R_ocra <= ai.wdata;
@@ -47,7 +51,9 @@ module tc (tci ai);
 					8'h45: R_tccrb1 <= ai.wdata;
 				endcase
 			end
-			//Read data
+			//////////////
+			//Read data //
+			//////////////
 			else if (R_timsk==7 && ai.read==1) begin
 					if (ai.addr==8'h27) ai.rdata <= R_ocra;
 					if (ai.addr==8'h28) ai.rdata <= R_ocrb;
@@ -75,6 +81,9 @@ module tc (tci ai);
 					R_timsk<=8'h8; 
 			end
 
+			//////////////////////////////////////////////////////////////////////////
+			//All conditions from the data sheet implemented to pass the test bench //
+			//////////////////////////////////////////////////////////////////////////
 			else if (R_timsk==8 && ai.read==1) begin
 					if (ai.addr==8'h27) ai.rdata <= R_ocra1;
 					if (ai.addr==8'h24) ai.rdata <= R_tccra;

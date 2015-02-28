@@ -38,3 +38,4 @@
   case 38: addBug("s2_top","ocra"); break;
   case 39: addBug("s2_ocraxfr","ocra"); break;
   case 40: addBug("s2_ocrbxfr","ocrb"); break;
+You caught all the errors :-)
