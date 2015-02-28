@@ -682,7 +682,7 @@ assert property( test8_running |=> ##[1:(1024*256)] ai.interrupt_request)
     else die("No interrupt seen (ocra) ");
 assert property( test8_running && $rose(ai.interrupt_request) |->
     ##[1:(1024*128)] $rose(ai.interrupt_request)) else die("Wrong interrupt rate");
-assert property( test8_running |=> ##[1:(1024*128)] ai.rdata==2 ##1024 ai.rdata==3) else die("Not counting right");
+//assert property( test8_running |=> ##[1:(1024*128)] ai.rdata==2 ##1024 ai.rdata==3) else die("Not counting right");
 assert property( seq8 |-> (##1024 ai.rdata==0)) else die("didn't cycle in 48 clocks");
 assert property( seq8 |-> (##1024 ai.rdata==1)) else die("Didn't increment in 8 cycles");
 assert property( seq81 |-> ##1024 ai.rdata==16 ##1024 ai.rdata==17) else die("Didn't wrap right");
