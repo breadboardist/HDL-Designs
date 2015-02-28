@@ -49,22 +49,22 @@ module tc (tci ai);
 			end
 			//Read data
 			else if (R_timsk==7 && ai.read==1) begin
-					if (hw1.addr==8'h27) hw1.rdata <= R_ocra;
-					if (hw1.addr==8'h28) hw1.rdata <= R_ocrb;
-					if (hw1.addr==8'h24) hw1.rdata <= R_tccra;
-					if (hw1.addr==8'h25) hw1.rdata <= R_tccrb;
-					if (hw1.addr==8'h15) hw1.rdata <= R_tifr;
-					if (hw1.addr==8'h6E) hw1.rdata <= R_timsk;
-					if (hw1.addr==8'h47) hw1.rdata <= R_ocra; 
-					if (hw1.addr==8'h44) hw1.rdata <= R_tccra;
-					if (hw1.addr==8'h15) hw1.rdata <= 8'h06;
-					if (hw1.addr==8'h35) hw1.rdata <= 8'h06;
-					if (hw1.addr==8'h45) hw1.wdata <= R_tccrb1;
-					if (hw1.addr==8'h26) begin
+					if (ai.addr==8'h27) ai.rdata <= R_ocra;
+					if (ai.addr==8'h28) ai.rdata <= R_ocrb;
+					if (ai.addr==8'h24) ai.rdata <= R_tccra;
+					if (ai.addr==8'h25) ai.rdata <= R_tccrb;
+					if (ai.addr==8'h15) ai.rdata <= R_tifr;
+					if (ai.addr==8'h6E) ai.rdata <= R_timsk;
+					if (ai.addr==8'h47) ai.rdata <= R_ocra; 
+					if (ai.addr==8'h44) ai.rdata <= R_tccra;
+					if (ai.addr==8'h15) ai.rdata <= 8'h06;
+					if (ai.addr==8'h35) ai.rdata <= 8'h06;
+					if (ai.addr==8'h45) ai.wdata <= R_tccrb1;
+					if (ai.addr==8'h26) begin
 											R_tcnt <= R_tccra; 
-											hw1.rdata <= R_tcnt; 
-											repeat(4) @(posedge (hw1.clk)); hw1.rdata <= R_tcnt+1'h1;
-											hw1.interrupt_request <= 1;
+											ai.rdata <= R_tcnt; 
+											repeat(4) @(posedge (ai.clk)); ai.rdata <= R_tcnt+1'h1;
+											ai.interrupt_request <= 1;
 										end
 			end
 
