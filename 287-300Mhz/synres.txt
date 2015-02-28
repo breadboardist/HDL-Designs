@@ -1,0 +1,817 @@
+
+                      Design Compiler Graphical
+                            DC Ultra (TM)
+                             DFTMAX (TM)
+                         Power Compiler (TM)
+                           DesignWare (R)
+                           DC Expert (TM)
+                         Design Vision (TM)
+                          HDL Compiler (TM)
+                         VHDL Compiler (TM)
+                            DFT Compiler
+                        Library Compiler (TM)
+                         Design Compiler(R)
+
+          Version I-2013.12-SP5 for RHEL32 -- Jul 20, 2014
+               Copyright (c) 1988-2014 Synopsys, Inc.
+
+This software and the associated documentation are confidential and 
+proprietary to Synopsys, Inc. Your use or disclosure of this software 
+is subject to the terms and conditions of a written license agreement 
+between you, or your company, and Synopsys, Inc.
+
+Information: As of the J-2014.09 version of dc_shell, the 32-bit
+             version of the product will not be delivered by default.
+             If you require a 32-bit version for any reason, please
+             contact Synopsys technical support.
+
+Initializing...
+set link_library {/apps/toshiba/sjsu/synopsys/tc240c/tc240c.db_NOMIN25 /apps/synopsys/I-2013.12-SP5/libraries/syn/dw_foundation.sldb}
+/apps/toshiba/sjsu/synopsys/tc240c/tc240c.db_NOMIN25 /apps/synopsys/I-2013.12-SP5/libraries/syn/dw_foundation.sldb
+set target_library {/apps/toshiba/sjsu/synopsys/tc240c/tc240c.db_NOMIN25}
+/apps/toshiba/sjsu/synopsys/tc240c/tc240c.db_NOMIN25
+read_verilog sfilt.v
+Loading db file '/apps/toshiba/sjsu/synopsys/tc240c/tc240c.db_NOMIN25'
+Loading db file '/apps/synopsys/I-2013.12-SP5/libraries/syn/dw_foundation.sldb'
+Loading db file '/apps/synopsys/I-2013.12-SP5/libraries/syn/gtech.db'
+Loading db file '/apps/synopsys/I-2013.12-SP5/libraries/syn/standard.sldb'
+  Loading link library 'tc240c'
+  Loading link library 'gtech'
+Loading verilog file '/home/so/soun0694/Work/287-300Mhz/sfilt.v'
+Detecting input file type automatically (-rtl or -netlist).
+Reading with Presto HDL Compiler (equivalent to -rtl option).
+Running PRESTO HDLC
+Compiling source file /home/so/soun0694/Work/287-300Mhz/sfilt.v
+Warning:  Starting with the 2000.11-1 release, the Presto Verilog reader treats Verilog 'integer' types as signed; synthesized result may not match earlier versions of HDL Compiler. (VER-314)
+Warning:  /home/so/soun0694/Work/287-300Mhz/sfilt.v:151: signed to unsigned part selection occurs. (VER-318)
+Warning:  /home/so/soun0694/Work/287-300Mhz/sfilt.v:159: signed to unsigned part selection occurs. (VER-318)
+Warning:  /home/so/soun0694/Work/287-300Mhz/sfilt.v:171: unsigned to signed assignment occurs. (VER-318)
+Warning:  /home/so/soun0694/Work/287-300Mhz/sfilt.v:172: unsigned to signed assignment occurs. (VER-318)
+Warning:  /home/so/soun0694/Work/287-300Mhz/sfilt.v:183: signed to unsigned conversion occurs. (VER-318)
+Warning:  /home/so/soun0694/Work/287-300Mhz/sfilt.v:186: signed to unsigned part selection occurs. (VER-318)
+Warning:  /home/so/soun0694/Work/287-300Mhz/sfilt.v:195: signed to unsigned assignment occurs. (VER-318)
+
+Statistics for case statements in always block at line 164 in file
+	'/home/so/soun0694/Work/287-300Mhz/sfilt.v'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|           175            |    auto/auto     |
+===============================================
+
+Inferred memory devices in process
+	in routine sfilt line 32 in file
+		'/home/so/soun0694/Work/287-300Mhz/sfilt.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|     cmd0_2_reg      | Flip-flop |   2   |  Y  | N  | Y  | N  | N  | N  | N  |
+|     cmd0_1_reg      | Flip-flop |   2   |  Y  | N  | Y  | N  | N  | N  | N  |
+|     cmd0_0_reg      | Flip-flop |   2   |  Y  | N  | Y  | N  | N  | N  | N  |
+|     push0_1_reg     | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+|    cmd2_en_2_reg    | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|    cmd1_en_2_reg    | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|     push0_0_reg     | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+|    cmd2_en_1_reg    | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+|    cmd1_en_1_reg    | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+|    cmd0_en_1_reg    | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+|    cmd0_en_2_reg    | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|   cmd0_en_2_d_reg   | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+|   cmd1_en_2_d_reg   | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+|     push0_2_reg     | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine sfilt line 67 in file
+		'/home/so/soun0694/Work/287-300Mhz/sfilt.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|     out0_0_reg      | Flip-flop |  64   |  Y  | N  | Y  | N  | N  | N  | N  |
+|     out0_2_reg      | Flip-flop |  64   |  Y  | N  | Y  | N  | N  | N  | N  |
+|     out0_1_reg      | Flip-flop |  64   |  Y  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine sfilt line 106 in file
+		'/home/so/soun0694/Work/287-300Mhz/sfilt.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|     out1_0_reg      | Flip-flop |  64   |  Y  | N  | Y  | N  | N  | N  | N  |
+|     out1_2_reg      | Flip-flop |  64   |  Y  | N  | Y  | N  | N  | N  | N  |
+|     out1_1_reg      | Flip-flop |  64   |  Y  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine sfilt line 142 in file
+		'/home/so/soun0694/Work/287-300Mhz/sfilt.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|     roundit_reg     | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|      h0_0_reg       | Flip-flop |   7   |  Y  | N  | Y  | N  | N  | N  | N  |
+|      h0_1_reg       | Flip-flop |   7   |  Y  | N  | Y  | N  | N  | N  | N  |
+|     out2_2_reg      | Flip-flop |  64   |  Y  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine sfilt line 198 in file
+		'/home/so/soun0694/Work/287-300Mhz/sfilt.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|      cmd0_reg       | Flip-flop |   2   |  Y  | N  | Y  | N  | N  | N  | N  |
+|    _pushout_reg     | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+|      push0_reg      | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+|       acc_reg       | Flip-flop |  64   |  Y  | N  | Y  | N  | N  | N  | N  |
+|       q0_reg        | Flip-flop |  32   |  Y  | N  | Y  | N  | N  | N  | N  |
+|       h0_reg        | Flip-flop |  32   |  Y  | N  | Y  | N  | N  | N  | N  |
+|      dout_reg       | Flip-flop |  32   |  Y  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+Presto compilation completed successfully.
+Current design is now '/home/so/soun0694/Work/287-300Mhz/sfilt.db:sfilt'
+Loaded 1 design.
+Current design is 'sfilt'.
+sfilt
+create_clock clk -name clk -period 2.31
+1
+set_propagated_clock clk
+Information: set_input_delay values are added to the propagated clock skew. (TIM-113)
+1
+set_clock_uncertainty 0.25 clk
+1
+set_propagated_clock clk
+Information: set_input_delay values are added to the propagated clock skew. (TIM-113)
+1
+set_output_delay 0.5 -clock clk [all_outputs]
+1
+set all_inputs_wo_rst_clk [remove_from_collection [remove_from_collection [all_inputs] [get_port clk]] [get_port rst]]
+{pushin cmd[1] cmd[0] q[31] q[30] q[29] q[28] q[27] q[26] q[25] q[24] q[23] q[22] q[21] q[20] q[19] q[18] q[17] q[16] q[15] q[14] q[13] q[12] q[11] q[10] q[9] q[8] q[7] q[6] q[5] q[4] q[3] q[2] q[1] q[0] h[31] h[30] h[29] h[28] h[27] h[26] h[25] h[24] h[23] h[22] h[21] h[20] h[19] h[18] h[17] h[16] h[15] h[14] h[13] h[12] h[11] h[10] h[9] h[8] h[7] h[6] h[5] h[4] h[3] h[2] h[1] h[0]}
+set_driving_cell -lib_cell CND2X1 $all_inputs_wo_rst_clk
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+1
+set_input_delay 0.6 -clock clk $all_inputs_wo_rst_clk
+1
+set_output_delay 0.6 -clock clk [all_outputs]
+1
+set_fix_hold [ get_clocks clk ]
+1
+set_output_delay 0.3 -clock clk [all_outputs]
+1
+compile_ultra
+Analyzing: "/apps/toshiba/sjsu/synopsys/tc240c/tc240c.db_NOMIN25"
+Library analysis succeeded.
+Information: Evaluating DesignWare library utilization. (UISN-27)
+
+============================================================================
+| DesignWare Building Block Library  |         Version         | Available |
+============================================================================
+| Basic DW Building Blocks           | I-2013.12-DWBB_201312.5 |     *     |
+| Licensed DW Building Blocks        | I-2013.12-DWBB_201312.5 |     *     |
+============================================================================
+
+Information: Sequential output inversion is enabled.  SVF file must be used for formal verification. (OPT-1208)
+
+Information: There are 3 potential problems in your design. Please run 'check_design' for more information. (LINT-99)
+
+
+Loaded alib file './alib-52/tc240c.db_NOMIN25.alib'
+Information: Ungrouping 0 of 1 hierarchies before Pass 1 (OPT-775)
+
+  Beginning Pass 1 Mapping
+  ------------------------
+  Processing 'sfilt'
+Information: In design 'sfilt', the register 'out0_0_reg[0]' is removed because it is merged to 'out1_0_reg[0]'. (OPT-1215)
+Information: In design 'sfilt', the register 'out0_1_reg[0]' is removed because it is merged to 'out1_1_reg[0]'. (OPT-1215)
+Information: In design 'sfilt', the register 'out0_0_reg[1]' is removed because it is merged to 'out1_0_reg[1]'. (OPT-1215)
+Information: In design 'sfilt', the register 'out0_1_reg[1]' is removed because it is merged to 'out1_1_reg[1]'. (OPT-1215)
+Information: In design 'sfilt', the register 'out0_0_reg[2]' is removed because it is merged to 'out1_0_reg[2]'. (OPT-1215)
+Information: In design 'sfilt', the register 'out0_1_reg[2]' is removed because it is merged to 'out1_1_reg[2]'. (OPT-1215)
+Information: In design 'sfilt', the register 'out0_0_reg[3]' is removed because it is merged to 'out1_0_reg[3]'. (OPT-1215)
+Information: In design 'sfilt', the register 'out0_1_reg[3]' is removed because it is merged to 'out1_1_reg[3]'. (OPT-1215)
+Information: In design 'sfilt', the register 'out0_0_reg[4]' is removed because it is merged to 'out1_0_reg[4]'. (OPT-1215)
+Information: In design 'sfilt', the register 'out0_1_reg[4]' is removed because it is merged to 'out1_1_reg[4]'. (OPT-1215)
+Information: In design 'sfilt', the register 'out0_0_reg[5]' is removed because it is merged to 'out1_0_reg[5]'. (OPT-1215)
+Information: In design 'sfilt', the register 'out0_1_reg[5]' is removed because it is merged to 'out1_1_reg[5]'. (OPT-1215)
+Information: In design 'sfilt', the register 'out0_0_reg[6]' is removed because it is merged to 'out1_0_reg[6]'. (OPT-1215)
+Information: In design 'sfilt', the register 'out0_1_reg[6]' is removed because it is merged to 'out1_1_reg[6]'. (OPT-1215)
+Information: In design 'sfilt', the register 'out0_0_reg[7]' is removed because it is merged to 'out1_0_reg[7]'. (OPT-1215)
+Information: In design 'sfilt', the register 'out0_1_reg[7]' is removed because it is merged to 'out1_1_reg[7]'. (OPT-1215)
+Information: In design 'sfilt', the register 'out0_0_reg[8]' is removed because it is merged to 'out1_0_reg[8]'. (OPT-1215)
+Information: In design 'sfilt', the register 'out0_1_reg[8]' is removed because it is merged to 'out1_1_reg[8]'. (OPT-1215)
+Information: In design 'sfilt', the register 'out0_0_reg[9]' is removed because it is merged to 'out1_0_reg[9]'. (OPT-1215)
+Information: In design 'sfilt', the register 'out0_1_reg[9]' is removed because it is merged to 'out1_1_reg[9]'. (OPT-1215)
+Information: In design 'sfilt', the register 'out0_0_reg[10]' is removed because it is merged to 'out1_0_reg[10]'. (OPT-1215)
+Information: In design 'sfilt', the register 'out0_1_reg[10]' is removed because it is merged to 'out1_1_reg[10]'. (OPT-1215)
+Information: In design 'sfilt', the register 'out0_0_reg[11]' is removed because it is merged to 'out1_0_reg[11]'. (OPT-1215)
+Information: In design 'sfilt', the register 'out0_1_reg[11]' is removed because it is merged to 'out1_1_reg[11]'. (OPT-1215)
+Information: In design 'sfilt', the register 'out0_0_reg[12]' is removed because it is merged to 'out1_0_reg[12]'. (OPT-1215)
+Information: In design 'sfilt', the register 'out0_1_reg[12]' is removed because it is merged to 'out1_1_reg[12]'. (OPT-1215)
+Information: In design 'sfilt', the register 'out0_0_reg[13]' is removed because it is merged to 'out1_0_reg[13]'. (OPT-1215)
+Information: In design 'sfilt', the register 'out0_1_reg[13]' is removed because it is merged to 'out1_1_reg[13]'. (OPT-1215)
+Information: In design 'sfilt', the register 'out0_0_reg[14]' is removed because it is merged to 'out1_0_reg[14]'. (OPT-1215)
+Information: In design 'sfilt', the register 'out0_1_reg[14]' is removed because it is merged to 'out1_1_reg[14]'. (OPT-1215)
+Information: In design 'sfilt', the register 'out0_0_reg[15]' is removed because it is merged to 'out1_0_reg[15]'. (OPT-1215)
+Information: In design 'sfilt', the register 'out0_1_reg[15]' is removed because it is merged to 'out1_1_reg[15]'. (OPT-1215)
+Information: In design 'sfilt', the register 'out0_0_reg[16]' is removed because it is merged to 'out1_0_reg[16]'. (OPT-1215)
+Information: In design 'sfilt', the register 'out0_1_reg[16]' is removed because it is merged to 'out1_1_reg[16]'. (OPT-1215)
+Information: In design 'sfilt', the register 'out0_0_reg[17]' is removed because it is merged to 'out1_0_reg[17]'. (OPT-1215)
+Information: In design 'sfilt', the register 'out0_1_reg[17]' is removed because it is merged to 'out1_1_reg[17]'. (OPT-1215)
+Information: In design 'sfilt', the register 'out0_0_reg[18]' is removed because it is merged to 'out1_0_reg[18]'. (OPT-1215)
+Information: In design 'sfilt', the register 'out0_1_reg[18]' is removed because it is merged to 'out1_1_reg[18]'. (OPT-1215)
+Information: In design 'sfilt', the register 'out0_0_reg[19]' is removed because it is merged to 'out1_0_reg[19]'. (OPT-1215)
+Information: In design 'sfilt', the register 'out0_1_reg[19]' is removed because it is merged to 'out1_1_reg[19]'. (OPT-1215)
+Information: In design 'sfilt', the register 'out0_0_reg[20]' is removed because it is merged to 'out1_0_reg[20]'. (OPT-1215)
+Information: In design 'sfilt', the register 'out0_1_reg[20]' is removed because it is merged to 'out1_1_reg[20]'. (OPT-1215)
+Information: In design 'sfilt', the register 'out0_0_reg[21]' is removed because it is merged to 'out1_0_reg[21]'. (OPT-1215)
+Information: In design 'sfilt', the register 'out0_1_reg[21]' is removed because it is merged to 'out1_1_reg[21]'. (OPT-1215)
+Information: In design 'sfilt', the register 'out0_0_reg[22]' is removed because it is merged to 'out1_0_reg[22]'. (OPT-1215)
+Information: In design 'sfilt', the register 'out0_1_reg[22]' is removed because it is merged to 'out1_1_reg[22]'. (OPT-1215)
+Information: In design 'sfilt', the register 'out0_0_reg[23]' is removed because it is merged to 'out1_0_reg[23]'. (OPT-1215)
+Information: In design 'sfilt', the register 'out0_1_reg[23]' is removed because it is merged to 'out1_1_reg[23]'. (OPT-1215)
+Information: In design 'sfilt', the register 'out0_0_reg[24]' is removed because it is merged to 'out1_0_reg[24]'. (OPT-1215)
+Information: In design 'sfilt', the register 'out0_1_reg[24]' is removed because it is merged to 'out1_1_reg[24]'. (OPT-1215)
+Information: In design 'sfilt', the register 'out0_0_reg[25]' is removed because it is merged to 'out1_0_reg[25]'. (OPT-1215)
+Information: In design 'sfilt', the register 'out0_1_reg[25]' is removed because it is merged to 'out1_1_reg[25]'. (OPT-1215)
+Information: In design 'sfilt', the register 'out0_0_reg[26]' is removed because it is merged to 'out1_0_reg[26]'. (OPT-1215)
+Information: In design 'sfilt', the register 'out0_1_reg[26]' is removed because it is merged to 'out1_1_reg[26]'. (OPT-1215)
+Information: In design 'sfilt', the register 'out0_0_reg[27]' is removed because it is merged to 'out1_0_reg[27]'. (OPT-1215)
+Information: In design 'sfilt', the register 'out0_1_reg[27]' is removed because it is merged to 'out1_1_reg[27]'. (OPT-1215)
+Information: In design 'sfilt', the register 'out0_0_reg[28]' is removed because it is merged to 'out1_0_reg[28]'. (OPT-1215)
+Information: In design 'sfilt', the register 'out0_1_reg[28]' is removed because it is merged to 'out1_1_reg[28]'. (OPT-1215)
+Information: In design 'sfilt', the register 'out0_0_reg[29]' is removed because it is merged to 'out1_0_reg[29]'. (OPT-1215)
+Information: In design 'sfilt', the register 'out0_1_reg[29]' is removed because it is merged to 'out1_1_reg[29]'. (OPT-1215)
+Information: In design 'sfilt', the register 'out0_0_reg[30]' is removed because it is merged to 'out1_0_reg[30]'. (OPT-1215)
+Information: In design 'sfilt', the register 'out0_1_reg[30]' is removed because it is merged to 'out1_1_reg[30]'. (OPT-1215)
+Information: In design 'sfilt', the register 'out0_0_reg[31]' is removed because it is merged to 'out1_0_reg[31]'. (OPT-1215)
+Information: In design 'sfilt', the register 'out0_1_reg[31]' is removed because it is merged to 'out1_1_reg[31]'. (OPT-1215)
+Information: In design 'sfilt', the register 'out0_0_reg[32]' is removed because it is merged to 'out1_0_reg[32]'. (OPT-1215)
+Information: In design 'sfilt', the register 'out0_1_reg[32]' is removed because it is merged to 'out1_1_reg[32]'. (OPT-1215)
+Information: In design 'sfilt', the register 'out0_0_reg[33]' is removed because it is merged to 'out1_0_reg[33]'. (OPT-1215)
+Information: In design 'sfilt', the register 'out0_1_reg[33]' is removed because it is merged to 'out1_1_reg[33]'. (OPT-1215)
+Information: In design 'sfilt', the register 'out0_0_reg[34]' is removed because it is merged to 'out1_0_reg[34]'. (OPT-1215)
+Information: In design 'sfilt', the register 'out0_1_reg[34]' is removed because it is merged to 'out1_1_reg[34]'. (OPT-1215)
+Information: In design 'sfilt', the register 'out0_0_reg[35]' is removed because it is merged to 'out1_0_reg[35]'. (OPT-1215)
+Information: In design 'sfilt', the register 'out0_1_reg[35]' is removed because it is merged to 'out1_1_reg[35]'. (OPT-1215)
+Information: In design 'sfilt', the register 'out0_0_reg[36]' is removed because it is merged to 'out1_0_reg[36]'. (OPT-1215)
+Information: In design 'sfilt', the register 'out0_1_reg[36]' is removed because it is merged to 'out1_1_reg[36]'. (OPT-1215)
+Information: In design 'sfilt', the register 'out0_0_reg[37]' is removed because it is merged to 'out1_0_reg[37]'. (OPT-1215)
+Information: In design 'sfilt', the register 'out0_1_reg[37]' is removed because it is merged to 'out1_1_reg[37]'. (OPT-1215)
+Information: In design 'sfilt', the register 'out0_0_reg[38]' is removed because it is merged to 'out1_0_reg[38]'. (OPT-1215)
+Information: In design 'sfilt', the register 'out0_1_reg[38]' is removed because it is merged to 'out1_1_reg[38]'. (OPT-1215)
+Information: In design 'sfilt', the register 'out0_0_reg[39]' is removed because it is merged to 'out1_0_reg[39]'. (OPT-1215)
+Information: In design 'sfilt', the register 'out0_1_reg[39]' is removed because it is merged to 'out1_1_reg[39]'. (OPT-1215)
+Information: In design 'sfilt', the register 'out0_0_reg[40]' is removed because it is merged to 'out1_0_reg[40]'. (OPT-1215)
+Information: In design 'sfilt', the register 'out0_1_reg[40]' is removed because it is merged to 'out1_1_reg[40]'. (OPT-1215)
+Information: In design 'sfilt', the register 'out0_0_reg[41]' is removed because it is merged to 'out1_0_reg[41]'. (OPT-1215)
+Information: In design 'sfilt', the register 'out0_1_reg[41]' is removed because it is merged to 'out1_1_reg[41]'. (OPT-1215)
+Information: In design 'sfilt', the register 'out0_0_reg[42]' is removed because it is merged to 'out1_0_reg[42]'. (OPT-1215)
+Information: In design 'sfilt', the register 'out0_1_reg[42]' is removed because it is merged to 'out1_1_reg[42]'. (OPT-1215)
+Information: In design 'sfilt', the register 'out0_0_reg[43]' is removed because it is merged to 'out1_0_reg[43]'. (OPT-1215)
+Information: In design 'sfilt', the register 'out0_1_reg[43]' is removed because it is merged to 'out1_1_reg[43]'. (OPT-1215)
+Information: In design 'sfilt', the register 'out0_0_reg[44]' is removed because it is merged to 'out1_0_reg[44]'. (OPT-1215)
+Information: In design 'sfilt', the register 'out0_1_reg[44]' is removed because it is merged to 'out1_1_reg[44]'. (OPT-1215)
+Information: In design 'sfilt', the register 'out0_0_reg[45]' is removed because it is merged to 'out1_0_reg[45]'. (OPT-1215)
+Information: In design 'sfilt', the register 'out0_1_reg[45]' is removed because it is merged to 'out1_1_reg[45]'. (OPT-1215)
+Information: In design 'sfilt', the register 'out0_0_reg[46]' is removed because it is merged to 'out1_0_reg[46]'. (OPT-1215)
+Information: In design 'sfilt', the register 'out0_1_reg[46]' is removed because it is merged to 'out1_1_reg[46]'. (OPT-1215)
+Information: In design 'sfilt', the register 'out0_0_reg[47]' is removed because it is merged to 'out1_0_reg[47]'. (OPT-1215)
+Information: In design 'sfilt', the register 'out0_1_reg[47]' is removed because it is merged to 'out1_1_reg[47]'. (OPT-1215)
+Information: In design 'sfilt', the register 'out0_0_reg[48]' is removed because it is merged to 'out1_0_reg[48]'. (OPT-1215)
+Information: In design 'sfilt', the register 'out0_1_reg[48]' is removed because it is merged to 'out1_1_reg[48]'. (OPT-1215)
+Information: In design 'sfilt', the register 'out0_0_reg[49]' is removed because it is merged to 'out1_0_reg[49]'. (OPT-1215)
+Information: In design 'sfilt', the register 'out0_1_reg[49]' is removed because it is merged to 'out1_1_reg[49]'. (OPT-1215)
+Information: In design 'sfilt', the register 'out0_0_reg[50]' is removed because it is merged to 'out1_0_reg[50]'. (OPT-1215)
+Information: In design 'sfilt', the register 'out0_1_reg[50]' is removed because it is merged to 'out1_1_reg[50]'. (OPT-1215)
+Information: In design 'sfilt', the register 'out0_0_reg[51]' is removed because it is merged to 'out1_0_reg[51]'. (OPT-1215)
+Information: In design 'sfilt', the register 'out0_1_reg[51]' is removed because it is merged to 'out1_1_reg[51]'. (OPT-1215)
+Information: In design 'sfilt', the register 'out0_0_reg[52]' is removed because it is merged to 'out1_0_reg[52]'. (OPT-1215)
+Information: In design 'sfilt', the register 'out0_1_reg[52]' is removed because it is merged to 'out1_1_reg[52]'. (OPT-1215)
+Information: In design 'sfilt', the register 'out0_0_reg[53]' is removed because it is merged to 'out1_0_reg[53]'. (OPT-1215)
+Information: In design 'sfilt', the register 'out0_1_reg[53]' is removed because it is merged to 'out1_1_reg[53]'. (OPT-1215)
+Information: In design 'sfilt', the register 'out0_0_reg[54]' is removed because it is merged to 'out1_0_reg[54]'. (OPT-1215)
+Information: In design 'sfilt', the register 'out0_1_reg[54]' is removed because it is merged to 'out1_1_reg[54]'. (OPT-1215)
+Information: In design 'sfilt', the register 'out0_0_reg[55]' is removed because it is merged to 'out1_0_reg[55]'. (OPT-1215)
+Information: In design 'sfilt', the register 'out0_1_reg[55]' is removed because it is merged to 'out1_1_reg[55]'. (OPT-1215)
+Information: In design 'sfilt', the register 'out0_0_reg[56]' is removed because it is merged to 'out1_0_reg[56]'. (OPT-1215)
+Information: In design 'sfilt', the register 'out0_1_reg[56]' is removed because it is merged to 'out1_1_reg[56]'. (OPT-1215)
+Information: In design 'sfilt', the register 'out0_0_reg[57]' is removed because it is merged to 'out1_0_reg[57]'. (OPT-1215)
+Information: In design 'sfilt', the register 'out0_1_reg[57]' is removed because it is merged to 'out1_1_reg[57]'. (OPT-1215)
+Information: In design 'sfilt', the register 'out0_0_reg[58]' is removed because it is merged to 'out1_0_reg[58]'. (OPT-1215)
+Information: In design 'sfilt', the register 'out0_1_reg[58]' is removed because it is merged to 'out1_1_reg[58]'. (OPT-1215)
+Information: In design 'sfilt', the register 'out0_0_reg[59]' is removed because it is merged to 'out1_0_reg[59]'. (OPT-1215)
+Information: In design 'sfilt', the register 'out0_1_reg[59]' is removed because it is merged to 'out1_1_reg[59]'. (OPT-1215)
+Information: In design 'sfilt', the register 'out0_0_reg[60]' is removed because it is merged to 'out1_0_reg[60]'. (OPT-1215)
+Information: In design 'sfilt', the register 'out0_1_reg[60]' is removed because it is merged to 'out1_1_reg[60]'. (OPT-1215)
+Information: In design 'sfilt', the register 'out0_0_reg[61]' is removed because it is merged to 'out1_0_reg[61]'. (OPT-1215)
+Information: In design 'sfilt', the register 'out0_1_reg[61]' is removed because it is merged to 'out1_1_reg[61]'. (OPT-1215)
+Information: In design 'sfilt', the register 'out0_0_reg[62]' is removed because it is merged to 'out1_0_reg[62]'. (OPT-1215)
+Information: In design 'sfilt', the register 'out0_1_reg[62]' is removed because it is merged to 'out1_1_reg[62]'. (OPT-1215)
+Information: In design 'sfilt', the register 'out0_0_reg[63]' is removed because it is merged to 'out1_0_reg[63]'. (OPT-1215)
+Information: In design 'sfilt', the register 'out0_1_reg[63]' is removed because it is merged to 'out1_1_reg[63]'. (OPT-1215)
+ Implement Synthetic for 'sfilt'.
+Information: Added key list 'DesignWare' to design 'sfilt'. (DDB-72)
+
+  Updating timing information
+Information: Updating design information... (UID-85)
+Information: Input delay ('fall') on clock port 'clk' will be added to the clock's propagated skew. (TIM-112)
+Information: Input delay ('rise') on clock port 'clk' will be added to the clock's propagated skew. (TIM-112)
+
+  Beginning Mapping Optimizations  (Ultra High effort)
+  -------------------------------
+  Mapping Optimization (Phase 1)
+
+                                  TOTAL                                                
+   ELAPSED            WORST NEG   SETUP    DESIGN                             MIN DELAY
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT            COST   
+  --------- --------- --------- --------- --------- ------------------------- ---------
+    0:00:12   18370.0      2.11     246.0       0.0                                0.00
+    0:00:12   18370.0      2.11     246.0       0.0                                0.00
+    0:00:12   18370.0      2.11     246.0       0.0                                0.00
+    0:00:12   18366.0      2.11     245.9       0.0                                0.00
+  Re-synthesis Optimization (Phase 1)
+  Re-synthesis Optimization (Phase 2)
+  Global Optimization (Phase 1)
+  Global Optimization (Phase 2)
+  Global Optimization (Phase 3)
+  Global Optimization (Phase 4)
+  Global Optimization (Phase 5)
+  Global Optimization (Phase 6)
+  Global Optimization (Phase 7)
+  Global Optimization (Phase 8)
+  Global Optimization (Phase 9)
+  Global Optimization (Phase 10)
+  Global Optimization (Phase 11)
+  Global Optimization (Phase 12)
+  Global Optimization (Phase 13)
+  Global Optimization (Phase 14)
+  Global Optimization (Phase 15)
+  Global Optimization (Phase 16)
+  Global Optimization (Phase 17)
+  Global Optimization (Phase 18)
+  Global Optimization (Phase 19)
+  Global Optimization (Phase 20)
+  Global Optimization (Phase 21)
+  Global Optimization (Phase 22)
+  Global Optimization (Phase 23)
+  Global Optimization (Phase 24)
+  Global Optimization (Phase 25)
+  Global Optimization (Phase 26)
+  Global Optimization (Phase 27)
+  Global Optimization (Phase 28)
+  Global Optimization (Phase 29)
+  Global Optimization (Phase 30)
+  Global Optimization (Phase 31)
+  Mapping 'sfilt_DW_mult_tc_3'
+Information: Input delay ('fall') on clock port 'clk' will be added to the clock's propagated skew. (TIM-112)
+Information: Input delay ('rise') on clock port 'clk' will be added to the clock's propagated skew. (TIM-112)
+Information: Input delay ('fall') on clock port 'clk' will be added to the clock's propagated skew. (TIM-112)
+Information: Input delay ('rise') on clock port 'clk' will be added to the clock's propagated skew. (TIM-112)
+    0:00:26   13068.0      1.85     141.0    5243.0                                0.00
+
+
+
+  Beginning Delay Optimization Phase
+  ----------------------------------
+
+                                  TOTAL                                                
+   ELAPSED            WORST NEG   SETUP    DESIGN                             MIN DELAY
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT            COST   
+  --------- --------- --------- --------- --------- ------------------------- ---------
+    0:00:26   13068.0      1.85     141.0    5243.0                                0.00
+    0:00:27   13148.5      1.80     138.6    5243.0                                0.00
+    0:00:27   13196.5      1.80     137.7    5242.4                                0.00
+    0:00:27   13197.5      1.80     137.3    5242.4                                0.00
+    0:00:37   13797.0      1.75     135.8    5242.4                                0.00
+    0:00:37   13797.0      1.75     135.8    5242.4                                0.00
+    0:00:37   13804.0      1.74     135.8    5242.4                                0.00
+    0:00:37   13804.0      1.74     135.8    5242.4                                0.00
+    0:00:39   13870.5      1.74     135.5    5242.4                                0.00
+    0:00:39   13870.5      1.74     135.5    5242.4                                0.00
+    0:00:53   15387.5      1.53     125.4    5242.4                                0.00
+    0:00:53   15387.5      1.53     125.4    5242.4                                0.00
+    0:01:02   15648.0      1.53     125.1    5242.4                                0.00
+
+  Beginning Delay Optimization
+  ----------------------------
+    0:01:03   15648.0      1.54     147.0    5216.7                                0.00
+    0:01:12   16117.5      1.46     142.1    5216.9                                0.00
+    0:01:12   16117.5      1.46     142.1    5216.9                                0.00
+    0:01:18   16181.0      1.46     142.0    5216.9                                0.00
+    0:01:19   16177.5      1.45     141.5    5194.5                                0.00
+    0:01:29   16423.0      1.42     139.1    5194.9                                0.00
+    0:01:29   16423.0      1.42     139.1    5194.9                                0.00
+    0:01:33   16462.5      1.41     138.9    5194.9                                0.00
+
+
+  Beginning Design Rule Fixing  (min_path)  (max_capacitance)
+  ----------------------------
+
+                                  TOTAL                                                
+   ELAPSED            WORST NEG   SETUP    DESIGN                             MIN DELAY
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT            COST   
+  --------- --------- --------- --------- --------- ------------------------- ---------
+    0:01:33   16462.5      1.41     138.9    5194.9                              -31.52
+  Global Optimization (Phase 32)
+  Global Optimization (Phase 33)
+  Global Optimization (Phase 34)
+    0:01:36   16874.5      1.41     139.9       0.0                                0.00
+    0:01:37   16312.5      1.41     115.0       0.0                              -15.89
+    0:01:37   16312.5      1.41     115.0       0.0                              -15.89
+    0:01:39   16276.5      1.40     114.8       0.0 out1_0_reg[41]/D             -15.93
+    0:01:40   16250.5      1.40     114.5       0.0                              -15.94
+    0:01:45   16312.0      1.40     114.3       0.0                              -15.98
+    0:01:47   16606.0      1.40     116.4       0.0                                0.00
+
+                                  TOTAL                                                
+   ELAPSED            WORST NEG   SETUP    DESIGN                             MIN DELAY
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT            COST   
+  --------- --------- --------- --------- --------- ------------------------- ---------
+    0:01:47   16606.0      1.40     116.4       0.0                                0.00
+    0:01:48   16301.0      1.40     116.4       0.0                              -17.23
+
+
+  Beginning Area-Recovery Phase  (max_area 0)
+  -----------------------------
+
+                                  TOTAL                                                
+   ELAPSED            WORST NEG   SETUP    DESIGN                             MIN DELAY
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT            COST   
+  --------- --------- --------- --------- --------- ------------------------- ---------
+    0:01:49   16297.0      1.40     117.8       0.0                              -17.24
+  Global Optimization (Phase 35)
+  Global Optimization (Phase 36)
+  Global Optimization (Phase 37)
+  Global Optimization (Phase 38)
+  Global Optimization (Phase 39)
+  Global Optimization (Phase 40)
+  Global Optimization (Phase 41)
+  Global Optimization (Phase 42)
+  Global Optimization (Phase 43)
+  Global Optimization (Phase 44)
+  Global Optimization (Phase 45)
+  Global Optimization (Phase 46)
+  Global Optimization (Phase 47)
+  Global Optimization (Phase 48)
+  Global Optimization (Phase 49)
+  Global Optimization (Phase 50)
+  Global Optimization (Phase 51)
+  Global Optimization (Phase 52)
+  Global Optimization (Phase 53)
+  Global Optimization (Phase 54)
+  Global Optimization (Phase 55)
+  Global Optimization (Phase 56)
+  Global Optimization (Phase 57)
+  Global Optimization (Phase 58)
+  Global Optimization (Phase 59)
+  Global Optimization (Phase 60)
+  Global Optimization (Phase 61)
+  Global Optimization (Phase 62)
+  Global Optimization (Phase 63)
+  Global Optimization (Phase 64)
+  Global Optimization (Phase 65)
+  Global Optimization (Phase 66)
+  Global Optimization (Phase 67)
+  Global Optimization (Phase 68)
+  Global Optimization (Phase 69)
+  Global Optimization (Phase 70)
+  Global Optimization (Phase 71)
+  Global Optimization (Phase 72)
+  Global Optimization (Phase 73)
+  Global Optimization (Phase 74)
+  Global Optimization (Phase 75)
+  Global Optimization (Phase 76)
+  Global Optimization (Phase 77)
+  Global Optimization (Phase 78)
+  Global Optimization (Phase 79)
+  Global Optimization (Phase 80)
+    0:02:06   15789.5      1.31     104.6       0.0 out1_0_reg[62]/D             -24.72
+    0:02:07   15812.0      1.30     104.2       0.0                              -24.76
+    0:02:11   15812.0      1.30     104.2       0.0                              -24.76
+    0:02:13   16190.0      1.30     105.6       0.0                                0.00
+    0:02:14   16200.5      1.30     105.3       0.0                               -0.03
+    0:02:14   16177.0      1.30     104.9       0.0                               -0.03
+    0:02:15   16183.0      1.30     104.9       0.0                               -0.03
+    0:02:16   16183.0      1.30     104.9       0.0                               -0.03
+    0:02:16   16183.0      1.30     104.9       0.0                               -0.03
+    0:02:16   16183.0      1.30     104.9       0.0                               -0.03
+    0:02:17   16183.0      1.30     104.9       0.0                               -0.03
+    0:02:17   16183.0      1.30     104.9       0.0                               -0.03
+    0:02:20   16218.0      1.29     104.6       0.0                               -0.03
+    0:02:20   16218.0      1.29     104.6       0.0                               -0.03
+    0:02:21   16218.0      1.29     104.6       0.0                               -0.03
+    0:02:21   16218.0      1.29     104.6       0.0                               -0.03
+    0:02:21   16218.0      1.29     104.6       0.0                               -0.03
+    0:02:21   16218.0      1.29     104.6       0.0                               -0.03
+    0:02:22   16218.0      1.29     104.6       0.0                               -0.03
+    0:02:22   16218.0      1.29     104.6       0.0                               -0.03
+    0:02:22   16218.0      1.29     104.6       0.0                               -0.03
+    0:02:22   16218.0      1.29     104.6       0.0                               -0.03
+    0:02:23   16218.0      1.29     104.6       0.0                               -0.03
+Loading db file '/apps/toshiba/sjsu/synopsys/tc240c/tc240c.db_NOMIN25'
+
+  Optimization Complete
+  ---------------------
+1
+create_clock clk -name clk -period 3.3
+1
+update_timing
+Information: Updating design information... (UID-85)
+1
+report_timing -max_paths 3
+ 
+****************************************
+Report : timing
+        -path full
+        -delay max
+        -max_paths 3
+Design : sfilt
+Version: I-2013.12-SP5
+Date   : Fri Feb 27 18:05:43 2015
+****************************************
+
+Operating Conditions: NOMIN25   Library: tc240c
+Wire Load Model Mode: top
+
+  Startpoint: q0_reg[11] (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: out1_0_reg[46]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock clk (rise edge)                    0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  q0_reg[11]/CP (CFD4X2)                   0.00       0.00 r
+  q0_reg[11]/Q (CFD4X2)                    0.39       0.39 r
+  U4692/Z (CIVX12)                         0.12       0.50 f
+  U1305/Z (CENX2)                          0.12       0.63 f
+  U6639/Z (COND2X1)                        0.19       0.81 r
+  U6713/S (CFA1X1)                         0.40       1.21 f
+  U6668/CO (CFA1X1)                        0.29       1.50 f
+  U6697/Z (CEO3X2)                         0.31       1.81 f
+  U6774/Z (CIVX2)                          0.05       1.86 r
+  U6776/Z (CND2X2)                         0.06       1.92 f
+  U3611/Z (CND2X2)                         0.05       1.97 r
+  U6778/Z (CND2X2)                         0.07       2.04 f
+  U6779/Z (CENX2)                          0.14       2.18 f
+  U6812/Z (CENX2)                          0.17       2.35 f
+  U3451/Z (CNR2X2)                         0.08       2.43 r
+  U7085/Z (COND1X2)                        0.09       2.51 f
+  U3279/Z (CANR1X1)                        0.14       2.65 r
+  U3561/Z (COND1X1)                        0.11       2.75 f
+  U3518/Z (CANR1X1)                        0.14       2.89 r
+  U7805/Z (COND1XL)                        0.11       3.01 f
+  U7807/Z (CENXL)                          0.13       3.14 f
+  out1_0_reg[46]/D (CFD2QXL)               0.00       3.14 f
+  data arrival time                                   3.14
+
+  clock clk (rise edge)                    3.30       3.30
+  clock network delay (ideal)              0.00       3.30
+  clock uncertainty                       -0.25       3.05
+  out1_0_reg[46]/CP (CFD2QXL)              0.00       3.05 r
+  library setup time                      -0.22       2.83
+  data required time                                  2.83
+  -----------------------------------------------------------
+  data required time                                  2.83
+  data arrival time                                  -3.14
+  -----------------------------------------------------------
+  slack (VIOLATED)                                   -0.30
+
+
+  Startpoint: q0_reg[11] (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: out1_0_reg[47]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock clk (rise edge)                    0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  q0_reg[11]/CP (CFD4X2)                   0.00       0.00 r
+  q0_reg[11]/Q (CFD4X2)                    0.39       0.39 r
+  U4692/Z (CIVX12)                         0.12       0.50 f
+  U1305/Z (CENX2)                          0.12       0.63 f
+  U6639/Z (COND2X1)                        0.19       0.81 r
+  U6713/S (CFA1X1)                         0.40       1.21 f
+  U6668/CO (CFA1X1)                        0.29       1.50 f
+  U6697/Z (CEO3X2)                         0.31       1.81 f
+  U6774/Z (CIVX2)                          0.05       1.86 r
+  U6776/Z (CND2X2)                         0.06       1.92 f
+  U3611/Z (CND2X2)                         0.05       1.97 r
+  U6778/Z (CND2X2)                         0.07       2.04 f
+  U6779/Z (CENX2)                          0.14       2.18 f
+  U6812/Z (CENX2)                          0.17       2.35 f
+  U3451/Z (CNR2X2)                         0.08       2.43 r
+  U7085/Z (COND1X2)                        0.09       2.51 f
+  U3279/Z (CANR1X1)                        0.14       2.65 r
+  U3561/Z (COND1X1)                        0.11       2.75 f
+  U3518/Z (CANR1X1)                        0.14       2.89 r
+  U7782/Z (COND1XL)                        0.11       3.01 f
+  U7785/Z (CENXL)                          0.13       3.14 f
+  out1_0_reg[47]/D (CFD2QXL)               0.00       3.14 f
+  data arrival time                                   3.14
+
+  clock clk (rise edge)                    3.30       3.30
+  clock network delay (ideal)              0.00       3.30
+  clock uncertainty                       -0.25       3.05
+  out1_0_reg[47]/CP (CFD2QXL)              0.00       3.05 r
+  library setup time                      -0.22       2.83
+  data required time                                  2.83
+  -----------------------------------------------------------
+  data required time                                  2.83
+  data arrival time                                  -3.14
+  -----------------------------------------------------------
+  slack (VIOLATED)                                   -0.30
+
+
+  Startpoint: q0_reg[11] (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: out1_0_reg[49]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock clk (rise edge)                    0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  q0_reg[11]/CP (CFD4X2)                   0.00       0.00 r
+  q0_reg[11]/Q (CFD4X2)                    0.39       0.39 r
+  U4692/Z (CIVX12)                         0.12       0.50 f
+  U1305/Z (CENX2)                          0.12       0.63 f
+  U6639/Z (COND2X1)                        0.19       0.81 r
+  U6713/S (CFA1X1)                         0.40       1.21 f
+  U6668/CO (CFA1X1)                        0.29       1.50 f
+  U6697/Z (CEO3X2)                         0.31       1.81 f
+  U6774/Z (CIVX2)                          0.05       1.86 r
+  U6776/Z (CND2X2)                         0.06       1.92 f
+  U3611/Z (CND2X2)                         0.05       1.97 r
+  U6778/Z (CND2X2)                         0.07       2.04 f
+  U6779/Z (CENX2)                          0.14       2.18 f
+  U6812/Z (CENX2)                          0.17       2.35 f
+  U3451/Z (CNR2X2)                         0.08       2.43 r
+  U7085/Z (COND1X2)                        0.09       2.51 f
+  U3279/Z (CANR1X1)                        0.14       2.65 r
+  U3561/Z (COND1X1)                        0.11       2.75 f
+  U3519/Z (CANR1X1)                        0.14       2.89 r
+  U7795/Z (COND1XL)                        0.11       3.01 f
+  U7797/Z (CENXL)                          0.13       3.14 f
+  out1_0_reg[49]/D (CFD2QXL)               0.00       3.14 f
+  data arrival time                                   3.14
+
+  clock clk (rise edge)                    3.30       3.30
+  clock network delay (ideal)              0.00       3.30
+  clock uncertainty                       -0.25       3.05
+  out1_0_reg[49]/CP (CFD2QXL)              0.00       3.05 r
+  library setup time                      -0.22       2.83
+  data required time                                  2.83
+  -----------------------------------------------------------
+  data required time                                  2.83
+  data arrival time                                  -3.14
+  -----------------------------------------------------------
+  slack (VIOLATED)                                   -0.30
+
+
+1
+write -hierarchy -format verilog -output sfilt_gates.v
+Writing verilog file '/home/so/soun0694/Work/287-300Mhz/sfilt_gates.v'.
+1
+quit
+
+Thank you...
