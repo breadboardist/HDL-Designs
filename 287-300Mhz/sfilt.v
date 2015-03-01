@@ -18,7 +18,7 @@ reg roundit;
 assign pushout = _pushout;
 assign z = dout;
 
-DW02_mult_3_stage #(32,32) pipe(q0,h0,1'b1,clk,multout_1);
+ DW02_mult_3_stage #(32,32) pipe(q0,h0,1'b1,clk,multout_1);
  
 always @(*) begin
   acc_d = acc;
@@ -67,7 +67,7 @@ always @(posedge(clk) or posedge(rst))
     cmd0 <= #1 0;
     cmd_2 <= #1 0;
     _pushout <= #1 0;
-    h1 <= #1 0;
+     h1 <= #1 0;
     
   end else begin
   
@@ -88,3 +88,4 @@ always @(posedge(clk) or posedge(rst))
   end
   
 endmodule
+
