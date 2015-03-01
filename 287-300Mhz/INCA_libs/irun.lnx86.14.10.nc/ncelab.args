@@ -2,8 +2,9 @@
 // File created by:  ncverilog
 // Do not modify this file
 //
-+sv
++libext+.tsbvlibp
 +access+r
++sv
 -noshowtop
 -ACCESS
 +r

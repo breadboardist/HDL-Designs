@@ -1,5 +1,5 @@
-sfilt script run started on Fri Feb 27 18:00:50 2015
-run on machine eecad42.engr.sjsu.edu
+sfilt script run started on Sat Feb 28 23:05:28 2015
+run on machine eecad16.engr.sjsu.edu
 
 Run with a clock period of 3.3
 student names
@@ -7,4 +7,6 @@ student names
 options syn False gates False
 VCS simulation worked
 NCverilog simulation worked
-///// Synthesis failed /////
+Synthesis finished OK
+Gate level simulation worked
+Completed the sfilt run

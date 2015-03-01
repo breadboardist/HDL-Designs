@@ -1,7 +1,7 @@
 #@ # 
 #@ # Running dc_shell Version I-2013.12-SP5 for linux -- Jul 20, 2014
-#@ # Date:   Fri Feb 27 18:02:06 2015
-#@ # Run by: soun0694@eecad42.engr.sjsu.edu
+#@ # Date:   Sat Feb 28 23:06:33 2015
+#@ # Run by: soun0694@eecad16.engr.sjsu.edu
 #@ 
 
 source /apps/synopsys/I-2013.12-SP5/admin/setup/.synopsys_dc.setup
