@@ -18,7 +18,7 @@ reg roundit;
 assign pushout = _pushout;
 assign z = dout;
 
- DW02_mult_3_stage #(32,32) pipe(q0,h0,1'b1,clk,multout_1);
+DW02_mult_3_stage #(32,32) pipe(q0,h0,1'b1,clk,multout_1);
  
 always @(*) begin
   acc_d = acc;
@@ -67,7 +67,7 @@ always @(posedge(clk) or posedge(rst))
     cmd0 <= #1 0;
     cmd_2 <= #1 0;
     _pushout <= #1 0;
-     h1 <= #1 0;
+    h1 <= #1 0;
     
   end else begin
   
@@ -87,5 +87,38 @@ always @(posedge(clk) or posedge(rst))
      
   end
   
+endmodule
+
+module DW02_mult_3_stage(A,B,TC,CLK,PRODUCT);
+parameter A_width = 8;
+parameter B_width = 8;
+input [A_width-1:0] A;
+input [B_width-1:0] B;
+input     TC,CLK;
+output  [A_width+B_width-1:0] PRODUCT;
+
+reg [A_width+B_width-1:0] PRODUCT,product_piped1;
+wire  [A_width+B_width-1:0] pre_product;
+
+wire  [A_width-1:0] temp_a;
+wire  [B_width-1:0] temp_b;
+wire  [A_width+B_width-2:0] long_temp1,long_temp2;
+
+assign  temp_a = (A[A_width-1])? (~A + 1'b1) : A;
+assign  temp_b = (B[B_width-1])? (~B + 1'b1) : B;
+
+assign  long_temp1 = temp_a * temp_b;
+assign  long_temp2 = ~(long_temp1 - 1'b1);
+
+assign  pre_product = (TC)? (((A[A_width-1] ^ B[B_width-1]) && (|long_temp1))?
+        {1'b1,long_temp2} : {1'b0,long_temp1})
+      : A * B;
+
+always @ (posedge CLK)
+begin
+  product_piped1 <= pre_product;
+  PRODUCT <= product_piped1;
+end
+
 endmodule
 

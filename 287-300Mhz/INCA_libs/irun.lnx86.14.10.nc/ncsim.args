@@ -2,14 +2,13 @@
 // File created by:  ncverilog
 // Do not modify this file
 //
-+libext+.tsbvlibp
-+access+r
 +sv
++access+r
 -MESSAGES
 +EMGRLOG
 ncverilog.log
 -XLSTIME
-1425193787
+1425195166
 -XLKEEP
 -XLMODE
 ./INCA_libs/irun.lnx86.14.10.nc
