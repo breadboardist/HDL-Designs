@@ -43,23 +43,23 @@ Reading with Presto HDL Compiler (equivalent to -rtl option).
 Running PRESTO HDLC
 Compiling source file /home/so/soun0694/Work/287-300Mhz/sfilt.v
 Warning:  Starting with the 2000.11-1 release, the Presto Verilog reader treats Verilog 'integer' types as signed; synthesized result may not match earlier versions of HDL Compiler. (VER-314)
-Warning:  /home/so/soun0694/Work/287-300Mhz/sfilt.v:19: signed to unsigned assignment occurs. (VER-318)
-Warning:  /home/so/soun0694/Work/287-300Mhz/sfilt.v:32: unsigned to signed assignment occurs. (VER-318)
-Warning:  /home/so/soun0694/Work/287-300Mhz/sfilt.v:33: unsigned to signed assignment occurs. (VER-318)
-Warning:  /home/so/soun0694/Work/287-300Mhz/sfilt.v:45: signed to unsigned part selection occurs. (VER-318)
-Warning:  /home/so/soun0694/Work/287-300Mhz/sfilt.v:46: signed to unsigned conversion occurs. (VER-318)
-Warning:  /home/so/soun0694/Work/287-300Mhz/sfilt.v:49: signed to unsigned part selection occurs. (VER-318)
+Warning:  /home/so/soun0694/Work/287-300Mhz/sfilt.v:18: signed to unsigned assignment occurs. (VER-318)
+Warning:  /home/so/soun0694/Work/287-300Mhz/sfilt.v:37: unsigned to signed assignment occurs. (VER-318)
+Warning:  /home/so/soun0694/Work/287-300Mhz/sfilt.v:38: unsigned to signed assignment occurs. (VER-318)
+Warning:  /home/so/soun0694/Work/287-300Mhz/sfilt.v:50: signed to unsigned part selection occurs. (VER-318)
+Warning:  /home/so/soun0694/Work/287-300Mhz/sfilt.v:51: signed to unsigned conversion occurs. (VER-318)
+Warning:  /home/so/soun0694/Work/287-300Mhz/sfilt.v:54: signed to unsigned part selection occurs. (VER-318)
 
-Statistics for case statements in always block at line 23 in file
+Statistics for case statements in always block at line 28 in file
 	'/home/so/soun0694/Work/287-300Mhz/sfilt.v'
 ===============================================
 |           Line           |  full/ parallel  |
 ===============================================
-|            37            |    auto/auto     |
+|            42            |    auto/auto     |
 ===============================================
 
 Inferred memory devices in process
-	in routine sfilt line 57 in file
+	in routine sfilt line 65 in file
 		'/home/so/soun0694/Work/287-300Mhz/sfilt.v'.
 ===============================================================================
 |    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
@@ -70,7 +70,7 @@ Inferred memory devices in process
 |     push_1_reg      | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
 |       h0_reg        | Flip-flop |  32   |  Y  | N  | Y  | N  | N  | N  | N  |
 |      cmd_1_reg      | Flip-flop |   2   |  Y  | N  | Y  | N  | N  | N  | N  |
-|      push0_reg      | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+|     push_0_reg      | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
 |       h2_reg        | Flip-flop |   7   |  Y  | N  | N  | N  | N  | N  | N  |
 |     push_2_reg      | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
 |       acc_reg       | Flip-flop |  64   |  Y  | N  | Y  | N  | N  | N  | N  |
@@ -242,8 +242,7 @@ set_fix_hold [ get_clocks clk ]
 set_output_delay 0.3 -clock clk [all_outputs]
 1
 compile_ultra
-Analyzing: "/apps/toshiba/sjsu/synopsys/tc240c/tc240c.db_NOMIN25"
-Library analysis succeeded.
+Alib files are up-to-date.
 Information: Evaluating DesignWare library utilization. (UISN-27)
 
 ============================================================================
@@ -323,12 +322,12 @@ Information: Input delay ('rise') on clock port 'clk' will be added to the clock
    ELAPSED            WORST NEG   SETUP    DESIGN                             MIN DELAY
     TIME      AREA      SLACK     COST    RULE COST         ENDPOINT            COST   
   --------- --------- --------- --------- --------- ------------------------- ---------
-    0:00:35   16663.0      0.55      63.9      75.6 acc_reg[52]/D                  0.00
-    0:00:35   16663.0      0.55      63.9      75.6 acc_reg[52]/D                  0.00
-    0:00:37   16610.0      0.52      62.3      75.6                                0.00
-    0:00:37   16610.0      0.52      62.3      75.6                                0.00
-    0:00:37   16610.0      0.52      62.3      75.6                                0.00
-    0:00:37   16605.0      0.52      62.3      75.6                                0.00
+    0:00:43   16663.0      0.55      63.9      75.6 acc_reg[52]/D                  0.00
+    0:00:43   16663.0      0.55      63.9      75.6 acc_reg[52]/D                  0.00
+    0:00:45   16610.0      0.52      62.3      75.6                                0.00
+    0:00:45   16610.0      0.52      62.3      75.6                                0.00
+    0:00:45   16610.0      0.52      62.3      75.6                                0.00
+    0:00:45   16605.0      0.52      62.3      75.6                                0.00
   Re-synthesis Optimization (Phase 1)
   Re-synthesis Optimization (Phase 2)
   Global Optimization (Phase 1)
@@ -366,7 +365,7 @@ Information: Input delay ('fall') on clock port 'clk' will be added to the clock
 Information: Input delay ('rise') on clock port 'clk' will be added to the clock's propagated skew. (TIM-112)
 Information: Input delay ('fall') on clock port 'clk' will be added to the clock's propagated skew. (TIM-112)
 Information: Input delay ('rise') on clock port 'clk' will be added to the clock's propagated skew. (TIM-112)
-    0:00:49   12228.0      0.41      53.3     856.0                                0.00
+    0:01:00   12228.0      0.41      53.3     856.0                                0.00
 
 
 
@@ -377,32 +376,32 @@ Information: Input delay ('rise') on clock port 'clk' will be added to the clock
    ELAPSED            WORST NEG   SETUP    DESIGN                             MIN DELAY
     TIME      AREA      SLACK     COST    RULE COST         ENDPOINT            COST   
   --------- --------- --------- --------- --------- ------------------------- ---------
-    0:00:49   12228.0      0.41      53.3     856.0                                0.00
-    0:00:50   12304.0      0.36      49.1     856.1                                0.00
-    0:00:50   12369.5      0.34      45.5     856.1                                0.00
-    0:00:50   12377.0      0.34      43.8     856.2                                0.00
-    0:00:51   12434.0      0.34      40.7     856.3                                0.00
-    0:00:51   12484.5      0.34      39.3     857.0                                0.00
-    0:00:58   12708.0      0.29      38.5     857.0                                0.00
-    0:00:58   12708.0      0.29      38.5     857.0                                0.00
-    0:00:58   12710.0      0.29      38.4     857.0                                0.00
-    0:00:58   12710.0      0.29      38.4     857.0                                0.00
-    0:00:59   12716.0      0.29      38.4     857.0                                0.00
-    0:00:59   12716.0      0.29      38.4     857.0                                0.00
-    0:01:02   12909.5      0.25      33.7     857.7                                0.00
-    0:01:02   12909.5      0.25      33.7     857.7                                0.00
-    0:01:03   12909.5      0.25      33.7     857.7                                0.00
+    0:01:00   12228.0      0.41      53.3     856.0                                0.00
+    0:01:01   12304.0      0.36      49.1     856.1                                0.00
+    0:01:01   12369.5      0.34      45.5     856.1                                0.00
+    0:01:02   12377.0      0.34      43.8     856.2                                0.00
+    0:01:02   12434.0      0.34      40.7     856.3                                0.00
+    0:01:03   12484.5      0.34      39.3     857.0                                0.00
+    0:01:10   12708.0      0.29      38.5     857.0                                0.00
+    0:01:10   12708.0      0.29      38.5     857.0                                0.00
+    0:01:10   12710.0      0.29      38.4     857.0                                0.00
+    0:01:10   12710.0      0.29      38.4     857.0                                0.00
+    0:01:12   12716.0      0.29      38.4     857.0                                0.00
+    0:01:12   12716.0      0.29      38.4     857.0                                0.00
+    0:01:16   12909.5      0.25      33.7     857.7                                0.00
+    0:01:16   12909.5      0.25      33.7     857.7                                0.00
+    0:01:16   12909.5      0.25      33.7     857.7                                0.00
 
   Beginning Delay Optimization
   ----------------------------
-    0:01:03   12907.5      0.24      33.7     857.5                                0.00
-    0:01:04   12963.5      0.24      33.1     858.2                                0.00
-    0:01:04   12963.5      0.24      33.1     858.2                                0.00
-    0:01:04   12963.5      0.24      33.1     858.2                                0.00
-    0:01:04   12962.5      0.24      33.1     858.2                                0.00
-    0:01:04   12962.5      0.24      33.1     858.2                                0.00
-    0:01:04   12962.5      0.24      33.1     858.2                                0.00
-    0:01:05   12962.5      0.24      33.1     858.2                                0.00
+    0:01:17   12907.5      0.24      33.7     857.5                                0.00
+    0:01:18   12963.5      0.24      33.1     858.2                                0.00
+    0:01:18   12963.5      0.24      33.1     858.2                                0.00
+    0:01:18   12963.5      0.24      33.1     858.2                                0.00
+    0:01:18   12962.5      0.24      33.1     858.2                                0.00
+    0:01:18   12962.5      0.24      33.1     858.2                                0.00
+    0:01:18   12962.5      0.24      33.1     858.2                                0.00
+    0:01:19   12962.5      0.24      33.1     858.2                                0.00
 
 
   Beginning Design Rule Fixing  (min_path)  (max_capacitance)
@@ -412,27 +411,27 @@ Information: Input delay ('rise') on clock port 'clk' will be added to the clock
    ELAPSED            WORST NEG   SETUP    DESIGN                             MIN DELAY
     TIME      AREA      SLACK     COST    RULE COST         ENDPOINT            COST   
   --------- --------- --------- --------- --------- ------------------------- ---------
-    0:01:05   12962.5      0.24      33.1     858.2                              -11.82
+    0:01:19   12962.5      0.24      33.1     858.2                              -11.82
   Global Optimization (Phase 32)
   Global Optimization (Phase 33)
   Global Optimization (Phase 34)
-    0:01:06   13156.5      0.24      33.3       0.0                                0.00
-    0:01:07   12855.5      0.24      31.8       0.0                               -8.77
-    0:01:07   12855.5      0.24      31.8       0.0                               -8.77
-    0:01:08   12841.5      0.24      31.6       0.0 acc_reg[62]/D                 -8.72
-    0:01:09   12888.0      0.23      31.0       0.0                               -8.72
-    0:01:11   12915.0      0.23      30.7       0.0                               -8.70
-    0:01:12   13079.5      0.23      30.9       0.0                                0.00
+    0:01:21   13156.5      0.24      33.3       0.0                                0.00
+    0:01:22   12855.5      0.24      31.8       0.0                               -8.77
+    0:01:22   12855.5      0.24      31.8       0.0                               -8.77
+    0:01:24   12841.5      0.24      31.6       0.0 acc_reg[62]/D                 -8.72
+    0:01:24   12888.0      0.23      31.0       0.0                               -8.72
+    0:01:26   12915.0      0.23      30.7       0.0                               -8.70
+    0:01:28   13079.5      0.23      30.9       0.0                                0.00
 
                                   TOTAL                                                
    ELAPSED            WORST NEG   SETUP    DESIGN                             MIN DELAY
     TIME      AREA      SLACK     COST    RULE COST         ENDPOINT            COST   
   --------- --------- --------- --------- --------- ------------------------- ---------
-    0:01:12   13079.5      0.23      30.9       0.0                                0.00
-    0:01:12   13014.0      0.23      31.0       0.0                               -4.62
+    0:01:28   13079.5      0.23      30.9       0.0                                0.00
+    0:01:28   13014.0      0.23      31.0       0.0                               -4.62
 Information: Input delay ('fall') on clock port 'clk' will be added to the clock's propagated skew. (TIM-112)
 Information: Input delay ('rise') on clock port 'clk' will be added to the clock's propagated skew. (TIM-112)
-    0:01:13   13013.0      0.23      30.8       0.0                               -4.46
+    0:01:29   13013.0      0.23      30.8       0.0                               -4.46
 
 
   Beginning Area-Recovery Phase  (max_area 0)
@@ -442,7 +441,7 @@ Information: Input delay ('rise') on clock port 'clk' will be added to the clock
    ELAPSED            WORST NEG   SETUP    DESIGN                             MIN DELAY
     TIME      AREA      SLACK     COST    RULE COST         ENDPOINT            COST   
   --------- --------- --------- --------- --------- ------------------------- ---------
-    0:01:13   13013.0      0.23      30.8       0.0                               -4.46
+    0:01:29   13013.0      0.23      30.8       0.0                               -4.46
   Global Optimization (Phase 35)
   Global Optimization (Phase 36)
   Global Optimization (Phase 37)
@@ -483,29 +482,29 @@ Information: Input delay ('rise') on clock port 'clk' will be added to the clock
   Global Optimization (Phase 72)
   Global Optimization (Phase 73)
   Global Optimization (Phase 74)
-    0:01:23   12859.5      0.19      25.2       0.0                              -11.61
-    0:01:24   12867.0      0.19      25.1       0.0                              -11.61
-    0:01:25   13067.5      0.19      28.4       0.0                                0.00
-    0:01:26   13083.0      0.19      28.0       0.0                                0.00
-    0:01:26   13125.5      0.19      27.1       0.0                               -0.10
-    0:01:27   13182.0      0.19      25.9       0.0                               -0.21
-    0:01:28   13187.5      0.19      25.9       0.0                               -0.21
-    0:01:28   13187.5      0.19      25.9       0.0                               -0.21
-    0:01:28   13187.5      0.19      25.9       0.0                               -0.21
-    0:01:28   13187.5      0.19      25.9       0.0                               -0.21
-    0:01:29   13187.5      0.19      25.9       0.0                               -0.21
-    0:01:29   13187.5      0.19      25.9       0.0                               -0.21
-    0:01:31   13225.0      0.18      26.1       0.0                               -0.21
-    0:01:31   13225.0      0.18      26.1       0.0                               -0.21
-    0:01:32   13225.0      0.18      26.1       0.0                               -0.21
-    0:01:32   13225.0      0.18      26.1       0.0                               -0.21
-    0:01:32   13225.0      0.18      26.1       0.0                               -0.21
-    0:01:32   13225.0      0.18      26.1       0.0                               -0.21
-    0:01:33   13225.0      0.18      26.1       0.0                               -0.21
-    0:01:33   13225.0      0.18      26.1       0.0                               -0.21
-    0:01:33   13225.0      0.18      26.1       0.0                               -0.21
-    0:01:33   13225.0      0.18      26.1       0.0                               -0.21
-    0:01:35   13225.0      0.18      26.1       0.0                               -0.21
+    0:01:42   12859.5      0.19      25.2       0.0                              -11.61
+    0:01:43   12867.0      0.19      25.1       0.0                              -11.61
+    0:01:45   13067.5      0.19      28.4       0.0                                0.00
+    0:01:45   13083.0      0.19      28.0       0.0                                0.00
+    0:01:46   13125.5      0.19      27.1       0.0                               -0.10
+    0:01:47   13182.0      0.19      25.9       0.0                               -0.21
+    0:01:49   13187.5      0.19      25.9       0.0                               -0.21
+    0:01:49   13187.5      0.19      25.9       0.0                               -0.21
+    0:01:49   13187.5      0.19      25.9       0.0                               -0.21
+    0:01:49   13187.5      0.19      25.9       0.0                               -0.21
+    0:01:50   13187.5      0.19      25.9       0.0                               -0.21
+    0:01:50   13187.5      0.19      25.9       0.0                               -0.21
+    0:01:52   13225.0      0.18      26.1       0.0                               -0.21
+    0:01:52   13225.0      0.18      26.1       0.0                               -0.21
+    0:01:53   13225.0      0.18      26.1       0.0                               -0.21
+    0:01:53   13225.0      0.18      26.1       0.0                               -0.21
+    0:01:53   13225.0      0.18      26.1       0.0                               -0.21
+    0:01:53   13225.0      0.18      26.1       0.0                               -0.21
+    0:01:55   13225.0      0.18      26.1       0.0                               -0.21
+    0:01:55   13225.0      0.18      26.1       0.0                               -0.21
+    0:01:55   13225.0      0.18      26.1       0.0                               -0.21
+    0:01:55   13225.0      0.18      26.1       0.0                               -0.21
+    0:01:56   13225.0      0.18      26.1       0.0                               -0.21
 Loading db file '/apps/toshiba/sjsu/synopsys/tc240c/tc240c.db_NOMIN25'
 
   Optimization Complete
@@ -525,7 +524,7 @@ Report : timing
         -max_paths 3
 Design : sfilt
 Version: I-2013.12-SP5
-Date   : Sun Mar  1 00:03:16 2015
+Date   : Mon Mar  2 12:05:47 2015
 ****************************************
 
 Operating Conditions: NOMIN25   Library: tc240c
