@@ -1,5 +1,5 @@
 ncverilog: 14.10-p001: (c) Copyright 1995-2014 Cadence Design Systems, Inc.
-TOOL:	ncverilog	14.10-p001: Started on Mar 02, 2015 at 12:05:48 PST
+TOOL:	ncverilog	14.10-p001: Started on Mar 02, 2015 at 15:56:26 PST
 ncverilog
 	+libext+.tsbvlibp
 	+access+r
@@ -90,4 +90,4 @@ We passed the test, happy happy :)
 Simulation complete via $finish(1) at time 150100720 PS + 0
 ./tbsfilt.sv:170   $finish;
 ncsim> exit
-TOOL:	ncverilog	14.10-p001: Exiting on Mar 02, 2015 at 12:06:00 PST  (total: 00:00:12)
+TOOL:	ncverilog	14.10-p001: Exiting on Mar 02, 2015 at 15:56:45 PST  (total: 00:00:19)

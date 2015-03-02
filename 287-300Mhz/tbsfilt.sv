@@ -2,7 +2,7 @@
 //
 //
 `timescale 1ns/10ps
-// Generated on Mon Mar  2 12:05:48 2015/n// Gate level simulation test bench only
+// Generated on Mon Mar  2 15:56:26 2015/n// Gate level simulation test bench only
 // Generated for student
 //    Prem Bharath Soundararajan 0694
 

@@ -1,5 +1,5 @@
-sfilt script run started on Mon Mar  2 12:03:17 2015
-run on machine eecad15.engr.sjsu.edu
+sfilt script run started on Mon Mar  2 15:53:47 2015
+run on machine eecad2.engr.sjsu.edu
 
 Run with a clock period of 3.3
 student names
