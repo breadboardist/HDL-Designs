@@ -10,11 +10,11 @@ module sfilt(input clk, input rst, input pushin, input [1:0] cmd,
 reg signed [63:0] acc, acc_d, mulout;
 integer q0, q0_d, h0, h0_d, dout, dout_d, h1, h2;
 reg push_0, push_1, push_2;
-reg pushout, pushout_d;
+reg _pushout, _pushout_d;
 reg [1:0] cmd0, cmd_1, cmd_2;
 reg roundit;
 
-assign pushout = pushout;
+assign pushout = _pushout;
 assign z = dout;
 
 ///////////////////////////////////////////////
@@ -28,7 +28,7 @@ DW02_mult_3_stage #(32,32) pipe(q0, h0, 1'b1, clk, mulout);
 always @(*) begin
   acc_d = acc;
   dout_d = dout;
-  pushout_d=0;
+  _pushout_d=0;
   
      q0_d = q0;
      h0_d = h0;
@@ -53,7 +53,7 @@ always @(*) begin
       3: begin
          dout_d = acc[31:0]                                                                                                                                        ;
          acc_d  = 0;
-         pushout_d=1;
+         _pushout_d=1;
          end
     endcase
   end
@@ -74,7 +74,7 @@ always @(posedge(clk) or posedge(rst))
     dout <= #1 0;
     cmd0 <= #1 0;
     cmd_2 <= #1 0;
-    pushout <= #1 0;
+    _pushout <= #1 0;
     h1 <= #1 0;
     
   end else begin
@@ -91,7 +91,7 @@ always @(posedge(clk) or posedge(rst))
     h1 <= #1 h0;
     h2 <= #1 h1;
     dout <= #1 dout_d;
-    pushout <= #1 pushout_d;
+    _pushout <= #1 _pushout_d;
      
   end
   
