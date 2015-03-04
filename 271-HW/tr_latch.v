@@ -10,6 +10,12 @@ module t_tr_latch ();
  wire q_out;
  reg enable, data;
  tr_latch M0 (q_out, enable, data);
+ initial
+begin
+$dumpfile("tr_latch.vcd");
+$dumpvars(0,t_tr_latch);
+end
+
  initial fork
   #3 data = 0;
   #5 forever #2 data = ~data;

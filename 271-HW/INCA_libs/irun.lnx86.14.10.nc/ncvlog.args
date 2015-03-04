@@ -5,7 +5,7 @@
 -XLMODE
 ./INCA_libs/irun.lnx86.14.10.nc
 -RUNMODE
-problem_2.v
+tr_latch.v
 -CDSLIB
 ./INCA_libs/irun.lnx86.14.10.nc/cdsrun.lib
 -HDLVAR
