@@ -18,11 +18,18 @@ and (w7, A_not, B, C, D);
  or  (Y2, w1, w2, w4, w5);
 endmodule
 
+
 module t_Problem_2();
  reg A, B, C, D;
  wire Y1, Y2;
  Problem_2 M0 (Y1, Y2, A, B, C, D);
- initial begin
+initial
+begin
+$dumpfile("problem_2.vcd");
+$dumpvars(0,t_Problem_2);
+end 
+
+initial begin
    #5 {A, B, C, D} = 4'b0000;
    #5 {A, B, C, D} = 4'b0001;
    #5 {A, B, C, D} = 4'b0010;
@@ -43,10 +50,5 @@ module t_Problem_2();
  initial begin
    #100 $finish;
  end
-initial
-begin
-#5; 
-$dumpfile("problem_2.vcd");
-$dumpvars(0,t_Problem_2);
-end
+
 endmodule

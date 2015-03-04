@@ -5,3 +5,7 @@ DEFINE RUNMODEDEFAULT 1
 DEFINE LIB_MAP ( + => worklib )
 define ELAB_SNAPSHOT
 define SNAPSHOT worklib.t_Problem_2:v
+define ELAB_SNAPSHOT
+define SNAPSHOT worklib.t_Problem_2:v
+define ELAB_SNAPSHOT
+define SNAPSHOT worklib.t_Problem_2:v
