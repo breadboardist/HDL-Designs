@@ -7,14 +7,6 @@ module delay_mux (y, Sel, A, B, C, D);
    nand #4 M2(Out2, C, D);
    mux M3(y, Out1, Out2, Sel);
 endmodule
-//module mux(y, y1, y2, Sel);
-  // input y1, y2, Sel;
-  // output y;
-  // wire w1, w2;
-  // or M1(w1, y1, Sel);
-  // or M2(w2, y2, Sel);
-  // nand M3(y, w1, w1);
-//endmodule
 module t_delay_mux ();
    reg A, B, C, D, Sel;
    wire y;
