@@ -5,3 +5,5 @@ DEFINE RUNMODEDEFAULT 1
 DEFINE LIB_MAP ( + => worklib )
 define ELAB_SNAPSHOT
 define SNAPSHOT worklib.t_delay_mux:v
+define ELAB_SNAPSHOT
+define SNAPSHOT worklib.t_delay_mux:v

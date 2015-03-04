@@ -1,17 +1,11 @@
 ncverilog: 14.10-p001: (c) Copyright 1995-2014 Cadence Design Systems, Inc.
-TOOL:	ncverilog	14.10-p001: Started on Mar 03, 2015 at 21:33:22 PST
+TOOL:	ncverilog	14.10-p001: Started on Mar 03, 2015 at 23:39:20 PST
 ncverilog
 	+access+r
 	delay_mux.v
-file: delay_mux.v
-	module worklib.delay_mux:v
-		errors: 0, warnings: 0
-	module worklib.mux:v
-		errors: 0, warnings: 0
-	module worklib.t_delay_mux:v
-		errors: 0, warnings: 0
 		Caching library 'worklib' ....... Done
 	Elaborating the design hierarchy:
+		Caching library 'worklib' ....... Done
 	Building instance overlay tables: .................... Done
 	Generating native compiled code:
 		worklib.t_delay_mux:v <0x51417924>
@@ -50,4 +44,4 @@ ncsim> run
 Simulation complete via $finish(1) at time 150 NS + 0
 ./delay_mux.v:30       #150 $finish;
 ncsim> exit
-TOOL:	ncverilog	14.10-p001: Exiting on Mar 03, 2015 at 21:33:29 PST  (total: 00:00:07)
+TOOL:	ncverilog	14.10-p001: Exiting on Mar 03, 2015 at 23:39:27 PST  (total: 00:00:07)
