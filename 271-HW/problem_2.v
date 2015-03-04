@@ -47,6 +47,6 @@ initial
 begin
 #5; 
 $dumpfile("problem_2.vcd");
-$dumpvars(9,t_Problem_2);
+$dumpvars(0,t_Problem_2);
 end
 endmodule

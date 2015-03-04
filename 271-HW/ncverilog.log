@@ -1,10 +1,10 @@
 ncverilog: 14.10-p001: (c) Copyright 1995-2014 Cadence Design Systems, Inc.
-TOOL:	ncverilog	14.10-p001: Started on Mar 03, 2015 at 21:04:03 PST
+TOOL:	ncverilog	14.10-p001: Started on Mar 03, 2015 at 21:07:11 PST
 ncverilog
 	problem_2.v
 Recompiling... reason: file './problem_2.v' is newer than expected.
-	expected: Tue Mar  3 20:58:33 2015
-	actual:   Tue Mar  3 21:03:28 2015
+	expected: Tue Mar  3 21:03:28 2015
+	actual:   Tue Mar  3 21:06:32 2015
 file: problem_2.v
 	module worklib.t_Problem_2:v
 		errors: 0, warnings: 0
@@ -35,4 +35,4 @@ ncsim: *W,DVEXACC: some objects excluded from $dumpvars due to access restrictio
 Simulation complete via $finish(1) at time 100 NS + 0
 ./problem_2.v:44    #100 $finish;
 ncsim> exit
-TOOL:	ncverilog	14.10-p001: Exiting on Mar 03, 2015 at 21:04:10 PST  (total: 00:00:07)
+TOOL:	ncverilog	14.10-p001: Exiting on Mar 03, 2015 at 21:07:18 PST  (total: 00:00:07)
