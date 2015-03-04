@@ -1,7 +1,7 @@
 define NCSIMRC	( /apps/cadence/INCISIV141/tools/inca/files/ncsimrc, ~/.ncsimrc )
 include ./hdlrun.var
-define SNAPSHOT worklib.t_tr_latch:v
+define SNAPSHOT worklib.t_delay_mux:v
 DEFINE RUNMODEDEFAULT 1
 DEFINE LIB_MAP ( + => worklib )
 define ELAB_SNAPSHOT
-define SNAPSHOT worklib.t_tr_latch:v
+define SNAPSHOT worklib.t_delay_mux:v

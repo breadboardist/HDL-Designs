@@ -1,0 +1,141 @@
+$date
+    Mar  3, 2015  21:33:29
+$end
+$version
+    TOOL:	ncsim	14.10-p001
+$end
+$timescale
+    10 ps
+$end
+
+$scope module t_delay_mux $end
+$var reg       1 !    A  $end
+$var reg       1 "    B  $end
+$var reg       1 #    C  $end
+$var reg       1 $    D  $end
+$var reg       1 %    Sel  $end
+$var wire      1 &    y  $end
+
+$scope module M0 $end
+$var wire      1 '    A  $end
+$var wire      1 (    B  $end
+$var wire      1 )    C  $end
+$var wire      1 *    D  $end
+$var wire      1 +    Sel  $end
+$var wire      1 &    y  $end
+$var wire      1 ,    Out1  $end
+$var wire      1 -    Out2  $end
+
+$scope module M3 $end
+$var wire      1 ,    y1  $end
+$var wire      1 -    y2  $end
+$var wire      1 +    Sel  $end
+$var wire      1 &    y  $end
+$var wire      1 .    w1  $end
+$var wire      1 /    w2  $end
+$upscope $end
+
+$upscope $end
+
+$upscope $end
+
+$enddefinitions $end
+$dumpvars
+x!
+x"
+x#
+x$
+x%
+x&
+x'
+x(
+x)
+x*
+x+
+x,
+x-
+x.
+x/
+$end
+#1000
+0!
+0"
+0#
+0$
+0%
+0+
+0*
+0)
+0(
+0'
+#1300
+1,
+1.
+0&
+#1400
+1-
+1/
+#2000
+1%
+1+
+#3000
+1!
+0%
+0+
+1'
+#4000
+1%
+1+
+#5000
+0!
+1"
+0%
+0+
+1(
+0'
+#6000
+1%
+1+
+#7000
+1!
+0%
+0+
+1'
+#7300
+0,
+0.
+1&
+#8000
+1%
+1+
+1.
+0&
+#9000
+0!
+0"
+1#
+0%
+0+
+1)
+0(
+0'
+0.
+1&
+#9300
+1,
+1.
+0&
+#10000
+1%
+1+
+#11000
+0#
+1$
+0%
+0+
+1*
+0)
+#12000
+1%
+1+
+#15000
