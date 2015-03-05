@@ -1,0 +1,92 @@
+Checking out Encounter license ...
+Encounter_Digital_Impl_Sys_XL 9.1 license checkout succeeded.
+You can run 2 CPU jobs with the base license that is currently checked out.
+If required, use the setMultiCpuUsage command to enable multi-CPU processing.
+**ERROR: (ENCOAX-148):	Could not open shared library libfeoax22.so : liboaDesign.so: cannot open shared object file: No such file or directory
+
+**ERROR: (ENCOAX-148):	OA features will be disabled in this session.
+
+
+*******************************************************************
+*   Copyright (c)  Cadence Design Systems, Inc.  1996 - 2010.     *
+*                     All rights reserved.                        *
+*                                                                 *
+*                                                                 *
+*                                                                 *
+* This program contains confidential and trade secret information *
+* of Cadence Design Systems, Inc. and is protected by copyright   *
+* law and international treaties.  Any reproduction, use,         *
+* distribution or disclosure of this program or any portion of it,*
+* or any attempt to obtain a human-readable version of this       *
+* program, without the express, prior written consent of          *
+* Cadence Design Systems, Inc., is strictly prohibited.           *
+*                                                                 *
+*                 Cadence Design Systems, Inc.                    *
+*                    2655 Seely Avenue                            *
+*                   San Jose, CA 95134,  USA                      *
+*                                                                 *
+*                                                                 *
+*******************************************************************
+
+@(#)CDS: Encounter v09.14-s273_1 (32bit) 02/17/2011 18:35 (Linux 2.6)
+@(#)CDS: NanoRoute v09.14-s029 NR110207-1105/USR65-UB (database version 2.30, 112.2.1) {superthreading v1.15}
+@(#)CDS: CeltIC v09.14-s097_1 (32bit) 02/08/2011 02:24:38 (Linux 2.6.9-89.0.19.ELsmp)
+@(#)CDS: AAE 09.14-s001 (32bit) 02/17/2011 (Linux 2.6.9-89.0.19.ELsmp)
+@(#)CDS: CTE 09.14-s140_1 (32bit) Feb  8 2011 01:13:15 (Linux 2.6.9-89.0.19.ELsmp)
+@(#)CDS: CPE v09.14-s001
+--- Starting "Encounter v09.14-s273_1" on Thu Mar  5 11:28:48 2015 (mem=46.5M) ---
+--- Running on eecad3.engr.sjsu.edu (x86_64 w/Linux 3.18.7-100.fc20.x86_64) ---
+This version was compiled on Thu Feb 17 18:35:02 PST 2011.
+Set DBUPerIGU to 1000.
+Set net toggle Scale Factor to 1.00
+Set Shrink Factor to 1.00000
+*** Memory pool thread-safe mode activated.
+<CMD> encMessage warning 0
+Suppress "**WARN ..." messages.
+<CMD> encMessage debug 0
+<CMD> encMessage info 0
+Reading config file - poly5.enc.dat/poly5.conf
+**WARN: (ENCLF-108):	There is no overlap layer defined in any lef file
+so you are unable to create rectilinear partition in a hierarchical flow.
+**WARN: (ENCPP-557):	a single-layer VIARULE GENERATE for turn-vias is obsolete and is being ignored. You should remove this statement from your LEF file.
+	VIARULE TURN1 GENERATE
+**WARN: (ENCPP-557):	a single-layer VIARULE GENERATE for turn-vias is obsolete and is being ignored. You should remove this statement from your LEF file.
+	VIARULE TURN2 GENERATE
+**WARN: (ENCPP-557):	a single-layer VIARULE GENERATE for turn-vias is obsolete and is being ignored. You should remove this statement from your LEF file.
+	VIARULE TURN3 GENERATE
+**WARN: (ENCPP-557):	a single-layer VIARULE GENERATE for turn-vias is obsolete and is being ignored. You should remove this statement from your LEF file.
+	VIARULE TURN4 GENERATE
+**WARN: (ENCPP-557):	a single-layer VIARULE GENERATE for turn-vias is obsolete and is being ignored. You should remove this statement from your LEF file.
+	VIARULE TURN5 GENERATE
+**WARN: (ENCPP-557):	a single-layer VIARULE GENERATE for turn-vias is obsolete and is being ignored. You should remove this statement from your LEF file.
+	VIARULE TURN6 GENERATE
+**WARN: (TECHLIB-436):	Attribute 'fanout_load' on 'input/inout' pin 'A' of cell 'AND2X1' is not defined in the library. Either define this value in the library or use set_default_timing_library to pick these values from a default library.
+**WARN: (TECHLIB-436):	Attribute 'fanout_load' on 'input/inout' pin 'B' of cell 'AND2X1' is not defined in the library. Either define this value in the library or use set_default_timing_library to pick these values from a default library.
+**WARN: (TECHLIB-436):	Attribute 'max_fanout' on 'output/inout' pin 'Y' of cell 'AND2X1' is not defined in the library. Either define this value in the library or use set_default_timing_library to pick these values from a default library.
+**WARN: (TECHLIB-436):	Attribute 'fanout_load' on 'input/inout' pin 'A' of cell 'AND2X2' is not defined in the library. Either define this value in the library or use set_default_timing_library to pick these values from a default library.
+**WARN: (TECHLIB-436):	Attribute 'fanout_load' on 'input/inout' pin 'B' of cell 'AND2X2' is not defined in the library. Either define this value in the library or use set_default_timing_library to pick these values from a default library.
+**WARN: (TECHLIB-436):	Attribute 'max_fanout' on 'output/inout' pin 'Y' of cell 'AND2X2' is not defined in the library. Either define this value in the library or use set_default_timing_library to pick these values from a default library.
+**WARN: (TECHLIB-436):	Attribute 'fanout_load' on 'input/inout' pin 'A' of cell 'AOI21X1' is not defined in the library. Either define this value in the library or use set_default_timing_library to pick these values from a default library.
+**WARN: (TECHLIB-436):	Attribute 'fanout_load' on 'input/inout' pin 'B' of cell 'AOI21X1' is not defined in the library. Either define this value in the library or use set_default_timing_library to pick these values from a default library.
+**WARN: (TECHLIB-436):	Attribute 'fanout_load' on 'input/inout' pin 'C' of cell 'AOI21X1' is not defined in the library. Either define this value in the library or use set_default_timing_library to pick these values from a default library.
+**WARN: (TECHLIB-436):	Attribute 'max_fanout' on 'output/inout' pin 'Y' of cell 'AOI21X1' is not defined in the library. Either define this value in the library or use set_default_timing_library to pick these values from a default library.
+**WARN: (TECHLIB-436):	Attribute 'fanout_load' on 'input/inout' pin 'A' of cell 'AOI22X1' is not defined in the library. Either define this value in the library or use set_default_timing_library to pick these values from a default library.
+**WARN: (TECHLIB-436):	Attribute 'fanout_load' on 'input/inout' pin 'B' of cell 'AOI22X1' is not defined in the library. Either define this value in the library or use set_default_timing_library to pick these values from a default library.
+**WARN: (TECHLIB-436):	Attribute 'fanout_load' on 'input/inout' pin 'C' of cell 'AOI22X1' is not defined in the library. Either define this value in the library or use set_default_timing_library to pick these values from a default library.
+**WARN: (TECHLIB-436):	Attribute 'fanout_load' on 'input/inout' pin 'D' of cell 'AOI22X1' is not defined in the library. Either define this value in the library or use set_default_timing_library to pick these values from a default library.
+**WARN: (TECHLIB-436):	Attribute 'max_fanout' on 'output/inout' pin 'Y' of cell 'AOI22X1' is not defined in the library. Either define this value in the library or use set_default_timing_library to pick these values from a default library.
+**WARN: (TECHLIB-436):	Attribute 'fanout_load' on 'input/inout' pin 'A' of cell 'BUFX2' is not defined in the library. Either define this value in the library or use set_default_timing_library to pick these values from a default library.
+**WARN: (TECHLIB-436):	Attribute 'max_fanout' on 'output/inout' pin 'Y' of cell 'BUFX2' is not defined in the library. Either define this value in the library or use set_default_timing_library to pick these values from a default library.
+**WARN: (TECHLIB-436):	Attribute 'fanout_load' on 'input/inout' pin 'A' of cell 'BUFX4' is not defined in the library. Either define this value in the library or use set_default_timing_library to pick these values from a default library.
+**WARN: (TECHLIB-436):	Attribute 'max_fanout' on 'output/inout' pin 'Y' of cell 'BUFX4' is not defined in the library. Either define this value in the library or use set_default_timing_library to pick these values from a default library.
+**WARN: (TECHLIB-436):	Attribute 'fanout_load' on 'input/inout' pin 'A' of cell 'CLKBUF1' is not defined in the library. Either define this value in the library or use set_default_timing_library to pick these values from a default library.
+**WARN: (ENCTS-302):	Min timing libraries are not specified, while max timing libraries are specified in configuration file. This may cause issues in hold analysis. Use rda_Input(ui_timelib) instead of rda_Input(ui_timelib,max) for timing library specification, or use setTimingLibrary command to set min timing libraries. By default max timing libraries will be used for hold analysis.
+*** End library_loading (cpu=0.00min, mem=0.3M, fe_cpu=0.07min, fe_mem=280.0M) ***
+Loading preference file poly5.enc.dat/enc.pref.tcl ...
+Loading mode file poly5.enc.dat/poly5.mode ...
+loading place ...
+**WARN: (ENCSP-311):	About 100.00% of instances are not placed. Rerun full placement to place these instances.
+loading route ...
+
+*** Memory Usage v0.159.2.9 (Current mem = 306.684M, initial mem = 46.504M) ***
+--- Ending "Encounter" (totcpu=0:00:06.5, real=0:00:29.0, mem=306.7M) ---
