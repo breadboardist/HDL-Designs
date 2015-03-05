@@ -1,0 +1,30 @@
+set link_library {/home/morris/PnRhw/tsmc018/signalstorm/osu018_stdcells.db /apps/synopsys/C-2009.06-SP2/libraries/syn/dw02.sldb /apps/synopsys/C-2009.06-SP2/libraries/syn/dw01.sldb }
+set target_library {/home/morris/PnRhw/tsmc018/signalstorm/osu018_stdcells.db}
+read_verilog poly5.v
+current_design poly5
+check_design
+set_drive 0 clk
+set_drive 0 rst
+set_dont_touch_network clk
+create_clock clk -name clk -period 23.750000
+set_propagated_clock clk
+set_clock_uncertainty 0.25 clk
+set_propagated_clock clk
+set_output_delay 0.5 -clock clk [all_outputs]
+set all_inputs_wo_rst_clk [remove_from_collection [remove_from_collection [all_inputs] [get_port clk]] [get_port rst]]
+set_driving_cell -lib_cell NAND2X1 $all_inputs_wo_rst_clk
+set_input_delay 0.5 -clock clk $all_inputs_wo_rst_clk
+set_max_delay 23.5 -to [all_outputs]
+set_max_delay 23.5 -from $all_inputs_wo_rst_clk
+set_fix_hold [ get_clocks clk ]
+compile -map_effort medium
+create_clock clk -name clk -period 25.000000
+set_propagated_clock clk
+set_clock_uncertainty 0.25 clk
+set_propagated_clock clk
+update_timing
+report -cell
+report_timing -max_paths 10
+write -hierarchy -format verilog -output poly5_gates.v
+write_sdc poly5_gates.sdc
+quit
