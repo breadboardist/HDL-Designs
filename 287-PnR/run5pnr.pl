@@ -19,8 +19,8 @@ printf sf "set link_library {/home/morris/PnRhw/tsmc018/signalstorm/osu018_stdce
 set target_library {/home/morris/PnRhw/tsmc018/signalstorm/osu018_stdcells.db}
 ";
 my $ix;
-printf sf "read_verilog poly5.v\n";
-printf sf "current_design poly5\ncheck_design";
+printf sf "read_verilog sfilt.v\n";
+printf sf "current_design sfilt\ncheck_design";
 printf sf "
 set_drive 0 clk
 set_drive 0 rst
@@ -51,8 +51,8 @@ set_propagated_clock clk
 update_timing
 report -cell
 report_timing -max_paths 10
-write -hierarchy -format verilog -output poly5_gates.v
-write_sdc poly5_gates.sdc
+write -hierarchy -format verilog -output sfilt_gates.v
+write_sdc sfilt_gates.sdc
 quit
 ";
 close(sf);
