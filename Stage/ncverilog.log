@@ -1,0 +1,58 @@
+ncverilog: 14.10-p001: (c) Copyright 1995-2014 Cadence Design Systems, Inc.
+TOOL:	ncverilog	14.10-p001: Started on Mar 06, 2015 at 14:12:14 PST
+ncverilog
+	alu.v
+file: alu.v
+reg zero;
+       |
+ncvlog: *W,ILLPDX (alu.v,10|7): Multiple declarations for a port not allowed in module with ANSI list of port declarations (port 'zero') [12.3.4(IEEE-2001)].
+reg [31:0] result;
+                |
+ncvlog: *W,ILLPDX (alu.v,11|16): Multiple declarations for a port not allowed in module with ANSI list of port declarations (port 'result') [12.3.4(IEEE-2001)].
+		#10 control = 4'b0000;
+		          |
+ncvlog: *E,WANOTL (alu.v,47|12): A net is not a legal lvalue in this context [9.3.1(IEEE)].
+		#10 control = 4'b0001;
+		          |
+ncvlog: *E,WANOTL (alu.v,48|12): A net is not a legal lvalue in this context [9.3.1(IEEE)].
+		#10 control = 4'b0010;
+		          |
+ncvlog: *E,WANOTL (alu.v,49|12): A net is not a legal lvalue in this context [9.3.1(IEEE)].
+		#10 control = 4'b0011;
+		          |
+ncvlog: *E,WANOTL (alu.v,50|12): A net is not a legal lvalue in this context [9.3.1(IEEE)].
+		#10 control = 4'b0100;
+		          |
+ncvlog: *E,WANOTL (alu.v,51|12): A net is not a legal lvalue in this context [9.3.1(IEEE)].
+		#10 control = 4'b0101;
+		          |
+ncvlog: *E,WANOTL (alu.v,52|12): A net is not a legal lvalue in this context [9.3.1(IEEE)].
+		#10 control = 4'b0110;
+		          |
+ncvlog: *E,WANOTL (alu.v,53|12): A net is not a legal lvalue in this context [9.3.1(IEEE)].
+		#10 control = 4'b0111;
+		          |
+ncvlog: *E,WANOTL (alu.v,54|12): A net is not a legal lvalue in this context [9.3.1(IEEE)].
+		#10 control = 4'b1000;
+		          |
+ncvlog: *E,WANOTL (alu.v,55|12): A net is not a legal lvalue in this context [9.3.1(IEEE)].
+		#10 control = 4'b1001;
+		          |
+ncvlog: *E,WANOTL (alu.v,56|12): A net is not a legal lvalue in this context [9.3.1(IEEE)].
+		#10 control = 4'b1010;
+		          |
+ncvlog: *E,WANOTL (alu.v,57|12): A net is not a legal lvalue in this context [9.3.1(IEEE)].
+		#10 control = 4'b1011;
+		          |
+ncvlog: *E,WANOTL (alu.v,58|12): A net is not a legal lvalue in this context [9.3.1(IEEE)].
+		#10 control = 4'b1100;
+		          |
+ncvlog: *E,WANOTL (alu.v,59|12): A net is not a legal lvalue in this context [9.3.1(IEEE)].
+		#10 control = 4'b1101;
+		          |
+ncvlog: *E,WANOTL (alu.v,60|12): A net is not a legal lvalue in this context [9.3.1(IEEE)].
+	module worklib.alu:v
+		errors: 14, warnings: 2
+ncvlog: *F,NOTOPL: no top-level unit found, must have recursive instances.
+ncverilog: *E,VLGERR: An error occurred during parsing.  Review the log file for errors with the code *E and fix those identified problems to proceed.  Exiting with code (status 2).
+TOOL:	ncverilog	14.10-p001: Exiting on Mar 06, 2015 at 14:12:16 PST  (total: 00:00:02)
