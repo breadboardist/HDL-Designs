@@ -1,0 +1,666 @@
+# Format: clock  timeReq  slackR/slackF  setupR/setupF  instName/pinName   # cycle(s)
+@(R)->clk(R)	2.167    -4.344/*        1.778/*         \q0_reg[22] /R    1
+@(R)->clk(R)	2.116    -4.339/*        1.776/*         \q0_reg[19] /R    1
+@(R)->clk(R)	2.117    -4.339/*        1.776/*         \h0_reg[2] /R    1
+@(R)->clk(R)	2.172    -4.338/*        1.774/*         \h0_reg[25] /R    1
+@(R)->clk(R)	2.171    -4.338/*        1.773/*         \h0_reg[26] /R    1
+@(R)->clk(R)	2.117    -4.338/*        1.776/*         \q0_reg[14] /R    1
+@(R)->clk(R)	2.172    -4.337/*        1.773/*         \h0_reg[24] /R    1
+@(R)->clk(R)	2.172    -4.336/*        1.773/*         \q0_reg[24] /R    1
+@(R)->clk(R)	2.172    -4.335/*        1.773/*         \q0_reg[31] /R    1
+@(R)->clk(R)	2.168    -4.333/*        1.778/*         \q0_reg[30] /R    1
+@(R)->clk(R)	2.168    -4.331/*        1.778/*         \h0_reg[23] /R    1
+@(R)->clk(R)	2.132    -4.330/*        1.770/*         \h0_reg[19] /R    1
+@(R)->clk(R)	2.127    -4.327/*        1.770/*         \q0_reg[16] /R    1
+@(R)->clk(R)	2.132    -4.327/*        1.770/*         \h0_reg[16] /R    1
+@(R)->clk(R)	2.127    -4.326/*        1.770/*         \h0_reg[6] /R    1
+@(R)->clk(R)	2.168    -4.326/*        1.778/*         \q0_reg[28] /R    1
+@(R)->clk(R)	2.127    -4.325/*        1.770/*         \q0_reg[21] /R    1
+@(R)->clk(R)	2.127    -4.323/*        1.770/*         \q0_reg[29] /R    1
+@(R)->clk(R)	2.187    -4.323/*        1.752/*         \q0_reg[26] /R    1
+@(R)->clk(R)	2.131    -4.320/*        1.770/*         \h0_reg[15] /R    1
+@(R)->clk(R)	2.165    -4.320/*        1.778/*         \h0_reg[22] /R    1
+@(R)->clk(R)	2.129    -4.320/*        1.770/*         \q0_reg[23] /R    1
+@(R)->clk(R)	2.129    -4.319/*        1.770/*         \h0_reg[14] /R    1
+@(R)->clk(R)	2.131    -4.311/*        1.770/*         \q0_reg[20] /R    1
+@(R)->clk(R)	2.165    -4.309/*        1.778/*         \h0_reg[21] /R    1
+@(R)->clk(R)	2.165    -4.307/*        1.778/*         \h0_reg[20] /R    1
+@(R)->clk(R)	2.166    -4.306/*        1.778/*         \h0_reg[18] /R    1
+@(R)->clk(R)	2.166    -4.303/*        1.778/*         \h0_reg[17] /R    1
+@(R)->clk(R)	2.132    -4.296/*        1.770/*         \q0_reg[25] /R    1
+@(R)->clk(R)	2.133    -4.293/*        1.770/*         \h0_reg[11] /R    1
+@(R)->clk(R)	2.133    -4.291/*        1.770/*         \h0_reg[10] /R    1
+@(R)->clk(R)	2.133    -4.268/*        1.770/*         \q0_reg[27] /R    1
+@(R)->clk(R)	2.134    -4.262/*        1.770/*         \h0_reg[4] /R    1
+@(R)->clk(R)	2.134    -4.248/*        1.770/*         \h0_reg[29] /R    1
+@(R)->clk(R)	2.122    -4.247/*        1.776/*         \h0_reg[31] /R    1
+@(R)->clk(R)	2.134    -4.242/*        1.770/*         \q0_reg[18] /R    1
+@(R)->clk(R)	2.122    -4.227/*        1.776/*         \h0_reg[28] /R    1
+@(R)->clk(R)	2.122    -4.207/*        1.776/*         \h0_reg[27] /R    1
+@(R)->clk(R)	2.121    -4.200/*        1.776/*         \h0_reg[30] /R    1
+@(R)->clk(R)	2.120    -4.199/*        1.776/*         \q0_reg[3] /R    1
+@(R)->clk(R)	2.121    -4.198/*        1.776/*         \q0_reg[4] /R    1
+@(R)->clk(R)	2.096    -4.189/*        1.808/*         \q0_reg[6] /R    1
+@(R)->clk(R)	2.117    -4.183/*        1.777/*         \q0_reg[12] /R    1
+@(R)->clk(R)	2.118    -4.181/*        1.776/*         \q0_reg[10] /R    1
+@(R)->clk(R)	2.118    -4.181/*        1.777/*         \h0_reg[3] /R    1
+@(R)->clk(R)	2.096    -4.164/*        1.808/*         \q0_reg[7] /R    1
+@(R)->clk(R)	2.096    -4.150/*        1.808/*         \q0_reg[17] /R    1
+@(R)->clk(R)	2.096    -4.141/*        1.808/*         \q0_reg[8] /R    1
+@(R)->clk(R)	2.097    -4.131/*        1.808/*         \q0_reg[15] /R    1
+@(R)->clk(R)	2.159    -3.978/*        1.783/*         \q0_reg[13] /R    1
+@(R)->clk(R)	2.188    -3.960/*        1.746/*         \q0_reg[11] /R    1
+@(R)->clk(R)	2.157    -3.948/*        1.783/*         \q0_reg[9] /R    1
+@(R)->clk(R)	2.157    -3.926/*        1.783/*         \h0_reg[12] /R    1
+@(R)->clk(R)	2.157    -3.926/*        1.783/*         \h0_reg[13] /R    1
+@(R)->clk(R)	2.156    -3.897/*        1.783/*         \h0_reg[7] /R    1
+@(R)->clk(R)	2.168    -3.874/*        1.772/*         \h0_reg[8] /R    1
+@(R)->clk(R)	2.168    -3.864/*        1.772/*         \h0_reg[9] /R    1
+@(R)->clk(R)	2.167    -3.728/*        1.752/*         \q0_reg[5] /R    1
+@(R)->clk(R)	2.148    -3.704/*        1.778/*         push_0_reg/R    1
+@(R)->clk(R)	2.149    -3.703/*        1.778/*         \h0_reg[5] /R    1
+@(R)->clk(R)	2.149    -3.703/*        1.778/*         \h0_reg[0] /R    1
+@(R)->clk(R)	2.161    -3.691/*        1.758/*         \h0_reg[1] /R    1
+@(R)->clk(R)	2.149    -3.663/*        1.778/*         \dout_reg[21] /R    1
+@(R)->clk(R)	2.148    -3.653/*        1.778/*         \dout_reg[19] /R    1
+@(R)->clk(R)	2.148    -3.648/*        1.778/*         push_1_reg/R    1
+@(R)->clk(R)	2.146    -3.641/*        1.778/*         \dout_reg[23] /R    1
+@(R)->clk(R)	2.148    -3.630/*        1.778/*         \dout_reg[20] /R    1
+@(R)->clk(R)	2.148    -3.591/*        1.778/*         \dout_reg[18] /R    1
+@(R)->clk(R)	2.148    -3.591/*        1.778/*         \dout_reg[17] /R    1
+@(R)->clk(R)	2.148    -3.590/*        1.778/*         \dout_reg[16] /R    1
+@(R)->clk(R)	2.148    -3.589/*        1.778/*         \dout_reg[22] /R    1
+@(R)->clk(R)	2.159    -3.555/*        1.761/*         \acc_reg[18] /R    1
+@(R)->clk(R)	2.159    -3.542/*        1.761/*         \acc_reg[19] /R    1
+@(R)->clk(R)	2.153    -3.536/*        1.776/*         \acc_reg[17] /R    1
+@(R)->clk(R)	2.159    -3.509/*        1.761/*         \acc_reg[21] /R    1
+@(R)->clk(R)	2.145    -3.479/*        1.782/*         \acc_reg[16] /R    1
+@(R)->clk(R)	2.160    -3.464/*        1.761/*         \acc_reg[13] /R    1
+@(R)->clk(R)	2.160    -3.431/*        1.761/*         \acc_reg[12] /R    1
+@(R)->clk(R)	2.146    -3.405/*        1.782/*         \acc_reg[4] /R    1
+@(R)->clk(R)	2.146    -3.405/*        1.782/*         \acc_reg[5] /R    1
+@(R)->clk(R)	2.146    -3.401/*        1.782/*         \dout_reg[3] /R    1
+@(R)->clk(R)	2.167    -3.400/*        1.769/*         \dout_reg[31] /R    1
+@(R)->clk(R)	2.167    -3.400/*        1.769/*         \dout_reg[30] /R    1
+@(R)->clk(R)	2.146    -3.400/*        1.782/*         \acc_reg[6] /R    1
+@(R)->clk(R)	2.167    -3.400/*        1.769/*         \dout_reg[29] /R    1
+@(R)->clk(R)	2.167    -3.398/*        1.769/*         \dout_reg[28] /R    1
+@(R)->clk(R)	2.167    -3.394/*        1.769/*         \dout_reg[26] /R    1
+@(R)->clk(R)	2.168    -3.393/*        1.769/*         \dout_reg[27] /R    1
+@(R)->clk(R)	2.168    -3.390/*        1.769/*         \dout_reg[25] /R    1
+@(R)->clk(R)	2.168    -3.387/*        1.769/*         \dout_reg[0] /R    1
+@(R)->clk(R)	2.168    -3.386/*        1.769/*         \dout_reg[1] /R    1
+@(R)->clk(R)	2.159    -3.382/*        1.761/*         \cmd0_reg[0] /R    1
+@(R)->clk(R)	2.168    -3.378/*        1.752/*         \acc_reg[8] /R    1
+@(R)->clk(R)	2.168    -3.377/*        1.752/*         \dout_reg[4] /R    1
+@(R)->clk(R)	2.168    -3.375/*        1.752/*         \acc_reg[9] /R    1
+@(R)->clk(R)	2.168    -3.372/*        1.752/*         \dout_reg[7] /R    1
+@(R)->clk(R)	2.168    -3.369/*        1.752/*         \dout_reg[5] /R    1
+@(R)->clk(R)	2.168    -3.368/*        1.752/*         \dout_reg[6] /R    1
+@(R)->clk(R)	2.168    -3.367/*        1.752/*         \dout_reg[8] /R    1
+@(R)->clk(R)	2.168    -3.367/*        1.752/*         _pushout_reg/R    1
+@(R)->clk(R)	2.168    -3.367/*        1.752/*         \dout_reg[10] /R    1
+@(R)->clk(R)	2.168    -3.363/*        1.752/*         \dout_reg[9] /R    1
+@(R)->clk(R)	2.160    -3.362/*        1.761/*         \dout_reg[15] /R    1
+@(R)->clk(R)	2.159    -3.362/*        1.761/*         \acc_reg[15] /R    1
+@(R)->clk(R)	2.160    -3.362/*        1.761/*         \dout_reg[13] /R    1
+@(R)->clk(R)	2.160    -3.361/*        1.761/*         \dout_reg[12] /R    1
+@(R)->clk(R)	2.160    -3.361/*        1.761/*         push_2_reg/R    1
+@(R)->clk(R)	2.160    -3.359/*        1.761/*         \acc_reg[14] /R    1
+@(R)->clk(R)	2.160    -3.358/*        1.761/*         \cmd_2_reg[0] /R    1
+@(R)->clk(R)	2.168    -3.351/*        1.752/*         \dout_reg[11] /R    1
+@(R)->clk(R)	2.168    -3.351/*        1.752/*         \dout_reg[14] /R    1
+@(R)->clk(R)	2.167    -3.349/*        1.752/*         \acc_reg[10] /R    1
+@(R)->clk(R)	2.167    -3.344/*        1.752/*         \cmd_1_reg[1] /R    1
+@(R)->clk(R)	2.167    -3.339/*        1.752/*         \cmd_1_reg[0] /R    1
+@(R)->clk(R)	2.160    -3.330/*        1.761/*         \cmd_2_reg[1] /R    1
+@(R)->clk(R)	2.160    -3.291/*        1.761/*         \acc_reg[7] /R    1
+@(R)->clk(R)	2.145    -3.256/*        1.782/*         \acc_reg[11] /R    1
+@(R)->clk(R)	2.160    -3.241/*        1.761/*         \dout_reg[2] /R    1
+@(R)->clk(R)	2.168    -3.220/*        1.752/*         \cmd0_reg[1] /R    1
+@(R)->clk(R)	2.145    -3.157/*        1.782/*         \acc_reg[3] /R    1
+@(R)->clk(R)	2.145    -3.149/*        1.782/*         \acc_reg[1] /R    1
+@(R)->clk(R)	2.144    -3.125/*        1.782/*         \dout_reg[24] /R    1
+@(R)->clk(R)	2.144    -3.050/*        1.782/*         \acc_reg[2] /R    1
+@(R)->clk(R)	2.162    -2.981/*        1.769/*         \acc_reg[24] /R    1
+@(R)->clk(R)	2.165    -2.946/*        1.769/*         \acc_reg[28] /R    1
+@(R)->clk(R)	2.165    -2.945/*        1.769/*         \acc_reg[27] /R    1
+@(R)->clk(R)	2.143    -2.931/*        1.782/*         \acc_reg[0] /R    1
+clk(R)->clk(R)	3.834    -2.916/*        0.109/*         \acc_reg[43] /D    1
+clk(R)->clk(R)	3.829    -2.914/*        0.109/*         \acc_reg[41] /D    1
+@(R)->clk(R)	2.144    -2.913/*        1.782/*         \acc_reg[22] /R    1
+clk(R)->clk(R)	3.830    -2.865/*        0.107/*         \acc_reg[39] /D    1
+@(R)->clk(R)	2.103    -2.857/*        1.828/*         \q0_reg[0] /R    1
+@(R)->clk(R)	2.105    -2.854/*        1.828/*         \h1_reg[1] /R    1
+clk(R)->clk(R)	3.822    -2.853/*        0.106/*         \acc_reg[33] /D    1
+@(R)->clk(R)	2.111    -2.851/*        1.784/*         \q0_reg[1] /R    1
+@(R)->clk(R)	2.110    -2.851/*        1.784/*         \q0_reg[2] /R    1
+@(R)->clk(R)	2.162    -2.823/*        1.758/*         \acc_reg[23] /R    1
+@(R)->clk(R)	2.152    -2.804/*        1.776/*         \acc_reg[20] /R    1
+@(R)->clk(R)	2.163    -2.795/*        1.767/*         \acc_reg[25] /R    1
+@(R)->clk(R)	2.162    -2.794/*        1.767/*         \h1_reg[0] /R    1
+clk(R)->clk(R)	3.831    -2.790/*        0.107/*         \acc_reg[42] /D    1
+clk(R)->clk(R)	3.836    -2.780/*        0.107/*         \acc_reg[45] /D    1
+clk(R)->clk(R)	3.835    -2.773/*        0.106/*         \acc_reg[47] /D    1
+@(R)->clk(R)	2.169    -2.762/*        1.769/*         \acc_reg[40] /R    1
+@(R)->clk(R)	2.169    -2.761/*        1.769/*         \acc_reg[41] /R    1
+@(R)->clk(R)	2.169    -2.760/*        1.769/*         \acc_reg[42] /R    1
+@(R)->clk(R)	2.170    -2.757/*        1.773/*         \acc_reg[51] /R    1
+@(R)->clk(R)	2.170    -2.756/*        1.773/*         \acc_reg[50] /R    1
+@(R)->clk(R)	2.170    -2.756/*        1.773/*         \acc_reg[43] /R    1
+clk(R)->clk(R)	3.832    -2.755/*        0.106/*         \acc_reg[61] /D    1
+@(R)->clk(R)	2.169    -2.755/*        1.773/*         \acc_reg[44] /R    1
+@(R)->clk(R)	2.170    -2.755/*        1.773/*         \acc_reg[45] /R    1
+@(R)->clk(R)	2.168    -2.748/*        1.773/*         \acc_reg[46] /R    1
+@(R)->clk(R)	2.168    -2.747/*        1.773/*         \acc_reg[47] /R    1
+@(R)->clk(R)	2.170    -2.747/*        1.773/*         \acc_reg[53] /R    1
+@(R)->clk(R)	2.170    -2.747/*        1.773/*         \acc_reg[59] /R    1
+@(R)->clk(R)	2.169    -2.746/*        1.773/*         \acc_reg[48] /R    1
+@(R)->clk(R)	2.170    -2.746/*        1.773/*         \acc_reg[52] /R    1
+@(R)->clk(R)	2.169    -2.745/*        1.773/*         \acc_reg[49] /R    1
+@(R)->clk(R)	2.170    -2.730/*        1.773/*         \acc_reg[56] /R    1
+@(R)->clk(R)	2.170    -2.730/*        1.773/*         \acc_reg[54] /R    1
+@(R)->clk(R)	2.170    -2.730/*        1.773/*         \acc_reg[55] /R    1
+@(R)->clk(R)	2.170    -2.730/*        1.773/*         \acc_reg[57] /R    1
+clk(R)->clk(R)	3.838    -2.728/*        0.106/*         \acc_reg[59] /D    1
+clk(R)->clk(R)	3.834    -2.726/*        0.110/*         \acc_reg[51] /D    1
+clk(R)->clk(R)	3.830    -2.718/*        0.106/*         \acc_reg[35] /D    1
+@(R)->clk(R)	2.169    -2.713/*        1.769/*         \acc_reg[61] /R    1
+clk(R)->clk(R)	3.830    -2.711/*        0.108/*         \acc_reg[40] /D    1
+clk(R)->clk(R)	3.833    -2.705/*        0.106/*         \acc_reg[37] /D    1
+@(R)->clk(R)	2.168    -2.703/*        1.769/*         \acc_reg[62] /R    1
+clk(R)->clk(R)	3.833    -2.700/*        0.112/*         \acc_reg[60] /D    1
+@(R)->clk(R)	2.168    -2.692/*        1.769/*         \acc_reg[39] /R    1
+@(R)->clk(R)	2.147    -2.684/*        1.798/*         \acc_reg[60] /R    1
+clk(R)->clk(R)	3.830    -2.682/*        0.106/*         \acc_reg[38] /D    1
+@(R)->clk(R)	2.168    -2.672/*        1.769/*         \acc_reg[35] /R    1
+@(R)->clk(R)	2.168    -2.671/*        1.769/*         \acc_reg[36] /R    1
+clk(R)->clk(R)	3.834    -2.663/*        0.109/*         \acc_reg[44] /D    1
+clk(R)->clk(R)	3.838    -2.660/*        0.106/*         \acc_reg[55] /D    1
+@(R)->clk(R)	2.171    -2.659/*        1.769/*         \acc_reg[58] /R    1
+@(R)->clk(R)	2.172    -2.656/*        1.769/*         \acc_reg[63] /R    1
+@(R)->clk(R)	2.170    -2.654/*        1.769/*         \acc_reg[37] /R    1
+@(R)->clk(R)	2.177    -2.651/*        1.759/*         \acc_reg[38] /R    1
+@(R)->clk(R)	2.170    -2.646/*        1.769/*         \h1_reg[4] /R    1
+@(R)->clk(R)	2.161    -2.644/*        1.775/*         \h1_reg[3] /R    1
+@(R)->clk(R)	2.165    -2.644/*        1.769/*         \acc_reg[26] /R    1
+clk(R)->clk(R)	3.816    -2.639/*        0.111/*         \acc_reg[34] /D    1
+@(R)->clk(R)	2.161    -2.632/*        1.775/*         \h1_reg[6] /R    1
+clk(R)->clk(R)	3.837    -2.624/*        0.106/*         \acc_reg[53] /D    1
+@(R)->clk(R)	2.153    -2.624/*        1.775/*         \acc_reg[34] /R    1
+clk(R)->clk(R)	3.826    -2.624/*        0.106/*         \acc_reg[32] /D    1
+@(R)->clk(R)	2.154    -2.623/*        1.775/*         \acc_reg[33] /R    1
+@(R)->clk(R)	2.155    -2.621/*        1.776/*         \acc_reg[31] /R    1
+@(R)->clk(R)	2.156    -2.618/*        1.776/*         \acc_reg[32] /R    1
+@(R)->clk(R)	2.165    -2.618/*        1.769/*         \h1_reg[2] /R    1
+clk(R)->clk(R)	3.836    -2.611/*        0.106/*         \acc_reg[49] /D    1
+clk(R)->clk(R)	3.825    -2.608/*        0.106/*         \acc_reg[31] /D    1
+clk(R)->clk(R)	3.833    -2.599/*        0.108/*         \acc_reg[63] /D    1
+clk(R)->clk(R)	3.835    -2.593/*        0.108/*         \acc_reg[57] /D    1
+@(R)->clk(R)	2.165    -2.589/*        1.769/*         \acc_reg[29] /R    1
+@(R)->clk(R)	2.156    -2.588/*        1.779/*         \acc_reg[30] /R    1
+clk(R)->clk(R)	3.834    -2.580/*        0.109/*         \acc_reg[50] /D    1
+@(R)->clk(R)	2.156    -2.572/*        1.779/*         \h1_reg[5] /R    1
+clk(R)->clk(R)	3.831    -2.567/*        0.106/*         \acc_reg[36] /D    1
+clk(R)->clk(R)	3.837    -2.543/*        0.106/*         \acc_reg[54] /D    1
+clk(R)->clk(R)	3.830    -2.543/*        0.109/*         \acc_reg[58] /D    1
+clk(R)->clk(R)	3.834    -2.542/*        0.107/*         \acc_reg[46] /D    1
+clk(R)->clk(R)	3.835    -2.511/*        0.108/*         \acc_reg[56] /D    1
+clk(R)->clk(R)	3.814    -2.506/*        0.106/*         \acc_reg[18] /D    1
+clk(R)->clk(R)	3.811    -2.505/*        0.109/*         \acc_reg[10] /D    1
+clk(R)->clk(R)	3.836    -2.499/*        0.106/*         \acc_reg[48] /D    1
+clk(R)->clk(R)	3.811    -2.496/*        0.109/*         \acc_reg[14] /D    1
+clk(R)->clk(R)	3.837    -2.489/*        0.106/*         \acc_reg[52] /D    1
+clk(R)->clk(R)	3.831    -2.475/*        0.106/*         \acc_reg[62] /D    1
+clk(R)->clk(R)	3.812    -2.455/*        0.109/*         \acc_reg[12] /D    1
+clk(R)->clk(R)	3.816    -2.402/*        0.109/*         \acc_reg[22] /D    1
+clk(R)->clk(R)	3.814    -2.389/*        0.107/*         \acc_reg[13] /D    1
+clk(R)->clk(R)	3.812    -2.362/*        0.109/*         \acc_reg[15] /D    1
+clk(R)->clk(R)	3.826    -2.353/*        0.108/*         \acc_reg[28] /D    1
+clk(R)->clk(R)	3.820    -2.342/*        0.107/*         \acc_reg[16] /D    1
+clk(R)->clk(R)	3.818    -2.338/*        0.110/*         \acc_reg[20] /D    1
+clk(R)->clk(R)	3.829    -2.331/*        0.105/*         \acc_reg[26] /D    1
+clk(R)->clk(R)	3.824    -2.328/*        0.110/*         \acc_reg[27] /D    1
+clk(R)->clk(R)	3.818    -2.302/*        0.108/*         \acc_reg[11] /D    1
+clk(R)->clk(R)	3.828    -2.274/*        0.108/*         \acc_reg[30] /D    1
+clk(R)->clk(R)	3.814    -2.241/*        0.106/*         \acc_reg[21] /D    1
+clk(R)->clk(R)	3.824    -2.231/*        0.105/*         \acc_reg[17] /D    1
+clk(R)->clk(R)	3.812    -2.231/*        0.107/*         \acc_reg[8] /D    1
+clk(R)->clk(R)	3.822    -2.197/*        0.108/*         \acc_reg[25] /D    1
+clk(R)->clk(R)	3.814    -2.196/*        0.106/*         \acc_reg[19] /D    1
+clk(R)->clk(R)	3.812    -2.191/*        0.108/*         \acc_reg[9] /D    1
+clk(R)->clk(R)	3.819    -2.169/*        0.112/*         \acc_reg[24] /D    1
+clk(R)->clk(R)	3.828    -2.148/*        0.107/*         \acc_reg[29] /D    1
+@(R)->clk(R)	3.723    -2.054/*        0.211/*         \h2_reg[1] /D    1
+@(R)->clk(R)	3.721    -2.047/*        0.208/*         \h2_reg[0] /D    1
+clk(R)->clk(R)	3.815    -2.044/*        0.105/*         \acc_reg[23] /D    1
+clk(R)->clk(R)	3.818    -2.029/*        0.109/*         \acc_reg[6] /D    1
+clk(R)->clk(R)	2.301    -1.985/*        0.138/*         \q0_reg[9] /D    1
+clk(R)->clk(R)	2.305    -1.982/*        0.136/*         \q0_reg[13] /D    1
+clk(R)->clk(R)	2.296    -1.968/*        0.138/*         \q0_reg[11] /D    1
+clk(R)->clk(R)	2.266    -1.919/*        0.128/*         \h0_reg[3] /D    1
+clk(R)->clk(R)	3.815    -1.906/*        0.106/*         \acc_reg[7] /D    1
+@(R)->clk(R)	3.730    -1.886/*        0.207/*         \h2_reg[3] /D    1
+@(R)->clk(R)	3.724    -1.886/*        0.212/*         \h2_reg[2] /D    1
+clk(R)->clk(R)	2.275    -1.877/*        0.129/*         \q0_reg[8] /D    1
+clk(R)->clk(R)	2.272    -1.873/*        0.133/*         \q0_reg[17] /D    1
+clk(R)->clk(R)	2.270    -1.870/*        0.123/*         \q0_reg[12] /D    1
+clk(R)->clk(R)	2.271    -1.853/*        0.122/*         \q0_reg[14] /D    1
+@(R)->clk(R)	3.729    -1.848/*        0.209/*         \h2_reg[4] /D    1
+clk(R)->clk(R)	2.275    -1.838/*        0.130/*         \q0_reg[15] /D    1
+@(R)->clk(R)	3.732    -1.833/*        0.203/*         \h2_reg[5] /D    1
+clk(R)->clk(R)	2.269    -1.832/*        0.124/*         \q0_reg[19] /D    1
+clk(R)->clk(R)	2.271    -1.827/*        0.123/*         \q0_reg[10] /D    1
+clk(R)->clk(R)	3.819    -1.821/*        0.108/*         \acc_reg[5] /D    1
+clk(R)->clk(R)	2.280    -1.809/*        0.124/*         \q0_reg[6] /D    1
+clk(R)->clk(R)	2.282    -1.808/*        0.122/*         \q0_reg[7] /D    1
+clk(R)->clk(R)	3.820    -1.798/*        0.108/*         \acc_reg[4] /D    1
+clk(R)->clk(R)	2.266    -1.786/*        0.127/*         \h0_reg[2] /D    1
+clk(R)->clk(R)	2.286    -1.778/*        0.117/*         \q0_reg[18] /D    1
+clk(R)->clk(R)	2.275    -1.774/*        0.121/*         \q0_reg[16] /D    1
+clk(R)->clk(R)	2.271    -1.766/*        0.126/*         \h0_reg[6] /D    1
+clk(R)->clk(R)	2.275    -1.750/*        0.123/*         \h0_reg[28] /D    1
+@(R)->clk(R)	3.733    -1.739/*        0.203/*         \h2_reg[6] /D    1
+clk(R)->clk(R)	2.277    -1.717/*        0.117/*         \q0_reg[2] /D    1
+clk(R)->clk(R)	2.273    -1.712/*        0.123/*         \q0_reg[21] /D    1
+clk(R)->clk(R)	2.282    -1.697/*        0.115/*         \q0_reg[3] /D    1
+clk(R)->clk(R)	2.279    -1.676/*        0.120/*         \h0_reg[14] /D    1
+clk(R)->clk(R)	2.280    -1.674/*        0.122/*         \q0_reg[25] /D    1
+clk(R)->clk(R)	2.274    -1.672/*        0.123/*         \q0_reg[29] /D    1
+clk(R)->clk(R)	2.280    -1.650/*        0.122/*         \h0_reg[11] /D    1
+clk(R)->clk(R)	2.278    -1.649/*        0.121/*         \q0_reg[23] /D    1
+clk(R)->clk(R)	2.283    -1.641/*        0.119/*         \h0_reg[19] /D    1
+clk(R)->clk(R)	2.284    -1.613/*        0.119/*         \h0_reg[4] /D    1
+clk(R)->clk(R)	2.285    -1.612/*        0.116/*         \h0_reg[15] /D    1
+clk(R)->clk(R)	3.818    -1.610/*        0.109/*         \acc_reg[3] /D    1
+clk(R)->clk(R)	2.285    -1.606/*        0.113/*         \h0_reg[27] /D    1
+clk(R)->clk(R)	2.316    -1.594/*        0.111/*         \h0_reg[0] /D    1
+clk(R)->clk(R)	2.326    -1.591/*        0.118/*         \h0_reg[17] /D    1
+clk(R)->clk(R)	2.288    -1.589/*        0.110/*         \h0_reg[30] /D    1
+clk(R)->clk(R)	2.288    -1.578/*        0.114/*         \h0_reg[10] /D    1
+clk(R)->clk(R)	2.289    -1.571/*        0.113/*         \q0_reg[20] /D    1
+clk(R)->clk(R)	2.311    -1.568/*        0.108/*         \q0_reg[5] /D    1
+clk(R)->clk(R)	2.289    -1.567/*        0.114/*         \q0_reg[27] /D    1
+clk(R)->clk(R)	2.288    -1.554/*        0.114/*         \h0_reg[16] /D    1
+clk(R)->clk(R)	2.319    -1.551/*        0.108/*         \h0_reg[5] /D    1
+clk(R)->clk(R)	2.292    -1.530/*        0.106/*         \q0_reg[4] /D    1
+clk(R)->clk(R)	2.292    -1.528/*        0.107/*         \h0_reg[31] /D    1
+clk(R)->clk(R)	2.296    -1.522/*        0.107/*         \h0_reg[29] /D    1
+clk(R)->clk(R)	3.707    */-1.513        */0.224         pipe/clk_r_REG255_S1/D    1
+clk(R)->clk(R)	2.327    -1.510/*        0.117/*         \h0_reg[18] /D    1
+clk(R)->clk(R)	2.324    -1.507/*        0.107/*         \q0_reg[0] /D    1
+clk(R)->clk(R)	2.290    -1.502/*        0.104/*         \q0_reg[1] /D    1
+clk(R)->clk(R)	2.332    -1.495/*        0.111/*         \h0_reg[21] /D    1
+clk(R)->clk(R)	2.317    -1.479/*        0.103/*         \h0_reg[1] /D    1
+clk(R)->clk(R)	2.329    -1.473/*        0.114/*         \h0_reg[20] /D    1
+clk(R)->clk(R)	2.332    -1.469/*        0.113/*         \q0_reg[31] /D    1
+clk(R)->clk(R)	2.335    -1.465/*        0.111/*         \h0_reg[23] /D    1
+clk(R)->clk(R)	2.333    -1.461/*        0.112/*         \q0_reg[22] /D    1
+clk(R)->clk(R)	2.337    -1.447/*        0.109/*         \q0_reg[28] /D    1
+clk(R)->clk(R)	2.339    -1.429/*        0.106/*         \h0_reg[25] /D    1
+clk(R)->clk(R)	2.332    -1.427/*        0.107/*         \q0_reg[26] /D    1
+clk(R)->clk(R)	3.816    -1.423/*        0.109/*         \acc_reg[2] /D    1
+clk(R)->clk(R)	2.337    -1.421/*        0.109/*         \h0_reg[24] /D    1
+clk(R)->clk(R)	2.336    -1.416/*        0.107/*         \h0_reg[22] /D    1
+clk(R)->clk(R)	2.339    -1.408/*        0.106/*         \h0_reg[26] /D    1
+clk(R)->clk(R)	2.336    -1.400/*        0.110/*         \q0_reg[30] /D    1
+clk(R)->clk(R)	3.704    */-1.392        */0.224         pipe/clk_r_REG257_S1/D    1
+clk(R)->clk(R)	2.339    -1.379/*        0.106/*         \q0_reg[24] /D    1
+clk(R)->clk(R)	2.226    -1.356/*        0.200/*         push_0_reg/D    1
+clk(R)->clk(R)	3.724    */-1.346        */0.221         pipe/mult_97/clk_r_REG50_S1/D    1
+clk(R)->clk(R)	3.732    -1.327/*        0.205/*         pipe/mult_97/clk_r_REG89_S1/D    1
+clk(R)->clk(R)	3.722    */-1.321        */0.223         pipe/mult_97/clk_r_REG52_S1/D    1
+clk(R)->clk(R)	3.721    */-1.312        */0.217         pipe/mult_97/clk_r_REG242_S1/D    1
+clk(R)->clk(R)	3.712    -1.312/*        0.206/*         pipe/mult_97/clk_r_REG244_S1/D    1
+clk(R)->clk(R)	3.714    */-1.307        */0.224         pipe/mult_97/clk_r_REG93_S1/D    1
+clk(R)->clk(R)	3.701    */-1.305        */0.217         pipe/mult_97/clk_r_REG239_S1/D    1
+clk(R)->clk(R)	3.718    */-1.303        */0.220         pipe/mult_97/clk_r_REG235_S1/D    1
+clk(R)->clk(R)	3.704    */-1.303        */0.234         pipe/mult_97/clk_r_REG129_S1/D    1
+clk(R)->clk(R)	3.721    */-1.298        */0.217         pipe/mult_97/clk_r_REG49_S1/D    1
+clk(R)->clk(R)	3.701    */-1.286        */0.218         pipe/mult_97/clk_r_REG241_S1/D    1
+clk(R)->clk(R)	3.723    */-1.286        */0.220         pipe/mult_97/clk_r_REG51_S1/D    1
+clk(R)->clk(R)	3.720    */-1.283        */0.222         pipe/mult_97/clk_r_REG60_S1/D    1
+clk(R)->clk(R)	3.699    */-1.281        */0.230         pipe/mult_97/clk_r_REG162_S1/D    1
+clk(R)->clk(R)	3.703    */-1.263        */0.230         pipe/mult_97/clk_r_REG140_S1/D    1
+clk(R)->clk(R)	3.692    -1.261/*        0.201/*         pipe/mult_97/clk_r_REG180_S1/D    1
+clk(R)->clk(R)	3.721    */-1.255        */0.218         pipe/mult_97/clk_r_REG59_S1/D    1
+clk(R)->clk(R)	3.698    -1.246/*        0.207/*         pipe/mult_97/clk_r_REG169_S1/D    1
+clk(R)->clk(R)	3.714    */-1.245        */0.224         pipe/mult_97/clk_r_REG96_S1/D    1
+clk(R)->clk(R)	3.702    */-1.245        */0.228         pipe/mult_97/clk_r_REG143_S1/D    1
+clk(R)->clk(R)	3.718    */-1.244        */0.221         pipe/mult_97/clk_r_REG165_S1/D    1
+clk(R)->clk(R)	3.714    */-1.239        */0.223         pipe/mult_97/clk_r_REG216_S1/D    1
+clk(R)->clk(R)	3.702    */-1.230        */0.219         pipe/mult_97/clk_r_REG234_S1/D    1
+clk(R)->clk(R)	3.702    */-1.230        */0.236         pipe/mult_97/clk_r_REG106_S1/D    1
+clk(R)->clk(R)	3.701    */-1.227        */0.237         pipe/mult_97/clk_r_REG110_S1/D    1
+clk(R)->clk(R)	3.712    */-1.226        */0.223         pipe/mult_97/clk_r_REG40_S1/D    1
+clk(R)->clk(R)	3.742    -1.224/*        0.198/*         pipe/mult_97/clk_r_REG147_S1/D    1
+clk(R)->clk(R)	3.722    */-1.224        */0.223         pipe/mult_97/clk_r_REG44_S1/D    1
+clk(R)->clk(R)	3.704    */-1.224        */0.234         pipe/mult_97/clk_r_REG128_S1/D    1
+clk(R)->clk(R)	3.678    */-1.224        */0.227         pipe/mult_97/clk_r_REG174_S1/D    1
+clk(R)->clk(R)	3.710    */-1.222        */0.224         pipe/mult_97/clk_r_REG145_S1/D    1
+clk(R)->clk(R)	3.712    */-1.221        */0.220         pipe/mult_97/clk_r_REG88_S1/D    1
+clk(R)->clk(R)	3.714    */-1.221        */0.224         pipe/mult_97/clk_r_REG92_S1/D    1
+clk(R)->clk(R)	3.701    */-1.220        */0.232         pipe/mult_97/clk_r_REG161_S1/D    1
+clk(R)->clk(R)	3.736    -1.220/*        0.198/*         pipe/mult_97/clk_r_REG190_S1/D    1
+clk(R)->clk(R)	3.718    */-1.214        */0.223         pipe/mult_97/clk_r_REG204_S1/D    1
+clk(R)->clk(R)	3.705    */-1.214        */0.234         pipe/mult_97/clk_r_REG138_S1/D    1
+clk(R)->clk(R)	3.712    */-1.210        */0.224         pipe/mult_97/clk_r_REG98_S1/D    1
+clk(R)->clk(R)	3.703    */-1.209        */0.230         pipe/mult_97/clk_r_REG126_S1/D    1
+clk(R)->clk(R)	3.702    */-1.200        */0.230         pipe/mult_97/clk_r_REG139_S1/D    1
+clk(R)->clk(R)	3.699    */-1.198        */0.235         pipe/mult_97/clk_r_REG108_S1/D    1
+clk(R)->clk(R)	3.710    */-1.196        */0.224         pipe/mult_97/clk_r_REG46_S1/D    1
+clk(R)->clk(R)	3.720    */-1.196        */0.224         pipe/mult_97/clk_r_REG229_S1/D    1
+clk(R)->clk(R)	3.666    */-1.194        */0.228         pipe/mult_97/clk_r_REG152_S1/D    1
+clk(R)->clk(R)	3.703    */-1.187        */0.236         pipe/mult_97/clk_r_REG104_S1/D    1
+clk(R)->clk(R)	3.715    */-1.187        */0.223         pipe/mult_97/clk_r_REG201_S1/D    1
+clk(R)->clk(R)	3.715    */-1.186        */0.223         pipe/mult_97/clk_r_REG215_S1/D    1
+clk(R)->clk(R)	3.724    */-1.183        */0.221         pipe/mult_97/clk_r_REG43_S1/D    1
+clk(R)->clk(R)	3.701    */-1.181        */0.232         pipe/mult_97/clk_r_REG164_S1/D    1
+clk(R)->clk(R)	3.703    */-1.180        */0.233         pipe/mult_97/clk_r_REG125_S1/D    1
+clk(R)->clk(R)	3.673    */-1.180        */0.224         pipe/mult_97/clk_r_REG176_S1/D    1
+clk(R)->clk(R)	3.724    */-1.179        */0.221         pipe/mult_97/clk_r_REG48_S1/D    1
+clk(R)->clk(R)	3.700    */-1.179        */0.229         pipe/mult_97/clk_r_REG137_S1/D    1
+clk(R)->clk(R)	3.701    */-1.172        */0.232         pipe/mult_97/clk_r_REG112_S1/D    1
+clk(R)->clk(R)	3.715    */-1.168        */0.224         pipe/mult_97/clk_r_REG95_S1/D    1
+clk(R)->clk(R)	3.719    */-1.164        */0.223         pipe/mult_97/clk_r_REG196_S1/D    1
+clk(R)->clk(R)	3.700    */-1.163        */0.229         pipe/mult_97/clk_r_REG39_S1/D    1
+clk(R)->clk(R)	3.669    */-1.162        */0.228         pipe/mult_97/clk_r_REG160_S1/D    1
+clk(R)->clk(R)	3.715    */-1.162        */0.218         pipe/mult_97/clk_r_REG203_S1/D    1
+clk(R)->clk(R)	3.719    */-1.161        */0.223         pipe/mult_97/clk_r_REG109_S1/D    1
+clk(R)->clk(R)	3.674    */-1.160        */0.228         pipe/mult_97/clk_r_REG177_S1/D    1
+clk(R)->clk(R)	3.714    */-1.160        */0.223         pipe/mult_97/clk_r_REG87_S1/D    1
+clk(R)->clk(R)	3.698    */-1.154        */0.230         pipe/mult_97/clk_r_REG142_S1/D    1
+clk(R)->clk(R)	3.712    */-1.153        */0.223         pipe/mult_97/clk_r_REG38_S1/D    1
+clk(R)->clk(R)	3.725    */-1.152        */0.221         pipe/mult_97/clk_r_REG146_S1/D    1
+clk(R)->clk(R)	3.714    */-1.149        */0.224         pipe/mult_97/clk_r_REG144_S1/D    1
+clk(R)->clk(R)	3.671    */-1.148        */0.224         pipe/mult_97/clk_r_REG132_S1/D    1
+clk(R)->clk(R)	3.726    -1.145/*        0.200/*         pipe/mult_97/clk_r_REG254_S1/D    1
+clk(R)->clk(R)	3.677    */-1.143        */0.217         pipe/mult_97/clk_r_REG183_S1/D    1
+clk(R)->clk(R)	3.720    */-1.142        */0.223         pipe/mult_97/clk_r_REG225_S1/D    1
+clk(R)->clk(R)	3.674    */-1.142        */0.223         pipe/mult_97/clk_r_REG173_S1/D    1
+clk(R)->clk(R)	3.703    */-1.140        */0.236         pipe/mult_97/clk_r_REG105_S1/D    1
+clk(R)->clk(R)	3.669    */-1.140        */0.228         pipe/mult_97/clk_r_REG168_S1/D    1
+clk(R)->clk(R)	3.674    */-1.140        */0.217         pipe/mult_97/clk_r_REG189_S1/D    1
+clk(R)->clk(R)	3.673    */-1.139        */0.222         pipe/mult_97/clk_r_REG179_S1/D    1
+clk(R)->clk(R)	3.675    */-1.133        */0.223         pipe/mult_97/clk_r_REG159_S1/D    1
+clk(R)->clk(R)	3.712    */-1.133        */0.224         pipe/mult_97/clk_r_REG97_S1/D    1
+clk(R)->clk(R)	3.718    */-1.133        */0.218         pipe/mult_97/clk_r_REG103_S1/D    1
+clk(R)->clk(R)	3.718    */-1.128        */0.222         pipe/mult_97/clk_r_REG200_S1/D    1
+clk(R)->clk(R)	3.718    */-1.125        */0.223         pipe/mult_97/clk_r_REG107_S1/D    1
+clk(R)->clk(R)	3.698    */-1.124        */0.230         pipe/mult_97/clk_r_REG117_S1/D    1
+clk(R)->clk(R)	3.711    */-1.123        */0.221         pipe/mult_97/clk_r_REG45_S1/D    1
+clk(R)->clk(R)	3.711    */-1.121        */0.216         pipe/mult_97/clk_r_REG68_S1/D    1
+clk(R)->clk(R)	3.672    */-1.120        */0.224         pipe/mult_97/clk_r_REG151_S1/D    1
+clk(R)->clk(R)	3.700    */-1.118        */0.229         pipe/mult_97/clk_r_REG35_S1/D    1
+clk(R)->clk(R)	3.719    */-1.117        */0.224         pipe/mult_97/clk_r_REG228_S1/D    1
+clk(R)->clk(R)	3.669    */-1.114        */0.228         pipe/mult_97/clk_r_REG172_S1/D    1
+clk(R)->clk(R)	3.720    */-1.114        */0.223         pipe/mult_97/clk_r_REG111_S1/D    1
+clk(R)->clk(R)	3.788    -1.113/*        0.149/*         \dout_reg[25] /D    1
+clk(R)->clk(R)	3.716    */-1.111        */0.220         pipe/mult_97/clk_r_REG224_S1/D    1
+clk(R)->clk(R)	3.715    */-1.108        */0.221         pipe/mult_97/clk_r_REG37_S1/D    1
+clk(R)->clk(R)	3.677    */-1.107        */0.228         pipe/mult_97/clk_r_REG188_S1/D    1
+clk(R)->clk(R)	3.721    */-1.107        */0.222         pipe/mult_97/clk_r_REG101_S1/D    1
+clk(R)->clk(R)	3.715    */-1.103        */0.221         pipe/mult_97/clk_r_REG221_S1/D    1
+clk(R)->clk(R)	3.710    */-1.096        */0.224         pipe/mult_97/clk_r_REG86_S1/D    1
+clk(R)->clk(R)	3.677    */-1.094        */0.217         pipe/mult_97/clk_r_REG182_S1/D    1
+clk(R)->clk(R)	3.744    -1.092/*        0.195/*         pipe/mult_97/clk_r_REG47_S1/D    1
+clk(R)->clk(R)	3.716    */-1.092        */0.218         pipe/mult_97/clk_r_REG195_S1/D    1
+clk(R)->clk(R)	3.678    */-1.090        */0.217         pipe/mult_97/clk_r_REG185_S1/D    1
+clk(R)->clk(R)	3.700    */-1.086        */0.219         pipe/mult_97/clk_r_REG238_S1/D    1
+clk(R)->clk(R)	3.817    -1.083/*        0.109/*         \acc_reg[1] /D    1
+clk(R)->clk(R)	3.771    -1.078/*        0.148/*         \dout_reg[11] /D    1
+clk(R)->clk(R)	3.718    */-1.077        */0.221         pipe/mult_97/clk_r_REG114_S1/D    1
+clk(R)->clk(R)	3.703    */-1.071        */0.237         pipe/mult_97/clk_r_REG135_S1/D    1
+clk(R)->clk(R)	3.712    */-1.070        */0.223         pipe/mult_97/clk_r_REG116_S1/D    1
+clk(R)->clk(R)	3.782    -1.068/*        0.154/*         \dout_reg[28] /D    1
+clk(R)->clk(R)	3.673    */-1.068        */0.224         pipe/mult_97/clk_r_REG149_S1/D    1
+clk(R)->clk(R)	3.702    */-1.066        */0.230         pipe/mult_97/clk_r_REG131_S1/D    1
+clk(R)->clk(R)	3.775    -1.065/*        0.145/*         \dout_reg[10] /D    1
+clk(R)->clk(R)	3.700    */-1.064        */0.229         pipe/mult_97/clk_r_REG34_S1/D    1
+clk(R)->clk(R)	3.721    */-1.063        */0.219         pipe/mult_97/clk_r_REG113_S1/D    1
+clk(R)->clk(R)	3.690    -1.061/*        0.204/*         pipe/mult_97/clk_r_REG163_S1/D    1
+clk(R)->clk(R)	3.712    */-1.057        */0.224         pipe/clk_r_REG26_S2/D    1
+clk(R)->clk(R)	3.819    -1.047/*        0.106/*         \acc_reg[0] /D    1
+clk(R)->clk(R)	3.710    */-1.047        */0.221         pipe/mult_97/clk_r_REG66_S1/D    1
+clk(R)->clk(R)	3.674    */-1.046        */0.224         pipe/mult_97/clk_r_REG171_S1/D    1
+clk(R)->clk(R)	3.713    */-1.042        */0.220         pipe/mult_97/clk_r_REG90_S1/D    1
+clk(R)->clk(R)	3.772    -1.039/*        0.164/*         \dout_reg[29] /D    1
+clk(R)->clk(R)	3.715    */-1.038        */0.223         pipe/mult_97/clk_r_REG217_S1/D    1
+clk(R)->clk(R)	3.678    */-1.038        */0.217         pipe/mult_97/clk_r_REG184_S1/D    1
+clk(R)->clk(R)	3.720    */-1.035        */0.223         pipe/mult_97/clk_r_REG231_S1/D    1
+clk(R)->clk(R)	3.718    */-1.033        */0.222         pipe/mult_97/clk_r_REG207_S1/D    1
+clk(R)->clk(R)	3.715    */-1.032        */0.223         pipe/mult_97/clk_r_REG220_S1/D    1
+clk(R)->clk(R)	3.700    */-1.031        */0.232         pipe/mult_97/clk_r_REG32_S1/D    1
+clk(R)->clk(R)	3.677    */-1.028        */0.228         pipe/mult_97/clk_r_REG187_S1/D    1
+clk(R)->clk(R)	3.714    */-1.028        */0.224         pipe/mult_97/clk_r_REG100_S1/D    1
+clk(R)->clk(R)	3.738    -1.028/*        0.190/*         pipe/mult_97/clk_r_REG67_S1/D    1
+clk(R)->clk(R)	3.716    */-1.025        */0.224         pipe/mult_97/clk_r_REG134_S1/D    1
+clk(R)->clk(R)	3.713    */-1.023        */0.215         pipe/mult_97/clk_r_REG65_S1/D    1
+clk(R)->clk(R)	3.715    */-1.023        */0.223         pipe/mult_97/clk_r_REG213_S1/D    1
+clk(R)->clk(R)	3.775    -1.022/*        0.151/*         \dout_reg[24] /D    1
+clk(R)->clk(R)	3.702    */-1.021        */0.236         pipe/mult_97/clk_r_REG115_S1/D    1
+clk(R)->clk(R)	3.713    */-1.019        */0.224         pipe/mult_97/clk_r_REG94_S1/D    1
+clk(R)->clk(R)	3.715    */-1.018        */0.218         pipe/mult_97/clk_r_REG192_S1/D    1
+clk(R)->clk(R)	3.718    */-1.011        */0.223         pipe/mult_97/clk_r_REG206_S1/D    1
+clk(R)->clk(R)	3.715    */-1.003        */0.223         pipe/mult_97/clk_r_REG178_S1/D    1
+clk(R)->clk(R)	3.718    */-0.994        */0.221         pipe/mult_97/clk_r_REG210_S1/D    1
+clk(R)->clk(R)	3.699    */-0.993        */0.230         pipe/mult_97/clk_r_REG148_S1/D    1
+clk(R)->clk(R)	3.720    */-0.988        */0.223         pipe/mult_97/clk_r_REG237_S1/D    1
+clk(R)->clk(R)	3.706    */-0.983        */0.222         pipe/clk_r_REG261_S1/D    1
+clk(R)->clk(R)	3.720    */-0.978        */0.224         pipe/mult_97/clk_r_REG230_S1/D    1
+clk(R)->clk(R)	3.776    -0.976/*        0.144/*         \dout_reg[9] /D    1
+clk(R)->clk(R)	3.719    */-0.975        */0.222         pipe/mult_97/clk_r_REG212_S1/D    1
+clk(R)->clk(R)	3.719    */-0.970        */0.223         pipe/mult_97/clk_r_REG102_S1/D    1
+clk(R)->clk(R)	3.717    */-0.970        */0.217         pipe/mult_97/clk_r_REG191_S1/D    1
+clk(R)->clk(R)	3.791    -0.964/*        0.145/*         \dout_reg[30] /D    1
+clk(R)->clk(R)	3.715    */-0.957        */0.226         pipe/clk_r_REG9_S2/D    1
+clk(R)->clk(R)	3.738    -0.957/*        0.205/*         pipe/mult_97/clk_r_REG194_S1/D    1
+clk(R)->clk(R)	3.774    -0.957/*        0.147/*         \dout_reg[12] /D    1
+clk(R)->clk(R)	3.699    */-0.955        */0.231         pipe/mult_97/clk_r_REG130_S1/D    1
+clk(R)->clk(R)	3.711    */-0.952        */0.224         pipe/mult_97/clk_r_REG70_S1/D    1
+clk(R)->clk(R)	3.715    */-0.948        */0.223         pipe/mult_97/clk_r_REG199_S1/D    1
+clk(R)->clk(R)	3.699    */-0.947        */0.233         pipe/mult_97/clk_r_REG2_S1/D    1
+clk(R)->clk(R)	3.755    -0.947/*        0.191/*         pipe/mult_97/clk_r_REG25_S2/D    1
+clk(R)->clk(R)	3.668    */-0.945        */0.228         pipe/mult_97/clk_r_REG153_S1/D    1
+clk(R)->clk(R)	3.793    -0.943/*        0.144/*         \dout_reg[26] /D    1
+clk(R)->clk(R)	3.713    */-0.939        */0.223         pipe/clk_r_REG13_S2/D    1
+clk(R)->clk(R)	3.705    */-0.936        */0.223         pipe/clk_r_REG259_S1/D    1
+clk(R)->clk(R)	3.716    */-0.936        */0.222         pipe/mult_97/clk_r_REG64_S1/D    1
+clk(R)->clk(R)	3.720    */-0.934        */0.223         pipe/mult_97/clk_r_REG233_S1/D    1
+clk(R)->clk(R)	3.718    */-0.933        */0.222         pipe/mult_97/clk_r_REG209_S1/D    1
+clk(R)->clk(R)	3.793    -0.926/*        0.144/*         \dout_reg[27] /D    1
+clk(R)->clk(R)	3.701    */-0.917        */0.231         pipe/mult_97/clk_r_REG155_S1/D    1
+clk(R)->clk(R)	3.783    -0.908/*        0.154/*         \dout_reg[31] /D    1
+clk(R)->clk(R)	3.700    */-0.908        */0.231         pipe/mult_97/clk_r_REG156_S1/D    1
+clk(R)->clk(R)	3.720    */-0.892        */0.223         pipe/mult_97/clk_r_REG197_S1/D    1
+clk(R)->clk(R)	3.734    -0.886/*        0.191/*         pipe/mult_97/clk_r_REG245_S1/D    1
+clk(R)->clk(R)	3.704    */-0.884        */0.218         pipe/mult_97/clk_r_REG226_S1/D    1
+clk(R)->clk(R)	3.718    */-0.875        */0.221         pipe/clk_r_REG8_S2/D    1
+clk(R)->clk(R)	3.741    -0.873/*        0.196/*         pipe/mult_97/clk_r_REG69_S1/D    1
+clk(R)->clk(R)	3.781    -0.873/*        0.145/*         \dout_reg[22] /D    1
+clk(R)->clk(R)	3.709    */-0.869        */0.215         pipe/mult_97/clk_r_REG157_S1/D    1
+clk(R)->clk(R)	3.704    */-0.867        */0.222         pipe/mult_97/clk_r_REG247_S1/D    1
+clk(R)->clk(R)	3.715    */-0.865        */0.220         pipe/mult_97/clk_r_REG222_S1/D    1
+clk(R)->clk(R)	3.720    */-0.864        */0.221         pipe/mult_97/clk_r_REG63_S1/D    1
+clk(R)->clk(R)	3.670    */-0.863        */0.227         pipe/mult_97/clk_r_REG167_S1/D    1
+clk(R)->clk(R)	3.704    */-0.858        */0.232         pipe/mult_97/clk_r_REG41_S1/D    1
+clk(R)->clk(R)	3.715    */-0.857        */0.223         pipe/clk_r_REG12_S2/D    1
+clk(R)->clk(R)	3.721    */-0.849        */0.223         pipe/clk_r_REG6_S2/D    1
+clk(R)->clk(R)	3.720    */-0.847        */0.226         pipe/clk_r_REG27_S2/D    1
+clk(R)->clk(R)	3.713    */-0.846        */0.223         pipe/mult_97/clk_r_REG73_S1/D    1
+clk(R)->clk(R)	3.716    */-0.841        */0.225         pipe/mult_97/clk_r_REG80_S1/D    1
+clk(R)->clk(R)	3.716    */-0.840        */0.222         pipe/clk_r_REG7_S2/D    1
+clk(R)->clk(R)	3.719    */-0.830        */0.221         pipe/mult_97/clk_r_REG205_S1/D    1
+clk(R)->clk(R)	3.708    */-0.825        */0.226         pipe/mult_97/clk_r_REG81_S1/D    1
+clk(R)->clk(R)	3.710    */-0.818        */0.227         pipe/mult_97/clk_r_REG78_S1/D    1
+clk(R)->clk(R)	3.710    */-0.812        */0.218         pipe/mult_97/clk_r_REG248_S1/D    1
+clk(R)->clk(R)	3.715    */-0.808        */0.223         pipe/mult_97/clk_r_REG72_S1/D    1
+clk(R)->clk(R)	3.710    */-0.805        */0.215         pipe/mult_97/clk_r_REG62_S1/D    1
+clk(R)->clk(R)	3.701    */-0.805        */0.231         pipe/mult_97/clk_r_REG166_S1/D    1
+clk(R)->clk(R)	3.739    -0.794/*        0.199/*         pipe/mult_97/clk_r_REG79_S1/D    1
+clk(R)->clk(R)	3.714    */-0.790        */0.217         pipe/mult_97/clk_r_REG211_S1/D    1
+clk(R)->clk(R)	3.715    */-0.766        */0.222         pipe/mult_97/clk_r_REG219_S1/D    1
+clk(R)->clk(R)	3.711    */-0.760        */0.221         pipe/mult_97/clk_r_REG71_S1/D    1
+clk(R)->clk(R)	3.708    */-0.754        */0.226         pipe/mult_97/clk_r_REG82_S1/D    1
+clk(R)->clk(R)	3.720    */-0.753        */0.222         pipe/mult_97/clk_r_REG61_S1/D    1
+clk(R)->clk(R)	3.732    -0.746/*        0.206/*         pipe/mult_97/clk_r_REG250_S1/D    1
+clk(R)->clk(R)	3.722    */-0.745        */0.222         pipe/mult_97/clk_r_REG56_S1/D    1
+clk(R)->clk(R)	3.724    -0.741/*        0.212/*         pipe/clk_r_REG14_S2/D    1
+clk(R)->clk(R)	3.716    */-0.735        */0.224         pipe/mult_97/clk_r_REG99_S1/D    1
+clk(R)->clk(R)	3.718    */-0.726        */0.220         pipe/clk_r_REG10_S2/D    1
+clk(R)->clk(R)	3.719    */-0.725        */0.220         pipe/clk_r_REG15_S2/D    1
+clk(R)->clk(R)	3.707    */-0.718        */0.215         pipe/mult_97/clk_r_REG251_S1/D    1
+clk(R)->clk(R)	3.779    -0.714/*        0.148/*         \dout_reg[21] /D    1
+clk(R)->clk(R)	3.781    -0.707/*        0.144/*         \dout_reg[23] /D    1
+clk(R)->clk(R)	2.313    */-0.700        */0.126         \h0_reg[7] /D    1
+clk(R)->clk(R)	3.719    */-0.695        */0.220         pipe/clk_r_REG11_S2/D    1
+clk(R)->clk(R)	2.316    */-0.684        */0.124         \h0_reg[12] /D    1
+clk(R)->clk(R)	3.720    */-0.679        */0.218         pipe/mult_97/clk_r_REG54_S1/D    1
+clk(R)->clk(R)	3.698    */-0.678        */0.230         pipe/mult_97/clk_r_REG141_S1/D    1
+clk(R)->clk(R)	3.715    -0.677/*        0.210/*         pipe/mult_97/clk_r_REG253_S1/D    1
+clk(R)->clk(R)	3.781    -0.670/*        0.144/*         \dout_reg[20] /D    1
+clk(R)->clk(R)	3.720    */-0.666        */0.219         pipe/mult_97/clk_r_REG55_S1/D    1
+clk(R)->clk(R)	3.773    -0.666/*        0.147/*         \dout_reg[14] /D    1
+clk(R)->clk(R)	3.781    -0.665/*        0.145/*         \dout_reg[19] /D    1
+clk(R)->clk(R)	3.721    */-0.665        */0.225         pipe/clk_r_REG20_S2/D    1
+clk(R)->clk(R)	3.703    */-0.663        */0.220         pipe/clk_r_REG263_S1/D    1
+clk(R)->clk(R)	3.715    */-0.652        */0.225         pipe/mult_97/clk_r_REG75_S1/D    1
+clk(R)->clk(R)	3.782    -0.651/*        0.144/*         \dout_reg[18] /D    1
+clk(R)->clk(R)	3.781    -0.649/*        0.145/*         \dout_reg[17] /D    1
+clk(R)->clk(R)	3.716    */-0.637        */0.227         pipe/clk_r_REG28_S2/D    1
+clk(R)->clk(R)	3.745    -0.636/*        0.192/*         pipe/mult_97/clk_r_REG91_S1/D    1
+clk(R)->clk(R)	3.722    */-0.628        */0.222         pipe/mult_97/clk_r_REG76_S1/D    1
+clk(R)->clk(R)	3.720    */-0.625        */0.219         pipe/mult_97/clk_r_REG58_S1/D    1
+clk(R)->clk(R)	3.787    -0.625/*        0.150/*         \dout_reg[0] /D    1
+clk(R)->clk(R)	2.321    */-0.612        */0.118         \h0_reg[13] /D    1
+clk(R)->clk(R)	3.776    -0.606/*        0.146/*         \dout_reg[13] /D    1
+clk(R)->clk(R)	3.711    */-0.605        */0.221         pipe/mult_97/clk_r_REG158_S1/D    1
+clk(R)->clk(R)	3.720    */-0.603        */0.223         pipe/mult_97/clk_r_REG77_S1/D    1
+clk(R)->clk(R)	3.716    */-0.593        */0.225         pipe/mult_97/clk_r_REG74_S1/D    1
+clk(R)->clk(R)	3.708    */-0.590        */0.215         pipe/mult_97/clk_r_REG57_S1/D    1
+clk(R)->clk(R)	3.749    -0.583/*        0.193/*         pipe/mult_97/clk_r_REG53_S1/D    1
+clk(R)->clk(R)	3.773    -0.568/*        0.148/*         \dout_reg[2] /D    1
+clk(R)->clk(R)	2.322    */-0.563        */0.118         \h0_reg[9] /D    1
+clk(R)->clk(R)	3.785    -0.556/*        0.152/*         \dout_reg[1] /D    1
+clk(R)->clk(R)	3.703    */-0.548        */0.220         pipe/clk_r_REG265_S1/D    1
+clk(R)->clk(R)	3.720    */-0.546        */0.226         pipe/clk_r_REG19_S2/D    1
+clk(R)->clk(R)	3.719    */-0.537        */0.222         pipe/clk_r_REG3_S2/D    1
+clk(R)->clk(R)	3.780    -0.530/*        0.148/*         \dout_reg[3] /D    1
+clk(R)->clk(R)	3.771    -0.523/*        0.148/*         \dout_reg[5] /D    1
+clk(R)->clk(R)	3.776    -0.510/*        0.144/*         \dout_reg[4] /D    1
+clk(R)->clk(R)	3.776    -0.506/*        0.146/*         \dout_reg[15] /D    1
+clk(R)->clk(R)	3.774    -0.500/*        0.145/*         \dout_reg[7] /D    1
+clk(R)->clk(R)	3.774    -0.492/*        0.146/*         \dout_reg[8] /D    1
+clk(R)->clk(R)	3.715    */-0.490        */0.226         pipe/mult_97/clk_r_REG83_S1/D    1
+clk(R)->clk(R)	3.782    -0.484/*        0.144/*         \dout_reg[16] /D    1
+clk(R)->clk(R)	3.718    */-0.473        */0.222         pipe/clk_r_REG17_S2/D    1
+clk(R)->clk(R)	3.774    -0.460/*        0.145/*         \dout_reg[6] /D    1
+clk(R)->clk(R)	3.718    */-0.459        */0.220         pipe/clk_r_REG16_S2/D    1
+clk(R)->clk(R)	3.714    */-0.459        */0.225         pipe/mult_97/clk_r_REG136_S1/D    1
+clk(R)->clk(R)	3.718    */-0.439        */0.224         pipe/clk_r_REG4_S2/D    1
+clk(R)->clk(R)	3.712    */-0.421        */0.227         pipe/mult_97/clk_r_REG124_S1/D    1
+clk(R)->clk(R)	3.720    */-0.390        */0.222         pipe/clk_r_REG24_S2/D    1
+clk(R)->clk(R)	3.715    */-0.387        */0.225         pipe/mult_97/clk_r_REG85_S1/D    1
+clk(R)->clk(R)	3.717    */-0.380        */0.219         pipe/clk_r_REG18_S2/D    1
+clk(R)->clk(R)	3.720    */-0.333        */0.221         pipe/clk_r_REG22_S2/D    1
+clk(R)->clk(R)	3.711    */-0.333        */0.226         pipe/clk_r_REG5_S2/D    1
+clk(R)->clk(R)	3.715    */-0.327        */0.223         pipe/mult_97/clk_r_REG84_S1/D    1
+clk(R)->clk(R)	2.336    */-0.292        */0.104         \h0_reg[8] /D    1
+clk(R)->clk(R)	3.712    */-0.274        */0.223         pipe/clk_r_REG31_S2/D    1
+clk(R)->clk(R)	1.050    -0.271/*        0.500/*         z[24]    1
+clk(R)->clk(R)	3.718    */-0.265        */0.224         pipe/clk_r_REG29_S2/D    1
+clk(R)->clk(R)	3.717    */-0.262        */0.222         pipe/clk_r_REG30_S2/D    1
+clk(R)->clk(R)	1.050    -0.256/*        0.500/*         z[25]    1
+clk(R)->clk(R)	1.050    -0.243/*        0.500/*         z[9]    1
+clk(R)->clk(R)	1.050    -0.241/*        0.500/*         z[12]    1
+clk(R)->clk(R)	3.727    -0.234/*        0.191/*         pipe/clk_r_REG267_S1/D    1
+clk(R)->clk(R)	1.050    -0.234/*        0.500/*         z[26]    1
+clk(R)->clk(R)	1.050    -0.234/*        0.500/*         z[27]    1
+clk(R)->clk(R)	1.050    -0.233/*        0.500/*         z[28]    1
+clk(R)->clk(R)	3.719    */-0.232        */0.223         pipe/clk_r_REG23_S2/D    1
+clk(R)->clk(R)	3.712    */-0.230        */0.227         pipe/mult_97/clk_r_REG123_S1/D    1
+clk(R)->clk(R)	1.050    -0.223/*        0.500/*         z[10]    1
+clk(R)->clk(R)	1.050    -0.214/*        0.500/*         z[29]    1
+clk(R)->clk(R)	1.050    -0.213/*        0.500/*         z[30]    1
+clk(R)->clk(R)	3.716    */-0.207        */0.220         pipe/clk_r_REG21_S2/D    1
+clk(R)->clk(R)	3.712    */-0.186        */0.223         pipe/clk_r_REG33_S2/D    1
+clk(R)->clk(R)	1.050    -0.185/*        0.500/*         z[22]    1
+clk(R)->clk(R)	1.050    -0.185/*        0.500/*         z[31]    1
+clk(R)->clk(R)	1.050    -0.185/*        0.500/*         z[11]    1
+clk(R)->clk(R)	3.719    */-0.177        */0.226         pipe/mult_97/clk_r_REG122_S1/D    1
+clk(R)->clk(R)	1.050    */-0.170        */0.500         z[1]    1
+clk(R)->clk(R)	3.712    */-0.160        */0.223         pipe/clk_r_REG36_S2/D    1
+clk(R)->clk(R)	1.050    */-0.151        */0.500         z[0]    1
+clk(R)->clk(R)	1.050    */-0.151        */0.500         z[23]    1
+clk(R)->clk(R)	1.050    */-0.147        */0.500         z[19]    1
+clk(R)->clk(R)	1.050    */-0.143        */0.500         z[17]    1
+clk(R)->clk(R)	1.050    */-0.140        */0.500         z[18]    1
+clk(R)->clk(R)	1.050    */-0.139        */0.500         z[13]    1
+clk(R)->clk(R)	1.050    */-0.137        */0.500         z[14]    1
+clk(R)->clk(R)	1.050    */-0.135        */0.500         z[21]    1
+clk(R)->clk(R)	1.050    */-0.135        */0.500         z[20]    1
+clk(R)->clk(R)	1.050    */-0.126        */0.500         z[2]    1
+clk(R)->clk(R)	1.050    */-0.116        */0.500         z[7]    1
+clk(R)->clk(R)	1.050    */-0.110        */0.500         z[3]    1
+clk(R)->clk(R)	1.050    */-0.105        */0.500         z[16]    1
+clk(R)->clk(R)	1.050    */-0.100        */0.500         z[4]    1
+clk(R)->clk(R)	3.719    */-0.100        */0.226         pipe/mult_97/clk_r_REG121_S1/D    1
+clk(R)->clk(R)	1.050    */-0.099        */0.500         z[15]    1
+clk(R)->clk(R)	1.050    */-0.097        */0.500         z[8]    1
+clk(R)->clk(R)	3.703    */-0.092        */0.231         pipe/clk_r_REG127_S2/D    1
+clk(R)->clk(R)	1.050    */-0.092        */0.500         z[6]    1
+clk(R)->clk(R)	1.050    */-0.092        */0.500         z[5]    1
+clk(R)->clk(R)	1.050    */-0.074        */0.500         pushout    1
+clk(R)->clk(R)	3.712    */-0.022        */0.224         pipe/mult_97/clk_r_REG120_S1/D    1
+clk(R)->clk(R)	3.711    */-0.004        */0.223         pipe/clk_r_REG42_S2/D    1
+clk(R)->clk(R)	3.711    0.029/*         0.222/*         pipe/clk_r_REG170_S2/D    1
+clk(R)->clk(R)	3.708    */0.053         */0.221         pipe/clk_r_REG133_S2/D    1
+clk(R)->clk(R)	3.703    */0.069         */0.230         pipe/clk_r_REG150_S2/D    1
+clk(R)->clk(R)	3.715    0.116/*         0.208/*         pipe/clk_r_REG181_S2/D    1
+clk(R)->clk(R)	3.717    0.127/*         0.210/*         pipe/clk_r_REG175_S2/D    1
+clk(R)->clk(R)	3.702    */0.201         */0.231         pipe/clk_r_REG154_S2/D    1
+clk(R)->clk(R)	3.717    0.326/*         0.210/*         pipe/clk_r_REG186_S2/D    1
+clk(R)->clk(R)	3.723    0.332/*         0.213/*         pipe/mult_97/clk_r_REG118_S1/D    1
+clk(R)->clk(R)	3.717    0.378/*         0.213/*         pipe/clk_r_REG193_S2/D    1
+clk(R)->clk(R)	3.717    0.483/*         0.215/*         pipe/clk_r_REG198_S2/D    1
+clk(R)->clk(R)	3.716    0.512/*         0.215/*         pipe/clk_r_REG202_S2/D    1
+clk(R)->clk(R)	3.711    0.655/*         0.215/*         pipe/clk_r_REG208_S2/D    1
+clk(R)->clk(R)	3.722    0.750/*         0.207/*         pipe/clk_r_REG269_S1/D    1
+clk(R)->clk(R)	3.771    */0.814         */0.149         _pushout_reg/D    1
+clk(R)->clk(R)	3.731    0.820/*         0.205/*         pipe/mult_97/clk_r_REG0_S1/D    1
+clk(R)->clk(R)	3.713    0.833/*         0.213/*         pipe/clk_r_REG218_S2/D    1
+clk(R)->clk(R)	3.716    0.848/*         0.212/*         pipe/clk_r_REG214_S2/D    1
+clk(R)->clk(R)	3.714    0.973/*         0.217/*         pipe/clk_r_REG223_S2/D    1
+clk(R)->clk(R)	3.704    */1.184         */0.222         pipe/clk_r_REG227_S2/D    1
+clk(R)->clk(R)	3.701    */1.303         */0.218         pipe/clk_r_REG232_S2/D    1
+clk(R)->clk(R)	3.704    */1.521         */0.223         pipe/clk_r_REG236_S2/D    1
+clk(R)->clk(R)	3.700    */1.651         */0.220         pipe/clk_r_REG240_S2/D    1
+clk(R)->clk(R)	3.749    1.763/*         0.186/*         \h1_reg[5] /D    1
+clk(R)->clk(R)	3.701    */1.793         */0.220         pipe/clk_r_REG243_S2/D    1
+clk(R)->clk(R)	2.322    1.796/*         0.097/*         \cmd0_reg[1] /D    1
+clk(R)->clk(R)	3.752    1.797/*         0.181/*         \h1_reg[1] /D    1
+clk(R)->clk(R)	2.323    1.798/*         0.097/*         \cmd0_reg[0] /D    1
+clk(R)->clk(R)	3.753    1.819/*         0.181/*         \h1_reg[2] /D    1
+clk(R)->clk(R)	3.755    1.822/*         0.182/*         \h1_reg[6] /D    1
+clk(R)->clk(R)	3.756    1.832/*         0.181/*         \h1_reg[3] /D    1
+clk(R)->clk(R)	3.749    1.844/*         0.180/*         \h1_reg[0] /D    1
+clk(R)->clk(R)	3.758    1.867/*         0.180/*         \h1_reg[4] /D    1
+clk(R)->clk(R)	3.702    */1.929         */0.219         pipe/clk_r_REG246_S2/D    1
+clk(R)->clk(R)	3.702    */2.104         */0.220         pipe/clk_r_REG252_S2/D    1
+clk(R)->clk(R)	3.708    */2.131         */0.222         pipe/clk_r_REG249_S2/D    1
+clk(R)->clk(R)	3.717    */2.622         */0.219         pipe/mult_97/clk_r_REG119_S2/D    1
+clk(R)->clk(R)	3.703    */2.634         */0.223         pipe/clk_r_REG264_S2/D    1
+clk(R)->clk(R)	3.703    */2.638         */0.220         pipe/clk_r_REG266_S2/D    1
+clk(R)->clk(R)	3.703    */2.642         */0.224         pipe/clk_r_REG262_S2/D    1
+clk(R)->clk(R)	3.702    */2.651         */0.220         pipe/clk_r_REG268_S2/D    1
+clk(R)->clk(R)	3.704    */2.651         */0.223         pipe/clk_r_REG258_S2/D    1
+clk(R)->clk(R)	3.707    */2.651         */0.224         pipe/clk_r_REG256_S2/D    1
+clk(R)->clk(R)	3.705    */2.652         */0.223         pipe/clk_r_REG260_S2/D    1
+clk(R)->clk(R)	3.822    */2.654         */0.099         push_2_reg/D    1
+clk(R)->clk(R)	3.707    */2.654         */0.222         pipe/clk_r_REG270_S2/D    1
+clk(R)->clk(R)	3.719    */2.658         */0.222         pipe/mult_97/clk_r_REG1_S2/D    1
+clk(R)->clk(R)	3.824    */2.679         */0.095         \cmd_1_reg[0] /D    1
+clk(R)->clk(R)	3.824    */2.681         */0.094         \cmd_1_reg[1] /D    1
+clk(R)->clk(R)	3.832    */2.687         */0.093         push_1_reg/D    1
+clk(R)->clk(R)	3.828    */2.691         */0.093         \cmd_2_reg[0] /D    1
+clk(R)->clk(R)	3.829    */2.695         */0.092         \cmd_2_reg[1] /D    1

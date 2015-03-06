@@ -1,0 +1,1060 @@
+routeGuideNet clk__L1_N0
+wire 324.4 86.5 324.4 286.5 V 0.5
+wire 308.4 48.5 324.4 48.5 H 0.5
+wire 324.4 48.5 324.4 86.5 V 0.5
+wire 293.2 286.5 324.4 286.5 H 0.5
+wire 324.4 286.5 328.4 286.5 H 0.5
+wire 328.4 286.5 328.4 513.5 V 0.5
+endRouteGuideNet
+routeGuideNet clk__L2_N2
+wire 334 511.5 363.6 511.5 H 0.5
+wire 363.6 511.5 363.6 506.5 V 0.5
+wire 321.2 513.5 321.2 511.5 V 0.5
+wire 297.2 493.5 321.2 493.5 H 0.5
+wire 321.2 493.5 321.2 511.5 V 0.5
+wire 321.2 511.5 334 511.5 H 0.5
+endRouteGuideNet
+routeGuideNet clk__L2_N1
+wire 286.8 293.5 279.6 293.5 H 0.5
+wire 298.8 288.5 286.8 288.5 H 0.5
+wire 286.8 288.5 286.8 293.5 V 0.5
+wire 329.2 273.5 298.8 273.5 H 0.5
+wire 298.8 273.5 298.8 288.5 V 0.5
+wire 336.4 273.5 329.2 273.5 H 0.5
+endRouteGuideNet
+routeGuideNet clk__L2_N0
+wire 330 88.5 330 86.5 V 0.5
+wire 250.8 86.5 330 86.5 H 0.5
+wire 136.4 106.5 250.8 106.5 H 0.5
+wire 250.8 106.5 250.8 86.5 V 0.5
+wire 330 86.5 487.6 86.5 H 0.5
+wire 487.6 86.5 487.6 73.5 V 0.5
+endRouteGuideNet
+routeGuideNet clk__L3_N9
+#Trunk_Term begin
+#Trunk clk__L3_I9 Y 369.2 508.5
+#Trunk clk__L4_I50 A 468.4 586.5
+#Trunk clk__L4_I47 A 547.6 473.5
+#Trunk clk__L4_I46 A 583.6 573.5
+#Trunk_Term end
+wire 468.4 533.5 500.4 533.5 H 0.5
+wire 500.4 533.5 500.4 513.5 V 0.5
+wire 468.4 533.5 468.4 586.5 V 0.5
+wire 468.4 533.5 420.4 533.5 H 0.5
+wire 369.2 508.5 420.4 508.5 H 0.5
+wire 420.4 508.5 420.4 533.5 V 0.5
+wire 500.4 513.5 541.2 513.5 H 0.5
+wire 541.2 573.5 583.6 573.5 H 0.5
+wire 541.2 573.5 541.2 513.5 V 0.5
+wire 547.6 473.5 541.2 473.5 H 0.5
+wire 541.2 473.5 541.2 513.5 V 0.5
+endRouteGuideNet
+routeGuideNet clk__L3_N8
+#Trunk_Term begin
+#Trunk clk__L4_I41 A 368.4 593.5
+#Trunk clk__L4_I40 A 362.8 473.5
+#Trunk clk__L4_I44 A 254.8 546.5
+#Trunk clk__L4_I45 A 238.8 453.5
+#Trunk_Term end
+wire 368.4 593.5 326.8 593.5 H 0.5
+wire 326.8 593.5 326.8 573.5 V 0.5
+wire 362.8 473.5 326.8 473.5 H 0.5
+wire 326.8 511.5 326.8 473.5 V 0.5
+wire 326.8 511.5 326.8 573.5 V 0.5
+wire 293.2 453.5 238.8 453.5 H 0.5
+wire 293.2 453.5 326.8 453.5 H 0.5
+wire 326.8 453.5 326.8 473.5 V 0.5
+wire 284.4 573.5 254.8 573.5 H 0.5
+wire 254.8 573.5 254.8 546.5 V 0.5
+wire 284.4 573.5 326.8 573.5 H 0.5
+endRouteGuideNet
+routeGuideNet clk__L3_N7
+#Trunk_Term begin
+#Trunk clk__L4_I39 A 95.6 546.5
+#Trunk clk__L4_I38 A 115.6 453.5
+#Trunk clk__L3_I7 Y 302.8 491.5
+#Trunk_Term end
+wire 197.2 453.5 197.2 491.5 V 0.5
+wire 197.2 453.5 115.6 453.5 H 0.5
+wire 197.2 546.5 178.8 546.5 H 0.5
+wire 197.2 546.5 197.2 493.5 V 0.5
+wire 95.6 546.5 178.8 546.5 H 0.5
+wire 197.2 493.5 197.2 491.5 V 0.5
+wire 302.8 491.5 197.2 491.5 H 0.5
+endRouteGuideNet
+routeGuideNet clk__L3_N6
+wire 570 373.5 551.6 373.5 H 0.5
+wire 551.6 373.5 551.6 271.5 V 0.5
+wire 551.6 233.5 575.6 233.5 H 0.5
+wire 575.6 233.5 575.6 173.5 V 0.5
+wire 342 271.5 551.6 271.5 H 0.5
+wire 551.6 271.5 551.6 233.5 V 0.5
+endRouteGuideNet
+routeGuideNet clk__L3_N5
+wire 342.8 193.5 342.8 271.5 V 0.5
+wire 334.8 271.5 342.8 271.5 H 0.5
+wire 287.6 173.5 342.8 173.5 H 0.5
+wire 342.8 173.5 342.8 193.5 V 0.5
+wire 342.8 271.5 570.8 271.5 H 0.5
+wire 570.8 271.5 570.8 313.5 V 0.5
+endRouteGuideNet
+routeGuideNet clk__L3_N4
+#Trunk_Term begin
+#Trunk clk__L3_I4 Y 292.4 291.5
+#Trunk clk__L4_I23 A 286.8 306.5
+#Trunk clk__L4_I24 A 286.8 273.5
+#Trunk_Term end
+wire 292.4 291.5 286.8 291.5 H 0.5
+wire 286.8 306.5 286.8 291.5 V 0.5
+wire 286.8 273.5 286.8 291.5 V 0.5
+endRouteGuideNet
+routeGuideNet clk__L3_N3
+#Trunk_Term begin
+#Trunk clk__L3_I3 Y 285.2 291.5
+#Trunk clk__L4_I17 A 198.8 406.5
+#Trunk clk__L4_I21 A 95.6 226.5
+#Trunk_Term end
+wire 285.2 291.5 199.6 291.5 H 0.5
+wire 199.6 291.5 199.6 286.5 V 0.5
+wire 199.6 286.5 137.2 286.5 H 0.5
+wire 198.8 406.5 137.2 406.5 H 0.5
+wire 137.2 406.5 137.2 353.5 V 0.5
+wire 137.2 353.5 137.2 333.5 V 0.5
+wire 137.2 333.5 137.2 286.5 V 0.5
+wire 95.6 226.5 137.2 226.5 H 0.5
+wire 137.2 226.5 137.2 286.5 V 0.5
+endRouteGuideNet
+routeGuideNet clk__L3_N2
+#Trunk_Term begin
+#Trunk clk__L4_I11 A 570 46.5
+#Trunk clk__L4_I12 A 551.6 106.5
+#Trunk clk__L3_I2 Y 493.2 71.5
+#Trunk clk__L4_I16 A 362.8 33.5
+#Trunk_Term end
+wire 570 46.5 551.6 46.5 H 0.5
+wire 551.6 46.5 551.6 53.5 V 0.5
+wire 551.6 106.5 551.6 53.5 V 0.5
+wire 529.2 53.5 493.2 53.5 H 0.5
+wire 529.2 53.5 551.6 53.5 H 0.5
+wire 493.2 71.5 493.2 53.5 V 0.5
+wire 487.6 46.5 404.4 46.5 H 0.5
+wire 487.6 46.5 493.2 46.5 H 0.5
+wire 493.2 46.5 493.2 53.5 V 0.5
+wire 362.8 33.5 404.4 33.5 H 0.5
+wire 404.4 33.5 404.4 46.5 V 0.5
+endRouteGuideNet
+routeGuideNet clk__L3_N1
+#Trunk_Term begin
+#Trunk clk__L4_I9 A 206.8 146.5
+#Trunk clk__L4_I5 A 286 46.5
+#Trunk_Term end
+wire 206.8 146.5 216.4 146.5 H 0.5
+wire 216.4 146.5 216.4 113.5 V 0.5
+wire 216.4 113.5 244.4 113.5 H 0.5
+wire 244.4 113.5 244.4 106.5 V 0.5
+wire 244.4 106.5 256.4 106.5 H 0.5
+wire 256.4 106.5 256.4 88.5 V 0.5
+wire 256.4 88.5 261.2 88.5 H 0.5
+wire 261.2 88.5 261.2 86.5 V 0.5
+wire 261.2 86.5 279.6 86.5 H 0.5
+wire 279.6 86.5 286 86.5 H 0.5
+wire 286 86.5 286 46.5 V 0.5
+endRouteGuideNet
+routeGuideNet clk__L3_N0
+#Trunk_Term begin
+#Trunk clk__L4_I0 A 197.2 53.5
+#Trunk clk__L4_I1 A 178.8 166.5
+#Trunk clk__L4_I3 A 90.8 153.5
+#Trunk clk__L4_I4 A 53.2 73.5
+#Trunk_Term end
+wire 197.2 53.5 142 53.5 H 0.5
+wire 142 53.5 142 73.5 V 0.5
+wire 178.8 166.5 142 166.5 H 0.5
+wire 142 166.5 142 153.5 V 0.5
+wire 142 108.5 142 153.5 V 0.5
+wire 142 108.5 142 73.5 V 0.5
+wire 131.6 73.5 53.2 73.5 H 0.5
+wire 131.6 73.5 142 73.5 H 0.5
+wire 90.8 153.5 142 153.5 H 0.5
+endRouteGuideNet
+routeGuideNet clk__L4_N51
+#Trunk_Term begin
+#Trunk pipe/mult_97/clk_r_REG88_S1 CLK 454 466.5
+#Trunk pipe/mult_97/clk_r_REG90_S1 CLK 391.6 473.5
+#Trunk pipe/mult_97/clk_r_REG66_S1 CLK 384.4 553.5
+#Trunk pipe/mult_97/clk_r_REG71_S1 CLK 422 573.5
+#Trunk_Term end
+wire 454 466.5 426 466.5 H 0.5
+wire 426 531.5 422 531.5 H 0.5
+wire 422 531.5 422 553.5 V 0.5
+wire 426 531.5 426 466.5 V 0.5
+wire 422 573.5 422 553.5 V 0.5
+wire 408.4 466.5 391.6 466.5 H 0.5
+wire 391.6 466.5 391.6 473.5 V 0.5
+wire 408.4 466.5 426 466.5 H 0.5
+wire 384.4 553.5 422 553.5 H 0.5
+endRouteGuideNet
+routeGuideNet clk__L4_N50
+#Trunk_Term begin
+#Trunk pipe/mult_97/clk_r_REG57_S1 CLK 499.6 586.5
+#Trunk pipe/mult_97/clk_r_REG65_S1 CLK 431.6 573.5
+#Trunk_Term end
+wire 433.2 573.5 431.6 573.5 H 0.5
+wire 499.6 586.5 474 586.5 H 0.5
+wire 474 586.5 474 588.5 V 0.5
+wire 474 593.5 452.4 593.5 H 0.5
+wire 474 593.5 474 588.5 V 0.5
+wire 452.4 593.5 446.8 593.5 H 0.5
+wire 446.8 593.5 446.8 586.5 V 0.5
+wire 446.8 586.5 433.2 586.5 H 0.5
+wire 433.2 586.5 433.2 573.5 V 0.5
+endRouteGuideNet
+routeGuideNet clk__L4_N49
+#Trunk_Term begin
+#Trunk pipe/mult_97/clk_r_REG147_S1 CLK 454 473.5
+#Trunk pipe/mult_97/clk_r_REG61_S1 CLK 468.4 566.5
+#Trunk pipe/mult_97/clk_r_REG60_S1 CLK 538 553.5
+#Trunk_Term end
+wire 506 506.5 506 511.5 V 0.5
+wire 506 506.5 454 506.5 H 0.5
+wire 454 506.5 454 473.5 V 0.5
+wire 507.6 553.5 507.6 566.5 V 0.5
+wire 507.6 553.5 538 553.5 H 0.5
+wire 507.6 553.5 506 553.5 H 0.5
+wire 506 553.5 506 511.5 V 0.5
+wire 468.4 566.5 495.6 566.5 H 0.5
+wire 495.6 566.5 507.6 566.5 H 0.5
+endRouteGuideNet
+routeGuideNet clk__L4_N48
+#Trunk_Term begin
+#Trunk q0_reg[26] CLK 550 527.5
+#Trunk pipe/mult_97/clk_r_REG58_S1 CLK 510.8 586.5
+#Trunk_Term end
+wire 550 553.5 550 527.5 V 0.5
+wire 550 553.5 550 566.5 V 0.5
+wire 546.8 571.5 536.4 571.5 H 0.5
+wire 536.4 571.5 536.4 573.5 V 0.5
+wire 546.8 571.5 550 571.5 H 0.5
+wire 550 571.5 550 566.5 V 0.5
+wire 536.4 586.5 510.8 586.5 H 0.5
+wire 536.4 586.5 536.4 573.5 V 0.5
+endRouteGuideNet
+routeGuideNet clk__L4_N47
+#Trunk_Term begin
+#Trunk q0_reg[22] CLK 508.4 492.5
+#Trunk pipe/mult_97/clk_r_REG52_S1 CLK 555.6 506.5
+#Trunk h0_reg[18] CLK 590 452.5
+#Trunk_Term end
+wire 587.6 487.5 590 487.5 H 0.5
+wire 590 487.5 590 472.5 V 0.5
+wire 587.6 487.5 587.6 492.5 V 0.5
+wire 587.6 506.5 578 506.5 H 0.5
+wire 587.6 506.5 587.6 492.5 V 0.5
+wire 553.2 467.5 553.2 471.5 V 0.5
+wire 553.2 467.5 582.8 467.5 H 0.5
+wire 590 467.5 590 452.5 V 0.5
+wire 590 467.5 582.8 467.5 H 0.5
+wire 590 467.5 590 472.5 V 0.5
+wire 508.4 473.5 508.4 492.5 V 0.5
+wire 508.4 473.5 553.2 473.5 H 0.5
+wire 553.2 473.5 553.2 471.5 V 0.5
+wire 555.6 506.5 578 506.5 H 0.5
+endRouteGuideNet
+routeGuideNet clk__L4_N46
+#Trunk_Term begin
+#Trunk clk__L4_I46 Y 589.2 571.5
+#Trunk pipe/mult_97/clk_r_REG51_S1 CLK 587.6 566.5
+#Trunk pipe/mult_97/clk_r_REG48_S1 CLK 578 526.5
+#Trunk_Term end
+wire 588.4 552.5 588.4 566.5 V 0.5
+wire 588.4 552.5 588.4 547.5 V 0.5
+wire 583.6 526.5 578 526.5 H 0.5
+wire 578 526.5 578 533.5 V 0.5
+wire 578 533.5 578 546.5 V 0.5
+wire 578 546.5 588.4 546.5 H 0.5
+wire 588.4 546.5 588.4 547.5 V 0.5
+wire 587.6 566.5 588.4 566.5 H 0.5
+wire 589.2 571.5 588.4 571.5 H 0.5
+wire 588.4 571.5 588.4 566.5 V 0.5
+endRouteGuideNet
+routeGuideNet clk__L4_N45
+#Trunk_Term begin
+#Trunk pipe/clk_r_REG26_S2 CLK 217.2 466.5
+#Trunk pipe/mult_97/clk_r_REG134_S1 CLK 259.6 433.5
+#Trunk_Term end
+wire 259.6 433.5 258 433.5 H 0.5
+wire 258 433.5 258 451.5 V 0.5
+wire 259.6 433.5 259.6 426.5 V 0.5
+wire 244.4 451.5 244.4 466.5 V 0.5
+wire 244.4 451.5 258 451.5 H 0.5
+wire 217.2 466.5 244.4 466.5 H 0.5
+endRouteGuideNet
+routeGuideNet clk__L4_N44
+#Trunk_Term begin
+#Trunk clk__L4_I44 Y 260.4 548.5
+#Trunk pipe/clk_r_REG5_S2 CLK 224.4 533.5
+#Trunk_Term end
+wire 260.4 548.5 259.6 548.5 H 0.5
+wire 259.6 548.5 259.6 533.5 V 0.5
+wire 259.6 533.5 257.2 533.5 H 0.5
+wire 257.2 533.5 250 533.5 H 0.5
+wire 250 526.5 246.8 526.5 H 0.5
+wire 246.8 526.5 246.8 513.5 V 0.5
+wire 250 526.5 250 533.5 V 0.5
+wire 246.8 513.5 224.4 513.5 H 0.5
+wire 224.4 533.5 224.4 513.5 V 0.5
+endRouteGuideNet
+routeGuideNet clk__L4_N43
+#Trunk_Term begin
+#Trunk clk__L4_I43 Y 290 571.5
+#Trunk pipe/mult_97/clk_r_REG83_S1 CLK 301.2 533.5
+#Trunk pipe/mult_97/clk_r_REG74_S1 CLK 334.8 533.5
+#Trunk pipe/clk_r_REG9_S2 CLK 246.8 553.5
+#Trunk_Term end
+wire 290 566.5 301.2 566.5 H 0.5
+wire 290 566.5 290 571.5 V 0.5
+wire 301.2 553.5 308.4 553.5 H 0.5
+wire 301.2 553.5 301.2 533.5 V 0.5
+wire 301.2 553.5 246.8 553.5 H 0.5
+wire 301.2 553.5 301.2 566.5 V 0.5
+wire 308.4 553.5 329.2 553.5 H 0.5
+wire 329.2 553.5 334.8 553.5 H 0.5
+wire 334.8 553.5 334.8 533.5 V 0.5
+endRouteGuideNet
+routeGuideNet clk__L4_N42
+#Trunk_Term begin
+#Trunk pipe/mult_97/clk_r_REG92_S1 CLK 323.6 446.5
+#Trunk pipe/mult_97/clk_r_REG97_S1 CLK 283.6 466.5
+#Trunk clk__L4_I42 Y 298.8 451.5
+#Trunk_Term end
+wire 323.6 446.5 323.6 426.5 V 0.5
+wire 306.8 426.5 294 426.5 H 0.5
+wire 306.8 426.5 323.6 426.5 H 0.5
+wire 298.8 451.5 294 451.5 H 0.5
+wire 294 446.5 294 451.5 V 0.5
+wire 294 446.5 294 426.5 V 0.5
+wire 283.6 466.5 294 466.5 H 0.5
+wire 294 466.5 294 451.5 V 0.5
+endRouteGuideNet
+routeGuideNet clk__L4_N41
+#Trunk_Term begin
+#Trunk clk__L4_I41 Y 374 591.5
+#Trunk pipe/clk_r_REG12_S2 CLK 341.2 553.5
+#Trunk_Term end
+wire 374 591.5 374 573.5 V 0.5
+wire 350 573.5 340.4 573.5 H 0.5
+wire 350 573.5 374 573.5 H 0.5
+wire 341.2 553.5 340.4 553.5 H 0.5
+wire 340.4 553.5 340.4 566.5 V 0.5
+wire 340.4 573.5 340.4 566.5 V 0.5
+endRouteGuideNet
+routeGuideNet clk__L4_N40
+#Trunk_Term begin
+#Trunk pipe/mult_97/clk_r_REG91_S1 CLK 339.6 473.5
+#Trunk clk__L4_I40 Y 368.4 471.5
+#Trunk pipe/mult_97/clk_r_REG87_S1 CLK 350 453.5
+#Trunk_Term end
+wire 339.6 471.5 339.6 473.5 V 0.5
+wire 382 471.5 368.4 471.5 H 0.5
+wire 350 471.5 339.6 471.5 H 0.5
+wire 350 471.5 350 453.5 V 0.5
+wire 350 471.5 368.4 471.5 H 0.5
+endRouteGuideNet
+routeGuideNet clk__L4_N39
+#Trunk_Term begin
+#Trunk clk__L4_I39 Y 101.2 548.5
+#Trunk acc_reg[59] CLK 170.8 512.5
+#Trunk acc_reg[50] CLK 50 507.5
+#Trunk acc_reg[57] CLK 126.8 512.5
+#Trunk_Term end
+wire 168.4 532.5 170.8 532.5 H 0.5
+wire 170.8 532.5 170.8 512.5 V 0.5
+wire 168.4 532.5 168.4 552.5 V 0.5
+wire 101.2 552.5 88.4 552.5 H 0.5
+wire 101.2 552.5 101.2 548.5 V 0.5
+wire 101.2 552.5 122.8 552.5 H 0.5
+wire 126.8 552.5 126.8 532.5 V 0.5
+wire 126.8 552.5 122.8 552.5 H 0.5
+wire 126.8 552.5 130.8 552.5 H 0.5
+wire 39.6 512.5 50 512.5 H 0.5
+wire 50 512.5 50 507.5 V 0.5
+wire 39.6 512.5 39.6 532.5 V 0.5
+wire 39.6 532.5 48.4 532.5 H 0.5
+wire 48.4 532.5 48.4 547.5 V 0.5
+wire 48.4 547.5 87.6 547.5 H 0.5
+wire 87.6 547.5 87.6 552.5 V 0.5
+wire 87.6 552.5 88.4 552.5 H 0.5
+wire 126.8 512.5 126.8 527.5 V 0.5
+wire 126.8 527.5 126.8 532.5 V 0.5
+wire 168.4 552.5 130.8 552.5 H 0.5
+endRouteGuideNet
+routeGuideNet clk__L4_N38
+#Trunk_Term begin
+#Trunk acc_reg[42] CLK 39.6 472.5
+#Trunk acc_reg[39] CLK 125.2 412.5
+#Trunk acc_reg[63] CLK 167.6 432.5
+#Trunk_Term end
+wire 121.2 447.5 122.8 447.5 H 0.5
+wire 122.8 447.5 122.8 432.5 V 0.5
+wire 121.2 447.5 121.2 451.5 V 0.5
+wire 121.2 447.5 45.2 447.5 H 0.5
+wire 167.6 446.5 167.6 432.5 V 0.5
+wire 167.6 446.5 164.4 446.5 H 0.5
+wire 164.4 446.5 164.4 467.5 V 0.5
+wire 39.6 452.5 39.6 472.5 V 0.5
+wire 39.6 452.5 45.2 452.5 H 0.5
+wire 45.2 452.5 45.2 447.5 V 0.5
+wire 121.2 451.5 135.6 451.5 H 0.5
+wire 135.6 451.5 135.6 467.5 V 0.5
+wire 122.8 432.5 125.2 432.5 H 0.5
+wire 125.2 432.5 125.2 412.5 V 0.5
+wire 135.6 467.5 164.4 467.5 H 0.5
+endRouteGuideNet
+routeGuideNet clk__L4_N37
+#Trunk_Term begin
+#Trunk acc_reg[38] CLK 175.6 412.5
+#Trunk pipe/clk_r_REG18_S2 CLK 182.8 453.5
+#Trunk pipe/mult_97/clk_r_REG119_S2 CLK 207.6 466.5
+#Trunk_Term end
+wire 207.6 448.5 207.6 466.5 V 0.5
+wire 207.6 448.5 202.8 448.5 H 0.5
+wire 202.8 433.5 184.4 433.5 H 0.5
+wire 202.8 433.5 202.8 448.5 V 0.5
+wire 175.6 412.5 182.8 412.5 H 0.5
+wire 182.8 412.5 182.8 433.5 V 0.5
+wire 182.8 453.5 182.8 433.5 V 0.5
+wire 184.4 433.5 182.8 433.5 H 0.5
+endRouteGuideNet
+routeGuideNet clk__L4_N36
+#Trunk_Term begin
+#Trunk pipe/clk_r_REG19_S2 CLK 181.2 473.5
+#Trunk acc_reg[60] CLK 206 487.5
+#Trunk_Term end
+wire 206 487.5 205.2 487.5 H 0.5
+wire 205.2 487.5 205.2 491.5 V 0.5
+wire 206 487.5 222.8 487.5 H 0.5
+wire 202.8 491.5 184.4 491.5 H 0.5
+wire 184.4 491.5 184.4 493.5 V 0.5
+wire 202.8 491.5 205.2 491.5 H 0.5
+wire 184.4 493.5 177.2 493.5 H 0.5
+wire 181.2 473.5 177.2 473.5 H 0.5
+wire 177.2 473.5 177.2 486.5 V 0.5
+wire 177.2 486.5 177.2 493.5 V 0.5
+endRouteGuideNet
+routeGuideNet clk__L4_N35
+#Trunk_Term begin
+#Trunk clk__L4_I35 Y 184.4 548.5
+#Trunk pipe/clk_r_REG24_S2 CLK 184.4 506.5
+#Trunk pipe/mult_97/clk_r_REG77_S1 CLK 204.4 526.5
+#Trunk_Term end
+wire 184.4 506.5 184.4 526.5 V 0.5
+wire 184.4 526.5 204.4 526.5 H 0.5
+wire 184.4 526.5 184.4 533.5 V 0.5
+wire 184.4 533.5 184.4 548.5 V 0.5
+endRouteGuideNet
+routeGuideNet clk__L4_N34
+#Trunk_Term begin
+#Trunk clk__L4_I34 Y 203.6 551.5
+#Trunk pipe/clk_r_REG10_S2 CLK 205.2 533.5
+#Trunk pipe/clk_r_REG8_S2 CLK 216.4 553.5
+#Trunk_Term end
+wire 216.4 553.5 214.8 553.5 H 0.5
+wire 214.8 553.5 214.8 546.5 V 0.5
+wire 214.8 546.5 205.2 546.5 H 0.5
+wire 205.2 546.5 203.6 546.5 H 0.5
+wire 203.6 546.5 203.6 551.5 V 0.5
+wire 205.2 546.5 205.2 533.5 V 0.5
+endRouteGuideNet
+routeGuideNet clk__L4_N33
+#Trunk_Term begin
+#Trunk h0_reg[11] CLK 550 392.5
+#Trunk h0_reg[4] CLK 550 352.5
+#Trunk h0_reg[6] CLK 587.6 352.5
+#Trunk h0_reg[15] CLK 584.4 412.5
+#Trunk_Term end
+wire 550 347.5 550 352.5 V 0.5
+wire 550 371.5 575.6 371.5 H 0.5
+wire 550 371.5 550 387.5 V 0.5
+wire 550 371.5 550 367.5 V 0.5
+wire 583.6 372.5 587.6 372.5 H 0.5
+wire 583.6 372.5 583.6 387.5 V 0.5
+wire 583.6 372.5 575.6 372.5 H 0.5
+wire 575.6 372.5 575.6 371.5 V 0.5
+wire 583.6 407.5 584.4 407.5 H 0.5
+wire 584.4 407.5 584.4 412.5 V 0.5
+wire 583.6 407.5 583.6 392.5 V 0.5
+wire 584.4 427.5 584.4 412.5 V 0.5
+wire 550 352.5 550 367.5 V 0.5
+wire 550 387.5 550 392.5 V 0.5
+wire 583.6 387.5 583.6 392.5 V 0.5
+wire 587.6 352.5 587.6 367.5 V 0.5
+wire 587.6 367.5 587.6 372.5 V 0.5
+endRouteGuideNet
+routeGuideNet clk__L4_N32
+#Trunk_Term begin
+#Trunk pipe/mult_97/clk_r_REG180_S1 CLK 550 166.5
+#Trunk pipe/mult_97/clk_r_REG184_S1 CLK 591.6 146.5
+#Trunk pipe/mult_97/clk_r_REG189_S1 CLK 583.6 173.5
+#Trunk_Term end
+wire 591.6 146.5 581.2 146.5 H 0.5
+wire 581.2 146.5 581.2 166.5 V 0.5
+wire 583.6 173.5 583.6 186.5 V 0.5
+wire 583.6 173.5 581.2 173.5 H 0.5
+wire 581.2 173.5 581.2 171.5 V 0.5
+wire 581.2 171.5 581.2 166.5 V 0.5
+wire 550 166.5 581.2 166.5 H 0.5
+endRouteGuideNet
+routeGuideNet clk__L4_N31
+#Trunk_Term begin
+#Trunk clk__L4_I31 Y 557.2 231.5
+#Trunk q0_reg[7] CLK 586 267.5
+#Trunk pipe/mult_97/clk_r_REG174_S1 CLK 598.8 226.5
+#Trunk_Term end
+wire 598 226.5 598.8 226.5 H 0.5
+wire 572.4 231.5 572.4 226.5 V 0.5
+wire 572.4 231.5 557.2 231.5 H 0.5
+wire 590.8 226.5 598 226.5 H 0.5
+wire 590.8 226.5 590.8 232.5 V 0.5
+wire 590.8 226.5 582 226.5 H 0.5
+wire 572.4 226.5 582 226.5 H 0.5
+wire 586 267.5 590 267.5 H 0.5
+wire 590 267.5 590 252.5 V 0.5
+wire 590 252.5 590.8 252.5 H 0.5
+wire 590.8 252.5 590.8 247.5 V 0.5
+wire 590.8 232.5 590.8 247.5 V 0.5
+endRouteGuideNet
+routeGuideNet clk__L4_N30
+#Trunk_Term begin
+#Trunk pipe/mult_97/clk_r_REG163_S1 CLK 306 153.5
+#Trunk pipe/mult_97/clk_r_REG151_S1 CLK 329.2 193.5
+#Trunk q0_reg[2] CLK 254.8 172.5
+#Trunk pipe/mult_97/clk_r_REG149_S1 CLK 336.4 173.5
+#Trunk_Term end
+wire 254.8 171.5 254.8 172.5 V 0.5
+wire 254.8 171.5 293.2 171.5 H 0.5
+wire 302.8 171.5 302.8 173.5 V 0.5
+wire 302.8 171.5 293.2 171.5 H 0.5
+wire 329.2 173.5 336.4 173.5 H 0.5
+wire 329.2 173.5 329.2 193.5 V 0.5
+wire 329.2 173.5 306 173.5 H 0.5
+wire 302.8 173.5 306 173.5 H 0.5
+wire 306 153.5 306 173.5 V 0.5
+endRouteGuideNet
+routeGuideNet clk__L4_N29
+#Trunk_Term begin
+#Trunk clk__L4_I29 Y 348.4 191.5
+#Trunk pipe/mult_97/clk_r_REG172_S1 CLK 382 166.5
+#Trunk_Term end
+wire 348.4 186.5 370.8 186.5 H 0.5
+wire 370.8 186.5 370.8 173.5 V 0.5
+wire 348.4 186.5 348.4 191.5 V 0.5
+wire 372.4 173.5 382 173.5 H 0.5
+wire 372.4 173.5 370.8 173.5 H 0.5
+wire 382 166.5 382 173.5 V 0.5
+endRouteGuideNet
+routeGuideNet clk__L4_N28
+#Trunk_Term begin
+#Trunk h0_reg[31] CLK 541.2 327.5
+#Trunk pipe/mult_97/clk_r_REG173_S1 CLK 570.8 253.5
+#Trunk pipe/mult_97/clk_r_REG179_S1 CLK 591.6 273.5
+#Trunk q0_reg[10] CLK 582.8 292.5
+#Trunk q0_reg[19] CLK 586.8 312.5
+#Trunk_Term end
+wire 550 287.5 550 292.5 V 0.5
+wire 550 287.5 550 267.5 V 0.5
+wire 586.8 327.5 586.8 312.5 V 0.5
+wire 550 311.5 576.4 311.5 H 0.5
+wire 550 311.5 545.2 311.5 H 0.5
+wire 545.2 311.5 545.2 312.5 V 0.5
+wire 550 311.5 550 307.5 V 0.5
+wire 591.6 292.5 591.6 273.5 V 0.5
+wire 591.6 292.5 582.8 292.5 H 0.5
+wire 591.6 292.5 591.6 307.5 V 0.5
+wire 541.2 327.5 545.2 327.5 H 0.5
+wire 545.2 327.5 545.2 312.5 V 0.5
+wire 550 267.5 570.8 267.5 H 0.5
+wire 570.8 267.5 570.8 253.5 V 0.5
+wire 550 292.5 550 307.5 V 0.5
+wire 576.4 311.5 586.8 311.5 H 0.5
+wire 586.8 312.5 586.8 311.5 V 0.5
+wire 591.6 307.5 586.8 307.5 H 0.5
+wire 586.8 307.5 586.8 311.5 V 0.5
+endRouteGuideNet
+routeGuideNet clk__L4_N27
+#Trunk_Term begin
+#Trunk h2_reg[2] CLK 184.4 226.5
+#Trunk clk__L4_I27 Y 285.2 271.5
+#Trunk_Term end
+wire 184.4 226.5 199.6 226.5 H 0.5
+wire 199.6 226.5 199.6 246.5 V 0.5
+wire 199.6 246.5 216.4 246.5 H 0.5
+wire 216.4 246.5 226 246.5 H 0.5
+wire 226 233.5 239.6 233.5 H 0.5
+wire 226 233.5 226 246.5 V 0.5
+wire 239.6 233.5 285.2 233.5 H 0.5
+wire 285.2 233.5 285.2 271.5 V 0.5
+endRouteGuideNet
+routeGuideNet clk__L4_N26
+#Trunk_Term begin
+#Trunk clk__L4_I26 Y 285.2 308.5
+#Trunk pipe/mult_97/clk_r_REG112_S1 CLK 218.8 366.5
+#Trunk pipe/mult_97/clk_r_REG166_S1 CLK 209.2 333.5
+#Trunk_Term end
+wire 285.2 308.5 224.4 308.5 H 0.5
+wire 224.4 308.5 224.4 333.5 V 0.5
+wire 224.4 346.5 224.4 353.5 V 0.5
+wire 224.4 346.5 224.4 333.5 V 0.5
+wire 218.8 366.5 224.4 366.5 H 0.5
+wire 224.4 366.5 224.4 353.5 V 0.5
+wire 218.8 333.5 209.2 333.5 H 0.5
+wire 218.8 333.5 224.4 333.5 H 0.5
+endRouteGuideNet
+routeGuideNet clk__L4_N25
+#Trunk_Term begin
+#Trunk clk__L4_I25 Y 285.2 268.5
+#Trunk q0_reg[0] CLK 247.6 187.5
+#Trunk pipe/clk_r_REG150_S2 CLK 206.8 206.5
+#Trunk_Term end
+wire 285.2 268.5 247.6 268.5 H 0.5
+wire 247.6 268.5 247.6 213.5 V 0.5
+wire 247.6 187.5 247.6 213.5 V 0.5
+wire 240.4 213.5 226 213.5 H 0.5
+wire 226 213.5 226 206.5 V 0.5
+wire 240.4 213.5 247.6 213.5 H 0.5
+wire 226 206.5 216.4 206.5 H 0.5
+wire 216.4 206.5 206.8 206.5 H 0.5
+wire 206.8 206.5 206.8 193.5 V 0.5
+endRouteGuideNet
+routeGuideNet clk__L4_N24
+#Trunk_Term begin
+#Trunk clk__L4_I24 Y 292.4 271.5
+#Trunk pipe/mult_97/clk_r_REG34_S1 CLK 224.4 273.5
+#Trunk_Term end
+wire 224.4 273.5 224.4 286.5 V 0.5
+wire 224.4 286.5 242 286.5 H 0.5
+wire 242 286.5 258.8 286.5 H 0.5
+wire 258.8 286.5 292.4 286.5 H 0.5
+wire 292.4 286.5 292.4 271.5 V 0.5
+endRouteGuideNet
+routeGuideNet clk__L4_N23
+#Trunk_Term begin
+#Trunk clk__L4_I23 Y 292.4 308.5
+#Trunk pipe/mult_97/clk_r_REG135_S1 CLK 287.6 426.5
+#Trunk pipe/mult_97/clk_r_REG106_S1 CLK 249.2 353.5
+#Trunk_Term end
+wire 292.4 308.5 287.6 308.5 H 0.5
+wire 287.6 308.5 287.6 373.5 V 0.5
+wire 287.6 426.5 266.8 426.5 H 0.5
+wire 266.8 426.5 266.8 413.5 V 0.5
+wire 287.6 373.5 250 373.5 H 0.5
+wire 266.8 413.5 266.8 406.5 V 0.5
+wire 266.8 406.5 250 406.5 H 0.5
+wire 250 406.5 250 393.5 V 0.5
+wire 250 393.5 250 373.5 V 0.5
+wire 249.2 353.5 250 353.5 H 0.5
+wire 250 353.5 250 373.5 V 0.5
+endRouteGuideNet
+routeGuideNet clk__L4_N22
+#Trunk_Term begin
+#Trunk clk__L4_I22 Y 296.4 268.5
+#Trunk pipe/mult_97/clk_r_REG148_S1 CLK 308.4 206.5
+#Trunk pipe/mult_97/clk_r_REG139_S1 CLK 266.8 206.5
+#Trunk_Term end
+wire 308.4 206.5 296.4 206.5 H 0.5
+wire 296.4 268.5 296.4 206.5 V 0.5
+wire 266.8 206.5 259.6 206.5 H 0.5
+wire 266.8 206.5 296.4 206.5 H 0.5
+endRouteGuideNet
+routeGuideNet clk__L4_N21
+#Trunk_Term begin
+#Trunk dout_reg[31] CLK 45.2 287.5
+#Trunk acc_reg[24] CLK 94 187.5
+#Trunk acc_reg[28] CLK 130 252.5
+#Trunk dout_reg[0] CLK 40.4 172.5
+#Trunk acc_reg[26] CLK 164.4 227.5
+#Trunk_Term end
+wire 129.2 228.5 130 228.5 H 0.5
+wire 130 228.5 130 252.5 V 0.5
+wire 129.2 228.5 129.2 227.5 V 0.5
+wire 129.2 228.5 101.2 228.5 H 0.5
+wire 174.8 232.5 164.4 232.5 H 0.5
+wire 164.4 232.5 164.4 227.5 V 0.5
+wire 40.4 227.5 40.4 247.5 V 0.5
+wire 40.4 227.5 40.4 207.5 V 0.5
+wire 40.4 227.5 45.2 227.5 H 0.5
+wire 94 227.5 94 187.5 V 0.5
+wire 94 227.5 45.2 227.5 H 0.5
+wire 94 227.5 101.2 227.5 H 0.5
+wire 101.2 227.5 101.2 228.5 V 0.5
+wire 40.4 172.5 40.4 187.5 V 0.5
+wire 40.4 192.5 40.4 187.5 V 0.5
+wire 40.4 192.5 40.4 207.5 V 0.5
+wire 40.4 247.5 40.4 267.5 V 0.5
+wire 40.4 267.5 45.2 267.5 H 0.5
+wire 45.2 267.5 45.2 287.5 V 0.5
+wire 129.2 227.5 164.4 227.5 H 0.5
+endRouteGuideNet
+routeGuideNet clk__L4_N20
+#Trunk_Term begin
+#Trunk acc_reg[32] CLK 163.6 292.5
+#Trunk acc_reg[31] CLK 131.6 292.5
+#Trunk_Term end
+wire 177.2 333.5 171.6 333.5 H 0.5
+wire 177.2 333.5 177.2 326.5 V 0.5
+wire 177.2 326.5 177.2 313.5 V 0.5
+wire 174.8 306.5 163.6 306.5 H 0.5
+wire 163.6 306.5 163.6 292.5 V 0.5
+wire 174.8 306.5 177.2 306.5 H 0.5
+wire 177.2 306.5 177.2 313.5 V 0.5
+wire 166.8 332.5 142.8 332.5 H 0.5
+wire 142.8 332.5 142.8 331.5 V 0.5
+wire 166.8 332.5 171.6 332.5 H 0.5
+wire 171.6 332.5 171.6 333.5 V 0.5
+wire 142.8 331.5 135.6 331.5 H 0.5
+wire 135.6 331.5 135.6 327.5 V 0.5
+wire 135.6 327.5 131.6 327.5 H 0.5
+wire 131.6 327.5 131.6 312.5 V 0.5
+wire 131.6 292.5 131.6 312.5 V 0.5
+endRouteGuideNet
+routeGuideNet clk__L4_N19
+#Trunk_Term begin
+#Trunk pipe/mult_97/clk_r_REG165_S1 CLK 198 346.5
+#Trunk pipe/clk_r_REG30_S2 CLK 169.2 366.5
+#Trunk acc_reg[35] CLK 133.2 367.5
+#Trunk_Term end
+wire 198 346.5 176.4 346.5 H 0.5
+wire 176.4 346.5 176.4 352.5 V 0.5
+wire 176.4 352.5 169.2 352.5 H 0.5
+wire 169.2 352.5 169.2 353.5 V 0.5
+wire 169.2 366.5 169.2 353.5 V 0.5
+wire 166.8 353.5 142.8 353.5 H 0.5
+wire 142.8 353.5 142.8 351.5 V 0.5
+wire 166.8 353.5 169.2 353.5 H 0.5
+wire 142.8 351.5 133.2 351.5 H 0.5
+wire 133.2 367.5 133.2 351.5 V 0.5
+endRouteGuideNet
+routeGuideNet clk__L4_N18
+#Trunk_Term begin
+#Trunk pipe/mult_97/clk_r_REG38_S1 CLK 218.8 306.5
+#Trunk pipe/mult_97/clk_r_REG40_S1 CLK 198.8 293.5
+#Trunk pipe/clk_r_REG36_S2 CLK 205.2 266.5
+#Trunk_Term end
+wire 218.8 306.5 205.2 306.5 H 0.5
+wire 205.2 306.5 205.2 293.5 V 0.5
+wire 205.2 288.5 205.2 266.5 V 0.5
+wire 205.2 288.5 205.2 293.5 V 0.5
+wire 205.2 266.5 176.4 266.5 H 0.5
+wire 198.8 293.5 205.2 293.5 H 0.5
+endRouteGuideNet
+routeGuideNet clk__L4_N17
+#Trunk_Term begin
+#Trunk clk__L4_I17 Y 204.4 408.5
+#Trunk pipe/mult_97/clk_r_REG111_S1 CLK 218.8 373.5
+#Trunk pipe/clk_r_REG4_S2 CLK 177.2 393.5
+#Trunk_Term end
+wire 178 393.5 177.2 393.5 H 0.5
+wire 178 393.5 218.8 393.5 H 0.5
+wire 204.4 413.5 204.4 408.5 V 0.5
+wire 204.4 413.5 209.2 413.5 H 0.5
+wire 218.8 406.5 218.8 413.5 V 0.5
+wire 218.8 406.5 218.8 393.5 V 0.5
+wire 209.2 413.5 218.8 413.5 H 0.5
+wire 218.8 373.5 218.8 393.5 V 0.5
+endRouteGuideNet
+routeGuideNet clk__L4_N16
+#Trunk_Term begin
+#Trunk pipe/mult_97/clk_r_REG225_S1 CLK 414.8 26.5
+#Trunk pipe/mult_97/clk_r_REG231_S1 CLK 340.4 33.5
+#Trunk_Term end
+wire 414.8 26.5 391.6 26.5 H 0.5
+wire 391.6 26.5 382 26.5 H 0.5
+wire 382 26.5 382 31.5 V 0.5
+wire 368.4 31.5 350 31.5 H 0.5
+wire 350 31.5 350 33.5 V 0.5
+wire 368.4 31.5 382 31.5 H 0.5
+wire 350 33.5 340.4 33.5 H 0.5
+endRouteGuideNet
+routeGuideNet clk__L4_N15
+#Trunk_Term begin
+#Trunk pipe/mult_97/clk_r_REG222_S1 CLK 433.2 26.5
+#Trunk pipe/mult_97/clk_r_REG235_S1 CLK 301.2 66.5
+#Trunk pipe/mult_97/clk_r_REG221_S1 CLK 454.8 46.5
+#Trunk_Term end
+wire 453.2 46.5 454.8 46.5 H 0.5
+wire 433.2 46.5 453.2 46.5 H 0.5
+wire 433.2 46.5 433.2 26.5 V 0.5
+wire 433.2 46.5 410 46.5 H 0.5
+wire 410 46.5 410 51.5 V 0.5
+wire 301.2 66.5 410 66.5 H 0.5
+wire 410 66.5 410 51.5 V 0.5
+endRouteGuideNet
+routeGuideNet clk__L4_N14
+#Trunk_Term begin
+#Trunk clk__L4_I14 Y 493.2 48.5
+#Trunk pipe/mult_97/clk_r_REG215_S1 CLK 505.2 53.5
+#Trunk_Term end
+wire 505.2 53.5 495.6 53.5 H 0.5
+wire 495.6 53.5 495.6 48.5 V 0.5
+wire 493.2 48.5 474 48.5 H 0.5
+wire 493.2 48.5 495.6 48.5 H 0.5
+endRouteGuideNet
+routeGuideNet clk__L4_N13
+#Trunk_Term begin
+#Trunk pipe/mult_97/clk_r_REG209_S1 CLK 538 73.5
+#Trunk pipe/mult_97/clk_r_REG207_S1 CLK 511.6 33.5
+#Trunk_Term end
+wire 538 73.5 538 53.5 V 0.5
+wire 534.8 51.5 534.8 33.5 V 0.5
+wire 534.8 51.5 538 51.5 H 0.5
+wire 538 51.5 538 53.5 V 0.5
+wire 511.6 33.5 534.8 33.5 H 0.5
+endRouteGuideNet
+routeGuideNet clk__L4_N12
+#Trunk_Term begin
+#Trunk clk__L4_I12 Y 557.2 108.5
+#Trunk pipe/mult_97/clk_r_REG211_S1 CLK 537.2 93.5
+#Trunk pipe/mult_97/clk_r_REG191_S1 CLK 591.6 93.5
+#Trunk_Term end
+wire 591.6 106.5 587.6 106.5 H 0.5
+wire 591.6 106.5 591.6 93.5 V 0.5
+wire 587.6 106.5 578 106.5 H 0.5
+wire 578 106.5 557.2 106.5 H 0.5
+wire 557.2 108.5 557.2 106.5 V 0.5
+wire 537.2 93.5 557.2 93.5 H 0.5
+wire 557.2 93.5 557.2 106.5 V 0.5
+endRouteGuideNet
+routeGuideNet clk__L4_N11
+#Trunk_Term begin
+#Trunk h0_reg[7] CLK 550 47.5
+#Trunk pipe/mult_97/clk_r_REG197_S1 CLK 557.2 86.5
+#Trunk clk__L4_I11 Y 575.6 48.5
+#Trunk h0_reg[12] CLK 584.4 27.5
+#Trunk_Term end
+wire 584.4 47.5 575.6 47.5 H 0.5
+wire 584.4 47.5 586 47.5 H 0.5
+wire 584.4 47.5 584.4 27.5 V 0.5
+wire 580.4 66.5 580.4 73.5 V 0.5
+wire 580.4 66.5 587.6 66.5 H 0.5
+wire 590.8 66.5 587.6 66.5 H 0.5
+wire 590.8 66.5 590.8 52.5 V 0.5
+wire 578 86.5 557.2 86.5 H 0.5
+wire 578 86.5 580.4 86.5 H 0.5
+wire 580.4 86.5 580.4 73.5 V 0.5
+wire 550 47.5 575.6 47.5 H 0.5
+wire 575.6 48.5 575.6 47.5 V 0.5
+wire 586 47.5 590.8 47.5 H 0.5
+wire 590.8 47.5 590.8 52.5 V 0.5
+endRouteGuideNet
+routeGuideNet clk__L4_N10
+#Trunk_Term begin
+#Trunk acc_reg[17] CLK 177.2 92.5
+#Trunk pipe/clk_r_REG261_S1 CLK 184.4 133.5
+#Trunk clk__L4_I10 Y 222 111.5
+#Trunk_Term end
+wire 209.2 132.5 209.2 113.5 V 0.5
+wire 209.2 132.5 184.4 132.5 H 0.5
+wire 184.4 132.5 184.4 133.5 V 0.5
+wire 206.8 92.5 177.2 92.5 H 0.5
+wire 206.8 92.5 210 92.5 H 0.5
+wire 210 92.5 210 93.5 V 0.5
+wire 210 106.5 216.4 106.5 H 0.5
+wire 210 106.5 210 93.5 V 0.5
+wire 210 106.5 209.2 106.5 H 0.5
+wire 209.2 113.5 209.2 106.5 V 0.5
+wire 216.4 106.5 222 106.5 H 0.5
+wire 222 106.5 222 111.5 V 0.5
+endRouteGuideNet
+routeGuideNet clk__L4_N9
+#Trunk_Term begin
+#Trunk clk__L4_I9 Y 212.4 148.5
+#Trunk h1_reg[0] CLK 215.6 172.5
+#Trunk_Term end
+wire 220.4 153.5 220.4 166.5 V 0.5
+wire 220.4 153.5 212.4 153.5 H 0.5
+wire 212.4 153.5 212.4 148.5 V 0.5
+wire 215.6 186.5 215.6 173.5 V 0.5
+wire 215.6 166.5 215.6 172.5 V 0.5
+wire 215.6 166.5 220.4 166.5 H 0.5
+wire 215.6 172.5 215.6 173.5 V 0.5
+endRouteGuideNet
+routeGuideNet clk__L4_N8
+#Trunk_Term begin
+#Trunk clk__L4_I8 Y 250 108.5
+#Trunk pipe/clk_r_REG255_S1 CLK 219.6 126.5
+#Trunk pipe/clk_r_REG202_S2 CLK 219.6 93.5
+#Trunk_Term end
+wire 250 108.5 240.4 108.5 H 0.5
+wire 240.4 108.5 240.4 106.5 V 0.5
+wire 226 106.5 219.6 106.5 H 0.5
+wire 226 106.5 240.4 106.5 H 0.5
+wire 219.6 126.5 219.6 106.5 V 0.5
+wire 219.6 93.5 219.6 106.5 V 0.5
+endRouteGuideNet
+routeGuideNet clk__L4_N7
+#Trunk_Term begin
+#Trunk pipe/mult_97/clk_r_REG244_S1 CLK 283.6 53.5
+#Trunk clk__L4_I7 Y 266.8 88.5
+#Trunk_Term end
+wire 283.6 53.5 256.4 53.5 H 0.5
+wire 266.8 88.5 250 88.5 H 0.5
+wire 256.4 66.5 246.8 66.5 H 0.5
+wire 256.4 66.5 256.4 53.5 V 0.5
+wire 249.2 86.5 250 86.5 H 0.5
+wire 250 86.5 250 88.5 V 0.5
+wire 249.2 86.5 246.8 86.5 H 0.5
+wire 246.8 86.5 246.8 73.5 V 0.5
+wire 246.8 73.5 246.8 66.5 V 0.5
+endRouteGuideNet
+routeGuideNet clk__L4_N6
+#Trunk_Term begin
+#Trunk clk__L4_I6 Y 285.2 88.5
+#Trunk pipe/mult_97/clk_r_REG248_S1 CLK 259.6 93.5
+#Trunk_Term end
+wire 295.6 86.5 285.2 86.5 H 0.5
+wire 285.2 86.5 285.2 88.5 V 0.5
+wire 295.6 86.5 295.6 73.5 V 0.5
+wire 295.6 73.5 282 73.5 H 0.5
+wire 282 73.5 282 66.5 V 0.5
+wire 282 66.5 266 66.5 H 0.5
+wire 266 73.5 259.6 73.5 H 0.5
+wire 266 73.5 266 66.5 V 0.5
+wire 259.6 93.5 259.6 73.5 V 0.5
+endRouteGuideNet
+routeGuideNet clk__L4_N5
+#Trunk_Term begin
+#Trunk pipe/clk_r_REG232_S2 CLK 264.4 53.5
+#Trunk pipe/mult_97/clk_r_REG239_S1 CLK 296.4 33.5
+#Trunk pipe/mult_97/clk_r_REG234_S1 CLK 330 46.5
+#Trunk_Term end
+wire 296.4 46.5 298.8 46.5 H 0.5
+wire 296.4 46.5 296.4 33.5 V 0.5
+wire 296.4 46.5 291.6 46.5 H 0.5
+wire 291.6 46.5 291.6 48.5 V 0.5
+wire 264.4 53.5 291.6 53.5 H 0.5
+wire 291.6 53.5 291.6 48.5 V 0.5
+wire 301.2 46.5 330 46.5 H 0.5
+wire 301.2 46.5 298.8 46.5 H 0.5
+endRouteGuideNet
+routeGuideNet clk__L4_N4
+#Trunk_Term begin
+#Trunk cmd0_reg[1] CLK 80.4 107.5
+#Trunk clk__L4_I4 Y 58.8 71.5
+#Trunk dout_reg[14] CLK 93.2 32.5
+#Trunk dout_reg[8] CLK 42.8 47.5
+#Trunk_Term end
+wire 93.2 32.5 80.4 32.5 H 0.5
+wire 80.4 32.5 80.4 52.5 V 0.5
+wire 80.4 107.5 47.6 107.5 H 0.5
+wire 80.4 72.5 58.8 72.5 H 0.5
+wire 80.4 72.5 80.4 67.5 V 0.5
+wire 80.4 67.5 80.4 52.5 V 0.5
+wire 58.8 71.5 58.8 72.5 V 0.5
+wire 47.6 107.5 42.8 107.5 H 0.5
+wire 42.8 92.5 42.8 107.5 V 0.5
+wire 42.8 92.5 40.4 92.5 H 0.5
+wire 40.4 92.5 40.4 87.5 V 0.5
+wire 42.8 47.5 42.8 32.5 V 0.5
+wire 42.8 47.5 42.8 52.5 V 0.5
+wire 40.4 87.5 40.4 72.5 V 0.5
+wire 40.4 72.5 40.4 67.5 V 0.5
+wire 40.4 72.5 58.8 72.5 H 0.5
+wire 40.4 67.5 42.8 67.5 H 0.5
+wire 42.8 67.5 42.8 52.5 V 0.5
+endRouteGuideNet
+routeGuideNet clk__L4_N3
+#Trunk_Term begin
+#Trunk acc_reg[11] CLK 86.8 127.5
+#Trunk acc_reg[0] CLK 126.8 172.5
+#Trunk dout_reg[3] CLK 40.4 132.5
+#Trunk acc_reg[1] CLK 81.2 152.5
+#Trunk pipe/clk_r_REG264_S2 CLK 127.6 146.5
+#Trunk_Term end
+wire 40.4 147.5 80.4 147.5 H 0.5
+wire 40.4 147.5 40.4 132.5 V 0.5
+wire 81.2 167.5 81.2 152.5 V 0.5
+wire 126.8 152.5 127.6 152.5 H 0.5
+wire 127.6 152.5 127.6 146.5 V 0.5
+wire 126.8 152.5 126.8 172.5 V 0.5
+wire 126.8 152.5 125.2 152.5 H 0.5
+wire 86.8 147.5 96.4 147.5 H 0.5
+wire 96.4 147.5 96.4 151.5 V 0.5
+wire 86.8 147.5 86.8 127.5 V 0.5
+wire 86.8 147.5 81.2 147.5 H 0.5
+wire 132.4 133.5 127.6 133.5 H 0.5
+wire 127.6 133.5 127.6 146.5 V 0.5
+wire 80.4 147.5 81.2 147.5 H 0.5
+wire 81.2 152.5 81.2 147.5 V 0.5
+wire 96.4 151.5 125.2 151.5 H 0.5
+wire 125.2 151.5 125.2 152.5 V 0.5
+endRouteGuideNet
+routeGuideNet clk__L4_N2
+#Trunk_Term begin
+#Trunk acc_reg[21] CLK 169.2 112.5
+#Trunk cmd_2_reg[0] CLK 93.2 47.5
+#Trunk dout_reg[2] CLK 81.2 112.5
+#Trunk acc_reg[19] CLK 166 72.5
+#Trunk dout_reg[13] CLK 124.4 32.5
+#Trunk_Term end
+wire 166 71.5 166 72.5 V 0.5
+wire 169.2 112.5 132.4 112.5 H 0.5
+wire 137.2 71.5 166 71.5 H 0.5
+wire 137.2 71.5 126.8 71.5 H 0.5
+wire 132.4 112.5 127.6 112.5 H 0.5
+wire 127.6 112.5 127.6 107.5 V 0.5
+wire 127.6 107.5 122 107.5 H 0.5
+wire 122 107.5 122 92.5 V 0.5
+wire 126.8 67.5 124.4 67.5 H 0.5
+wire 124.4 67.5 124.4 52.5 V 0.5
+wire 126.8 67.5 126.8 71.5 V 0.5
+wire 124.4 52.5 124.4 47.5 V 0.5
+wire 124.4 32.5 124.4 47.5 V 0.5
+wire 123.6 47.5 93.2 47.5 H 0.5
+wire 123.6 47.5 124.4 47.5 H 0.5
+wire 122.8 72.5 126.8 72.5 H 0.5
+wire 126.8 72.5 126.8 71.5 V 0.5
+wire 122.8 72.5 122 72.5 H 0.5
+wire 122 72.5 122 87.5 V 0.5
+wire 122 87.5 122 92.5 V 0.5
+wire 92.4 92.5 85.2 92.5 H 0.5
+wire 92.4 92.5 122 92.5 H 0.5
+wire 81.2 112.5 85.2 112.5 H 0.5
+wire 85.2 112.5 85.2 92.5 V 0.5
+endRouteGuideNet
+routeGuideNet clk__L4_N1
+#Trunk_Term begin
+#Trunk pipe/clk_r_REG266_S2 CLK 142 146.5
+#Trunk clk__L4_I1 Y 184.4 168.5
+#Trunk pipe/clk_r_REG181_S2 CLK 206.8 153.5
+#Trunk_Term end
+wire 205.2 153.5 206.8 153.5 H 0.5
+wire 205.2 153.5 184.4 153.5 H 0.5
+wire 184.4 153.5 184.4 167.5 V 0.5
+wire 142 146.5 163.6 146.5 H 0.5
+wire 163.6 146.5 163.6 153.5 V 0.5
+wire 163.6 153.5 166.8 153.5 H 0.5
+wire 166.8 153.5 166.8 167.5 V 0.5
+wire 166.8 167.5 184.4 167.5 H 0.5
+wire 184.4 168.5 184.4 167.5 V 0.5
+endRouteGuideNet
+routeGuideNet clk__L4_N0
+#Trunk_Term begin
+#Trunk push_0_reg CLK 247.6 52.5
+#Trunk clk__L4_I0 Y 202.8 51.5
+#Trunk push_1_reg CLK 216.4 52.5
+#Trunk_Term end
+wire 171.6 47.5 173.2 47.5 H 0.5
+wire 173.2 47.5 173.2 51.5 V 0.5
+wire 171.6 47.5 171.6 32.5 V 0.5
+wire 247.6 52.5 247.6 32.5 V 0.5
+wire 247.6 32.5 247.6 27.5 V 0.5
+wire 247.6 27.5 218.8 27.5 H 0.5
+wire 218.8 27.5 210.8 27.5 H 0.5
+wire 210.8 27.5 210.8 32.5 V 0.5
+wire 216.4 52.5 216.4 66.5 V 0.5
+wire 216.4 52.5 210.8 52.5 H 0.5
+wire 210.8 52.5 210.8 51.5 V 0.5
+wire 210.8 47.5 210.8 32.5 V 0.5
+wire 210.8 47.5 210.8 51.5 V 0.5
+wire 202.8 51.5 210.8 51.5 H 0.5
+wire 202.8 51.5 173.2 51.5 H 0.5
+endRouteGuideNet
