@@ -9,11 +9,12 @@ module alu (
 integer in1, in2, out;
 reg zero;
 
+assign in1 = r1;
+assign in2 = r2;
+
 always @(*) 
 	begin
 		zero = 1'b0;
-		in1 = r1;
-		in2 = r2;
 		case(control)
 			4'b0000: out = in1 + in2; //ADD and ADDI also LB, LW, SB ,SW
 			4'b0001: out = in1 & in2; //AND and ANDI
