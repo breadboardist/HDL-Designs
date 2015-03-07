@@ -43,10 +43,34 @@ module test_alu ();
 	wire [31:0] outp; 
 	wire zer;
 	alu A(input1, input2, cntrl, outp, zer);
-	forever input1 = 5;
-	forever input2 = 7;
 	initial
-		begin
+		fork
+			#9 input1 = 5;
+			#9 input1 = 5;
+			#9 input1 = 5;
+			#9 input1 = 5;
+			#9 input1 = 5;
+			#9 input1 = 5;
+			#9 input1 = 5;
+			#9 input1 = 5;
+			#9 input1 = 5;
+			#9 input1 = 5;
+		join
+	initial
+		fork
+			#8 input2 = 8;
+			#8 input2 = 8;
+			#8 input2 = 8;
+			#8 input2 = 8;
+			#8 input2 = 8;
+			#8 input2 = 8;
+			#8 input2 = 8;
+			#8 input2 = 8;
+			#8 input2 = 8;
+			#8 input2 = 8;
+		join
+	initial
+		fork
 			#10 cntrl = 4'b0000;
 			#10 cntrl = 4'b0001;
 			#10 cntrl = 4'b0010;
@@ -57,6 +81,6 @@ module test_alu ();
 			#10 cntrl = 4'b0111;
 			#10 cntrl = 4'b1000;
 			#10 cntrl = 4'b1001;
-		end
+		join
 	initial $monitor("Result: %d", outp);
 endmodule
