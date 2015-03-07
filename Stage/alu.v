@@ -43,8 +43,8 @@ module test_alu ();
 	wire [31:0] outp; 
 	wire zer;
 	alu A(input1, input2, cntrl, outp, zer);
-	input1 = 5;
-	input2 = 7;
+	forever input1 = 5;
+	forever input2 = 7;
 	initial
 		begin
 			#10 cntrl = 4'b0000;
