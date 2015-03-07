@@ -43,11 +43,10 @@ module test_alu ();
 	wire [31:0] outp; 
 	wire zer;
 	alu A(input1, input2, cntrl, outp, zer);
-	
+	input1 = 5;
+	input2 = 7;
 	initial
 		begin
-			#10 input1 = -15;
-			#10 input2 = 5;
 			#10 cntrl = 4'b0000;
 			#10 cntrl = 4'b0001;
 			#10 cntrl = 4'b0010;
