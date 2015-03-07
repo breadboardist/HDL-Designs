@@ -1,39 +1,33 @@
 ncverilog: 14.10-p001: (c) Copyright 1995-2014 Cadence Design Systems, Inc.
-TOOL:	ncverilog	14.10-p001: Started on Mar 06, 2015 at 16:33:20 PST
+TOOL:	ncverilog	14.10-p001: Started on Mar 06, 2015 at 17:09:18 PST
 ncverilog
 	alu.v
 Recompiling... reason: file './alu.v' is newer than expected.
-	expected: Fri Mar  6 16:17:32 2015
-	actual:   Fri Mar  6 16:31:48 2015
+	expected: Fri Mar  6 17:03:56 2015
+	actual:   Fri Mar  6 17:08:40 2015
 file: alu.v
-reg zero;
-       |
-ncvlog: *W,ILLPDX (alu.v,10|7): Multiple declarations for a port not allowed in module with ANSI list of port declarations (port 'zero') [12.3.4(IEEE-2001)].
-	module worklib.test_alu:v
+	module worklib.alu:v
 		errors: 0, warnings: 0
 		Caching library 'worklib' ....... Done
 	Elaborating the design hierarchy:
 	Building instance overlay tables: .................... Done
 	Generating native compiled code:
-		worklib.test_alu:v <0x172052bb>
-			streams:   5, words:  5290
+		worklib.alu:v <0x562192a3>
+			streams:   0, words:     0
 	Building instance specific data structures.
 	Loading native compiled code:     .................... Done
 	Design hierarchy summary:
 		            Instances  Unique
-		Modules:            2       2
-		Registers:          7       7
-		Vectored wires:     4       -
+		Modules:            1       1
+		Registers:          4       4
+		Scalar wires:       1       -
+		Vectored wires:     1       -
 		Always blocks:      1       1
-		Initial blocks:     4       4
-		Parallel blocks:    3       3
-		Cont. assignments:  0       1
-	Writing initial simulation snapshot: worklib.test_alu:v
-Loading snapshot worklib.test_alu:v .................... Done
+		Cont. assignments:  0       2
+	Writing initial simulation snapshot: worklib.alu:v
+Loading snapshot worklib.alu:v .................... Done
 ncsim> source /apps/cadence/INCISIV141/tools/inca/files/ncsimrc
 ncsim> run
-Result:          x
-Result:          0
 ncsim: *W,RNQUIE: Simulation is complete.
 ncsim> exit
-TOOL:	ncverilog	14.10-p001: Exiting on Mar 06, 2015 at 16:33:29 PST  (total: 00:00:09)
+TOOL:	ncverilog	14.10-p001: Exiting on Mar 06, 2015 at 17:09:25 PST  (total: 00:00:07)

@@ -7,14 +7,13 @@ module alu (
 );
 
 integer in1, in2, out;
-reg zero;
-
-assign in1 = r1;
-assign in2 = r2;
+reg bcond;
 
 always @(*) 
 	begin
-		zero = 1'b0;
+		bcond = 1'b0;
+		in1 = r1;
+		in2 = r2;
 		case(control)
 			4'b0000: out = in1 + in2; //ADD and ADDI also LB, LW, SB ,SW
 			4'b0001: out = in1 & in2; //AND and ANDI
@@ -25,16 +24,17 @@ always @(*)
 			4'b0110: out = in1 - in2; //SUB
 			4'b0111: out = in1 ^ in2; //XOR and XORI
 			4'b1000: begin //BEQ, zero flag is 1 if branch is true i.e., if both inputs are equal
-						if (in1 == in2) zero = 1'b1;
-						else zero = 1'b0;
+						if (in1 == in2) bcond = 1'b1;
+						else bcond = 1'b0;
 					  end
 			4'b1001: begin //BNE, zero flag is 1 if branch is true i.e., if both inputs are not equal
-						if (in1 != in2) zero = 1'b1;
-						else zero = 1'b0;
+						if (in1 != in2) bcond = 1'b1;
+						else bcond = 1'b0;
 					  end
 			default: out = 0;
 		endcase
 	end
+	assign zero = bcond;
 	assign result = out;
 endmodule
 

@@ -1,0 +1,166 @@
+
+                        DC Professional (TM)
+                           DC Expert (TM)
+                            DC Ultra (TM)
+                       FloorPlan Manager (TM)
+                          HDL Compiler (TM)
+                         VHDL Compiler (TM)
+                        Library Compiler (TM)
+                      DesignWare Developer (TM)
+                          DFT Compiler (TM)
+                            BSD Compiler
+                         Power Compiler (TM)
+
+           Version C-2009.06-SP5 for linux -- Jan 15, 2010
+              Copyright (c) 1988-2009 by Synopsys, Inc.
+                         ALL RIGHTS RESERVED
+
+This software and the associated documentation are confidential and 
+proprietary to Synopsys, Inc. Your use or disclosure of this software 
+is subject to the terms and conditions of a written license agreement 
+between you, or your company, and Synopsys, Inc.
+
+The above trademark notice does not imply that you are licensed to use 
+all of the listed products. You are licensed to use only those products 
+for which you have lawfully obtained a valid license key.
+
+Initializing...
+set link_library {/home/morris/PnRhw/tsmc018/signalstorm/osu018_stdcells.db /apps/synopsys/C-2009.06-SP2/libraries/syn/dw02.sldb /apps/synopsys/C-2009.06-SP2/libraries/syn/dw01.sldb }
+/home/morris/PnRhw/tsmc018/signalstorm/osu018_stdcells.db /apps/synopsys/C-2009.06-SP2/libraries/syn/dw02.sldb /apps/synopsys/C-2009.06-SP2/libraries/syn/dw01.sldb 
+set target_library {/home/morris/PnRhw/tsmc018/signalstorm/osu018_stdcells.db}
+/home/morris/PnRhw/tsmc018/signalstorm/osu018_stdcells.db
+read_verilog sfilt.v
+Loading db file '/home/morris/PnRhw/tsmc018/signalstorm/osu018_stdcells.db'
+Loading db file '/apps/synopsys/C-2009.06-SP2/libraries/syn/dw02.sldb'
+Loading db file '/apps/synopsys/C-2009.06-SP2/libraries/syn/dw01.sldb'
+Loading db file '/apps/synopsys/SYNTH/libraries/syn/gtech.db'
+Loading db file '/apps/synopsys/SYNTH/libraries/syn/standard.sldb'
+  Loading link library 'osu018_stdcells'
+  Loading link library 'gtech'
+Loading verilog file '/home/so/soun0694/Work/287-PnR-Ultra/sfilt.v'
+Detecting input file type automatically (-rtl or -netlist).
+Running DC verilog reader
+Reading with Presto HDL Compiler (equivalent to -rtl option).
+Running PRESTO HDLC
+Compiling source file /home/so/soun0694/Work/287-PnR-Ultra/sfilt.v
+Error:  /home/so/soun0694/Work/287-PnR-Ultra/sfilt.v:1: Syntax error at or near token 'run'. (VER-294)
+*** Presto compilation terminated with 1 errors. ***
+Error: Can't read 'verilog' file '/home/so/soun0694/Work/287-PnR-Ultra/sfilt.v'. (UID-59)
+No designs were read
+current_design sfilt
+Error: Can't find design 'sfilt'. (UID-109)
+Error: Current design is not defined. (UID-4)
+check_design
+Error: Current design is not defined. (UID-4)
+0
+set_drive 0 clk
+Error: Current design is not defined. (UID-4)
+Error: Can't find port 'clk'. (UID-109)
+Error: Value for list 'port_list' must have 1 elements. (CMD-036)
+0
+set_drive 0 rst
+Error: Current design is not defined. (UID-4)
+Error: Can't find port 'rst'. (UID-109)
+Error: Value for list 'port_list' must have 1 elements. (CMD-036)
+0
+set_dont_touch_network clk
+Error: Current design is not defined. (UID-4)
+Error: Can't find object 'clk'. (UID-109)
+Error: Value for list '<object_list>' must have 1 elements. (CMD-036)
+0
+create_clock clk -name clk -period 3.135000
+Error: Current design is not defined. (UID-4)
+Error: Can't find object 'clk'. (UID-109)
+Error: Value for list 'source_objects' must have 1 elements. (CMD-036)
+0
+set_propagated_clock clk
+Error: Current design is not defined. (UID-4)
+Error: Can't find object 'clk'. (UID-109)
+Error: Value for list 'object_list' must have 1 elements. (CMD-036)
+0
+set_clock_uncertainty 0.25 clk
+Error: Current design is not defined. (UID-4)
+Error: Can't find object 'clk'. (UID-109)
+Error: Value for list 'object_list' must have 1 elements. (CMD-036)
+0
+set_propagated_clock clk
+Error: Current design is not defined. (UID-4)
+Error: Can't find object 'clk'. (UID-109)
+Error: Value for list 'object_list' must have 1 elements. (CMD-036)
+0
+set_output_delay 0.5 -clock clk [all_outputs]
+Error: Current design is not defined. (UID-4)
+Error: Current design is not defined. (UID-4)
+Error: Can't find clock 'clk'. (UID-109)
+Error: Value for list '-clock' must have 1 elements. (CMD-036)
+Error: Value for list 'port_pin_list' must have 1 elements. (CMD-036)
+0
+set all_inputs_wo_rst_clk [remove_from_collection [remove_from_collection [all_inputs] [get_port clk]] [get_port rst]]
+Error: Current design is not defined. (UID-4)
+Error: Current design is not defined. (UID-4)
+Error: Can't find port 'clk'. (UID-109)
+Error: Current design is not defined. (UID-4)
+Error: Can't find port 'rst'. (UID-109)
+set_driving_cell -lib_cell NAND2X1 $all_inputs_wo_rst_clk
+Error: Value for list 'port_list' must have 1 elements. (CMD-036)
+0
+set_input_delay 0.5 -clock clk $all_inputs_wo_rst_clk
+Error: Current design is not defined. (UID-4)
+Error: Can't find clock 'clk'. (UID-109)
+Error: Value for list '-clock' must have 1 elements. (CMD-036)
+Error: Value for list 'port_pin_list' must have 1 elements. (CMD-036)
+0
+set_max_delay 1.8 -to [all_outputs]
+Error: Current design is not defined. (UID-4)
+Error: Value for list '-to' must have 1 elements. (CMD-036)
+0
+set_max_delay 1.8 -from $all_inputs_wo_rst_clk
+Error: Value for list '-from' must have 1 elements. (CMD-036)
+0
+set_fix_hold [ get_clocks clk ]
+Error: Current design is not defined. (UID-4)
+Error: Can't find clock 'clk'. (UID-109)
+Error: Value for list '<clock_list>' must have 1 elements. (CMD-036)
+0
+compile_ultra
+Error: Current design is not defined. (UID-4)
+0
+create_clock clk -name clk -period 3.300000
+Error: Current design is not defined. (UID-4)
+Error: Can't find object 'clk'. (UID-109)
+Error: Value for list 'source_objects' must have 1 elements. (CMD-036)
+0
+set_propagated_clock clk
+Error: Current design is not defined. (UID-4)
+Error: Can't find object 'clk'. (UID-109)
+Error: Value for list 'object_list' must have 1 elements. (CMD-036)
+0
+set_clock_uncertainty 0.25 clk
+Error: Current design is not defined. (UID-4)
+Error: Can't find object 'clk'. (UID-109)
+Error: Value for list 'object_list' must have 1 elements. (CMD-036)
+0
+set_propagated_clock clk
+Error: Current design is not defined. (UID-4)
+Error: Can't find object 'clk'. (UID-109)
+Error: Value for list 'object_list' must have 1 elements. (CMD-036)
+0
+update_timing
+Error: Current design is not defined. (UID-4)
+0
+report -cell
+Error: Current design is not defined. (UID-4)
+0
+report_timing -max_paths 10
+Error: Current design is not defined. (UID-4)
+0
+write -hierarchy -format verilog -output sfilt_gates.v
+Error: No files or designs were specified. (UID-22)
+0
+write_sdc sfilt_gates.sdc
+Error: Current design is not defined. (UID-4)
+0
+quit
+Information: Defining new variable 'all_inputs_wo_rst_clk'. (CMD-041)
+
+Thank you...
