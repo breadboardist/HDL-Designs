@@ -8,7 +8,6 @@ module alu (
 
 integer in1, in2, out;
 reg zero;
-reg [31:0] result;
 
 always @(*) 
 	begin
@@ -16,7 +15,7 @@ always @(*)
 		in1 = r1;
 		in2 = r2;
 		case(control)
-			4'b0000: out = in1 + in2; //ADD and ADDI
+			4'b0000: out = in1 + in2; //ADD and ADDI also LB, LW, SB ,SW
 			4'b0001: out = in1 & in2; //AND and ANDI
 			4'b0010: out = in1 | in2; //OR and ORI
 			4'b0011: out = in1 << in2; //SLL, in1 shifted left by in2 amount
@@ -32,32 +31,33 @@ always @(*)
 						if (in1 != in2) zero = 1'b1;
 						else zero = 1'b0;
 					  end
-			// 4'b1010: //LB
-			// 4'b1011: //LW
-			// 4'b1100: //SB
-			// 4'b1101: //SW
 			default: out = 0;
 		endcase
-		result = out;
 	end
-initial
-	begin
-		#10 in1 = -15;
-		#10 in2 = 5;
-		#10 control = 4'b0000;
-		#10 control = 4'b0001;
-		#10 control = 4'b0010;
-		#10 control = 4'b0011;
-		#10 control = 4'b0100;
-		#10 control = 4'b0101;
-		#10 control = 4'b0110;
-		#10 control = 4'b0111;
-		#10 control = 4'b1000;
-		#10 control = 4'b1001;
-		#10 control = 4'b1010;
-		#10 control = 4'b1011;
-		#10 control = 4'b1100;
-		#10 control = 4'b1101;
-	end
-initial $monitor("Result: %b", result);
+	assign result = out;
+endmodule
+
+module test_alu ();
+	integer input1, input2;
+	reg [3:0] cntrl;
+	wire [31:0] outp; 
+	wire zer;
+	alu A(input1, input2, cntrl, outp, zer);
+	
+	initial
+		begin
+			#10 input1 = -15;
+			#10 input2 = 5;
+			#10 cntrl = 4'b0000;
+			#10 cntrl = 4'b0001;
+			#10 cntrl = 4'b0010;
+			#10 cntrl = 4'b0011;
+			#10 cntrl = 4'b0100;
+			#10 cntrl = 4'b0101;
+			#10 cntrl = 4'b0110;
+			#10 cntrl = 4'b0111;
+			#10 cntrl = 4'b1000;
+			#10 cntrl = 4'b1001;
+		end
+	initial $monitor("Result: %b", outp);
 endmodule
