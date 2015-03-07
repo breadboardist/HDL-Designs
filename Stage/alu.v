@@ -59,5 +59,5 @@ module test_alu ();
 			#10 cntrl = 4'b1000;
 			#10 cntrl = 4'b1001;
 		end
-	initial $monitor("Result: %b", outp);
+	initial $monitor("Result: %d", outp);
 endmodule
