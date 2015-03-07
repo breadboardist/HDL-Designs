@@ -1,0 +1,5 @@
+#!/bin/csh
+source /apps/design_environment.csh
+setenv PATH "${PATH}:/apps/cadence/EDI91/bin"
+encounter
+
