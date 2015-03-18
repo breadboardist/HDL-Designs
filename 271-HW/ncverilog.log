@@ -1,29 +1,33 @@
 ncverilog: 14.10-p001: (c) Copyright 1995-2014 Cadence Design Systems, Inc.
-TOOL:	ncverilog	14.10-p001: Started on Mar 17, 2015 at 18:53:52 PDT
+TOOL:	ncverilog	14.10-p001: Started on Mar 17, 2015 at 19:24:26 PDT
 ncverilog
 	+access+r
-	rca.v
+	compare.v
+file: compare.v
+	module worklib.compare:v
+		errors: 0, warnings: 0
+	module worklib.test_compare:v
+		errors: 0, warnings: 0
 		Caching library 'worklib' ....... Done
 	Elaborating the design hierarchy:
 	Building instance overlay tables: .................... Done
 	Generating native compiled code:
-		worklib.test_Add_rca:v <0x5ca63b71>
-			streams:   3, words:  5677
+		worklib.test_compare:v <0x1c1f09d0>
+			streams:   3, words:  3652
 	Building instance specific data structures.
 	Loading native compiled code:     .................... Done
 	Design hierarchy summary:
 		          Instances  Unique
-		Modules:         54       5
-		Primitives:      80       3
-		Registers:        3       3
-		Scalar wires:     1       -
-		Expanded wires:  32       2
+		Modules:          2       2
+		Primitives:      10       5
+		Registers:        4       4
+		Scalar wires:     4       -
 		Initial blocks:   3       3
-	Writing initial simulation snapshot: worklib.test_Add_rca:v
-Loading snapshot worklib.test_Add_rca:v .................... Done
+	Writing initial simulation snapshot: worklib.test_compare:v
+Loading snapshot worklib.test_compare:v .................... Done
 ncsim> source /apps/cadence/INCISIV141/tools/inca/files/ncsimrc
 ncsim> run
 Simulation complete via $finish(1) at time 100 NS + 0
-./rca.v:42     #100 $finish;
+./compare.v:17     #100 $finish;
 ncsim> exit
-TOOL:	ncverilog	14.10-p001: Exiting on Mar 17, 2015 at 18:54:02 PDT  (total: 00:00:10)
+TOOL:	ncverilog	14.10-p001: Exiting on Mar 17, 2015 at 19:24:35 PDT  (total: 00:00:09)
