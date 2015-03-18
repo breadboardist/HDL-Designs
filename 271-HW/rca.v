@@ -57,7 +57,7 @@ module test_Add_rca ( );
 	#5 a = 500000;
     #5 b = 500000;
   end
-  initial
+  initial begin
   	$dumpfile(rippleadder.vcd);
   	$dumpvars(0,test_Add_rca);
   end
