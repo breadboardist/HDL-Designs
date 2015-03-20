@@ -1,0 +1,5 @@
+rm -rf csrc
+rm -rf INCA_libs
+rm -rf ncverilog.log
+rm -rf simv
+rm -rf simv.daidir

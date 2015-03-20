@@ -1,0 +1,43 @@
+ncverilog: 14.10-p001: (c) Copyright 1995-2014 Cadence Design Systems, Inc.
+TOOL:	ncverilog	14.10-p001: Started on Mar 20, 2015 at 10:07:15 PDT
+ncverilog
+	test.v
+file: test.v
+	module worklib.tb_mips:v
+		errors: 0, warnings: 0
+		Caching library 'worklib' ....... Done
+	Elaborating the design hierarchy:
+		Caching library 'worklib' ....... Done
+	Building instance overlay tables: .................... Done
+	Generating native compiled code:
+		worklib.control_unit:v <0x39157b32>
+			streams:   0, words:     0
+		worklib.gpr:v <0x091429a8>
+			streams:   0, words:     0
+		worklib.tb_mips:v <0x6c11c882>
+			streams:   2, words:  1171
+	Building instance specific data structures.
+	Loading native compiled code:     .................... Done
+	Design hierarchy summary:
+		                   Instances  Unique
+		Modules:                  18      10
+		Registers:                25      17
+		Scalar wires:             15       -
+		Vectored wires:           29       -
+		Always blocks:            20      12
+		Initial blocks:            3       3
+		Cont. assignments:         0      33
+		Simulation timescale:  100ps
+	Writing initial simulation snapshot: worklib.tb_mips:v
+Loading snapshot worklib.tb_mips:v .................... Done
+ncsim> source /apps/cadence/INCISIV141/tools/inca/files/ncsimrc
+ncsim> run
+ncsim: *W,DVEXACC: some objects excluded from $dumpvars due to access restrictions, use +access+r on command line for access to all objects.
+            File: ./test.v, line = 150, pos = 11
+           Scope: tb_mips
+            Time: 0 FS + 0
+
+Simulation complete via $finish(1) at time 4115 NS + 0
+./test.v:139    #100 $finish;
+ncsim> exit
+TOOL:	ncverilog	14.10-p001: Exiting on Mar 20, 2015 at 10:07:24 PDT  (total: 00:00:09)

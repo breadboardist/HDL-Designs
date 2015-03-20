@@ -1,0 +1,10 @@
+1425719031 /home/jo/jose9145/ee275/sc_mips/adder.v
+1425719052 /home/jo/jose9145/ee275/sc_mips/lshift.v
+1426833286 /home/jo/jose9145/ee275/sc_mips/signext.v
+1426862106 /home/jo/jose9145/ee275/sc_mips/gpr.v
+1425718997 /home/jo/jose9145/ee275/sc_mips/mux_2x1.v
+1426837397 /home/jo/jose9145/ee275/sc_mips/alu.v
+1426873489 /home/jo/jose9145/ee275/sc_mips/control_unit.v
+1425719009 /home/jo/jose9145/ee275/sc_mips/pc.v
+1426858977 /home/jo/jose9145/ee275/sc_mips/processor.v
+1426879531 /home/jo/jose9145/ee275/sc_mips/test.v

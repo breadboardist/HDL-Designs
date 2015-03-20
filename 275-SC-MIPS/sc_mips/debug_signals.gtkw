@@ -1,0 +1,34 @@
+[*]
+[*] GTKWave Analyzer v3.3.52 (w)1999-2013 BSI
+[*] Fri Mar 20 05:20:55 2015
+[*]
+[dumpfile] "/home/jo/jose9145/ee275/sc_mips/mips.vcd"
+[dumpfile_mtime] "Fri Mar 20 05:16:14 2015"
+[dumpfile_size] 59620
+[savefile] "/home/jo/jose9145/ee275/sc_mips/debug_signals.gtkw"
+[timestart] 0
+[size] 1920 1153
+[pos] -97 -38
+*-15.000000 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[treeopen] tb_mips.
+[treeopen] tb_mips.P.
+[sst_width] 216
+[signals_width] 110
+[sst_expanded] 1
+[sst_vpaned_height] 355
+@28
+tb_mips.P.clock
+tb_mips.P.reset
+@22
+tb_mips.P.PC[31:0]
+tb_mips.P.Inst[31:0]
+@28
+tb_mips.P.MemRead
+tb_mips.P.MemWrite
+@22
+tb_mips.P.Addr[31:0]
+tb_mips.P.Din[31:0]
+@23
+tb_mips.P.Dout[31:0]
+[pattern_trace] 1
+[pattern_trace] 0

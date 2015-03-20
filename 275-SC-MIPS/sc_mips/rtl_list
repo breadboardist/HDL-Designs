@@ -1,0 +1,9 @@
+ncverilog adder.v
+ncverilog lshift.v
+ncverilog signext.v
+ncverilog gpr.v
+ncverilog mux_2x1.v
+ncverilog alu.v
+ncverilog control_unit.v
+ncverilog pc.v
+ncverilog processor.v

@@ -1,0 +1,5 @@
+ncvlog: 14.10-p001: (c) Copyright 1995-2014 Cadence Design Systems, Inc.
+ncvlog: *W,DLNOHV: Unable to find an 'hdl.var' file to load in.
+module processor (clock, reset, PC, Inst, MemRead, MemWrite, Addr, Din, Dout);
+     |
+ncvlog: *F,NOWORK (processor.v,3|5): no working library defined.

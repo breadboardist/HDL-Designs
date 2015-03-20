@@ -1,0 +1,218 @@
+# SimVision Command Script (Fri Mar 20 12:27:56 PM PDT 2015)
+#
+# Version 14.10.p001
+#
+# You can restore this configuration with:
+#
+#      irun +access+r processor.v control_unit.v pc.v alu.v signext.v lshift.v adder.v gpr.v mux_2x1.v test.v -s -input restore.tcl
+#
+
+
+#
+# Preferences
+#
+preferences set plugin-enable-svdatabrowser-new 1
+preferences set cursorctl-dont-show-sync-warning 1
+preferences set plugin-enable-groupscope 0
+preferences set plugin-enable-interleaveandcompare 0
+preferences set whats-new-dont-show-at-startup 1
+
+#
+# Simulator
+#
+database require simulator -hints {
+	simulator "irun +access+r processor.v control_unit.v pc.v alu.v signext.v lshift.v adder.v gpr.v mux_2x1.v test.v -gui -s -input restore.tcl"
+}
+
+#
+# Groups
+#
+catch {group new -name Control_Unit -overlay 0}
+catch {group new -name GPR -overlay 0}
+catch {group new -name ALU -overlay 0}
+
+group using Control_Unit
+group set -overlay 0
+group set -comment {}
+group clear 0 end
+
+group insert \
+    [subst  {simulator::[format {tb_mips.P.control_unit_u0.funct[5:0]}]} ] \
+    [subst  {simulator::[format {tb_mips.P.control_unit_u0.opcode[5:0]}]} ]
+
+group using GPR
+group set -overlay 0
+group set -comment {}
+group clear 0 end
+
+group insert \
+    [subst  {simulator::[format {tb_mips.P.gpr_u0.rd_data1[31:0]}]} ] \
+    [subst  {simulator::[format {tb_mips.P.gpr_u0.rd_data2[31:0]}]} ] \
+    [subst  {simulator::[format {tb_mips.P.gpr_u0.rd_addr2[4:0]}]} ] \
+    [subst  {simulator::[format {tb_mips.P.gpr_u0.rd_addr1[4:0]}]} ] \
+    Control_Unit \
+    [subst  {simulator::[format {tb_mips.P.RegWrite}]} ] \
+    [subst  {simulator::[format {tb_mips.P.Inst[31:0]}]} ] \
+    [subst  {simulator::[format {tb_mips.P.gpr_u0.wr_data[31:0]}]} ] \
+    [subst  {simulator::[format {tb_mips.MemWrite}]} ] \
+    [subst  {simulator::[format {tb_mips.P.gpr_u0.gpr[1:31]}]} ]
+
+group using ALU
+group set -overlay 0
+group set -comment {}
+group clear 0 end
+
+group insert \
+    [subst  {simulator::[format {tb_mips.P.alu_u0.r1[31:0]}]} ] \
+    [subst  {simulator::[format {tb_mips.P.alu_u0.r2[31:0]}]} ] \
+    [subst  {simulator::[format {tb_mips.P.alu_u0.in1}]} ] \
+    [subst  {simulator::[format {tb_mips.P.alu_u0.in2}]} ] \
+    [subst  {simulator::[format {tb_mips.P.alu_u0.out}]} ] \
+    [subst  {simulator::[format {tb_mips.P.gpr_rd_data1[31:0]}]} ] \
+    [subst  {simulator::[format {tb_mips.P.gpr_rd_data2[31:0]}]} ] \
+    [subst  {simulator::[format {tb_mips.P.Inst_20_16[4:0]}]} ] \
+    [subst  {simulator::[format {tb_mips.P.ALU_datain2[31:0]}]} ] \
+    [subst  {simulator::[format {tb_mips.P.Inst_15_0_signext[31:0]}]} ] \
+    [subst  {simulator::[format {tb_mips.P.ALU_datain2_src0[31:0]}]} ] \
+    [subst  {simulator::[format {tb_mips.P.shamt[31:0]}]} ] \
+    [subst  {simulator::[format {tb_mips.P.gpr_rd_addr1[4:0]}]} ] \
+    [subst  {simulator::[format {tb_mips.P.isSLL_SRL}]} ] \
+    [subst  {simulator::[format {tb_mips.P.ALUSrc[1:0]}]} ] \
+    [subst  {simulator::[format {tb_mips.P.ALU_Control[3:0]}]} ] \
+    [subst  {simulator::[format {tb_mips.P.ALU_Result[31:0]}]} ] \
+    [subst  {simulator::[format {tb_mips.P.bcond}]} ]
+
+#
+# Mnemonic Maps
+#
+mmap new -reuse -name {Boolean as Logic} -radix %b -contents {{%c=FALSE -edgepriority 1 -shape low}
+{%c=TRUE -edgepriority 1 -shape high}}
+mmap new -reuse -name {Example Map} -radix %x -contents {{%b=11???? -bgcolor orange -label REG:%x -linecolor yellow -shape bus}
+{%x=1F -bgcolor red -label ERROR -linecolor white -shape EVENT}
+{%x=2C -bgcolor red -label ERROR -linecolor white -shape EVENT}
+{%x=* -label %x -linecolor gray -shape bus}}
+
+#
+# Waveform windows
+#
+if {[catch {window new WaveWindow -name "Waveform 1" -geometry 1916x1026+0+0}] != ""} {
+    window geometry "Waveform 1" 1916x1026+0+0
+}
+window target "Waveform 1" on
+waveform using {Waveform 1}
+waveform sidebar visibility partial
+waveform set \
+    -primarycursor TimeA \
+    -signalnames name \
+    -signalwidth 198 \
+    -units ps \
+    -valuewidth 75
+waveform baseline set -time 0
+
+set id [waveform add -signals [subst  {
+	{simulator::[format {tb_mips.P.Addr[31:0]}]}
+	{simulator::[format {tb_mips.P.Din[31:0]}]}
+	{simulator::[format {tb_mips.mem_addr[31:0]}]}
+	{simulator::[format {tb_mips.MemRead}]}
+	{simulator::[format {tb_mips.P.Dout[31:0]}]}
+	{simulator::[format {tb_mips.P.Inst[31:0]}]}
+	} ]]
+set id [waveform add -signals [subst  {
+	{simulator::[format {tb_mips.P.Inst[31:0]}]}
+	} ]]
+waveform format $id -radix %b
+set id [waveform add -signals [subst  {
+	{simulator::[format {tb_mips.P.MemRead}]}
+	{simulator::[format {tb_mips.P.MemWrite}]}
+	{simulator::[format {tb_mips.P.PC[31:0]}]}
+	{simulator::[format {tb_mips.P.clock}]}
+	{simulator::[format {tb_mips.P.reset}]}
+	} ]]
+
+set groupId0 [waveform add -groups Control_Unit]
+set gpGlist0 [waveform hierarchy contents $groupId0]
+set gpID0 [lindex $gpGlist0 0]
+foreach {name attrs} [subst  {
+    {simulator::[format {tb_mips.P.control_unit_u0.funct[5:0]}]} {-radix %x}
+    {simulator::[format {tb_mips.P.control_unit_u0.opcode[5:0]}]} {-radix %x}
+}] childcmds {
+    {}
+    {}
+} {
+    set expected [ join [waveform signals -format fullpath $gpID0] ]
+    if {[string equal $name $expected] || $name == "cdivider"} {
+        if {$attrs != ""} {
+            eval waveform format $gpID0 $attrs
+        }
+        if { $childcmds != ""} {
+            eval $childcmds
+        }
+    }
+    set gpGlist0 [lrange $gpGlist0 1 end]
+    set gpID0 [lindex $gpGlist0 0]
+}
+
+
+set groupId0 [waveform add -groups ALU]
+waveform hierarchy collapse $groupId0
+
+set id [waveform add -signals [subst  {
+	{simulator::[format {tb_mips.P.Inst_15_0_signext[31:0]}]}
+	{simulator::[format {tb_mips.P.gpr_rd_data2[31:0]}]}
+	{simulator::[format {tb_mips.P.Inst_15_0[15:0]}]}
+	{simulator::[format {tb_mips.P.Inst_15_0_signext[31:0]}]}
+	} ]]
+
+set groupId0 [waveform add -groups GPR]
+
+set groupId1 [waveform find -name Control_Unit]
+set gpGlist1 [waveform hierarchy contents $groupId1]
+set gpID1 [lindex $gpGlist1 0]
+foreach {name attrs} [subst  {
+    {simulator::[format {tb_mips.P.control_unit_u0.funct[5:0]}]} {-radix %x}
+    {simulator::[format {tb_mips.P.control_unit_u0.opcode[5:0]}]} {-radix %x}
+}] childcmds {
+    {}
+    {}
+} {
+    set expected [ join [waveform signals -format fullpath $gpID1] ]
+    if {[string equal $name $expected] || $name == "cdivider"} {
+        if {$attrs != ""} {
+            eval waveform format $gpID1 $attrs
+        }
+        if { $childcmds != ""} {
+            eval $childcmds
+        }
+    }
+    set gpGlist1 [lrange $gpGlist1 1 end]
+    set gpID1 [lindex $gpGlist1 0]
+}
+
+
+set id [waveform add -signals [subst  {
+	{simulator::[format {tb_mips.DataMem[0:255]}]}
+	} ]]
+waveform hierarchy expand $id
+set id [waveform add -signals [subst  {
+	{simulator::[format {tb_mips.P.pc_u0.jump}]}
+	{simulator::[format {tb_mips.P.pc_u0.branch}]}
+	{simulator::[format {tb_mips.P.pc_u0.jump_reg}]}
+	{simulator::[format {tb_mips.P.pc_u0.br_loc[31:0]}]}
+	} ]]
+
+waveform xview limits 0 5615000ps
+
+#
+# Waveform Window Links
+#
+
+#
+# Console windows
+#
+console set -windowname Console
+window geometry Console 730x250+246+277
+
+#
+# Layout selection
+#
+

@@ -1,0 +1,71 @@
+
+#
+# Preferences
+#
+preferences set plugin-enable-svdatabrowser-new 1
+preferences set cursorctl-dont-show-sync-warning 1
+preferences set plugin-enable-groupscope 0
+preferences set plugin-enable-interleaveandcompare 0
+preferences set whats-new-dont-show-at-startup 1
+
+#
+# Groups
+#
+catch {group new -name Control_Unit -overlay 0}
+catch {group new -name GPR -overlay 0}
+catch {group new -name ALU -overlay 0}
+
+group using Control_Unit
+group set -overlay 0
+group set -comment {}
+group clear 0 end
+
+group insert \
+    simulator::tb_mips.P.control_unit_u0.funct[5:0] \
+    simulator::tb_mips.P.control_unit_u0.opcode[5:0]
+
+group using GPR
+group set -overlay 0
+group set -comment {}
+group clear 0 end
+
+group insert \
+    simulator::tb_mips.P.gpr_u0.rd_data1[31:0] \
+    simulator::tb_mips.P.gpr_u0.rd_data2[31:0] \
+    simulator::tb_mips.P.gpr_u0.rd_addr2[4:0] \
+    simulator::tb_mips.P.gpr_u0.rd_addr1[4:0] \
+    simulator::tb_mips.P.gpr_u0.RegWrite \
+    simulator::tb_mips.P.gpr_u0.wr_data[31:0] \
+    simulator::tb_mips.P.gpr_u0.gpr[1:31]
+
+group using ALU
+group set -overlay 0
+group set -comment {}
+group clear 0 end
+
+group insert \
+    simulator::tb_mips.P.gpr_rd_data1[31:0] \
+    simulator::tb_mips.P.ALU_datain2[31:0] \
+    simulator::tb_mips.P.ALU_Control[3:0] \
+    simulator::tb_mips.P.ALU_Result[31:0] \
+    simulator::tb_mips.P.bcond
+
+#
+# Mnemonic Maps
+#
+mmap new -reuse -name {Boolean as Logic} -radix %b -contents {{%c=FALSE -edgepriority 1 -shape low}
+{%c=TRUE -edgepriority 1 -shape high}}
+mmap new -reuse -name {Example Map} -radix %x -contents {{%b=11???? -bgcolor orange -label REG:%x -linecolor yellow -shape bus}
+{%x=1F -bgcolor red -label ERROR -linecolor white -shape EVENT}
+{%x=2C -bgcolor red -label ERROR -linecolor white -shape EVENT}
+{%x=* -label %x -linecolor gray -shape bus}}
+
+#
+# Console windows
+#
+console set -windowname Console
+window geometry Console 730x250+246+277
+
+#
+# Layout selection
+#

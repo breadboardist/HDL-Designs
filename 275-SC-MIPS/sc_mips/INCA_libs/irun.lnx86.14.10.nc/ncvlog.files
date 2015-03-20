@@ -1,0 +1,14 @@
+//
+// File created by:  irun
+// Do not modify this file
+//
+/home/jo/jose9145/ee275/sc_mips/processor.v
+/home/jo/jose9145/ee275/sc_mips/control_unit.v
+/home/jo/jose9145/ee275/sc_mips/pc.v
+/home/jo/jose9145/ee275/sc_mips/alu.v
+/home/jo/jose9145/ee275/sc_mips/signext.v
+/home/jo/jose9145/ee275/sc_mips/lshift.v
+/home/jo/jose9145/ee275/sc_mips/adder.v
+/home/jo/jose9145/ee275/sc_mips/gpr.v
+/home/jo/jose9145/ee275/sc_mips/mux_2x1.v
+/home/jo/jose9145/ee275/sc_mips/test.v
