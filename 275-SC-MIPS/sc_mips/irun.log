@@ -1,5 +1,5 @@
 irun: 14.10-p001: (c) Copyright 1995-2014 Cadence Design Systems, Inc.
-TOOL:	irun	14.10-p001: Started on Mar 20, 2015 at 12:26:32 PDT
+TOOL:	irun	14.10-p001: Started on Mar 20, 2015 at 13:51:33 PDT
 irun
 	+access+r
 	processor.v
@@ -13,52 +13,18 @@ irun
 	mux_2x1.v
 	test.v
 	-gui
-	-s
-Recompiling... reason: file './test.v' is newer than expected.
-	expected: Fri Mar 20 12:22:21 2015
-	actual:   Fri Mar 20 12:25:31 2015
-file: test.v
-	module worklib.tb_mips:v
-		errors: 0, warnings: 0
-		Caching library 'worklib' ....... Done
-	Elaborating the design hierarchy:
-	Top level design units:
-		tb_mips
-	Building instance overlay tables: .................... Done
-	Generating native compiled code:
-		worklib.tb_mips:v <0x54247b78>
-			streams:  10, words:  6497
-	Building instance specific data structures.
-	Loading native compiled code:     .................... Done
-	Design hierarchy summary:
-		                   Instances  Unique
-		Modules:                  18      10
-		Registers:                25      17
-		Scalar wires:             15       -
-		Vectored wires:           36       -
-		Always blocks:            20      12
-		Initial blocks:            3       3
-		Cont. assignments:        11      33
-		Pseudo assignments:        6       6
-		Simulation timescale:  100ps
-	Writing initial simulation snapshot: worklib.tb_mips:v
-ncsim> 
-ncsim> source /apps/cadence/INCISIV141/tools/inca/files/ncsimrc
-ncsim> 
+
 -------------------------------------
 Relinquished control to SimVision...
-# Restoring simulation environment...
-ncsim> input -quiet .reinvoke.sim
-ncsim> file delete .reinvoke.sim
+ncsim> 
+ncsim> source /apps/cadence/INCISIV141/tools/inca/files/ncsimrc
+ncsim> database -open waves -into waves.shm -default
+Created default SHM database waves
+ncsim> probe -create -shm tb_mips.Addr tb_mips.DataMem tb_mips.Din tb_mips.Dout tb_mips.Inst tb_mips.InstMem tb_mips.MemRead tb_mips.MemWrite tb_mips.PC tb_mips.clock tb_mips.mem_addr tb_mips.reset
+Created probe 1
 ncsim> run
-ncsim: *W,DFUSE: $dumpfile mips.vcd is already in use (VCD file).
-            File: ./test.v, line = 117, pos = 11
-           Scope: tb_mips
-            Time: 0 FS + 0
-
-ncsim: *W,VCDFUSE: Default VCD file name verilog.dump already in use (VCD file).
-            Time: 0 FS + 1
-
 Simulation complete via $finish(1) at time 5615 NS + 0
 ./test.v:107    #100 $finish;
-ncsim> 
+ncsim> ^C
+ncsim> exit
+TOOL:	irun	14.10-p001: Exiting on Mar 20, 2015 at 14:17:47 PDT  (total: 00:26:14)

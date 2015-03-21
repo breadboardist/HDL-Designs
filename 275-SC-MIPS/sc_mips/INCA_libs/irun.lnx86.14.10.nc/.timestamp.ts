@@ -8,3 +8,13 @@
 1425719009 /home/jo/jose9145/ee275/sc_mips/pc.v
 1426858977 /home/jo/jose9145/ee275/sc_mips/processor.v
 1426879531 /home/jo/jose9145/ee275/sc_mips/test.v
+1426879927 /home/so/soun0694/Work/275-SC-MIPS/sc_mips/processor.v
+1426879927 /home/so/soun0694/Work/275-SC-MIPS/sc_mips/control_unit.v
+1426879927 /home/so/soun0694/Work/275-SC-MIPS/sc_mips/pc.v
+1426879933 /home/so/soun0694/Work/275-SC-MIPS/sc_mips/alu.v
+1426879927 /home/so/soun0694/Work/275-SC-MIPS/sc_mips/signext.v
+1426879933 /home/so/soun0694/Work/275-SC-MIPS/sc_mips/lshift.v
+1426879933 /home/so/soun0694/Work/275-SC-MIPS/sc_mips/adder.v
+1426879932 /home/so/soun0694/Work/275-SC-MIPS/sc_mips/gpr.v
+1426879927 /home/so/soun0694/Work/275-SC-MIPS/sc_mips/mux_2x1.v
+1426879933 /home/so/soun0694/Work/275-SC-MIPS/sc_mips/test.v
