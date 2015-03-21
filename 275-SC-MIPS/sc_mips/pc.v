@@ -17,10 +17,17 @@ parameter TD = 1;
 reg  [31:0] pc_val;
 wire [31:0] br_loc, pc_plus_4;
 
-adder next(pc_val, 32'd4, pc_plus_4);             //Adder to calculate next instruction(+4)
-adder jal (pc_val, 32'd8, pc_plus_8);             //Adder to calculate PC+8--to be 
-                                                  //written to GPR[31] on JAL
-adder br(pc_plus_4, br_signext_sl2, br_loc);      //Adder to calculate branch target
+
+
+//adder next(pc_val, 32'd4, pc_plus_4);             //Adder to calculate next instruction(+4)
+//adder jal (pc_val, 32'd8, pc_plus_8);             //Adder to calculate PC+8--to be 
+//                                                  //written to GPR[31] on JAL
+//adder br(pc_plus_4, br_signext_sl2, br_loc);      //Adder to calculate branch target
+
+assign pc_plus_4 = pc_val + 32'd4;             // Next PC (PC+4) when the instruction  is not brach
+assign pc_plus_8 = pc_val + 32'd8;             // To calculate PC+8 to be written to GPR[31] 
+                                               // on JAL instruction
+assign br_loc    = pc_plus_4 + br_signext_sl2; // To calculate branch target
 
 always @ (posedge clk or posedge rst)             //PCSrc Mux
 begin
