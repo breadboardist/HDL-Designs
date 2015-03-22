@@ -16,6 +16,14 @@ class btclass;
    end
  endfunction
 
+  function new(input integer vl);
+   begin
+     value=vl;
+     lpt=null;
+     gpt=null;
+   end
+ endfunction
+
  function automatic void printascending(input btclass root);
    begin
      //-----------------------------------------------------
@@ -35,15 +43,6 @@ class btclass;
      //------------------------------------------------------
      //Add code here to print the numbers in descending order
      //------------------------------------------------------   
-   end
- endfunction
-
-
- function new(input integer vl);
-   begin
-     value=vl;
-     lpt=null;
-     gpt=null;
    end
  endfunction
 
