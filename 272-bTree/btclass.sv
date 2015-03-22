@@ -1,5 +1,4 @@
 // A class for the binary tree homework problem.
-//
 
 class btclass;
  btclass lpt;
@@ -17,19 +16,25 @@ class btclass;
    end
  endfunction
 
- function automatic void printascending;
+ function automatic void printascending(input btclass root);
    begin
-     //---------------------------------------------------
+     //-----------------------------------------------------
      //Add code here to print the numbers in assending order
-     //---------------------------------------------------
+     //-----------------------------------------------------
+     if(root.value==null) return;
+     else begin
+        printascending(root.lpt);
+        $display("%d",root.value);
+        printascending(root.gpt);
+     end
    end
  endfunction
  
  function automatic void printdescending;
    begin
-     //----------------------------------------------------
+     //------------------------------------------------------
      //Add code here to print the numbers in descending order
-     //----------------------------------------------------   
+     //------------------------------------------------------   
    end
  endfunction
 

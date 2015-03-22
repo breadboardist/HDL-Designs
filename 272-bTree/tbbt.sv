@@ -1,6 +1,5 @@
 `timescale 1ns/10ps
 // This is a simple driver for a binary tree sort problem used in EE272
-//
 `include "btclass.sv"
 
 module testbench;
@@ -14,16 +13,13 @@ initial begin
     wk = new($random);
     bthead.add(wk);
   end
-  $display("\n\n-------  Ascending ");
-  bthead.printascending();
-  $display("\n\n-------  Descending");
+  $display("\n\n-------  Ascending  --------");
+  bthead.printascending(bthead);
+  $display("\n\n-------  Descending --------");
   bthead.printdescending();
   $display("All done");
   $finish;
 end
-
-
-
 endmodule
 
 
