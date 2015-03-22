@@ -29,12 +29,9 @@ class btclass;
      //-----------------------------------------------------
      //Add code here to print the numbers in assending order
      //-----------------------------------------------------
-     if(root.value==null) return;
-     else begin
         printascending(root.lpt);
         $display("%d",root.value);
         printascending(root.gpt);
-     end
    end
  endfunction
  
