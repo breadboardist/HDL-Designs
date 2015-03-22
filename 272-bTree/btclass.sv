@@ -20,7 +20,7 @@ class btclass;
  function automatic void printascending;
    begin
      //---------------------------------------------------
-     Add code here to print the numbers in assending order
+     //Add code here to print the numbers in assending order
      //---------------------------------------------------
    end
  endfunction
@@ -28,7 +28,7 @@ class btclass;
  function automatic void printdescending;
    begin
      //----------------------------------------------------
-     Add code here to print the numbers in descending order
+     //Add code here to print the numbers in descending order
      //----------------------------------------------------   
    end
  endfunction
