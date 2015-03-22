@@ -1,0 +1,257 @@
+/apps/synopsys/VCSMX_NEW/bin/vcs
+
+Warning-[LNX_OS_VERUN] Unsupported Linux version
+  Linux version 'Fedora release 20 (Heisenbug)' is not supported on 'x86_64' 
+  officially, assuming linux compatibility by default. Set VCS_ARCH_OVERRIDE 
+  to linux or suse32 to override.
+  Please refer to release notes for information on supported platforms.
+
+
+Warning-[LINX_KRNL] Unsupported Linux kernel
+  Linux kernel '3.17.3-200.fc20.x86_64' is not supported.
+  Supported versions are 2.4* or 2.6*.
+
+                         Chronologic VCS (TM)
+           Version I-2014.03-2 -- Sun Mar 22 12:11:14 2015
+               Copyright (c) 1991-2014 by Synopsys Inc.
+                         ALL RIGHTS RESERVED
+
+This program is proprietary and confidential information of Synopsys Inc.
+and may be used and disclosed only as authorized in a license agreement
+controlling such use and disclosure.
+
+Parsing design file 'tbbt.sv'
+Parsing included file 'btclass.sv'.
+Back to file 'tbbt.sv'.
+Top Level Modules:
+       testbench
+TimeScale is 1 ns / 10 ps
+Starting vcs inline pass...
+2 modules and 0 UDP read.
+	However, due to incremental compilation, no re-compilation is necessary.
+rm -f _csrc*.so linux_scvhdl_*.so pre_vcsobj_*.so share_vcsobj_*.so
+ld -m elf_i386 -shared -o .//../simv.daidir//_csrc0.so SIM_l.o 5NrI_d.o 5NrIB_d.o  
+ld -m elf_i386 -shared -o .//../simv.daidir//pre_vcsobj_1_1.so --whole-archive pre_vcsobj_1_1.a --no-whole-archive
+ld -m elf_i386 -shared -o .//../simv.daidir//pre_vcsobj_1_2.so --whole-archive pre_vcsobj_1_2.a --no-whole-archive
+if [ -x ../simv ]; then chmod -x ../simv; fi
+g++  -o ../simv  -m32 -m32   -Wl,-rpath-link=./ -Wl,-rpath='$ORIGIN'/simv.daidir/ -Wl,-rpath='$ORIGIN'/simv.daidir//scsim.db.dir  _csrc0.so   pre_vcsobj_1_1.so pre_vcsobj_1_2.so  rmapats_mop.o rmapats.o rmar.o           /apps/synopsys/VCSMX_NEW/linux/lib/libzerosoft_rt_stubs.so /apps/synopsys/VCSMX_NEW/linux/lib/libvirsim.so /apps/synopsys/VCSMX_NEW/linux/lib/librterrorinf.so /apps/synopsys/VCSMX_NEW/linux/lib/libsnpsmalloc.so    /apps/synopsys/VCSMX_NEW/linux/lib/libvcsnew.so /apps/synopsys/VCSMX_NEW/linux/lib/libuclinative.so   -Wl,-whole-archive /apps/synopsys/VCSMX_NEW/linux/lib/libvcsucli.so -Wl,-no-whole-archive          /apps/synopsys/VCSMX_NEW/linux/lib/vcs_save_restore_new.o /apps/synopsys/VCSMX_NEW/linux/lib/ctype-stubs_32.a -ldl  -lc -lm -lpthread -ldl 
+../simv up to date
+CPU time: .103 seconds to compile + .033 seconds to elab + .150 seconds to link
+Chronologic VCS simulator copyright 1991-2014
+Contains Synopsys proprietary information.
+Compiler version I-2014.03-2; Runtime version I-2014.03-2;  Mar 22 12:11 2015
+
+
+-------  Ascending  --------
+Value=-2129180158
+Value=-2071669239
+Value=-2049467893
+Value=-2034485235
+Value=-1993157102
+Value=-1992863214
+Value=-1987856365
+Value=-1767155667
+Value=-1647550405
+Value=-1640936388
+Value=-1532087735
+Value=-1463288751
+Value=-1448618413
+Value=-1379155877
+Value=-1367501732
+Value=-1309711773
+Value=-1309649309
+Value=-1297668507
+Value=-1295874971
+Value=-1198014863
+Value=-1149085065
+Value=-1143836041
+Value=-1139505032
+Value=-1090191234
+Value=-1088212354
+Value=-1069866368
+Value=-1064739199
+Value= -997584247
+Value= -887079274
+Value= -825439075
+Value= -809216353
+Value= -720121174
+Value= -682213714
+Value= -607297353
+Value= -562756932
+Value= -561108803
+Value= -517157182
+Value= -490058043
+Value= -487095099
+Value= -482925370
+Value= -445445430
+Value= -411658546
+Value= -406490417
+Value= -400343344
+Value= -370411821
+Value= -358208811
+Value= -335626025
+Value= -330615592
+Value= -201295128
+Value=   15983361
+Value=   84501770
+Value=   91457290
+Value=  102596364
+Value=  112818957
+Value=  114806029
+Value=  151837458
+Value=  178932501
+Value=  251652381
+Value=  265457439
+Value=  274997536
+Value=  293882147
+Value=  303379748
+Value=  353361194
+Value=  484042553
+Value=  486945594
+Value=  512609597
+Value=  519236925
+Value=  549761857
+Value=  641071948
+Value=  670192975
+Value=  769284443
+Value=  777537884
+Value=  824379234
+Value=  899669355
+Value=  921010541
+Value=  992211318
+Value= 1008792440
+Value= 1121529733
+Value= 1123172741
+Value= 1155413897
+Value= 1160667530
+Value= 1177417612
+Value= 1189058957
+Value= 1203347855
+Value= 1206705039
+Value= 1260466070
+Value= 1335973279
+Value= 1433945514
+Value= 1460999086
+Value= 1526883766
+Value= 1665923526
+Value= 1683484104
+Value= 1822182361
+Value= 1924134885
+Value= 1975848427
+Value= 1993627629
+Value= 2027527153
+Value= 2033215986
+Value= 2036907506
+Value= 2087561720
+Value= 2097015289
+
+
+-------  Descending --------
+Value= 2097015289
+Value= 2087561720
+Value= 2036907506
+Value= 2033215986
+Value= 2027527153
+Value= 1993627629
+Value= 1975848427
+Value= 1924134885
+Value= 1822182361
+Value= 1683484104
+Value= 1665923526
+Value= 1526883766
+Value= 1460999086
+Value= 1433945514
+Value= 1335973279
+Value= 1260466070
+Value= 1206705039
+Value= 1203347855
+Value= 1189058957
+Value= 1177417612
+Value= 1160667530
+Value= 1155413897
+Value= 1123172741
+Value= 1121529733
+Value= 1008792440
+Value=  992211318
+Value=  921010541
+Value=  899669355
+Value=  824379234
+Value=  777537884
+Value=  769284443
+Value=  670192975
+Value=  641071948
+Value=  549761857
+Value=  519236925
+Value=  512609597
+Value=  486945594
+Value=  484042553
+Value=  353361194
+Value=  303379748
+Value=  293882147
+Value=  274997536
+Value=  265457439
+Value=  251652381
+Value=  178932501
+Value=  151837458
+Value=  114806029
+Value=  112818957
+Value=  102596364
+Value=   91457290
+Value=   84501770
+Value=   15983361
+Value= -201295128
+Value= -330615592
+Value= -335626025
+Value= -358208811
+Value= -370411821
+Value= -400343344
+Value= -406490417
+Value= -411658546
+Value= -445445430
+Value= -482925370
+Value= -487095099
+Value= -490058043
+Value= -517157182
+Value= -561108803
+Value= -562756932
+Value= -607297353
+Value= -682213714
+Value= -720121174
+Value= -809216353
+Value= -825439075
+Value= -887079274
+Value= -997584247
+Value=-1064739199
+Value=-1069866368
+Value=-1088212354
+Value=-1090191234
+Value=-1139505032
+Value=-1143836041
+Value=-1149085065
+Value=-1198014863
+Value=-1295874971
+Value=-1297668507
+Value=-1309649309
+Value=-1309711773
+Value=-1367501732
+Value=-1379155877
+Value=-1448618413
+Value=-1463288751
+Value=-1532087735
+Value=-1640936388
+Value=-1647550405
+Value=-1767155667
+Value=-1987856365
+Value=-1992863214
+Value=-1993157102
+Value=-2034485235
+Value=-2049467893
+Value=-2071669239
+Value=-2129180158
+All done
+$finish called from file "tbbt.sv", line 25.
+$finish at simulation time                    0
+           V C S   S i m u l a t i o n   R e p o r t 
+Time: 00 ps
+CPU Time:      0.260 seconds;       Data structure size:   0.0Mb
+Sun Mar 22 12:11:16 2015

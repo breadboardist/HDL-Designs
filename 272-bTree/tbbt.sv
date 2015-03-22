@@ -20,7 +20,7 @@ initial begin
   $display("\n\n-------  Ascending  --------");
   bthead.printascending(bthead);
   $display("\n\n-------  Descending --------");
-  bthead.printdescending();
+  bthead.printdescending(bthead);
   $display("All done");
   $finish;
 end

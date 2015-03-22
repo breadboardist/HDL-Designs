@@ -27,19 +27,24 @@ class btclass;
  function automatic void printascending(input btclass root);
    begin
      //-----------------------------------------------------
-     //Add code here to print the numbers in assending order
+     //Print the numbers in assending order
      //-----------------------------------------------------
-        // printascending(root.lpt);
-        $display("%d",root.value);
-        // printascending(root.gpt);
+        if (root == null) return;
+        printascending (root.lpt);
+        $display("Value=%d",root.value);
+        printascending (root.gpt);
    end
  endfunction
  
- function automatic void printdescending;
+ function automatic void printdescending(input btclass root);
    begin
      //------------------------------------------------------
-     //Add code here to print the numbers in descending order
-     //------------------------------------------------------   
+     //Print the numbers in descending order
+     //------------------------------------------------------
+     if (root == null) return;
+        printdescending (root.gpt);
+        $display("Value=%d",root.value);
+        printdescending (root.lpt);   
    end
  endfunction
 
