@@ -1,3 +1,3 @@
-module();
+module FLMultiplier	();
 
 endmodule
