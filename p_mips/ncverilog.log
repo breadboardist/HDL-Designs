@@ -1,0 +1,31 @@
+ncverilog: 14.10-p001: (c) Copyright 1995-2014 Cadence Design Systems, Inc.
+TOOL:	ncverilog	14.10-p001: Started on Mar 31, 2015 at 10:29:26 PDT
+ncverilog
+	pc.v
+file: pc.v
+	module worklib.pc:v
+		errors: 0, warnings: 0
+		Caching library 'worklib' ....... Done
+	Elaborating the design hierarchy:
+	Building instance overlay tables: .................... Done
+	Generating native compiled code:
+		worklib.pc:v <0x1c611ece>
+			streams:   0, words:     0
+	Building instance specific data structures.
+	Loading native compiled code:     .................... Done
+	Design hierarchy summary:
+		                   Instances  Unique
+		Modules:                   1       1
+		Registers:                 1       1
+		Scalar wires:              1       -
+		Vectored wires:            4       -
+		Always blocks:             1       1
+		Cont. assignments:         0       5
+		Simulation timescale:  100ps
+	Writing initial simulation snapshot: worklib.pc:v
+Loading snapshot worklib.pc:v .................... Done
+ncsim> source /apps/cadence/INCISIV141/tools/inca/files/ncsimrc
+ncsim> run
+ncsim: *W,RNQUIE: Simulation is complete.
+ncsim> exit
+TOOL:	ncverilog	14.10-p001: Exiting on Mar 31, 2015 at 10:29:37 PDT  (total: 00:00:11)
