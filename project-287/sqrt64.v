@@ -1,4 +1,4 @@
-module sqrt64(clk, rdy, reset, x, .y(acc));
+module sqrt64(clk, rdy, reset, x, acc);
    input  clk;
    output rdy;
    input  reset;
@@ -40,15 +40,15 @@ module sqrt64(clk, rdy, reset, x, .y(acc));
 
    task clear;
       begin
-	 acc = 0;
-	 acc2 = 0;
-	 bitl = 31;
+	 acc <= 0;
+	 acc2 <= 0;
+	 bitl <= 31;
       end
    endtask
 
    initial clear;
 
-   always @(reset or posedge clk)
+   always @(posedge reset or posedge clk)
       if (reset)
        clear;
       else begin
@@ -61,32 +61,30 @@ module sqrt64(clk, rdy, reset, x, .y(acc));
 
 endmodule
 
-module main;
+/////////////////////////
+//Testbench for sqrt64 //
+/////////////////////////
 
-   reg clk, reset;
-   reg [63:0] value;
-   wire [31:0] result;
-   wire rdy;
-
-   sqrt64 root(.clk(clk), .rdy(rdy), .reset(reset), .x(value), .y(result));
-
-   always #4 clk = ~clk;
-
-   always @(posedge rdy) begin
-      $display("sqrt(%d) --> %d", value, result);
-      $finish;
-   end
-initial begin
-$dumpfile("sqrt64dump.vcd");
-$dumpvars(0, main);
-end
-
-
-   initial begin
-      clk = 0;
-      reset = 1;
-      $monitor($time,,"%m.acc = %b", root.acc);
-      #100 value =64'd213213123244;
-      reset = 0;
-   end
-endmodule /* main */
+// module main;
+//    reg clk, reset;
+//    reg [63:0] value;
+//    wire [31:0] result;
+//    wire rdy;
+//    sqrt64 root(.clk(clk), .rdy(rdy), .reset(reset), .x(value), .y(result));
+//    always #4 clk = ~clk;
+//    always @(posedge rdy) begin
+//       $display("sqrt(%d) --> %d", value, result);
+//       $finish;
+//    end
+// initial begin
+// $dumpfile("sqrt64dump.vcd");
+// $dumpvars(0, main);
+// end
+//    initial begin
+//       clk = 0;
+//       reset = 1;
+//       $monitor($time,,"%m.acc = %b", root.acc);
+//       #100 value =64'd213213123244;
+//       reset = 0;
+//    end
+// endmodule /* main */
