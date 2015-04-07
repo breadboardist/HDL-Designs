@@ -1,0 +1,58 @@
+ncverilog: 14.10-p001: (c) Copyright 1995-2014 Cadence Design Systems, Inc.
+TOOL:	ncverilog	14.10-p001: Started on Apr 07, 2015 at 13:22:40 PDT
+ncverilog
+	+access+r
+	sqrt64.v
+Recompiling... reason: file './sqrt64.v' is newer than expected.
+	expected: Tue Apr  7 13:20:53 2015
+	actual:   Tue Apr  7 13:21:41 2015
+file: sqrt64.v
+	module worklib.main:v
+		errors: 0, warnings: 0
+		Caching library 'worklib' ....... Done
+	Elaborating the design hierarchy:
+	Building instance overlay tables: .................... Done
+	Generating native compiled code:
+		worklib.main:v <0x3e1ac850>
+			streams:   6, words:  3946
+	Building instance specific data structures.
+	Loading native compiled code:     .................... Done
+	Design hierarchy summary:
+		             Instances  Unique
+		Modules:             2       2
+		Registers:           6       6
+		Scalar wires:        3       -
+		Vectored wires:      6       -
+		Always blocks:       3       3
+		Initial blocks:      3       3
+		Cont. assignments:   3       5
+		Pseudo assignments:  1       1
+	Writing initial simulation snapshot: worklib.main:v
+Loading snapshot worklib.main:v .................... Done
+ncsim> source /apps/cadence/INCISIV141/tools/inca/files/ncsimrc
+ncsim> run
+                   0 main.acc = 00000000000000000000000000000000
+                 100 main.acc = 10000000000000000000000000000000
+                 105 main.acc = 11000000000000000000000000000000
+                 115 main.acc = 11100000000000000000000000000000
+                 155 main.acc = 11100010000000000000000000000000
+                 175 main.acc = 11100010100000000000000000000000
+                 215 main.acc = 11100010100010000000000000000000
+                 225 main.acc = 11100010100011000000000000000000
+                 255 main.acc = 11100010100011001000000000000000
+                 265 main.acc = 11100010100011001100000000000000
+                 275 main.acc = 11100010100011001110000000000000
+                 295 main.acc = 11100010100011001110100000000000
+                 305 main.acc = 11100010100011001110110000000000
+                 315 main.acc = 11100010100011001110111000000000
+                 325 main.acc = 11100010100011001110111100000000
+                 335 main.acc = 11100010100011001110111110000000
+                 345 main.acc = 11100010100011001110111111000000
+                 355 main.acc = 11100010100011001110111111100000
+                 375 main.acc = 11100010100011001110111111101000
+                 395 main.acc = 11100010100011001110111111101010
+sqrt(14446744073709551615) --> 3800887274
+Simulation complete via $finish(1) at time 405 NS + 3
+./sqrt64.v:129       $finish;
+ncsim> exit
+TOOL:	ncverilog	14.10-p001: Exiting on Apr 07, 2015 at 13:22:45 PDT  (total: 00:00:05)
