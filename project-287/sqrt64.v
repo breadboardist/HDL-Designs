@@ -70,7 +70,7 @@ module main;
 
    sqrt64 root(.clk(clk), .rdy(rdy), .reset(reset), .x(value), .y(result));
 
-   always #5 clk = ~clk;
+   always #4 clk = ~clk;
 
    always @(posedge rdy) begin
       $display("sqrt(%d) --> %d", value, result);
@@ -86,7 +86,7 @@ end
       clk = 0;
       reset = 1;
       $monitor($time,,"%m.acc = %b", root.acc);
-      #100 value =64'd14446744073709551615;
+      #100 value =64'd213213123244;
       reset = 0;
    end
 endmodule /* main */
