@@ -42,8 +42,14 @@ $(VCS_ARC1) : $(VCS_OBJS1)
 	$(PIC_LD) -m elf_i386 -shared -o .//../simv.daidir//$(VCS_ARC1) $(PIC_LD_PRE_OPTS) $(VCS_OBJS1) $(PIC_LD_POST_OPTS)
 	@ln -sf .//../simv.daidir//$(VCS_ARC1) $(VCS_ARC1)
 
+VCS_INCR1_OBJ1=pre_vcsobj_1_1.a
+VCS_INCR1_ARC1=pre_vcsobj_1_1.so
+$(VCS_INCR1_ARC1) : $(VCS_INCR1_OBJ1)
+	$(PIC_LD) -m elf_i386 -shared -o .//../simv.daidir//$(VCS_INCR1_ARC1) $(PIC_LD_PRE_OPTS) $(VCS_INCR1_OBJ1) $(PIC_LD_POST_OPTS)
+	@ln -sf .//../simv.daidir//$(VCS_INCR1_ARC1) $(VCS_INCR1_ARC1)
 
-VCS_INCR_OBJS=
+
+VCS_INCR_OBJS= $(VCS_INCR1_ARC1)
 
 
 SHARED_OBJ_SO=
