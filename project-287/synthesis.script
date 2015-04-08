@@ -1,7 +1,7 @@
 set link_library {/apps/toshiba/sjsu/synopsys/tc240c/tc240c.db_NOMIN25 /apps/synopsys/I-2013.12-SP5/libraries/syn/dw_foundation.sldb}
 set target_library {/apps/toshiba/sjsu/synopsys/tc240c/tc240c.db_NOMIN25}
 read_verilog sqrt64.v
-create_clock clk -name clk -period 3.0
+create_clock clk -name clk -period 4.0
 set_propagated_clock clk
 set_clock_uncertainty 0.25 clk
 set_propagated_clock clk
