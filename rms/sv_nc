@@ -1,0 +1,3 @@
+#!/usr/bin/csh
+source /apps/design_environment.csh
+ncverilog +sv +access+r ++incdir+/apps/synopsys/I-2013.12-SP5/dw/dw02/src_ver  $argv

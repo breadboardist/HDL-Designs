@@ -1,2 +1,0 @@
-include ../../../../../../../apps/cadence/local/cdssetup/cds.lib
-define worklib ../worklib

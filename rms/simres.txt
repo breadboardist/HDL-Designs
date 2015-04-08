@@ -1,0 +1,36 @@
+/apps/synopsys/VCSMX_NEW/bin/vcs
+
+Warning-[LNX_OS_VERUN] Unsupported Linux version
+  Linux version 'Fedora release 20 (Heisenbug)' is not supported on 'x86_64' 
+  officially, assuming linux compatibility by default. Set VCS_ARCH_OVERRIDE 
+  to linux or suse32 to override.
+  Please refer to release notes for information on supported platforms.
+
+
+Warning-[LINX_KRNL] Unsupported Linux kernel
+  Linux kernel '3.16.6-203.fc20.x86_64' is not supported.
+  Supported versions are 2.4* or 2.6*.
+
+                         Chronologic VCS (TM)
+           Version I-2014.03-2 -- Tue Apr  7 19:53:27 2015
+               Copyright (c) 1991-2014 by Synopsys Inc.
+                         ALL RIGHTS RESERVED
+
+This program is proprietary and confidential information of Synopsys Inc.
+and may be used and disclosed only as authorized in a license agreement
+controlling such use and disclosure.
+
+Parsing design file 'trms.v'
+Parsing design file 'sqrt64.v'
+Top Level Modules:
+       trms
+       main
+TimeScale is 1 ns / 10 ps
+
+Error-[URMI] Unresolved modules
+trms.v, 33
+"rms r(clk, rst, pushin, cmdin, Xin, pullout, stopout, Xout);"
+  Module definition of above instance is not found in the design.
+
+1 error
+CPU time: .023 seconds to compile
