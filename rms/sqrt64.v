@@ -15,13 +15,10 @@ module sqrt64(clk, rdy, reset, x, acc);
    // Keep track of which bit I'm working on.
    reg [5:0]  bitl;
    reg [31:0] bitm;
-   //assign bitm = 1 << bitl;
    reg [63:0] bit2;
-   //assign bit2 = 1 << (bitl << 1);
 
    // The output is ready when the bitl counter underflows.
    reg rdy;
-   //assign rdy = bitl[5];
 
    // guess holds the potential next values for acc, and guess2 holds
    // the square of that guess. The guess2 calculation is a little bit
@@ -35,9 +32,7 @@ module sqrt64(clk, rdy, reset, x, acc);
    // This works out using shifts because bit and bit2 are known to
    // have only a single bit in them.
    reg [31:0] guess;
-   //assign guess = acc | bitm;
    reg [63:0] guess2;
-   //assign guess2 = acc2 + bit2 + ((acc << bitl) << 1);
 
    always @(*)
    begin
