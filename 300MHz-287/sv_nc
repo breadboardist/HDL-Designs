@@ -1,3 +1,0 @@
-#!/usr/bin/csh
-source /apps/design_environment.csh
-ncverilog +sv +access+r $argv

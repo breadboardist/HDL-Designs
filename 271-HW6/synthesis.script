@@ -1,6 +1,0 @@
-analyze -f verilog rca16bit.v
-elaborate fulladder_16bit
-compile
-report_timing
-report_area
-exit

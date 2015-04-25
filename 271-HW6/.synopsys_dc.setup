@@ -1,6 +1,0 @@
-set search_path {/apps/synopsys/SYNTH/libraries/syn \
-/apps/synopsys/CORE/libraries/syn /home/so/soun0694/271-HW6}
-set link_library {* class.db and_or.db dw_foundation.sldb}
-set target_library {class.db and_or.db}
-set symbol_library {class.sdb generic.sdb}
-set synthetic_library {dw_foundation.sldb standard.sldb}

@@ -1,8 +1,0 @@
-runrms script run started on Tue Apr  7 19:53:08 2015
-run on machine eecad34.engr.sjsu.edu
-
-Run with a clock period of 4.0
-student names
-  Prem Bharath Soundararajan  0694
-options syn False gates False
-VCS FAILED TO WORK
