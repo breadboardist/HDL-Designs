@@ -4,6 +4,7 @@ module tmulti();
   reg signed [31:0] mlier, mcand;
   wire signed [63:0] prodt;
   wire valid;
+  int i;
 
   reg debug = 1;
 
@@ -33,8 +34,7 @@ module tmulti();
 
   initial begin
 
-	repeat (10)@(posedge clock)
-    	begin
+for (i=0;i<10;i++) begin
     		start = 1;
     		mlier =$random;
     		mcand =$random;
