@@ -32,13 +32,6 @@ module tmulti();
   end
 
   initial begin
-    reset=0;
-    #2.0;
-    reset=1;
-    start=0;
-    mlier=0;
-    mcand=0;
-    #9.0;
 
 	repeat (10)@(posedge clock)
     	begin
