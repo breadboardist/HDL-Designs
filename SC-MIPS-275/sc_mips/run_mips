@@ -1,1 +1,0 @@
-ncverilog +access+r adder.v lshift.v signext.v gpr.v mux_2x1.v alu.v control_unit.v pc.v processor.v test.v
