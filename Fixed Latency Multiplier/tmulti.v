@@ -2,7 +2,7 @@
 module tmulti();
   reg clock, reset, start;
   reg signed [31:0] mlier, mcand;
-  wire [63:0] prodt;
+  wire signed [63:0] prodt;
   wire valid;
 
   reg debug = 1;
