@@ -40,7 +40,7 @@ module tmulti();
     mcand=0;
     #9.0;
 
-	repeat (10)
+	repeat (10)@(posedge clock)
     	begin
     		start = 1;
     		mlier =$random;
@@ -48,8 +48,8 @@ module tmulti();
     		#(4.0*33);
     		start=0;
     	end
-    #(500*2);
 
+    #(500*2);
     $finish;
   end
 
