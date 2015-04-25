@@ -40,53 +40,14 @@ module tmulti();
     mcand=0;
     #9.0;
 
-    reset=0;
-    #2.5;
-    start=1;
-    mlier=32'd147483646;
-    mcand=32'd0;
-    #(4.0*33);
-    start=0;
-    #4.0;
-
-    start=1;
-    mlier=32'd147483646;
-    mcand=32'd1;
-    #(4.0*33);
-    start=0;
-    #4.0;
-
-    start=1;
-    mlier=-32'd147483646;
-    mcand=-32'd1;
-    #(4.0*33);
-    start=0;
-    #4.0;
-
-    start=1;
-    mlier=32'd147483646;
-    mcand=-32'd1;
-    #(4.0*33);
-    start=0;
-    #4.0;
-
-    start=1;
-    mlier=32'd1;
-    mcand=32'd34222;
-    #(4.0*33);
-    start=0;
-    #4.0;
-
-    start=1;
-    mlier=-32'd10;
-    mcand=-32'd12345;
-    #(4.0*33);
-    start=0;
-
-    mlier=0;
-    mcand=0;
-
-
+	repeat (10)
+    	begin
+    		start = 1;
+    		mlier =$random;
+    		mcand =$random;
+    		#(4.0*33);
+    		start=0;
+    	end
     #(500*2);
 
     $finish;
