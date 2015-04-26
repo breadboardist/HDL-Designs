@@ -85,134 +85,134 @@ always_ff @(posedge(clock.sysClk))begin
   case(1'b1)
 	(m00.YouGotIt):begin 
       case(m00.addrM) inside 
-    		[48'hffff8ddc:48'hffff8edc]:begin s00.tarActive <= 1'b1;s00.Adr <= m00.addrM;s00.dbus_in <= m00.DoutM;m00.DinMast <= s00.dataOut; end
-    		[48'hffff7015:48'hffff7085]:begin s01.tarActive <= 1'b1;s01.Adr <= m00.addrM;s01.dbus_in <= m00.DoutM;m00.DinMast <= s01.dataOut; end
-    		[48'hffff58ce:48'hffff58df]:begin s02.tarActive <= 1'b1;s02.Adr <= m00.addrM;s02.dbus_in <= m00.DoutM;m00.DinMast <= s02.dataOut; end
-    		[48'hffff3ca5:48'hffff3d61]:begin s03.tarActive <= 1'b1;s03.Adr <= m00.addrM;s03.dbus_in <= m00.DoutM;m00.DinMast <= s03.dataOut; end
-    		[48'hfffe951f:48'hfffe9553]:begin s04.tarActive <= 1'b1;s04.Adr <= m00.addrM;s04.dbus_in <= m00.DoutM;m00.DinMast <= s04.dataOut; end
-    		[48'hfffe93e5:48'hfffe93fe]:begin s05.tarActive <= 1'b1;s05.Adr <= m00.addrM;s05.dbus_in <= m00.DoutM;m00.DinMast <= s05.dataOut; end
-    		[48'hffff5342:48'hffff5374]:begin s06.tarActive <= 1'b1;s06.Adr <= m00.addrM;s06.dbus_in <= m00.DoutM;m00.DinMast <= s06.dataOut; end
-    		[48'hfffffc6a:48'hfffffd5a]:begin s07.tarActive <= 1'b1;s07.Adr <= m00.addrM;s07.dbus_in <= m00.DoutM;m00.DinMast <= s07.dataOut; end
-    		[48'hffff3064:48'hffff3100]:begin s08.tarActive <= 1'b1;s08.Adr <= m00.addrM;s08.dbus_in <= m00.DoutM;m00.DinMast <= s08.dataOut; end
-    		[48'hffff7d12:48'hffff7ded]:begin s09.tarActive <= 1'b1;s09.Adr <= m00.addrM;s09.dbus_in <= m00.DoutM;m00.DinMast <= s09.dataOut; end
-    		[48'hffff6513:48'hffff6554]:begin s10.tarActive <= 1'b1;s10.Adr <= m00.addrM;s10.dbus_in <= m00.DoutM;m00.DinMast <= s10.dataOut; end
-    		[48'hffff4096:48'hffff418a]:begin s11.tarActive <= 1'b1;s11.Adr <= m00.addrM;s11.dbus_in <= m00.DoutM;m00.DinMast <= s11.dataOut; end
-    		[48'hffffaac2:48'hffffab79]:begin s12.tarActive <= 1'b1;s12.Adr <= m00.addrM;s12.dbus_in <= m00.DoutM;m00.DinMast <= s12.dataOut; end
-    		[48'hffff6066:48'hffff610b]:begin s13.tarActive <= 1'b1;s13.Adr <= m00.addrM;s13.dbus_in <= m00.DoutM;m00.DinMast <= s13.dataOut; end
+    		[20'hf8ddc:20'hf8edc]:begin s00.tarActive <= 1'b1;s00.Adr <= m00.addrM;s00.dbus_in <= m00.DoutM;m00.DinMast <= s00.dataOut; end
+    		[20'hf7015:20'hf7085]:begin s01.tarActive <= 1'b1;s01.Adr <= m00.addrM;s01.dbus_in <= m00.DoutM;m00.DinMast <= s01.dataOut; end
+    		[20'hf58ce:20'hf58df]:begin s02.tarActive <= 1'b1;s02.Adr <= m00.addrM;s02.dbus_in <= m00.DoutM;m00.DinMast <= s02.dataOut; end
+    		[20'hf3ca5:20'hf3d61]:begin s03.tarActive <= 1'b1;s03.Adr <= m00.addrM;s03.dbus_in <= m00.DoutM;m00.DinMast <= s03.dataOut; end
+    		[20'he951f:20'he9553]:begin s04.tarActive <= 1'b1;s04.Adr <= m00.addrM;s04.dbus_in <= m00.DoutM;m00.DinMast <= s04.dataOut; end
+    		[20'he93e5:20'he93fe]:begin s05.tarActive <= 1'b1;s05.Adr <= m00.addrM;s05.dbus_in <= m00.DoutM;m00.DinMast <= s05.dataOut; end
+    		[20'hf5342:20'hf5374]:begin s06.tarActive <= 1'b1;s06.Adr <= m00.addrM;s06.dbus_in <= m00.DoutM;m00.DinMast <= s06.dataOut; end
+    		[20'hffc6a:20'hffd5a]:begin s07.tarActive <= 1'b1;s07.Adr <= m00.addrM;s07.dbus_in <= m00.DoutM;m00.DinMast <= s07.dataOut; end
+    		[20'hf3064:20'hf3100]:begin s08.tarActive <= 1'b1;s08.Adr <= m00.addrM;s08.dbus_in <= m00.DoutM;m00.DinMast <= s08.dataOut; end
+    		[20'hf7d12:20'hf7ded]:begin s09.tarActive <= 1'b1;s09.Adr <= m00.addrM;s09.dbus_in <= m00.DoutM;m00.DinMast <= s09.dataOut; end
+    		[20'hf6513:20'hf6554]:begin s10.tarActive <= 1'b1;s10.Adr <= m00.addrM;s10.dbus_in <= m00.DoutM;m00.DinMast <= s10.dataOut; end
+    		[20'hf4096:20'hf418a]:begin s11.tarActive <= 1'b1;s11.Adr <= m00.addrM;s11.dbus_in <= m00.DoutM;m00.DinMast <= s11.dataOut; end
+    		[20'hfaac2:20'hfab79]:begin s12.tarActive <= 1'b1;s12.Adr <= m00.addrM;s12.dbus_in <= m00.DoutM;m00.DinMast <= s12.dataOut; end
+    		[20'hf6066:20'hf610b]:begin s13.tarActive <= 1'b1;s13.Adr <= m00.addrM;s13.dbus_in <= m00.DoutM;m00.DinMast <= s13.dataOut; end
       endcase
     end
 
     (m01.YouGotIt):begin 
       case(m01.addrM) inside 
-		    [48'hffff8ddc:48'hffff8edc]:begin s00.tarActive <= 1'b1;s00.Adr <= m01.addrM;s00.dbus_in <= m01.DoutM;m01.DinMast <= s00.dataOut; end
-		    [48'hffff7015:48'hffff7085]:begin s01.tarActive <= 1'b1;s01.Adr <= m01.addrM;s01.dbus_in <= m01.DoutM;m01.DinMast <= s01.dataOut; end
-		    [48'hffff58ce:48'hffff58df]:begin s02.tarActive <= 1'b1;s02.Adr <= m01.addrM;s02.dbus_in <= m01.DoutM;m01.DinMast <= s02.dataOut; end
-		    [48'hffff3ca5:48'hffff3d61]:begin s03.tarActive <= 1'b1;s03.Adr <= m01.addrM;s03.dbus_in <= m01.DoutM;m01.DinMast <= s03.dataOut; end
-		    [48'hfffe951f:48'hfffe9553]:begin s04.tarActive <= 1'b1;s04.Adr <= m01.addrM;s04.dbus_in <= m01.DoutM;m01.DinMast <= s04.dataOut; end
-		    [48'hfffe93e5:48'hfffe93fe]:begin s05.tarActive <= 1'b1;s05.Adr <= m01.addrM;s05.dbus_in <= m01.DoutM;m01.DinMast <= s05.dataOut; end
-		    [48'hffff5342:48'hffff5374]:begin s06.tarActive <= 1'b1;s06.Adr <= m01.addrM;s06.dbus_in <= m01.DoutM;m01.DinMast <= s06.dataOut; end
-		    [48'hfffffc6a:48'hfffffd5a]:begin s07.tarActive <= 1'b1;s07.Adr <= m01.addrM;s07.dbus_in <= m01.DoutM;m01.DinMast <= s07.dataOut; end
-		    [48'hffff3064:48'hffff3100]:begin s08.tarActive <= 1'b1;s08.Adr <= m01.addrM;s08.dbus_in <= m01.DoutM;m01.DinMast <= s08.dataOut; end
-		    [48'hffff7d12:48'hffff7ded]:begin s09.tarActive <= 1'b1;s09.Adr <= m01.addrM;s09.dbus_in <= m01.DoutM;m01.DinMast <= s09.dataOut; end
-		    [48'hffff6513:48'hffff6554]:begin s10.tarActive <= 1'b1;s10.Adr <= m01.addrM;s10.dbus_in <= m01.DoutM;m01.DinMast <= s10.dataOut; end
-		    [48'hffff4096:48'hffff418a]:begin s11.tarActive <= 1'b1;s11.Adr <= m01.addrM;s11.dbus_in <= m01.DoutM;m01.DinMast <= s11.dataOut; end
-		    [48'hffffaac2:48'hffffab79]:begin s12.tarActive <= 1'b1;s12.Adr <= m01.addrM;s12.dbus_in <= m01.DoutM;m01.DinMast <= s12.dataOut; end
-		    [48'hffff6066:48'hffff610b]:begin s13.tarActive <= 1'b1;s13.Adr <= m01.addrM;s13.dbus_in <= m01.DoutM;m01.DinMast <= s13.dataOut; end
+		    [20'hf8ddc:20'hf8edc]:begin s00.tarActive <= 1'b1;s00.Adr <= m01.addrM;s00.dbus_in <= m01.DoutM;m01.DinMast <= s00.dataOut; end
+		    [20'hf7015:20'hf7085]:begin s01.tarActive <= 1'b1;s01.Adr <= m01.addrM;s01.dbus_in <= m01.DoutM;m01.DinMast <= s01.dataOut; end
+		    [20'hf58ce:20'hf58df]:begin s02.tarActive <= 1'b1;s02.Adr <= m01.addrM;s02.dbus_in <= m01.DoutM;m01.DinMast <= s02.dataOut; end
+		    [20'hf3ca5:20'hf3d61]:begin s03.tarActive <= 1'b1;s03.Adr <= m01.addrM;s03.dbus_in <= m01.DoutM;m01.DinMast <= s03.dataOut; end
+		    [20'he951f:20'he9553]:begin s04.tarActive <= 1'b1;s04.Adr <= m01.addrM;s04.dbus_in <= m01.DoutM;m01.DinMast <= s04.dataOut; end
+		    [20'he93e5:20'he93fe]:begin s05.tarActive <= 1'b1;s05.Adr <= m01.addrM;s05.dbus_in <= m01.DoutM;m01.DinMast <= s05.dataOut; end
+		    [20'hf5342:20'hf5374]:begin s06.tarActive <= 1'b1;s06.Adr <= m01.addrM;s06.dbus_in <= m01.DoutM;m01.DinMast <= s06.dataOut; end
+		    [20'hffc6a:20'hffd5a]:begin s07.tarActive <= 1'b1;s07.Adr <= m01.addrM;s07.dbus_in <= m01.DoutM;m01.DinMast <= s07.dataOut; end
+		    [20'hf3064:20'hf3100]:begin s08.tarActive <= 1'b1;s08.Adr <= m01.addrM;s08.dbus_in <= m01.DoutM;m01.DinMast <= s08.dataOut; end
+		    [20'hf7d12:20'hf7ded]:begin s09.tarActive <= 1'b1;s09.Adr <= m01.addrM;s09.dbus_in <= m01.DoutM;m01.DinMast <= s09.dataOut; end
+		    [20'hf6513:20'hf6554]:begin s10.tarActive <= 1'b1;s10.Adr <= m01.addrM;s10.dbus_in <= m01.DoutM;m01.DinMast <= s10.dataOut; end
+		    [20'hf4096:20'hf418a]:begin s11.tarActive <= 1'b1;s11.Adr <= m01.addrM;s11.dbus_in <= m01.DoutM;m01.DinMast <= s11.dataOut; end
+		    [20'hfaac2:20'hfab79]:begin s12.tarActive <= 1'b1;s12.Adr <= m01.addrM;s12.dbus_in <= m01.DoutM;m01.DinMast <= s12.dataOut; end
+		    [20'hf6066:20'hf610b]:begin s13.tarActive <= 1'b1;s13.Adr <= m01.addrM;s13.dbus_in <= m01.DoutM;m01.DinMast <= s13.dataOut; end
       endcase
     end
 
     (m02.YouGotIt):begin
       case(m02.addrM) inside 
-		    [48'hffff8ddc:48'hffff8edc]:begin s00.tarActive <= 1'b1;s00.Adr <= m02.addrM;s00.dbus_in <= m02.DoutM;m02.DinMast <= s00.dataOut; end
-		    [48'hffff7015:48'hffff7085]:begin s01.tarActive <= 1'b1;s01.Adr <= m02.addrM;s01.dbus_in <= m02.DoutM;m02.DinMast <= s01.dataOut; end
-		    [48'hffff58ce:48'hffff58df]:begin s02.tarActive <= 1'b1;s02.Adr <= m02.addrM;s02.dbus_in <= m02.DoutM;m02.DinMast <= s02.dataOut; end
-		    [48'hffff3ca5:48'hffff3d61]:begin s03.tarActive <= 1'b1;s03.Adr <= m02.addrM;s03.dbus_in <= m02.DoutM;m02.DinMast <= s03.dataOut; end
-		    [48'hfffe951f:48'hfffe9553]:begin s04.tarActive <= 1'b1;s04.Adr <= m02.addrM;s04.dbus_in <= m02.DoutM;m02.DinMast <= s04.dataOut; end
-		    [48'hfffe93e5:48'hfffe93fe]:begin s05.tarActive <= 1'b1;s05.Adr <= m02.addrM;s05.dbus_in <= m02.DoutM;m02.DinMast <= s05.dataOut; end
-		    [48'hffff5342:48'hffff5374]:begin s06.tarActive <= 1'b1;s06.Adr <= m02.addrM;s06.dbus_in <= m02.DoutM;m02.DinMast <= s06.dataOut; end
-		    [48'hfffffc6a:48'hfffffd5a]:begin s07.tarActive <= 1'b1;s07.Adr <= m02.addrM;s07.dbus_in <= m02.DoutM;m02.DinMast <= s07.dataOut; end
-		    [48'hffff3064:48'hffff3100]:begin s08.tarActive <= 1'b1;s08.Adr <= m02.addrM;s08.dbus_in <= m02.DoutM;m02.DinMast <= s08.dataOut; end
-		    [48'hffff7d12:48'hffff7ded]:begin s09.tarActive <= 1'b1;s09.Adr <= m02.addrM;s09.dbus_in <= m02.DoutM;m02.DinMast <= s09.dataOut; end
-		    [48'hffff6513:48'hffff6554]:begin s10.tarActive <= 1'b1;s10.Adr <= m02.addrM;s10.dbus_in <= m02.DoutM;m02.DinMast <= s10.dataOut; end
-		    [48'hffff4096:48'hffff418a]:begin s11.tarActive <= 1'b1;s11.Adr <= m02.addrM;s11.dbus_in <= m02.DoutM;m02.DinMast <= s11.dataOut; end
-		    [48'hffffaac2:48'hffffab79]:begin s12.tarActive <= 1'b1;s12.Adr <= m02.addrM;s12.dbus_in <= m02.DoutM;m02.DinMast <= s12.dataOut; end
-		    [48'hffff6066:48'hffff610b]:begin s13.tarActive <= 1'b1;s13.Adr <= m02.addrM;s13.dbus_in <= m02.DoutM;m02.DinMast <= s13.dataOut; end
+		    [20'hf8ddc:20'hf8edc]:begin s00.tarActive <= 1'b1;s00.Adr <= m02.addrM;s00.dbus_in <= m02.DoutM;m02.DinMast <= s00.dataOut; end
+		    [20'hf7015:20'hf7085]:begin s01.tarActive <= 1'b1;s01.Adr <= m02.addrM;s01.dbus_in <= m02.DoutM;m02.DinMast <= s01.dataOut; end
+		    [20'hf58ce:20'hf58df]:begin s02.tarActive <= 1'b1;s02.Adr <= m02.addrM;s02.dbus_in <= m02.DoutM;m02.DinMast <= s02.dataOut; end
+		    [20'hf3ca5:20'hf3d61]:begin s03.tarActive <= 1'b1;s03.Adr <= m02.addrM;s03.dbus_in <= m02.DoutM;m02.DinMast <= s03.dataOut; end
+		    [20'he951f:20'he9553]:begin s04.tarActive <= 1'b1;s04.Adr <= m02.addrM;s04.dbus_in <= m02.DoutM;m02.DinMast <= s04.dataOut; end
+		    [20'he93e5:20'he93fe]:begin s05.tarActive <= 1'b1;s05.Adr <= m02.addrM;s05.dbus_in <= m02.DoutM;m02.DinMast <= s05.dataOut; end
+		    [20'hf5342:20'hf5374]:begin s06.tarActive <= 1'b1;s06.Adr <= m02.addrM;s06.dbus_in <= m02.DoutM;m02.DinMast <= s06.dataOut; end
+		    [20'hffc6a:20'hffd5a]:begin s07.tarActive <= 1'b1;s07.Adr <= m02.addrM;s07.dbus_in <= m02.DoutM;m02.DinMast <= s07.dataOut; end
+		    [20'hf3064:20'hf3100]:begin s08.tarActive <= 1'b1;s08.Adr <= m02.addrM;s08.dbus_in <= m02.DoutM;m02.DinMast <= s08.dataOut; end
+		    [20'hf7d12:20'hf7ded]:begin s09.tarActive <= 1'b1;s09.Adr <= m02.addrM;s09.dbus_in <= m02.DoutM;m02.DinMast <= s09.dataOut; end
+		    [20'hf6513:20'hf6554]:begin s10.tarActive <= 1'b1;s10.Adr <= m02.addrM;s10.dbus_in <= m02.DoutM;m02.DinMast <= s10.dataOut; end
+		    [20'hf4096:20'hf418a]:begin s11.tarActive <= 1'b1;s11.Adr <= m02.addrM;s11.dbus_in <= m02.DoutM;m02.DinMast <= s11.dataOut; end
+		    [20'hfaac2:20'hfab79]:begin s12.tarActive <= 1'b1;s12.Adr <= m02.addrM;s12.dbus_in <= m02.DoutM;m02.DinMast <= s12.dataOut; end
+		    [20'hf6066:20'hf610b]:begin s13.tarActive <= 1'b1;s13.Adr <= m02.addrM;s13.dbus_in <= m02.DoutM;m02.DinMast <= s13.dataOut; end
       endcase
     end
     
     (m03.YouGotIt):begin 
       case(m03.addrM) inside 
-		    [48'hffff8ddc:48'hffff8edc]:begin s00.tarActive <= 1'b1;s00.Adr <= m03.addrM;s00.dbus_in <= m03.DoutM;m03.DinMast <= s00.dataOut; end
-		    [48'hffff7015:48'hffff7085]:begin s01.tarActive <= 1'b1;s01.Adr <= m03.addrM;s01.dbus_in <= m03.DoutM;m03.DinMast <= s01.dataOut; end
-		    [48'hffff58ce:48'hffff58df]:begin s02.tarActive <= 1'b1;s02.Adr <= m03.addrM;s02.dbus_in <= m03.DoutM;m03.DinMast <= s02.dataOut; end
-		    [48'hffff3ca5:48'hffff3d61]:begin s03.tarActive <= 1'b1;s03.Adr <= m03.addrM;s03.dbus_in <= m03.DoutM;m03.DinMast <= s03.dataOut; end
-		    [48'hfffe951f:48'hfffe9553]:begin s04.tarActive <= 1'b1;s04.Adr <= m03.addrM;s04.dbus_in <= m03.DoutM;m03.DinMast <= s04.dataOut; end
-		    [48'hfffe93e5:48'hfffe93fe]:begin s05.tarActive <= 1'b1;s05.Adr <= m03.addrM;s05.dbus_in <= m03.DoutM;m03.DinMast <= s05.dataOut; end
-		    [48'hffff5342:48'hffff5374]:begin s06.tarActive <= 1'b1;s06.Adr <= m03.addrM;s06.dbus_in <= m03.DoutM;m03.DinMast <= s06.dataOut; end
-		    [48'hfffffc6a:48'hfffffd5a]:begin s07.tarActive <= 1'b1;s07.Adr <= m03.addrM;s07.dbus_in <= m03.DoutM;m03.DinMast <= s07.dataOut; end
-		    [48'hffff3064:48'hffff3100]:begin s08.tarActive <= 1'b1;s08.Adr <= m03.addrM;s08.dbus_in <= m03.DoutM;m03.DinMast <= s08.dataOut; end
-		    [48'hffff7d12:48'hffff7ded]:begin s09.tarActive <= 1'b1;s09.Adr <= m03.addrM;s09.dbus_in <= m03.DoutM;m03.DinMast <= s09.dataOut; end
-		    [48'hffff6513:48'hffff6554]:begin s10.tarActive <= 1'b1;s10.Adr <= m03.addrM;s10.dbus_in <= m03.DoutM;m03.DinMast <= s10.dataOut; end
-		    [48'hffff4096:48'hffff418a]:begin s11.tarActive <= 1'b1;s11.Adr <= m03.addrM;s11.dbus_in <= m03.DoutM;m03.DinMast <= s11.dataOut; end
-		    [48'hffffaac2:48'hffffab79]:begin s12.tarActive <= 1'b1;s12.Adr <= m03.addrM;s12.dbus_in <= m03.DoutM;m03.DinMast <= s12.dataOut; end
-	   	    [48'hffff6066:48'hffff610b]:begin s13.tarActive <= 1'b1;s13.Adr <= m03.addrM;s13.dbus_in <= m03.DoutM;m03.DinMast <= s13.dataOut; end
+		    [20'hf8ddc:20'hf8edc]:begin s00.tarActive <= 1'b1;s00.Adr <= m03.addrM;s00.dbus_in <= m03.DoutM;m03.DinMast <= s00.dataOut; end
+		    [20'hf7015:20'hf7085]:begin s01.tarActive <= 1'b1;s01.Adr <= m03.addrM;s01.dbus_in <= m03.DoutM;m03.DinMast <= s01.dataOut; end
+		    [20'hf58ce:20'hf58df]:begin s02.tarActive <= 1'b1;s02.Adr <= m03.addrM;s02.dbus_in <= m03.DoutM;m03.DinMast <= s02.dataOut; end
+		    [20'hf3ca5:20'hf3d61]:begin s03.tarActive <= 1'b1;s03.Adr <= m03.addrM;s03.dbus_in <= m03.DoutM;m03.DinMast <= s03.dataOut; end
+		    [20'he951f:20'he9553]:begin s04.tarActive <= 1'b1;s04.Adr <= m03.addrM;s04.dbus_in <= m03.DoutM;m03.DinMast <= s04.dataOut; end
+		    [20'he93e5:20'he93fe]:begin s05.tarActive <= 1'b1;s05.Adr <= m03.addrM;s05.dbus_in <= m03.DoutM;m03.DinMast <= s05.dataOut; end
+		    [20'hf5342:20'hf5374]:begin s06.tarActive <= 1'b1;s06.Adr <= m03.addrM;s06.dbus_in <= m03.DoutM;m03.DinMast <= s06.dataOut; end
+		    [20'hffc6a:20'hffd5a]:begin s07.tarActive <= 1'b1;s07.Adr <= m03.addrM;s07.dbus_in <= m03.DoutM;m03.DinMast <= s07.dataOut; end
+		    [20'hf3064:20'hf3100]:begin s08.tarActive <= 1'b1;s08.Adr <= m03.addrM;s08.dbus_in <= m03.DoutM;m03.DinMast <= s08.dataOut; end
+		    [20'hf7d12:20'hf7ded]:begin s09.tarActive <= 1'b1;s09.Adr <= m03.addrM;s09.dbus_in <= m03.DoutM;m03.DinMast <= s09.dataOut; end
+		    [20'hf6513:20'hf6554]:begin s10.tarActive <= 1'b1;s10.Adr <= m03.addrM;s10.dbus_in <= m03.DoutM;m03.DinMast <= s10.dataOut; end
+		    [20'hf4096:20'hf418a]:begin s11.tarActive <= 1'b1;s11.Adr <= m03.addrM;s11.dbus_in <= m03.DoutM;m03.DinMast <= s11.dataOut; end
+		    [20'hfaac2:20'hfab79]:begin s12.tarActive <= 1'b1;s12.Adr <= m03.addrM;s12.dbus_in <= m03.DoutM;m03.DinMast <= s12.dataOut; end
+	   	    [20'hf6066:20'hf610b]:begin s13.tarActive <= 1'b1;s13.Adr <= m03.addrM;s13.dbus_in <= m03.DoutM;m03.DinMast <= s13.dataOut; end
       endcase
     end
 
     (m04.YouGotIt):begin 
       case(m04.addrM) inside 
-		    [48'hffff8ddc:48'hffff8edc]:begin s00.tarActive <= 1'b1;s00.Adr <= m04.addrM;s00.dbus_in <= m04.DoutM;m04.DinMast <= s00.dataOut; end
-		    [48'hffff7015:48'hffff7085]:begin s01.tarActive <= 1'b1;s01.Adr <= m04.addrM;s01.dbus_in <= m04.DoutM;m04.DinMast <= s01.dataOut; end
-		    [48'hffff58ce:48'hffff58df]:begin s02.tarActive <= 1'b1;s02.Adr <= m04.addrM;s02.dbus_in <= m04.DoutM;m04.DinMast <= s02.dataOut; end
-		    [48'hffff3ca5:48'hffff3d61]:begin s03.tarActive <= 1'b1;s03.Adr <= m04.addrM;s03.dbus_in <= m04.DoutM;m04.DinMast <= s03.dataOut; end
-		    [48'hfffe951f:48'hfffe9553]:begin s04.tarActive <= 1'b1;s04.Adr <= m04.addrM;s04.dbus_in <= m04.DoutM;m04.DinMast <= s04.dataOut; end
-		    [48'hfffe93e5:48'hfffe93fe]:begin s05.tarActive <= 1'b1;s05.Adr <= m04.addrM;s05.dbus_in <= m04.DoutM;m04.DinMast <= s05.dataOut; end
-		    [48'hffff5342:48'hffff5374]:begin s06.tarActive <= 1'b1;s06.Adr <= m04.addrM;s06.dbus_in <= m04.DoutM;m04.DinMast <= s06.dataOut; end
-		    [48'hfffffc6a:48'hfffffd5a]:begin s07.tarActive <= 1'b1;s07.Adr <= m04.addrM;s07.dbus_in <= m04.DoutM;m04.DinMast <= s07.dataOut; end
-		    [48'hffff3064:48'hffff3100]:begin s08.tarActive <= 1'b1;s08.Adr <= m04.addrM;s08.dbus_in <= m04.DoutM;m04.DinMast <= s08.dataOut; end
-		    [48'hffff7d12:48'hffff7ded]:begin s09.tarActive <= 1'b1;s09.Adr <= m04.addrM;s09.dbus_in <= m04.DoutM;m04.DinMast <= s09.dataOut; end
-		    [48'hffff6513:48'hffff6554]:begin s10.tarActive <= 1'b1;s10.Adr <= m04.addrM;s10.dbus_in <= m04.DoutM;m04.DinMast <= s10.dataOut; end
-		    [48'hffff4096:48'hffff418a]:begin s11.tarActive <= 1'b1;s11.Adr <= m04.addrM;s11.dbus_in <= m04.DoutM;m04.DinMast <= s11.dataOut; end
-		    [48'hffffaac2:48'hffffab79]:begin s12.tarActive <= 1'b1;s12.Adr <= m04.addrM;s12.dbus_in <= m04.DoutM;m04.DinMast <= s12.dataOut; end
-		    [48'hffff6066:48'hffff610b]:begin s13.tarActive <= 1'b1;s13.Adr <= m04.addrM;s13.dbus_in <= m04.DoutM;m04.DinMast <= s13.dataOut; end
+		    [20'hf8ddc:20'hf8edc]:begin s00.tarActive <= 1'b1;s00.Adr <= m04.addrM;s00.dbus_in <= m04.DoutM;m04.DinMast <= s00.dataOut; end
+		    [20'hf7015:20'hf7085]:begin s01.tarActive <= 1'b1;s01.Adr <= m04.addrM;s01.dbus_in <= m04.DoutM;m04.DinMast <= s01.dataOut; end
+		    [20'hf58ce:20'hf58df]:begin s02.tarActive <= 1'b1;s02.Adr <= m04.addrM;s02.dbus_in <= m04.DoutM;m04.DinMast <= s02.dataOut; end
+		    [20'hf3ca5:20'hf3d61]:begin s03.tarActive <= 1'b1;s03.Adr <= m04.addrM;s03.dbus_in <= m04.DoutM;m04.DinMast <= s03.dataOut; end
+		    [20'he951f:20'he9553]:begin s04.tarActive <= 1'b1;s04.Adr <= m04.addrM;s04.dbus_in <= m04.DoutM;m04.DinMast <= s04.dataOut; end
+		    [20'he93e5:20'he93fe]:begin s05.tarActive <= 1'b1;s05.Adr <= m04.addrM;s05.dbus_in <= m04.DoutM;m04.DinMast <= s05.dataOut; end
+		    [20'hf5342:20'hf5374]:begin s06.tarActive <= 1'b1;s06.Adr <= m04.addrM;s06.dbus_in <= m04.DoutM;m04.DinMast <= s06.dataOut; end
+		    [20'hffc6a:20'hffd5a]:begin s07.tarActive <= 1'b1;s07.Adr <= m04.addrM;s07.dbus_in <= m04.DoutM;m04.DinMast <= s07.dataOut; end
+		    [20'hf3064:20'hf3100]:begin s08.tarActive <= 1'b1;s08.Adr <= m04.addrM;s08.dbus_in <= m04.DoutM;m04.DinMast <= s08.dataOut; end
+		    [20'hf7d12:20'hf7ded]:begin s09.tarActive <= 1'b1;s09.Adr <= m04.addrM;s09.dbus_in <= m04.DoutM;m04.DinMast <= s09.dataOut; end
+		    [20'hf6513:20'hf6554]:begin s10.tarActive <= 1'b1;s10.Adr <= m04.addrM;s10.dbus_in <= m04.DoutM;m04.DinMast <= s10.dataOut; end
+		    [20'hf4096:20'hf418a]:begin s11.tarActive <= 1'b1;s11.Adr <= m04.addrM;s11.dbus_in <= m04.DoutM;m04.DinMast <= s11.dataOut; end
+		    [20'hfaac2:20'hfab79]:begin s12.tarActive <= 1'b1;s12.Adr <= m04.addrM;s12.dbus_in <= m04.DoutM;m04.DinMast <= s12.dataOut; end
+		    [20'hf6066:20'hf610b]:begin s13.tarActive <= 1'b1;s13.Adr <= m04.addrM;s13.dbus_in <= m04.DoutM;m04.DinMast <= s13.dataOut; end
       endcase
     end
 
     (m05.YouGotIt):begin 
       case(m05.addrM) inside 
-		    [48'hffff8ddc:48'hffff8edc]:begin s00.tarActive <= 1'b1;s00.Adr <= m05.addrM;s00.dbus_in <= m05.DoutM;m05.DinMast <= s00.dataOut; end
-		    [48'hffff7015:48'hffff7085]:begin s01.tarActive <= 1'b1;s01.Adr <= m05.addrM;s01.dbus_in <= m05.DoutM;m05.DinMast <= s01.dataOut; end
-		    [48'hffff58ce:48'hffff58df]:begin s02.tarActive <= 1'b1;s02.Adr <= m05.addrM;s02.dbus_in <= m05.DoutM;m05.DinMast <= s02.dataOut; end
-		    [48'hffff3ca5:48'hffff3d61]:begin s03.tarActive <= 1'b1;s03.Adr <= m05.addrM;s03.dbus_in <= m05.DoutM;m05.DinMast <= s03.dataOut; end
-		    [48'hfffe951f:48'hfffe9553]:begin s04.tarActive <= 1'b1;s04.Adr <= m05.addrM;s04.dbus_in <= m05.DoutM;m05.DinMast <= s04.dataOut; end
-		    [48'hfffe93e5:48'hfffe93fe]:begin s05.tarActive <= 1'b1;s05.Adr <= m05.addrM;s05.dbus_in <= m05.DoutM;m05.DinMast <= s05.dataOut; end
-		    [48'hffff5342:48'hffff5374]:begin s06.tarActive <= 1'b1;s06.Adr <= m05.addrM;s06.dbus_in <= m05.DoutM;m05.DinMast <= s06.dataOut; end
-		    [48'hfffffc6a:48'hfffffd5a]:begin s07.tarActive <= 1'b1;s07.Adr <= m05.addrM;s07.dbus_in <= m05.DoutM;m05.DinMast <= s07.dataOut; end
-		    [48'hffff3064:48'hffff3100]:begin s08.tarActive <= 1'b1;s08.Adr <= m05.addrM;s08.dbus_in <= m05.DoutM;m05.DinMast <= s08.dataOut; end
-		    [48'hffff7d12:48'hffff7ded]:begin s09.tarActive <= 1'b1;s09.Adr <= m05.addrM;s09.dbus_in <= m05.DoutM;m05.DinMast <= s09.dataOut; end
-		    [48'hffff6513:48'hffff6554]:begin s10.tarActive <= 1'b1;s10.Adr <= m05.addrM;s10.dbus_in <= m05.DoutM;m05.DinMast <= s10.dataOut; end
-		    [48'hffff4096:48'hffff418a]:begin s11.tarActive <= 1'b1;s11.Adr <= m05.addrM;s11.dbus_in <= m05.DoutM;m05.DinMast <= s11.dataOut; end
-		    [48'hffffaac2:48'hffffab79]:begin s12.tarActive <= 1'b1;s12.Adr <= m05.addrM;s12.dbus_in <= m05.DoutM;m05.DinMast <= s12.dataOut; end
-		    [48'hffff6066:48'hffff610b]:begin s13.tarActive <= 1'b1;s13.Adr <= m05.addrM;s13.dbus_in <= m05.DoutM;m05.DinMast <= s13.dataOut; end
+		    [20'hf8ddc:20'hf8edc]:begin s00.tarActive <= 1'b1;s00.Adr <= m05.addrM;s00.dbus_in <= m05.DoutM;m05.DinMast <= s00.dataOut; end
+		    [20'hf7015:20'hf7085]:begin s01.tarActive <= 1'b1;s01.Adr <= m05.addrM;s01.dbus_in <= m05.DoutM;m05.DinMast <= s01.dataOut; end
+		    [20'hf58ce:20'hf58df]:begin s02.tarActive <= 1'b1;s02.Adr <= m05.addrM;s02.dbus_in <= m05.DoutM;m05.DinMast <= s02.dataOut; end
+		    [20'hf3ca5:20'hf3d61]:begin s03.tarActive <= 1'b1;s03.Adr <= m05.addrM;s03.dbus_in <= m05.DoutM;m05.DinMast <= s03.dataOut; end
+		    [20'he951f:20'he9553]:begin s04.tarActive <= 1'b1;s04.Adr <= m05.addrM;s04.dbus_in <= m05.DoutM;m05.DinMast <= s04.dataOut; end
+		    [20'he93e5:20'he93fe]:begin s05.tarActive <= 1'b1;s05.Adr <= m05.addrM;s05.dbus_in <= m05.DoutM;m05.DinMast <= s05.dataOut; end
+		    [20'hf5342:20'hf5374]:begin s06.tarActive <= 1'b1;s06.Adr <= m05.addrM;s06.dbus_in <= m05.DoutM;m05.DinMast <= s06.dataOut; end
+		    [20'hffc6a:20'hffd5a]:begin s07.tarActive <= 1'b1;s07.Adr <= m05.addrM;s07.dbus_in <= m05.DoutM;m05.DinMast <= s07.dataOut; end
+		    [20'hf3064:20'hf3100]:begin s08.tarActive <= 1'b1;s08.Adr <= m05.addrM;s08.dbus_in <= m05.DoutM;m05.DinMast <= s08.dataOut; end
+		    [20'hf7d12:20'hf7ded]:begin s09.tarActive <= 1'b1;s09.Adr <= m05.addrM;s09.dbus_in <= m05.DoutM;m05.DinMast <= s09.dataOut; end
+		    [20'hf6513:20'hf6554]:begin s10.tarActive <= 1'b1;s10.Adr <= m05.addrM;s10.dbus_in <= m05.DoutM;m05.DinMast <= s10.dataOut; end
+		    [20'hf4096:20'hf418a]:begin s11.tarActive <= 1'b1;s11.Adr <= m05.addrM;s11.dbus_in <= m05.DoutM;m05.DinMast <= s11.dataOut; end
+		    [20'hfaac2:20'hfab79]:begin s12.tarActive <= 1'b1;s12.Adr <= m05.addrM;s12.dbus_in <= m05.DoutM;m05.DinMast <= s12.dataOut; end
+		    [20'hf6066:20'hf610b]:begin s13.tarActive <= 1'b1;s13.Adr <= m05.addrM;s13.dbus_in <= m05.DoutM;m05.DinMast <= s13.dataOut; end
       endcase
     end
 
     (m06.YouGotIt):begin 
       case(m06.addrM) inside 
-		    [48'hffff8ddc:48'hffff8edc]:begin s00.tarActive <= 1'b1;s00.Adr <= m06.addrM;s00.dbus_in <= m06.DoutM;m06.DinMast <= s00.dataOut; end
-		    [48'hffff7015:48'hffff7085]:begin s01.tarActive <= 1'b1;s01.Adr <= m06.addrM;s01.dbus_in <= m06.DoutM;m06.DinMast <= s01.dataOut; end
-		    [48'hffff58ce:48'hffff58df]:begin s02.tarActive <= 1'b1;s02.Adr <= m06.addrM;s02.dbus_in <= m06.DoutM;m06.DinMast <= s02.dataOut; end
-		    [48'hffff3ca5:48'hffff3d61]:begin s03.tarActive <= 1'b1;s03.Adr <= m06.addrM;s03.dbus_in <= m06.DoutM;m06.DinMast <= s03.dataOut; end
-		    [48'hfffe951f:48'hfffe9553]:begin s04.tarActive <= 1'b1;s04.Adr <= m06.addrM;s04.dbus_in <= m06.DoutM;m06.DinMast <= s04.dataOut; end
-		    [48'hfffe93e5:48'hfffe93fe]:begin s05.tarActive <= 1'b1;s05.Adr <= m06.addrM;s05.dbus_in <= m06.DoutM;m06.DinMast <= s05.dataOut; end
-		    [48'hffff5342:48'hffff5374]:begin s06.tarActive <= 1'b1;s06.Adr <= m06.addrM;s06.dbus_in <= m06.DoutM;m06.DinMast <= s06.dataOut; end
-		    [48'hfffffc6a:48'hfffffd5a]:begin s07.tarActive <= 1'b1;s07.Adr <= m06.addrM;s07.dbus_in <= m06.DoutM;m06.DinMast <= s07.dataOut; end
-		    [48'hffff3064:48'hffff3100]:begin s08.tarActive <= 1'b1;s08.Adr <= m06.addrM;s08.dbus_in <= m06.DoutM;m06.DinMast <= s08.dataOut; end
-		    [48'hffff7d12:48'hffff7ded]:begin s09.tarActive <= 1'b1;s09.Adr <= m06.addrM;s09.dbus_in <= m06.DoutM;m06.DinMast <= s09.dataOut; end
-		    [48'hffff6513:48'hffff6554]:begin s10.tarActive <= 1'b1;s10.Adr <= m06.addrM;s10.dbus_in <= m06.DoutM;m06.DinMast <= s10.dataOut; end
-		    [48'hffff4096:48'hffff418a]:begin s11.tarActive <= 1'b1;s11.Adr <= m06.addrM;s11.dbus_in <= m06.DoutM;m06.DinMast <= s11.dataOut; end
-		    [48'hffffaac2:48'hffffab79]:begin s12.tarActive <= 1'b1;s12.Adr <= m06.addrM;s12.dbus_in <= m06.DoutM;m06.DinMast <= s12.dataOut; end
-		    [48'hffff6066:48'hffff610b]:begin s13.tarActive <= 1'b1;s13.Adr <= m06.addrM;s13.dbus_in <= m06.DoutM;m06.DinMast <= s13.dataOut; end
+		    [20'hf8ddc:20'hf8edc]:begin s00.tarActive <= 1'b1;s00.Adr <= m06.addrM;s00.dbus_in <= m06.DoutM;m06.DinMast <= s00.dataOut; end
+		    [20'hf7015:20'hf7085]:begin s01.tarActive <= 1'b1;s01.Adr <= m06.addrM;s01.dbus_in <= m06.DoutM;m06.DinMast <= s01.dataOut; end
+		    [20'hf58ce:20'hf58df]:begin s02.tarActive <= 1'b1;s02.Adr <= m06.addrM;s02.dbus_in <= m06.DoutM;m06.DinMast <= s02.dataOut; end
+		    [20'hf3ca5:20'hf3d61]:begin s03.tarActive <= 1'b1;s03.Adr <= m06.addrM;s03.dbus_in <= m06.DoutM;m06.DinMast <= s03.dataOut; end
+		    [20'he951f:20'he9553]:begin s04.tarActive <= 1'b1;s04.Adr <= m06.addrM;s04.dbus_in <= m06.DoutM;m06.DinMast <= s04.dataOut; end
+		    [20'he93e5:20'he93fe]:begin s05.tarActive <= 1'b1;s05.Adr <= m06.addrM;s05.dbus_in <= m06.DoutM;m06.DinMast <= s05.dataOut; end
+		    [20'hf5342:20'hf5374]:begin s06.tarActive <= 1'b1;s06.Adr <= m06.addrM;s06.dbus_in <= m06.DoutM;m06.DinMast <= s06.dataOut; end
+		    [20'hffc6a:20'hffd5a]:begin s07.tarActive <= 1'b1;s07.Adr <= m06.addrM;s07.dbus_in <= m06.DoutM;m06.DinMast <= s07.dataOut; end
+		    [20'hf3064:20'hf3100]:begin s08.tarActive <= 1'b1;s08.Adr <= m06.addrM;s08.dbus_in <= m06.DoutM;m06.DinMast <= s08.dataOut; end
+		    [20'hf7d12:20'hf7ded]:begin s09.tarActive <= 1'b1;s09.Adr <= m06.addrM;s09.dbus_in <= m06.DoutM;m06.DinMast <= s09.dataOut; end
+		    [20'hf6513:20'hf6554]:begin s10.tarActive <= 1'b1;s10.Adr <= m06.addrM;s10.dbus_in <= m06.DoutM;m06.DinMast <= s10.dataOut; end
+		    [20'hf4096:20'hf418a]:begin s11.tarActive <= 1'b1;s11.Adr <= m06.addrM;s11.dbus_in <= m06.DoutM;m06.DinMast <= s11.dataOut; end
+		    [20'hfaac2:20'hfab79]:begin s12.tarActive <= 1'b1;s12.Adr <= m06.addrM;s12.dbus_in <= m06.DoutM;m06.DinMast <= s12.dataOut; end
+		    [20'hf6066:20'hf610b]:begin s13.tarActive <= 1'b1;s13.Adr <= m06.addrM;s13.dbus_in <= m06.DoutM;m06.DinMast <= s13.dataOut; end
       endcase
     end
 	endcase
