@@ -4,7 +4,7 @@ module tmulti();
   reg signed [31:0] mlier, mcand;
   wire signed [63:0] prodt;
   wire valid;
-  int i;
+  reg signed [63:0] ex_prodt;
 
   reg debug = 1;
 
@@ -25,27 +25,38 @@ module tmulti();
 
   always @(posedge start)
     begin
+      ex_prodt = mlier * mcand;
+      $display("Expected answer:%h",ex_prodt);
       cnt = 1;
     end
 
   always @(posedge valid) begin
-    $display("clocks:%d ::: %d x %d = %d",cnt, mlier, mcand, prodt);
-  end
-
-  initial begin
-
-for (i=0;i<10;i++) begin
-    		start = 1;
-    		mlier =$random;
-    		mcand =$random;
-    		#(4.0*33);
-    		start=0;
-    	end
-
-    #(500*2);
-    $finish;
+      if (ex_prodt==prodt) begin $display("Correct answer computed"); end      
+      $display("clocks:%d ::: %h x %h = %h",cnt, mlier, mcand, prodt);
   end
 
   multi multi(clock, reset, mlier, mcand, prodt, start, valid);
+
+  initial begin
+    reset=0;
+    #2.0;
+    reset=1;
+    start=0;
+    mlier=0;
+    mcand=0;
+    #9.0;
+    reset=0;
+
+    repeat (10) begin
+      start = 1;
+      mlier = $random%32'hfffffff;
+      mcand = $random%32'hfffffff;
+      #(4.0*33) start = 0;
+      #4.0;
+    end
+
+    #800 $finish;
+
+  end
 
 endmodule
