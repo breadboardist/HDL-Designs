@@ -1,6 +1,6 @@
 `timescale 1ns/10ps
 
-module g16Arbitrator (	g16_if.CLKS clock,
+module g16Arbitrator (	g16_if.CLKS cks,
 						g16_if.Mstr m00, g16_if.Slave s00,
 						g16_if.Mstr m01, g16_if.Slave s01,						
 						g16_if.Mstr m02, g16_if.Slave s02,						
@@ -48,9 +48,9 @@ always_comb begin
   m06nsat = (m06xfer_count<m06goal)?1:0;
 end
 
-always_ff @(posedge(clock.sysClk))begin
+always_ff @(posedge(cks.sysClk))begin
   
-  if(clock.rst)begin
+  if(cks.rst)begin
     m00xfer_count<=0;
     m01xfer_count<=0;
     m02xfer_count<=0;
@@ -84,7 +84,7 @@ always_ff @(posedge(clock.sysClk))begin
   //Multiplexors to connect appropriate masters to slaves
   case(1'b1)
 	(m00.YouGotIt):begin 
-      case(m00.addrM) inside 
+      case(m00.addrM[19:0]) inside 
     		[20'hf8ddc:20'hf8edc]:begin s00.tarActive <= 1'b1;s00.Adr <= m00.addrM;s00.dbus_in <= m00.DoutM;m00.DinMast <= s00.dataOut; end
     		[20'hf7015:20'hf7085]:begin s01.tarActive <= 1'b1;s01.Adr <= m00.addrM;s01.dbus_in <= m00.DoutM;m00.DinMast <= s01.dataOut; end
     		[20'hf58ce:20'hf58df]:begin s02.tarActive <= 1'b1;s02.Adr <= m00.addrM;s02.dbus_in <= m00.DoutM;m00.DinMast <= s02.dataOut; end
@@ -103,7 +103,7 @@ always_ff @(posedge(clock.sysClk))begin
     end
 
     (m01.YouGotIt):begin 
-      case(m01.addrM) inside 
+      case(m01.addrM[19:0]) inside 
 		    [20'hf8ddc:20'hf8edc]:begin s00.tarActive <= 1'b1;s00.Adr <= m01.addrM;s00.dbus_in <= m01.DoutM;m01.DinMast <= s00.dataOut; end
 		    [20'hf7015:20'hf7085]:begin s01.tarActive <= 1'b1;s01.Adr <= m01.addrM;s01.dbus_in <= m01.DoutM;m01.DinMast <= s01.dataOut; end
 		    [20'hf58ce:20'hf58df]:begin s02.tarActive <= 1'b1;s02.Adr <= m01.addrM;s02.dbus_in <= m01.DoutM;m01.DinMast <= s02.dataOut; end
@@ -122,7 +122,7 @@ always_ff @(posedge(clock.sysClk))begin
     end
 
     (m02.YouGotIt):begin
-      case(m02.addrM) inside 
+      case(m02.addrM[19:0]) inside 
 		    [20'hf8ddc:20'hf8edc]:begin s00.tarActive <= 1'b1;s00.Adr <= m02.addrM;s00.dbus_in <= m02.DoutM;m02.DinMast <= s00.dataOut; end
 		    [20'hf7015:20'hf7085]:begin s01.tarActive <= 1'b1;s01.Adr <= m02.addrM;s01.dbus_in <= m02.DoutM;m02.DinMast <= s01.dataOut; end
 		    [20'hf58ce:20'hf58df]:begin s02.tarActive <= 1'b1;s02.Adr <= m02.addrM;s02.dbus_in <= m02.DoutM;m02.DinMast <= s02.dataOut; end
@@ -141,7 +141,7 @@ always_ff @(posedge(clock.sysClk))begin
     end
     
     (m03.YouGotIt):begin 
-      case(m03.addrM) inside 
+      case(m03.addrM[19:0]) inside 
 		    [20'hf8ddc:20'hf8edc]:begin s00.tarActive <= 1'b1;s00.Adr <= m03.addrM;s00.dbus_in <= m03.DoutM;m03.DinMast <= s00.dataOut; end
 		    [20'hf7015:20'hf7085]:begin s01.tarActive <= 1'b1;s01.Adr <= m03.addrM;s01.dbus_in <= m03.DoutM;m03.DinMast <= s01.dataOut; end
 		    [20'hf58ce:20'hf58df]:begin s02.tarActive <= 1'b1;s02.Adr <= m03.addrM;s02.dbus_in <= m03.DoutM;m03.DinMast <= s02.dataOut; end
@@ -160,7 +160,7 @@ always_ff @(posedge(clock.sysClk))begin
     end
 
     (m04.YouGotIt):begin 
-      case(m04.addrM) inside 
+      case(m04.addrM[19:0]) inside 
 		    [20'hf8ddc:20'hf8edc]:begin s00.tarActive <= 1'b1;s00.Adr <= m04.addrM;s00.dbus_in <= m04.DoutM;m04.DinMast <= s00.dataOut; end
 		    [20'hf7015:20'hf7085]:begin s01.tarActive <= 1'b1;s01.Adr <= m04.addrM;s01.dbus_in <= m04.DoutM;m04.DinMast <= s01.dataOut; end
 		    [20'hf58ce:20'hf58df]:begin s02.tarActive <= 1'b1;s02.Adr <= m04.addrM;s02.dbus_in <= m04.DoutM;m04.DinMast <= s02.dataOut; end
@@ -179,7 +179,7 @@ always_ff @(posedge(clock.sysClk))begin
     end
 
     (m05.YouGotIt):begin 
-      case(m05.addrM) inside 
+      case(m05.addrM[19:0]) inside 
 		    [20'hf8ddc:20'hf8edc]:begin s00.tarActive <= 1'b1;s00.Adr <= m05.addrM;s00.dbus_in <= m05.DoutM;m05.DinMast <= s00.dataOut; end
 		    [20'hf7015:20'hf7085]:begin s01.tarActive <= 1'b1;s01.Adr <= m05.addrM;s01.dbus_in <= m05.DoutM;m05.DinMast <= s01.dataOut; end
 		    [20'hf58ce:20'hf58df]:begin s02.tarActive <= 1'b1;s02.Adr <= m05.addrM;s02.dbus_in <= m05.DoutM;m05.DinMast <= s02.dataOut; end
@@ -198,7 +198,7 @@ always_ff @(posedge(clock.sysClk))begin
     end
 
     (m06.YouGotIt):begin 
-      case(m06.addrM) inside 
+      case(m06.addrM[19:0]) inside 
 		    [20'hf8ddc:20'hf8edc]:begin s00.tarActive <= 1'b1;s00.Adr <= m06.addrM;s00.dbus_in <= m06.DoutM;m06.DinMast <= s00.dataOut; end
 		    [20'hf7015:20'hf7085]:begin s01.tarActive <= 1'b1;s01.Adr <= m06.addrM;s01.dbus_in <= m06.DoutM;m06.DinMast <= s01.dataOut; end
 		    [20'hf58ce:20'hf58df]:begin s02.tarActive <= 1'b1;s02.Adr <= m06.addrM;s02.dbus_in <= m06.DoutM;m06.DinMast <= s02.dataOut; end
@@ -353,144 +353,172 @@ always_ff @(posedge(clock.sysClk))begin
   //End of transaction, pull down grant (yougotit) and increment appropriate Mcounter, also track total transfers
   case(1'b1)
      (s00.Clast):begin 
-     		if(m00.YouGotIt)begin m00.YouGotIt <= 0;m00xfer_count<=m00xfer_count+1;end 
-		    if(m01.YouGotIt)begin m01.YouGotIt <= 0;m01xfer_count<=m01xfer_count+1;end
-		    if(m02.YouGotIt)begin m02.YouGotIt <= 0;m02xfer_count<=m02xfer_count+1;end
-		    if(m03.YouGotIt)begin m03.YouGotIt <= 0;m03xfer_count<=m03xfer_count+1;end
-		    if(m04.YouGotIt)begin m04.YouGotIt <= 0;m04xfer_count<=m04xfer_count+1;end 
-		    if(m05.YouGotIt)begin m05.YouGotIt <= 0;m05xfer_count<=m05xfer_count+1;end
-		    if(m06.YouGotIt)begin m06.YouGotIt <= 0;m06xfer_count<=m06xfer_count+1;end
-		    xfer_counter <= xfer_counter +1;
-	      end
+     	case(1'b1)
+     		(m00.YouGotIt):begin m00.YouGotIt <= 0;m00xfer_count<=m00xfer_count+1;end 
+		    (m01.YouGotIt):begin m01.YouGotIt <= 0;m01xfer_count<=m01xfer_count+1;end
+		    (m02.YouGotIt):begin m02.YouGotIt <= 0;m02xfer_count<=m02xfer_count+1;end
+		    (m03.YouGotIt):begin m03.YouGotIt <= 0;m03xfer_count<=m03xfer_count+1;end
+		    (m04.YouGotIt):begin m04.YouGotIt <= 0;m04xfer_count<=m04xfer_count+1;end 
+		    (m05.YouGotIt):begin m05.YouGotIt <= 0;m05xfer_count<=m05xfer_count+1;end
+		    (m06.YouGotIt):begin m06.YouGotIt <= 0;m06xfer_count<=m06xfer_count+1;end
+	     endcase // 1'b1
+	     xfer_counter <= xfer_counter +1;
+	 end
      (s01.Clast):begin 
-     		if(m00.YouGotIt)begin m00.YouGotIt <= 0;m00xfer_count<=m00xfer_count+1;end 
-		    if(m01.YouGotIt)begin m01.YouGotIt <= 0;m01xfer_count<=m01xfer_count+1;end
-		    if(m02.YouGotIt)begin m02.YouGotIt <= 0;m02xfer_count<=m02xfer_count+1;end
-		    if(m03.YouGotIt)begin m03.YouGotIt <= 0;m03xfer_count<=m03xfer_count+1;end
-		    if(m04.YouGotIt)begin m04.YouGotIt <= 0;m04xfer_count<=m04xfer_count+1;end 
-		    if(m05.YouGotIt)begin m05.YouGotIt <= 0;m05xfer_count<=m05xfer_count+1;end
-		    if(m06.YouGotIt)begin m06.YouGotIt <= 0;m06xfer_count<=m06xfer_count+1;end
-		    xfer_counter <= xfer_counter +1;
+     		case(1'b1)
+     		(m00.YouGotIt):begin m00.YouGotIt <= 0;m00xfer_count<=m00xfer_count+1;end 
+		    (m01.YouGotIt):begin m01.YouGotIt <= 0;m01xfer_count<=m01xfer_count+1;end
+		    (m02.YouGotIt):begin m02.YouGotIt <= 0;m02xfer_count<=m02xfer_count+1;end
+		    (m03.YouGotIt):begin m03.YouGotIt <= 0;m03xfer_count<=m03xfer_count+1;end
+		    (m04.YouGotIt):begin m04.YouGotIt <= 0;m04xfer_count<=m04xfer_count+1;end 
+		    (m05.YouGotIt):begin m05.YouGotIt <= 0;m05xfer_count<=m05xfer_count+1;end
+		    (m06.YouGotIt):begin m06.YouGotIt <= 0;m06xfer_count<=m06xfer_count+1;end
+	     endcase // 1'b1
+	     xfer_counter <= xfer_counter +1;
 	      end
      (s02.Clast):begin 
-     		if(m00.YouGotIt)begin m00.YouGotIt <= 0;m00xfer_count<=m00xfer_count+1;end 
-		    if(m01.YouGotIt)begin m01.YouGotIt <= 0;m01xfer_count<=m01xfer_count+1;end
-		    if(m02.YouGotIt)begin m02.YouGotIt <= 0;m02xfer_count<=m02xfer_count+1;end
-		    if(m03.YouGotIt)begin m03.YouGotIt <= 0;m03xfer_count<=m03xfer_count+1;end
-		    if(m04.YouGotIt)begin m04.YouGotIt <= 0;m04xfer_count<=m04xfer_count+1;end 
-		    if(m05.YouGotIt)begin m05.YouGotIt <= 0;m05xfer_count<=m05xfer_count+1;end
-		    if(m06.YouGotIt)begin m06.YouGotIt <= 0;m06xfer_count<=m06xfer_count+1;end
-		    xfer_counter <= xfer_counter +1;
+     		case(1'b1)
+     		(m00.YouGotIt):begin m00.YouGotIt <= 0;m00xfer_count<=m00xfer_count+1;end 
+		    (m01.YouGotIt):begin m01.YouGotIt <= 0;m01xfer_count<=m01xfer_count+1;end
+		    (m02.YouGotIt):begin m02.YouGotIt <= 0;m02xfer_count<=m02xfer_count+1;end
+		    (m03.YouGotIt):begin m03.YouGotIt <= 0;m03xfer_count<=m03xfer_count+1;end
+		    (m04.YouGotIt):begin m04.YouGotIt <= 0;m04xfer_count<=m04xfer_count+1;end 
+		    (m05.YouGotIt):begin m05.YouGotIt <= 0;m05xfer_count<=m05xfer_count+1;end
+		    (m06.YouGotIt):begin m06.YouGotIt <= 0;m06xfer_count<=m06xfer_count+1;end
+	     endcase // 1'b1
+	     xfer_counter <= xfer_counter +1;
 	      end
      (s03.Clast):begin 
-     		if(m00.YouGotIt)begin m00.YouGotIt <= 0;m00xfer_count<=m00xfer_count+1;end 
-		    if(m01.YouGotIt)begin m01.YouGotIt <= 0;m01xfer_count<=m01xfer_count+1;end
-		    if(m02.YouGotIt)begin m02.YouGotIt <= 0;m02xfer_count<=m02xfer_count+1;end
-		    if(m03.YouGotIt)begin m03.YouGotIt <= 0;m03xfer_count<=m03xfer_count+1;end
-		    if(m04.YouGotIt)begin m04.YouGotIt <= 0;m04xfer_count<=m04xfer_count+1;end 
-		    if(m05.YouGotIt)begin m05.YouGotIt <= 0;m05xfer_count<=m05xfer_count+1;end
-		    if(m06.YouGotIt)begin m06.YouGotIt <= 0;m06xfer_count<=m06xfer_count+1;end
-		    xfer_counter <= xfer_counter +1;
+     		case(1'b1)
+     		(m00.YouGotIt):begin m00.YouGotIt <= 0;m00xfer_count<=m00xfer_count+1;end 
+		    (m01.YouGotIt):begin m01.YouGotIt <= 0;m01xfer_count<=m01xfer_count+1;end
+		    (m02.YouGotIt):begin m02.YouGotIt <= 0;m02xfer_count<=m02xfer_count+1;end
+		    (m03.YouGotIt):begin m03.YouGotIt <= 0;m03xfer_count<=m03xfer_count+1;end
+		    (m04.YouGotIt):begin m04.YouGotIt <= 0;m04xfer_count<=m04xfer_count+1;end 
+		    (m05.YouGotIt):begin m05.YouGotIt <= 0;m05xfer_count<=m05xfer_count+1;end
+		    (m06.YouGotIt):begin m06.YouGotIt <= 0;m06xfer_count<=m06xfer_count+1;end
+	     endcase // 1'b1
+	     xfer_counter <= xfer_counter +1;
 	      end
      (s04.Clast):begin 
-     		if(m00.YouGotIt)begin m00.YouGotIt <= 0;m00xfer_count<=m00xfer_count+1;end 
-		    if(m01.YouGotIt)begin m01.YouGotIt <= 0;m01xfer_count<=m01xfer_count+1;end
-		    if(m02.YouGotIt)begin m02.YouGotIt <= 0;m02xfer_count<=m02xfer_count+1;end
-		    if(m03.YouGotIt)begin m03.YouGotIt <= 0;m03xfer_count<=m03xfer_count+1;end
-		    if(m04.YouGotIt)begin m04.YouGotIt <= 0;m04xfer_count<=m04xfer_count+1;end 
-		    if(m05.YouGotIt)begin m05.YouGotIt <= 0;m05xfer_count<=m05xfer_count+1;end
-		    if(m06.YouGotIt)begin m06.YouGotIt <= 0;m06xfer_count<=m06xfer_count+1;end
-		    xfer_counter <= xfer_counter +1;
+     		case(1'b1)
+     		(m00.YouGotIt):begin m00.YouGotIt <= 0;m00xfer_count<=m00xfer_count+1;end 
+		    (m01.YouGotIt):begin m01.YouGotIt <= 0;m01xfer_count<=m01xfer_count+1;end
+		    (m02.YouGotIt):begin m02.YouGotIt <= 0;m02xfer_count<=m02xfer_count+1;end
+		    (m03.YouGotIt):begin m03.YouGotIt <= 0;m03xfer_count<=m03xfer_count+1;end
+		    (m04.YouGotIt):begin m04.YouGotIt <= 0;m04xfer_count<=m04xfer_count+1;end 
+		    (m05.YouGotIt):begin m05.YouGotIt <= 0;m05xfer_count<=m05xfer_count+1;end
+		    (m06.YouGotIt):begin m06.YouGotIt <= 0;m06xfer_count<=m06xfer_count+1;end
+	     endcase // 1'b1
+	     xfer_counter <= xfer_counter +1;
 	      end
      (s05.Clast):begin 
-     		if(m00.YouGotIt)begin m00.YouGotIt <= 0;m00xfer_count<=m00xfer_count+1;end 
-		    if(m01.YouGotIt)begin m01.YouGotIt <= 0;m01xfer_count<=m01xfer_count+1;end
-		    if(m02.YouGotIt)begin m02.YouGotIt <= 0;m02xfer_count<=m02xfer_count+1;end
-		    if(m03.YouGotIt)begin m03.YouGotIt <= 0;m03xfer_count<=m03xfer_count+1;end
-		    if(m04.YouGotIt)begin m04.YouGotIt <= 0;m04xfer_count<=m04xfer_count+1;end 
-		    if(m05.YouGotIt)begin m05.YouGotIt <= 0;m05xfer_count<=m05xfer_count+1;end
-		    if(m06.YouGotIt)begin m06.YouGotIt <= 0;m06xfer_count<=m06xfer_count+1;end
-		    xfer_counter <= xfer_counter +1;
+     		case(1'b1)
+     		(m00.YouGotIt):begin m00.YouGotIt <= 0;m00xfer_count<=m00xfer_count+1;end 
+		    (m01.YouGotIt):begin m01.YouGotIt <= 0;m01xfer_count<=m01xfer_count+1;end
+		    (m02.YouGotIt):begin m02.YouGotIt <= 0;m02xfer_count<=m02xfer_count+1;end
+		    (m03.YouGotIt):begin m03.YouGotIt <= 0;m03xfer_count<=m03xfer_count+1;end
+		    (m04.YouGotIt):begin m04.YouGotIt <= 0;m04xfer_count<=m04xfer_count+1;end 
+		    (m05.YouGotIt):begin m05.YouGotIt <= 0;m05xfer_count<=m05xfer_count+1;end
+		    (m06.YouGotIt):begin m06.YouGotIt <= 0;m06xfer_count<=m06xfer_count+1;end
+	     endcase // 1'b1
+	     xfer_counter <= xfer_counter +1;
 	      end
      (s06.Clast):begin 
-     		if(m00.YouGotIt)begin m00.YouGotIt <= 0;m00xfer_count<=m00xfer_count+1;end 
-		    if(m01.YouGotIt)begin m01.YouGotIt <= 0;m01xfer_count<=m01xfer_count+1;end
-		    if(m02.YouGotIt)begin m02.YouGotIt <= 0;m02xfer_count<=m02xfer_count+1;end
-		    if(m03.YouGotIt)begin m03.YouGotIt <= 0;m03xfer_count<=m03xfer_count+1;end
-		    if(m04.YouGotIt)begin m04.YouGotIt <= 0;m04xfer_count<=m04xfer_count+1;end 
-		    if(m05.YouGotIt)begin m05.YouGotIt <= 0;m05xfer_count<=m05xfer_count+1;end
-		    if(m06.YouGotIt)begin m06.YouGotIt <= 0;m06xfer_count<=m06xfer_count+1;end
-		    xfer_counter <= xfer_counter +1;
+     		case(1'b1)
+     		(m00.YouGotIt):begin m00.YouGotIt <= 0;m00xfer_count<=m00xfer_count+1;end 
+		    (m01.YouGotIt):begin m01.YouGotIt <= 0;m01xfer_count<=m01xfer_count+1;end
+		    (m02.YouGotIt):begin m02.YouGotIt <= 0;m02xfer_count<=m02xfer_count+1;end
+		    (m03.YouGotIt):begin m03.YouGotIt <= 0;m03xfer_count<=m03xfer_count+1;end
+		    (m04.YouGotIt):begin m04.YouGotIt <= 0;m04xfer_count<=m04xfer_count+1;end 
+		    (m05.YouGotIt):begin m05.YouGotIt <= 0;m05xfer_count<=m05xfer_count+1;end
+		    (m06.YouGotIt):begin m06.YouGotIt <= 0;m06xfer_count<=m06xfer_count+1;end
+	     endcase // 1'b1
+	     xfer_counter <= xfer_counter +1;
 	      end
      (s07.Clast):begin 
-     		if(m00.YouGotIt)begin m00.YouGotIt <= 0;m00xfer_count<=m00xfer_count+1;end 
-		    if(m01.YouGotIt)begin m01.YouGotIt <= 0;m01xfer_count<=m01xfer_count+1;end
-		    if(m02.YouGotIt)begin m02.YouGotIt <= 0;m02xfer_count<=m02xfer_count+1;end
-		    if(m03.YouGotIt)begin m03.YouGotIt <= 0;m03xfer_count<=m03xfer_count+1;end
-		    if(m04.YouGotIt)begin m04.YouGotIt <= 0;m04xfer_count<=m04xfer_count+1;end 
-		    if(m05.YouGotIt)begin m05.YouGotIt <= 0;m05xfer_count<=m05xfer_count+1;end
-		    if(m06.YouGotIt)begin m06.YouGotIt <= 0;m06xfer_count<=m06xfer_count+1;end
-		    xfer_counter <= xfer_counter +1;
+     		case(1'b1)
+     		(m00.YouGotIt):begin m00.YouGotIt <= 0;m00xfer_count<=m00xfer_count+1;end 
+		    (m01.YouGotIt):begin m01.YouGotIt <= 0;m01xfer_count<=m01xfer_count+1;end
+		    (m02.YouGotIt):begin m02.YouGotIt <= 0;m02xfer_count<=m02xfer_count+1;end
+		    (m03.YouGotIt):begin m03.YouGotIt <= 0;m03xfer_count<=m03xfer_count+1;end
+		    (m04.YouGotIt):begin m04.YouGotIt <= 0;m04xfer_count<=m04xfer_count+1;end 
+		    (m05.YouGotIt):begin m05.YouGotIt <= 0;m05xfer_count<=m05xfer_count+1;end
+		    (m06.YouGotIt):begin m06.YouGotIt <= 0;m06xfer_count<=m06xfer_count+1;end
+	     endcase // 1'b1
+	     xfer_counter <= xfer_counter +1;
 	      end
      (s08.Clast):begin 
-     		if(m00.YouGotIt)begin m00.YouGotIt <= 0;m00xfer_count<=m00xfer_count+1;end 
-		    if(m01.YouGotIt)begin m01.YouGotIt <= 0;m01xfer_count<=m01xfer_count+1;end
-		    if(m02.YouGotIt)begin m02.YouGotIt <= 0;m02xfer_count<=m02xfer_count+1;end
-		    if(m03.YouGotIt)begin m03.YouGotIt <= 0;m03xfer_count<=m03xfer_count+1;end
-		    if(m04.YouGotIt)begin m04.YouGotIt <= 0;m04xfer_count<=m04xfer_count+1;end 
-		    if(m05.YouGotIt)begin m05.YouGotIt <= 0;m05xfer_count<=m05xfer_count+1;end
-		    if(m06.YouGotIt)begin m06.YouGotIt <= 0;m06xfer_count<=m06xfer_count+1;end
-		    xfer_counter <= xfer_counter +1;
+     		case(1'b1)
+     		(m00.YouGotIt):begin m00.YouGotIt <= 0;m00xfer_count<=m00xfer_count+1;end 
+		    (m01.YouGotIt):begin m01.YouGotIt <= 0;m01xfer_count<=m01xfer_count+1;end
+		    (m02.YouGotIt):begin m02.YouGotIt <= 0;m02xfer_count<=m02xfer_count+1;end
+		    (m03.YouGotIt):begin m03.YouGotIt <= 0;m03xfer_count<=m03xfer_count+1;end
+		    (m04.YouGotIt):begin m04.YouGotIt <= 0;m04xfer_count<=m04xfer_count+1;end 
+		    (m05.YouGotIt):begin m05.YouGotIt <= 0;m05xfer_count<=m05xfer_count+1;end
+		    (m06.YouGotIt):begin m06.YouGotIt <= 0;m06xfer_count<=m06xfer_count+1;end
+	     endcase // 1'b1
+	     xfer_counter <= xfer_counter +1;
 	      end
      (s09.Clast):begin 
-     		if(m00.YouGotIt)begin m00.YouGotIt <= 0;m00xfer_count<=m00xfer_count+1;end 
-		    if(m01.YouGotIt)begin m01.YouGotIt <= 0;m01xfer_count<=m01xfer_count+1;end
-		    if(m02.YouGotIt)begin m02.YouGotIt <= 0;m02xfer_count<=m02xfer_count+1;end
-		    if(m03.YouGotIt)begin m03.YouGotIt <= 0;m03xfer_count<=m03xfer_count+1;end
-		    if(m04.YouGotIt)begin m04.YouGotIt <= 0;m04xfer_count<=m04xfer_count+1;end 
-		    if(m05.YouGotIt)begin m05.YouGotIt <= 0;m05xfer_count<=m05xfer_count+1;end
-		    if(m06.YouGotIt)begin m06.YouGotIt <= 0;m06xfer_count<=m06xfer_count+1;end
-		    xfer_counter <= xfer_counter +1;
+     		case(1'b1)
+     		(m00.YouGotIt):begin m00.YouGotIt <= 0;m00xfer_count<=m00xfer_count+1;end 
+		    (m01.YouGotIt):begin m01.YouGotIt <= 0;m01xfer_count<=m01xfer_count+1;end
+		    (m02.YouGotIt):begin m02.YouGotIt <= 0;m02xfer_count<=m02xfer_count+1;end
+		    (m03.YouGotIt):begin m03.YouGotIt <= 0;m03xfer_count<=m03xfer_count+1;end
+		    (m04.YouGotIt):begin m04.YouGotIt <= 0;m04xfer_count<=m04xfer_count+1;end 
+		    (m05.YouGotIt):begin m05.YouGotIt <= 0;m05xfer_count<=m05xfer_count+1;end
+		    (m06.YouGotIt):begin m06.YouGotIt <= 0;m06xfer_count<=m06xfer_count+1;end
+	     endcase // 1'b1
+	     xfer_counter <= xfer_counter +1;
 	      end
      (s10.Clast):begin 
-     		if(m00.YouGotIt)begin m00.YouGotIt <= 0;m00xfer_count<=m00xfer_count+1;end 
-		    if(m01.YouGotIt)begin m01.YouGotIt <= 0;m01xfer_count<=m01xfer_count+1;end
-		    if(m02.YouGotIt)begin m02.YouGotIt <= 0;m02xfer_count<=m02xfer_count+1;end
-		    if(m03.YouGotIt)begin m03.YouGotIt <= 0;m03xfer_count<=m03xfer_count+1;end
-		    if(m04.YouGotIt)begin m04.YouGotIt <= 0;m04xfer_count<=m04xfer_count+1;end 
-		    if(m05.YouGotIt)begin m05.YouGotIt <= 0;m05xfer_count<=m05xfer_count+1;end
-		    if(m06.YouGotIt)begin m06.YouGotIt <= 0;m06xfer_count<=m06xfer_count+1;end
-		    xfer_counter <= xfer_counter +1;
+     		case(1'b1)
+     		(m00.YouGotIt):begin m00.YouGotIt <= 0;m00xfer_count<=m00xfer_count+1;end 
+		    (m01.YouGotIt):begin m01.YouGotIt <= 0;m01xfer_count<=m01xfer_count+1;end
+		    (m02.YouGotIt):begin m02.YouGotIt <= 0;m02xfer_count<=m02xfer_count+1;end
+		    (m03.YouGotIt):begin m03.YouGotIt <= 0;m03xfer_count<=m03xfer_count+1;end
+		    (m04.YouGotIt):begin m04.YouGotIt <= 0;m04xfer_count<=m04xfer_count+1;end 
+		    (m05.YouGotIt):begin m05.YouGotIt <= 0;m05xfer_count<=m05xfer_count+1;end
+		    (m06.YouGotIt):begin m06.YouGotIt <= 0;m06xfer_count<=m06xfer_count+1;end
+	     endcase // 1'b1
+	     xfer_counter <= xfer_counter +1;
 	      end
      (s11.Clast):begin 
-     		if(m00.YouGotIt)begin m00.YouGotIt <= 0;m00xfer_count<=m00xfer_count+1;end 
-		    if(m01.YouGotIt)begin m01.YouGotIt <= 0;m01xfer_count<=m01xfer_count+1;end
-		    if(m02.YouGotIt)begin m02.YouGotIt <= 0;m02xfer_count<=m02xfer_count+1;end
-		    if(m03.YouGotIt)begin m03.YouGotIt <= 0;m03xfer_count<=m03xfer_count+1;end
-		    if(m04.YouGotIt)begin m04.YouGotIt <= 0;m04xfer_count<=m04xfer_count+1;end 
-		    if(m05.YouGotIt)begin m05.YouGotIt <= 0;m05xfer_count<=m05xfer_count+1;end
-		    if(m06.YouGotIt)begin m06.YouGotIt <= 0;m06xfer_count<=m06xfer_count+1;end
-		    xfer_counter <= xfer_counter +1;
+     		case(1'b1)
+     		(m00.YouGotIt):begin m00.YouGotIt <= 0;m00xfer_count<=m00xfer_count+1;end 
+		    (m01.YouGotIt):begin m01.YouGotIt <= 0;m01xfer_count<=m01xfer_count+1;end
+		    (m02.YouGotIt):begin m02.YouGotIt <= 0;m02xfer_count<=m02xfer_count+1;end
+		    (m03.YouGotIt):begin m03.YouGotIt <= 0;m03xfer_count<=m03xfer_count+1;end
+		    (m04.YouGotIt):begin m04.YouGotIt <= 0;m04xfer_count<=m04xfer_count+1;end 
+		    (m05.YouGotIt):begin m05.YouGotIt <= 0;m05xfer_count<=m05xfer_count+1;end
+		    (m06.YouGotIt):begin m06.YouGotIt <= 0;m06xfer_count<=m06xfer_count+1;end
+	     endcase // 1'b1
+	     xfer_counter <= xfer_counter +1;
 	      end
      (s12.Clast):begin 
-     		if(m00.YouGotIt)begin m00.YouGotIt <= 0;m00xfer_count<=m00xfer_count+1;end 
-		    if(m01.YouGotIt)begin m01.YouGotIt <= 0;m01xfer_count<=m01xfer_count+1;end
-		    if(m02.YouGotIt)begin m02.YouGotIt <= 0;m02xfer_count<=m02xfer_count+1;end
-		    if(m03.YouGotIt)begin m03.YouGotIt <= 0;m03xfer_count<=m03xfer_count+1;end
-		    if(m04.YouGotIt)begin m04.YouGotIt <= 0;m04xfer_count<=m04xfer_count+1;end 
-		    if(m05.YouGotIt)begin m05.YouGotIt <= 0;m05xfer_count<=m05xfer_count+1;end
-		    if(m06.YouGotIt)begin m06.YouGotIt <= 0;m06xfer_count<=m06xfer_count+1;end
-		    xfer_counter <= xfer_counter +1;
+     		case(1'b1)
+     		(m00.YouGotIt):begin m00.YouGotIt <= 0;m00xfer_count<=m00xfer_count+1;end 
+		    (m01.YouGotIt):begin m01.YouGotIt <= 0;m01xfer_count<=m01xfer_count+1;end
+		    (m02.YouGotIt):begin m02.YouGotIt <= 0;m02xfer_count<=m02xfer_count+1;end
+		    (m03.YouGotIt):begin m03.YouGotIt <= 0;m03xfer_count<=m03xfer_count+1;end
+		    (m04.YouGotIt):begin m04.YouGotIt <= 0;m04xfer_count<=m04xfer_count+1;end 
+		    (m05.YouGotIt):begin m05.YouGotIt <= 0;m05xfer_count<=m05xfer_count+1;end
+		    (m06.YouGotIt):begin m06.YouGotIt <= 0;m06xfer_count<=m06xfer_count+1;end
+	     endcase // 1'b1
+	     xfer_counter <= xfer_counter +1;
 	      end
      (s13.Clast):begin 
-     		if(m00.YouGotIt)begin m00.YouGotIt <= 0;m00xfer_count<=m00xfer_count+1;end 
-		    if(m01.YouGotIt)begin m01.YouGotIt <= 0;m01xfer_count<=m01xfer_count+1;end
-		    if(m02.YouGotIt)begin m02.YouGotIt <= 0;m02xfer_count<=m02xfer_count+1;end
-		    if(m03.YouGotIt)begin m03.YouGotIt <= 0;m03xfer_count<=m03xfer_count+1;end
-		    if(m04.YouGotIt)begin m04.YouGotIt <= 0;m04xfer_count<=m04xfer_count+1;end 
-		    if(m05.YouGotIt)begin m05.YouGotIt <= 0;m05xfer_count<=m05xfer_count+1;end
-		    if(m06.YouGotIt)begin m06.YouGotIt <= 0;m06xfer_count<=m06xfer_count+1;end
-		    xfer_counter <= xfer_counter +1;
+     		case(1'b1)
+     		(m00.YouGotIt):begin m00.YouGotIt <= 0;m00xfer_count<=m00xfer_count+1;end 
+		    (m01.YouGotIt):begin m01.YouGotIt <= 0;m01xfer_count<=m01xfer_count+1;end
+		    (m02.YouGotIt):begin m02.YouGotIt <= 0;m02xfer_count<=m02xfer_count+1;end
+		    (m03.YouGotIt):begin m03.YouGotIt <= 0;m03xfer_count<=m03xfer_count+1;end
+		    (m04.YouGotIt):begin m04.YouGotIt <= 0;m04xfer_count<=m04xfer_count+1;end 
+		    (m05.YouGotIt):begin m05.YouGotIt <= 0;m05xfer_count<=m05xfer_count+1;end
+		    (m06.YouGotIt):begin m06.YouGotIt <= 0;m06xfer_count<=m06xfer_count+1;end
+	     endcase // 1'b1
+	     xfer_counter <= xfer_counter +1;
 	      end
   endcase
 end
