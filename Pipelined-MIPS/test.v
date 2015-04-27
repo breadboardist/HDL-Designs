@@ -16,6 +16,9 @@ wire  [31:0] mem_addr;
 reg   [31:0] InstMem [0:255];
 reg   [31:0] DataMem [0:255];
 
+reg [4:0] i;
+reg [16:0] iteration;
+
 processor P (.clock          (clock),
              .reset          (reset),
              .PC             (PC),
@@ -101,6 +104,7 @@ always@(*) begin
 end
 
 initial begin
+   iteration = 0;
    #5  reset = 1;
    #10 reset = 0;
    #5500;
@@ -108,13 +112,18 @@ initial begin
 end
 
 
-initial begin
-   $monitor("time = %t, DataMemory[1] = %h", $time, DataMem[1]);
+always@(PC) begin
+  iteration = iteration + 1;
+  $display("--------------Iteration %d----------------",iteration);
+  for (i=0;i<18;i=i+1) begin
+   $display("DataMemory[%d] = %h", i, DataMem[i]);
+ end
 end
-// dumping waveform file //
-initial begin
-   $dumpfile("mips.vcd");
-   $dumpvars(0, tb_mips);
-end
+
+// dumping waveform file
+// initial begin
+//   $dumpfile("mips.vcd");
+//    $dumpvars(0, tb_mips);
+// end
 
 endmodule
