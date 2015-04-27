@@ -107,11 +107,10 @@ initial begin
    #100 $finish;
 end
 
-/* display function //
-always @(clock)
-   $display ("time = %t, DataMemory_input = %d", $time, Din);
-*/
 
+initial begin
+   $monitor("time = %t, DataMemory[1] = %h", $time, DataMem[1]);
+end
 // dumping waveform file //
 initial begin
    $dumpfile("mips.vcd");
