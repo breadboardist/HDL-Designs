@@ -15,8 +15,8 @@ wire  [31:0] q0, h0;
 
 // 32 clk cycle, produce sft/add operation
 
-assign  q0 = (mlier[31])? (~mlier + 1'b1) : mlier;
-assign  h0 = (mcand[31])? (~mcand + 1'b1) : mcand;
+assign  q0 = mlier;
+assign  h0 = mcand;
 
 reg  [63:0] s_buf;
 reg  [32:0] sft_cnt;
