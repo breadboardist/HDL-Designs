@@ -31,7 +31,7 @@ module tmulti();
     end
 
   always @(posedge valid) begin
-      if (ex_prodt==prodt) begin $display("Correct answer computed"); end      
+      if (ex_prodt==prodt) begin $display("--------------------Correct answer computed--------------------"); end      
       $display("clocks:%d ::: %h x %h = %h",cnt, mlier, mcand, prodt);
   end
 
