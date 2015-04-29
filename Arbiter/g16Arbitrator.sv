@@ -17,7 +17,8 @@ module g16Arbitrator (	g16_if.CLKS cks,
 						g16_if.Slave s13);
 
 logic idle,m00nsat,m01nsat,m02nsat,m03nsat,m04nsat,m05nsat, m06nsat;
-
+logic m01need, m02need, m03need, m04need, m05need, m06need;
+logic m01neednsat, m02neednsat, m03neednsat, m04neednsat, m05neednsat, m06neednsat;
 logic [8:0]   m00goal, m00xfer_count,
 			  m01goal, m01xfer_count,
 			  m02goal, m02xfer_count,
@@ -46,6 +47,41 @@ always_comb begin
   m04nsat = (m04xfer_count<m04goal)?1:0;
   m05nsat = (m05xfer_count<m05goal)?1:0;
   m06nsat = (m06xfer_count<m06goal)?1:0;
+  
+  if (m06.need&&(m00.need==0&&m04.need==0)&&(m05.need==0&&m03.need==0)&&(m01.need==0&&m02.need==0))
+    m06need = 1;
+  else m06need = 0;
+  
+  if (m02.need&&(m01.need==0)&&(m03.need==0&&m05.need==0)&&(m04.need==0&&m00.need==0))
+    m02need =1;
+  else m02need = 0;
+  
+  if (m01.need&&(m03.need==0&&m05.need==0)&&(m04.need==0&&m00.need==0))
+    m01need = 1;
+  else m01need = 0;
+  
+  if ((m03.need&&m05.need==0)&&(m04.need==0&&m00.need==0))
+    m03need = 1;
+  else m03need = 0;
+  
+  if (m05.need&&(m04.need==0&&m00.need==0))
+    m05need = 1;
+  else m05need = 0;
+  
+  if (m04.need&&m00.need==0)
+    m04need = 1;
+  else m04need = 0;
+  
+   m01neednsat= m01.need && m01nsat;
+  m02neednsat= m02.need && m02nsat;
+  m03neednsat= m03.need && m03nsat;
+  m04neednsat= m04.need && m04nsat;
+  m05neednsat= m05.need && m05nsat;
+  m06neednsat= m06.need && m06nsat;
+  
+  
+  
+  
 end
 
 always_ff @(posedge(cks.sysClk))begin
@@ -251,13 +287,15 @@ always_ff @(posedge(cks.sysClk))begin
   begin
       case(1'b1)
 	    (m00.need): begin 
+	    
+// 		      case {m00nsat, }
            		if(m00nsat)begin m00.YouGotIt <= 1;end
-			    else if(m04.need && m04nsat)begin m04.YouGotIt <= 1;end
-			    else if(m05.need && m05nsat)begin m05.YouGotIt <= 1;end      
-			    else if(m03.need && m03nsat)begin m03.YouGotIt <= 1;end
-			    else if(m01.need && m01nsat)begin m01.YouGotIt <= 1;end
-			    else if(m02.need && m02nsat)begin m02.YouGotIt <= 1;end 
-			    else if(m06.need && m06nsat)begin m06.YouGotIt <= 1;end
+			    else if(m04neednsat)begin m04.YouGotIt <= 1;end
+			    else if(m05neednsat)begin m05.YouGotIt <= 1;end      
+			    else if(m03neednsat)begin m03.YouGotIt <= 1;end
+			    else if(m01neednsat)begin m01.YouGotIt <= 1;end
+			    else if(m02neednsat)begin m02.YouGotIt <= 1;end 
+			    else if(m06neednsat)begin m06.YouGotIt <= 1;end
           		else if(m04.need) begin m04.YouGotIt <= 1;end 
 			    else if(m05.need) begin m05.YouGotIt <= 1;end
 			    else if(m03.need) begin m03.YouGotIt <= 1;end
@@ -267,13 +305,13 @@ always_ff @(posedge(cks.sysClk))begin
            		else begin m00.YouGotIt <= 1;end
 			 end
 
-		(m04.need&&(m00.need==0)): begin 
+		(m04need): begin 
              	if(m04nsat)begin m04.YouGotIt <= 1;end
-			    else if(m05.need && m05nsat)begin m05.YouGotIt <= 1;end      
-			    else if(m03.need && m03nsat)begin m03.YouGotIt <= 1;end
-			    else if(m01.need && m01nsat)begin m01.YouGotIt <= 1;end
-			    else if(m02.need && m02nsat)begin m02.YouGotIt <= 1;end
-			    else if(m06.need && m06nsat)begin m06.YouGotIt <= 1;end
+			    else if(m05neednsat)begin m05.YouGotIt <= 1;end      
+			    else if(m03neednsat)begin m03.YouGotIt <= 1;end
+			    else if(m01neednsat)begin m01.YouGotIt <= 1;end
+			    else if(m02neednsat)begin m02.YouGotIt <= 1;end
+			    else if(m06neednsat)begin m06.YouGotIt <= 1;end
 			    else if(m05.need) begin m05.YouGotIt <= 1;end
 			    else if(m03.need) begin m03.YouGotIt <= 1;end
 			    else if(m01.need) begin m01.YouGotIt <= 1;end
@@ -283,12 +321,12 @@ always_ff @(posedge(cks.sysClk))begin
 			    else begin m04.YouGotIt <= 1;end
 			 end
 
-	    (m05.need&&(m04.need==0)&&(m00.need==0)): begin
+	    (m05need): begin
              	if(m05nsat)begin m05.YouGotIt <= 1;end      
-             	else if(m03.need && m03nsat)begin m03.YouGotIt <= 1;end
-			    else if(m01.need && m01nsat)begin m01.YouGotIt <= 1;end
-			    else if(m02.need && m02nsat)begin m02.YouGotIt <= 1;end
-			    else if(m06.need && m06nsat)begin m06.YouGotIt <= 1;end		       
+             	else if(m03neednsat)begin m03.YouGotIt <= 1;end
+			    else if(m01neednsat)begin m01.YouGotIt <= 1;end
+			    else if(m02neednsat)begin m02.YouGotIt <= 1;end
+			    else if(m06neednsat)begin m06.YouGotIt <= 1;end		       
 			    else if(m03.need) begin m03.YouGotIt <= 1;end
 			    else if(m01.need) begin m01.YouGotIt <= 1;end
 			    else if(m02.need) begin m02.YouGotIt <= 1;end
@@ -298,11 +336,11 @@ always_ff @(posedge(cks.sysClk))begin
 			    else begin m05.YouGotIt <= 1;end
 			 end
 
-	   	(m03.need&&(m05.need==0)&&(m04.need==0)&&(m00.need==0)): begin 
+	   	(m03need): begin 
          	    if(m03nsat)begin m03.YouGotIt <= 1;end
-			    else if(m01.need && m01nsat)begin m01.YouGotIt <= 1;end
-			    else if(m02.need && m02nsat)begin m02.YouGotIt <= 1;end
-			    else if(m06.need && m06nsat)begin m06.YouGotIt <= 1;end
+			    else if(m01neednsat)begin m01.YouGotIt <= 1;end
+			    else if(m02neednsat)begin m02.YouGotIt <= 1;end
+			    else if(m06neednsat)begin m06.YouGotIt <= 1;end
 			    else if(m01.need) begin m01.YouGotIt <= 1;end
 			    else if(m02.need) begin m02.YouGotIt <= 1;end
 			    else if(m06.need) begin m06.YouGotIt <= 1;end
@@ -312,10 +350,10 @@ always_ff @(posedge(cks.sysClk))begin
 			    else begin m03.YouGotIt <= 1;end
 			 end
 
-	    (m01.need&&(m03.need==0)&&(m05.need==0)&&(m04.need==0)&&(m00.need==0)): begin
+	    (m01need): begin
             	if(m01nsat)begin m01.YouGotIt <= 1;end
-			    else if(m02.need && m02nsat)begin m02.YouGotIt <= 1;end
-			    else if(m06.need && m06nsat)begin m06.YouGotIt <= 1;end
+			    else if(m02neednsat)begin m02.YouGotIt <= 1;end
+			    else if(m06neednsat)begin m06.YouGotIt <= 1;end
 			    else if(m02.need) begin m02.YouGotIt <= 1;end
 			    else if(m06.need) begin m06.YouGotIt <= 1;end
 			    else if(m00.need) begin m00.YouGotIt <= 1;end
@@ -325,9 +363,9 @@ always_ff @(posedge(cks.sysClk))begin
 			    else begin m01.YouGotIt <= 1;end
 			 end
 
-	     (m02.need&&(m01.need==0)&&(m03.need==0)&&(m05.need==0)&&(m04.need==0)&&(m00.need==0)): begin 
+	     (m02need): begin 
              	if(m02nsat) begin m02.YouGotIt <= 1;end
-			    else if(m06.need && m06nsat)begin m06.YouGotIt <= 1;end
+			    else if(m06neednsat)begin m06.YouGotIt <= 1;end
 			    else if(m06.need) begin m06.YouGotIt <= 1;end
 			    else if(m00.need) begin m00.YouGotIt <= 1;end
 			    else if(m04.need) begin m04.YouGotIt <= 1;end
@@ -337,7 +375,7 @@ always_ff @(posedge(cks.sysClk))begin
 			    else begin m02.YouGotIt <= 1;end
 			 end
 
-	     (m06.need&&(m00.need==0)&&(m04.need==0)&&(m05.need==0)&&(m03.need==0)&&(m01.need==0)&&(m02.need==0)): begin 
+	     (m06need): begin 
              	if(m06nsat)begin m06.YouGotIt <= 1;end 
 				else if(m00.need) begin m00.YouGotIt <= 1;end
 			    else if(m04.need) begin m04.YouGotIt <= 1;end
