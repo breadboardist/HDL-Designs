@@ -29,6 +29,7 @@ logic [8:0]   m00goal, m00xfer_count,
               xfer_counter;
 
 always_comb begin
+	
   //Calculate percentges
   m00goal = 105; //21*5
   m01goal = 30;  //6*5
@@ -37,8 +38,10 @@ always_comb begin
   m04goal = 105;
   m05goal = 105;
   m06goal = 30;
+
   //Check if bus is idle
   idle = m00.YouGotIt==0&&m01.YouGotIt==0&&m02.YouGotIt==0&&m03.YouGotIt==0&&m04.YouGotIt==0&&m05.YouGotIt==0&&m06.YouGotIt==0;
+
   //Check if master is satisfied
   m00nsat = (m00xfer_count<m00goal)?1:0;
   m01nsat = (m01xfer_count<m01goal)?1:0;
@@ -49,39 +52,35 @@ always_comb begin
   m06nsat = (m06xfer_count<m06goal)?1:0;
   
   if (m06.need&&(m00.need==0&&m04.need==0)&&(m05.need==0&&m03.need==0)&&(m01.need==0&&m02.need==0))
-    m06need = 1;
-  else m06need = 0;
+    	m06need = 1;
+  else 	m06need = 0;
   
   if (m02.need&&(m01.need==0)&&(m03.need==0&&m05.need==0)&&(m04.need==0&&m00.need==0))
-    m02need =1;
-  else m02need = 0;
+    	m02need =1;
+  else 	m02need = 0;
   
   if (m01.need&&(m03.need==0&&m05.need==0)&&(m04.need==0&&m00.need==0))
-    m01need = 1;
-  else m01need = 0;
+    	m01need = 1;
+  else 	m01need = 0;
   
   if ((m03.need&&m05.need==0)&&(m04.need==0&&m00.need==0))
-    m03need = 1;
-  else m03need = 0;
+    	m03need = 1;
+  else 	m03need = 0;
   
   if (m05.need&&(m04.need==0&&m00.need==0))
-    m05need = 1;
-  else m05need = 0;
+   		m05need = 1;
+  else 	m05need = 0;
   
   if (m04.need&&m00.need==0)
-    m04need = 1;
-  else m04need = 0;
+    	m04need = 1;
+  else 	m04need = 0;
   
-   m01neednsat= m01.need && m01nsat;
+  m01neednsat= m01.need && m01nsat;
   m02neednsat= m02.need && m02nsat;
   m03neednsat= m03.need && m03nsat;
   m04neednsat= m04.need && m04nsat;
   m05neednsat= m05.need && m05nsat;
-  m06neednsat= m06.need && m06nsat;
-  
-  
-  
-  
+  m06neednsat= m06.need && m06nsat;  
 end
 
 always_ff @(posedge(cks.sysClk))begin
