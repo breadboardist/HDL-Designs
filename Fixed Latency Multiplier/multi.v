@@ -67,7 +67,7 @@ assign  mult_out = ((mlier[31] ^ mcand[31]) && (|s_buf))? {1'b1,mult_tmp} : {1'b
 
 assign valid = sft_cnt[32];
 
-always @( posedge clock or posedge reset ) begin
+always @(posedge clock or posedge reset) begin
     if ( reset ) begin
         prodt <= 0;    
     end else begin 
