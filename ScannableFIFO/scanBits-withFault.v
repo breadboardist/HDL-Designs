@@ -45,7 +45,7 @@ module bits (input clk, input  rst, input pushin, input [31:0] datain,
 			if (scanEnable) begin /*Not in unscannable BITS*/
 				wrt_ptr <= {wrt_ptr[3:0], scanIn} & 5'b11011; /*Not in unscannable BITS*/
 			end
-			else begin wrt_ptr <=  wrt_ptr + 1; end
+			else begin wrt_ptr <=  (wrt_ptr + 1) & 5'b11011; end
 		end
 	end
 
