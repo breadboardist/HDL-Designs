@@ -29,8 +29,8 @@ parameter P_1dly = 0;
 
 // 32 clk cycle, produce sft/add operation
 
-assign  q0 = (mlier[31])? (~mlier + 1'b1) : mlier;
-assign  h0 = (mcand[31])? (~mcand + 1'b1) : mcand;
+assign  q0 = mlier;
+assign  h0 = mcand;
 
 
 always @( posedge clock or posedge reset ) begin
