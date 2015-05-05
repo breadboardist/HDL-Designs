@@ -1,4 +1,7 @@
 `timescale 1ns/10ps
+//Square Root Module of A RMS Calculator
+//Author: Prem Bharath Soundararajan
+//The specifications of the design are in the pdf
 module sqrt #
   (
     parameter INPUT_BITS   = 64,
@@ -37,7 +40,8 @@ module sqrt #
       end
     end
   end
-  
+  //Algorithm described here
+  //http://en.wikipedia.org/wiki/Methods_of_computing_square_roots#Binary_numeral_system_.28base_2.29
   generate
     genvar i;
     for (i = 0; i < OUTPUT_BITS; i = i + 1) begin: mask_4

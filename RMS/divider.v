@@ -1,4 +1,7 @@
 `timescale 1ns/10ps
+//Divider Module of A RMS Calculator
+//Author: Prem Bharath Soundararajan
+//The specifications of the design are in the pdf
 module divider #
   (
    parameter 	NUMERATOR_WIDTH = 72,
@@ -36,7 +39,8 @@ module divider #
       for (i = 0; i < NUMERATOR_WIDTH; i = i + 1)
 		begin
 	   		assign remainder_next[i] = i > 0 ? (remainder[i - 1] << 1) | numerator[i - 1][NUMERATOR_WIDTH - i - 1] : 0;
-
+	   		//Algorithm described here 
+	   		//http://en.wikipedia.org/wiki/Division_algorithm#Long_division
 	   		always @(posedge clk) 
 	   		begin
 	     		if (rst)

@@ -1,4 +1,7 @@
 `timescale 1ns/10ps
+//FIFO and Memory Module of A RMS Calculator
+//Author: Prem Bharath Soundararajan
+//The specifications of the design are in the pdf
 module fifo #
 			(
 				parameter WIDTH = 32,
