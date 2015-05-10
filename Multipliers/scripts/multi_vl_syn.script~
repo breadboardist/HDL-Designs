@@ -1,0 +1,37 @@
+set target_library {/apps/toshiba/sjsu/synopsys/tc240c/tc240c.db_WCCOM25}
+set synthetic_library {/apps/synopsys/I-2013.12-SP5/libraries/syn/dw_foundation.sldb}
+set link_library {/apps/toshiba/sjsu/synopsys/tc240c/tc240c.db_WCCOM25 /apps/synopsys/I-2013.12-SP5/libraries/syn/dw_foundation.sldb}
+set symbol_library {/apps/toshiba/sjsu/synopsys/tc240c/tc240c.workview.sdb}
+
+define_design_lib WORK -path ./work
+analyze -format verilog ./src/multi_vl.v
+elaborate multi_vl
+
+set_min_library /apps/toshiba/sjsu/synopsys/tc240c/tc240c.db_WCCOM25 -min_version /apps/toshiba/sjsu/synopsys/tc240c/tc240c.db_BCCOM25
+set_max_area 4000
+set WIRE_LOAD_EST 0.2
+
+create_clock clock -name Qclock -period 4.5
+set_propagated_clock Qclock
+set_clock_uncertainty 0.25 Qclock
+set_propagated_clock Qclock
+set_output_delay 0.5 -clock Qclock [all_outputs]
+set all_inputs_wo_rst_clk [remove_from_collection [remove_from_collection [all_inputs] [get_port clock]] [get_port reset]]
+set_driving_cell -lib_cell CND2X1 $all_inputs_wo_rst_clk
+set_input_delay 0.6 -clock Qclock $all_inputs_wo_rst_clk
+set_output_delay 0.6 -clock Qclock [all_outputs]
+set_fix_hold [ get_clocks Qclock ]
+set_output_delay 0.3 -clock Qclock [all_outputs]
+set_wire_load_model -name T8G00TW8
+set_load 20 prodt 
+set_load 20 valid
+
+compile_ultra 
+check_timing
+report_timing -delay min -max_paths 3
+report_timing -delay max -max_paths 3
+report_clock
+report_area 
+report_power
+write -hierarchy -format verilog -output ./src/multi_vl_gates.v
+quit

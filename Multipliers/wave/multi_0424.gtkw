@@ -1,0 +1,47 @@
+[*]
+[*] GTKWave Analyzer v3.3.52 (w)1999-2013 BSI
+[*] Fri Apr 24 05:04:03 2015
+[*]
+[dumpfile] "/home/zh/zhan7489/multi/wave/multi_var.vcd"
+[dumpfile_mtime] "Fri Apr 24 05:00:43 2015"
+[dumpfile_size] 221703
+[savefile] "/home/zh/zhan7489/multi/wave/multi_fix_0424.gtkw"
+[timestart] 1480000
+[size] 1176 600
+[pos] -838 537
+*-19.000000 2082000 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[sst_width] 216
+[signals_width] 134
+[sst_expanded] 1
+[sst_vpaned_height] 160
+@28
+tmulti.clock
+tmulti.reset
+tmulti.debug
+@22
+tmulti.mr1[63:0]
+tmulti.mr2[63:0]
+tmulti.prodt[63:0]
+tmulti.pt[3:0]
+tmulti.mlier[31:0]
+tmulti.mcand[31:0]
+@200
+-
+@25
+[color] 2
+tmulti.h0[31:0]
+[color] 2
+tmulti.q0[31:0]
+@22
+tmulti.exp[63:0]
+@28
+tmulti.start
+@22
+tmulti.t_cnt[7:0]
+@28
+tmulti.valid
+@22
+tmulti.r_prodt[63:0]
+tmulti.c_prodt[63:0]
+[pattern_trace] 1
+[pattern_trace] 0
