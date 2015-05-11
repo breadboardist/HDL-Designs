@@ -5,20 +5,20 @@ module multi(clock, reset, mlier, mcand, prodt, start, valid);
 	//Ports and Register declarations //
 	////////////////////////////////////
 	
-	input clock;
-	input reset;
-	input [31:0] mlier;
-	input [31:0] mcand;
-	input start;
-	output [63:0] prodt;
-	output valid; 
+	input 			clock;
+	input 			reset;
+	input [31:0]	mlier;
+	input [31:0] 	mcand;
+	input 			start;
+	output [63:0] 	prodt;
+	output 			valid; 
 
 	reg   [63:0] prodt;
 	wire         valid;
 	wire  [31:0] reg_mlier, reg_mcand, comp_mlier, comp_mcand;
 
 	reg  [63:0] acc_d;
-	reg  [33:0] sft_cnt;
+	reg  [33:0] shift_position;
 	wire [63:0] acc;
 	reg  [63:0] mcand_sft;
 	reg  [31:0] mlier_sft;
@@ -57,7 +57,7 @@ module multi(clock, reset, mlier, mcand, prodt, start, valid);
 	        acc_d 		<= 0;
 	        msb_mlier 	<= 0; 
 	        msb_mcand 	<= 0;   
-	        sft_cnt 	<= 34'b1;    
+	        shift_position 	<= 34'b1;    
 			load_vals 	<= 0;
 	    end else begin
 	    //Begin State Machine Multiplication 
@@ -85,11 +85,11 @@ module multi(clock, reset, mlier, mcand, prodt, start, valid);
 			end
 
 			if (!start) begin
-		       	acc_d <= 0;    
-		        sft_cnt <= 34'b1;    
+		       	acc_d			<= 0;    
+		        shift_position 	<= 34'b1;    
 			end else begin
-		       	acc_d <= acc;    
-		        sft_cnt <= {sft_cnt[32:0], 1'b0};    
+		       	acc_d 			<= acc;    
+		        shift_position 	<= {shift_position[32:0], 1'b0};    
 			end
 	   	end
 	end 
@@ -101,13 +101,15 @@ module multi(clock, reset, mlier, mcand, prodt, start, valid);
 	wire [63: 0] mult_tmp;
 	wire [63: 0] mult_out;
 
+	//Produce sign adjustment depending on the MSB of the inputs and output
 	assign  mult_tmp = ~(acc - 1'b1);
 	assign  mult_out = ((msb_mlier ^ msb_mcand) && (|acc))? {1'b1,mult_tmp} : {1'b0, acc};
 
-	assign valid = sft_cnt[33];
+	//When 33 clock cycles have been completed, the valid signal can be asserted
+	assign valid = shift_position[33];
 
 	always @( posedge clock or posedge reset ) begin
-	    if ( reset == 1'b1 ) begin
+	    if ( reset ) begin
 	        prodt <= 0;    
 	    end else begin 
 	       	prodt <= mult_out;    
