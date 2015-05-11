@@ -25,13 +25,10 @@ reg         load_ok, first_sft;
 wire [63: 0] mult_tmp;
 wire [63: 0] mult_out;
 
-//*********************************************//
 // 32 clk cycle, produce sft/add operation
 add_full_32b add32_inst1(mlier_comp, cout1, ~mlier, 32'b1, 1'b0);
 add_full_32b add32_inst2(mcand_comp, cout2, ~mcand, 32'b1, 1'b0);
 
-//assign  q0 = (mlier[31])? (~mlier + 1'b1) : mlier;
-//assign  h0 = (mcand[31])? (~mcand + 1'b1) : mcand;
 assign  q0 = (mlier[31])? mlier_comp : mlier;
 assign  h0 = (mcand[31])? mcand_comp : mcand;
 
@@ -99,8 +96,6 @@ assign q0_judge = q_sft[31:0] ;
 always @(*) begin// figure out how many continuous 0 exist
 	if (!start || !load_ok) begin
 		sft_num = 0;
-//	end else if (!sft_cnt[33] && load_ok) begin // figure out how many continuous 0 exist
-//	end else if (load_ok) begin 
 	end else begin 
 		if (q0_judge[31:0] ==0) begin
 			sft_num = 32;
@@ -172,7 +167,6 @@ always @(*) begin// figure out how many continuous 0 exist
 	end
 end 
 
-//*********************************************//
 // 1 clk cycle, produce sign adjustment
 
 assign  mult_tmp = ~(sum - 1'b1);

@@ -1,6 +1,6 @@
 `timescale 1ns/10ps
 
-module g16Arbitrator (	g16_if.CLKS cks,
+module g16Arbitrator (g16_if.CLKS cks,
 						g16_if.Mstr m00, g16_if.Slave s00,
 						g16_if.Mstr m01, g16_if.Slave s01,						
 						g16_if.Mstr m02, g16_if.Slave s02,						
@@ -16,28 +16,29 @@ module g16Arbitrator (	g16_if.CLKS cks,
 						g16_if.Slave s12,
 						g16_if.Slave s13);
 
-logic idle,m00nsat,m01nsat,m02nsat,m03nsat,m04nsat,m05nsat, m06nsat;
-logic m01need, m02need, m03need, m04need, m05need, m06need;
-logic m01neednsat, m02neednsat, m03neednsat, m04neednsat, m05neednsat, m06neednsat;
+logic idle,m00nsat,m01nsat,m02nsat,m03nsat,m04nsat,m05nsat, m06nsat, 
+      m01need, m02need, m03need, m04need, m05need, m06need, m01neednsat,
+      m02neednsat, m03neednsat, m04neednsat, m05neednsat, m06neednsat;
+
 logic [8:0]   m00goal, m00xfer_count,
-			  m01goal, m01xfer_count,
-			  m02goal, m02xfer_count,
-			  m03goal, m03xfer_count,
-			  m04goal, m04xfer_count,
-			  m05goal, m05xfer_count,
-			  m06goal, m06xfer_count,
+			        m01goal, m01xfer_count,
+			        m02goal, m02xfer_count,
+			        m03goal, m03xfer_count,
+			        m04goal, m04xfer_count,
+			        m05goal, m05xfer_count,
+			        m06goal, m06xfer_count,
               xfer_counter;
 
 always_comb begin
 	
   //Calculate percentges
   m00goal = 105; //21*5
-  m01goal = 30;  //6*5
-  m02goal = 30;
-  m03goal = 96;  //19*5=95, but 96 to compensate
   m04goal = 105;
   m05goal = 105;
+  m01goal = 30;  //6*5
+  m02goal = 30;
   m06goal = 30;
+  m03goal = 96;  //19*5=95, but 96 to compensate. The simulation fails if it is set to 95 or >95.
 
   //Check if bus is idle
   idle = m00.YouGotIt==0&&m01.YouGotIt==0&&m02.YouGotIt==0&&m03.YouGotIt==0&&m04.YouGotIt==0&&m05.YouGotIt==0&&m06.YouGotIt==0;
@@ -50,31 +51,35 @@ always_comb begin
   m04nsat = (m04xfer_count<m04goal)?1:0;
   m05nsat = (m05xfer_count<m05goal)?1:0;
   m06nsat = (m06xfer_count<m06goal)?1:0;
-  
+
+  //Check if the master needs the bus. This combo logic will check if the highest priority master needs it or not.
+  //The bus need of low priority master is acknowledged only if a higher priority master does not need it.
   if (m06.need&&(m00.need==0&&m04.need==0)&&(m05.need==0&&m03.need==0)&&(m01.need==0&&m02.need==0))
-    	m06need = 1;
-  else 	m06need = 0;
+    	 m06need = 1;
+  else m06need = 0;
   
   if (m02.need&&(m01.need==0)&&(m03.need==0&&m05.need==0)&&(m04.need==0&&m00.need==0))
-    	m02need =1;
-  else 	m02need = 0;
+    	 m02need =1;
+  else m02need = 0;
   
   if (m01.need&&(m03.need==0&&m05.need==0)&&(m04.need==0&&m00.need==0))
-    	m01need = 1;
-  else 	m01need = 0;
+    	 m01need = 1;
+  else m01need = 0;
   
   if ((m03.need&&m05.need==0)&&(m04.need==0&&m00.need==0))
-    	m03need = 1;
-  else 	m03need = 0;
+    	 m03need = 1;
+  else m03need = 0;
   
   if (m05.need&&(m04.need==0&&m00.need==0))
-   		m05need = 1;
-  else 	m05need = 0;
+   		 m05need = 1;
+  else m05need = 0;
   
   if (m04.need&&m00.need==0)
-    	m04need = 1;
-  else 	m04need = 0;
+    	 m04need = 1;
+  else m04need = 0;
   
+  //This signal is used to give grant to the masters. A need is asserted only if the master is not 
+  //satisfied and the master is the highest priority one needing it an any time.
   m01neednsat= m01.need && m01nsat;
   m02neednsat= m02.need && m02nsat;
   m03neednsat= m03.need && m03nsat;
@@ -116,6 +121,7 @@ always_ff @(posedge(cks.sysClk))begin
     s12.tarActive <=0;
     s13.tarActive <=0;
   end
+
   //Multiplexors to connect appropriate masters to slaves
   case(1'b1)
 	(m00.YouGotIt):begin 
@@ -190,7 +196,7 @@ always_ff @(posedge(cks.sysClk))begin
 		    [20'hf6513:20'hf6554]:begin s10.tarActive <= 1'b1;s10.Adr <= m03.addrM;s10.dbus_in <= m03.DoutM;m03.DinMast <= s10.dataOut; end
 		    [20'hf4096:20'hf418a]:begin s11.tarActive <= 1'b1;s11.Adr <= m03.addrM;s11.dbus_in <= m03.DoutM;m03.DinMast <= s11.dataOut; end
 		    [20'hfaac2:20'hfab79]:begin s12.tarActive <= 1'b1;s12.Adr <= m03.addrM;s12.dbus_in <= m03.DoutM;m03.DinMast <= s12.dataOut; end
-	   	    [20'hf6066:20'hf610b]:begin s13.tarActive <= 1'b1;s13.Adr <= m03.addrM;s13.dbus_in <= m03.DoutM;m03.DinMast <= s13.dataOut; end
+	   	  [20'hf6066:20'hf610b]:begin s13.tarActive <= 1'b1;s13.Adr <= m03.addrM;s13.dbus_in <= m03.DoutM;m03.DinMast <= s13.dataOut; end
       endcase
     end
 
@@ -251,6 +257,7 @@ always_ff @(posedge(cks.sysClk))begin
       endcase
     end
 	endcase
+
   //Disable slave on end of transaction by pulling down tarActive
   case(1'b1)
      (s00.Clast):begin s00.tarActive <= 0;end
@@ -268,6 +275,7 @@ always_ff @(posedge(cks.sysClk))begin
      (s12.Clast):begin s12.tarActive <= 0;end
      (s13.Clast):begin s13.tarActive <= 0;end
   endcase
+
   //Reset counter for every 500 cycles
   if(xfer_counter == 501)begin
   	xfer_counter <=0;
@@ -286,107 +294,105 @@ always_ff @(posedge(cks.sysClk))begin
   begin
       case(1'b1)
 	    (m00.need): begin 
-	    
-// 		      case {m00nsat, }
            		if(m00nsat)begin m00.YouGotIt <= 1;end
-			    else if(m04neednsat)begin m04.YouGotIt <= 1;end
-			    else if(m05neednsat)begin m05.YouGotIt <= 1;end      
-			    else if(m03neednsat)begin m03.YouGotIt <= 1;end
-			    else if(m01neednsat)begin m01.YouGotIt <= 1;end
-			    else if(m02neednsat)begin m02.YouGotIt <= 1;end 
-			    else if(m06neednsat)begin m06.YouGotIt <= 1;end
+			        else if(m04neednsat)begin m04.YouGotIt <= 1;end
+			        else if(m05neednsat)begin m05.YouGotIt <= 1;end      
+			        else if(m03neednsat)begin m03.YouGotIt <= 1;end
+			        else if(m01neednsat)begin m01.YouGotIt <= 1;end
+			        else if(m02neednsat)begin m02.YouGotIt <= 1;end 
+			        else if(m06neednsat)begin m06.YouGotIt <= 1;end
           		else if(m04.need) begin m04.YouGotIt <= 1;end 
-			    else if(m05.need) begin m05.YouGotIt <= 1;end
-			    else if(m03.need) begin m03.YouGotIt <= 1;end
-			    else if(m01.need) begin m01.YouGotIt <= 1;end
-			    else if(m02.need) begin m02.YouGotIt <= 1;end
+			        else if(m05.need) begin m05.YouGotIt <= 1;end
+			        else if(m03.need) begin m03.YouGotIt <= 1;end
+			        else if(m01.need) begin m01.YouGotIt <= 1;end
+			        else if(m02.need) begin m02.YouGotIt <= 1;end
            		else if(m06.need) begin m06.YouGotIt <= 1;end 
            		else begin m00.YouGotIt <= 1;end
 			 end
 
-		(m04need): begin 
+		  (m04need): begin 
              	if(m04nsat)begin m04.YouGotIt <= 1;end
-			    else if(m05neednsat)begin m05.YouGotIt <= 1;end      
-			    else if(m03neednsat)begin m03.YouGotIt <= 1;end
-			    else if(m01neednsat)begin m01.YouGotIt <= 1;end
-			    else if(m02neednsat)begin m02.YouGotIt <= 1;end
-			    else if(m06neednsat)begin m06.YouGotIt <= 1;end
-			    else if(m05.need) begin m05.YouGotIt <= 1;end
-			    else if(m03.need) begin m03.YouGotIt <= 1;end
-			    else if(m01.need) begin m01.YouGotIt <= 1;end
-			    else if(m02.need) begin m02.YouGotIt <= 1;end
-			    else if(m06.need) begin m06.YouGotIt <= 1;end
-			    else if(m00.need) begin m00.YouGotIt <= 1;end 
-			    else begin m04.YouGotIt <= 1;end
+			        else if(m05neednsat)begin m05.YouGotIt <= 1;end      
+			        else if(m03neednsat)begin m03.YouGotIt <= 1;end
+			        else if(m01neednsat)begin m01.YouGotIt <= 1;end
+			        else if(m02neednsat)begin m02.YouGotIt <= 1;end
+			        else if(m06neednsat)begin m06.YouGotIt <= 1;end
+			        else if(m05.need) begin m05.YouGotIt <= 1;end
+			        else if(m03.need) begin m03.YouGotIt <= 1;end
+			        else if(m01.need) begin m01.YouGotIt <= 1;end
+			        else if(m02.need) begin m02.YouGotIt <= 1;end
+			        else if(m06.need) begin m06.YouGotIt <= 1;end
+			        else if(m00.need) begin m00.YouGotIt <= 1;end 
+			        else begin m04.YouGotIt <= 1;end
 			 end
 
 	    (m05need): begin
              	if(m05nsat)begin m05.YouGotIt <= 1;end      
              	else if(m03neednsat)begin m03.YouGotIt <= 1;end
-			    else if(m01neednsat)begin m01.YouGotIt <= 1;end
-			    else if(m02neednsat)begin m02.YouGotIt <= 1;end
-			    else if(m06neednsat)begin m06.YouGotIt <= 1;end		       
-			    else if(m03.need) begin m03.YouGotIt <= 1;end
-			    else if(m01.need) begin m01.YouGotIt <= 1;end
-			    else if(m02.need) begin m02.YouGotIt <= 1;end
-			    else if(m06.need) begin m06.YouGotIt <= 1;end
-			    else if(m00.need) begin m00.YouGotIt <= 1;end
-			    else if(m04.need) begin m04.YouGotIt <= 1;end 
-			    else begin m05.YouGotIt <= 1;end
+			        else if(m01neednsat)begin m01.YouGotIt <= 1;end
+			        else if(m02neednsat)begin m02.YouGotIt <= 1;end
+			        else if(m06neednsat)begin m06.YouGotIt <= 1;end		       
+			        else if(m03.need) begin m03.YouGotIt <= 1;end
+			        else if(m01.need) begin m01.YouGotIt <= 1;end
+			        else if(m02.need) begin m02.YouGotIt <= 1;end
+			        else if(m06.need) begin m06.YouGotIt <= 1;end
+			        else if(m00.need) begin m00.YouGotIt <= 1;end
+			        else if(m04.need) begin m04.YouGotIt <= 1;end 
+			        else begin m05.YouGotIt <= 1;end
 			 end
 
 	   	(m03need): begin 
          	    if(m03nsat)begin m03.YouGotIt <= 1;end
-			    else if(m01neednsat)begin m01.YouGotIt <= 1;end
-			    else if(m02neednsat)begin m02.YouGotIt <= 1;end
-			    else if(m06neednsat)begin m06.YouGotIt <= 1;end
-			    else if(m01.need) begin m01.YouGotIt <= 1;end
-			    else if(m02.need) begin m02.YouGotIt <= 1;end
-			    else if(m06.need) begin m06.YouGotIt <= 1;end
-			    else if(m00.need) begin m00.YouGotIt <= 1;end
-			    else if(m04.need) begin m04.YouGotIt <= 1;end
-			    else if(m05.need) begin m05.YouGotIt <= 1;end 
-			    else begin m03.YouGotIt <= 1;end
+			        else if(m01neednsat)begin m01.YouGotIt <= 1;end
+			        else if(m02neednsat)begin m02.YouGotIt <= 1;end
+			        else if(m06neednsat)begin m06.YouGotIt <= 1;end
+			        else if(m01.need) begin m01.YouGotIt <= 1;end
+			        else if(m02.need) begin m02.YouGotIt <= 1;end
+			        else if(m06.need) begin m06.YouGotIt <= 1;end
+			        else if(m00.need) begin m00.YouGotIt <= 1;end
+			        else if(m04.need) begin m04.YouGotIt <= 1;end
+			        else if(m05.need) begin m05.YouGotIt <= 1;end 
+			        else begin m03.YouGotIt <= 1;end
 			 end
 
 	    (m01need): begin
             	if(m01nsat)begin m01.YouGotIt <= 1;end
-			    else if(m02neednsat)begin m02.YouGotIt <= 1;end
-			    else if(m06neednsat)begin m06.YouGotIt <= 1;end
-			    else if(m02.need) begin m02.YouGotIt <= 1;end
-			    else if(m06.need) begin m06.YouGotIt <= 1;end
-			    else if(m00.need) begin m00.YouGotIt <= 1;end
-			    else if(m04.need) begin m04.YouGotIt <= 1;end
-			    else if(m05.need) begin m05.YouGotIt <= 1;end
-			    else if(m03.need) begin m03.YouGotIt <= 1;end
-			    else begin m01.YouGotIt <= 1;end
+			        else if(m02neednsat)begin m02.YouGotIt <= 1;end
+			        else if(m06neednsat)begin m06.YouGotIt <= 1;end
+			        else if(m02.need) begin m02.YouGotIt <= 1;end
+			        else if(m06.need) begin m06.YouGotIt <= 1;end
+			        else if(m00.need) begin m00.YouGotIt <= 1;end
+			        else if(m04.need) begin m04.YouGotIt <= 1;end
+			        else if(m05.need) begin m05.YouGotIt <= 1;end
+			        else if(m03.need) begin m03.YouGotIt <= 1;end
+			        else begin m01.YouGotIt <= 1;end
 			 end
 
 	     (m02need): begin 
              	if(m02nsat) begin m02.YouGotIt <= 1;end
-			    else if(m06neednsat)begin m06.YouGotIt <= 1;end
-			    else if(m06.need) begin m06.YouGotIt <= 1;end
-			    else if(m00.need) begin m00.YouGotIt <= 1;end
-			    else if(m04.need) begin m04.YouGotIt <= 1;end
-			    else if(m05.need) begin m05.YouGotIt <= 1;end
-			    else if(m03.need) begin m03.YouGotIt <= 1;end
-			    else if(m01.need) begin m01.YouGotIt <= 1;end
-			    else begin m02.YouGotIt <= 1;end
+			        else if(m06neednsat)begin m06.YouGotIt <= 1;end
+			        else if(m06.need) begin m06.YouGotIt <= 1;end
+			        else if(m00.need) begin m00.YouGotIt <= 1;end
+			        else if(m04.need) begin m04.YouGotIt <= 1;end
+			        else if(m05.need) begin m05.YouGotIt <= 1;end
+			        else if(m03.need) begin m03.YouGotIt <= 1;end
+			        else if(m01.need) begin m01.YouGotIt <= 1;end
+			        else begin m02.YouGotIt <= 1;end
 			 end
 
 	     (m06need): begin 
              	if(m06nsat)begin m06.YouGotIt <= 1;end 
-				else if(m00.need) begin m00.YouGotIt <= 1;end
-			    else if(m04.need) begin m04.YouGotIt <= 1;end
-			    else if(m05.need) begin m05.YouGotIt <= 1;end
-			    else if(m03.need) begin m03.YouGotIt <= 1;end
-			    else if(m01.need) begin m01.YouGotIt <= 1;end
-			    else if(m02.need) begin m02.YouGotIt <= 1;end
-				else begin m06.YouGotIt <= 1;end
-			   
-	     end
-      endcase
+				      else if(m00.need) begin m00.YouGotIt <= 1;end
+			        else if(m04.need) begin m04.YouGotIt <= 1;end
+			        else if(m05.need) begin m05.YouGotIt <= 1;end
+			        else if(m03.need) begin m03.YouGotIt <= 1;end
+			        else if(m01.need) begin m01.YouGotIt <= 1;end
+			        else if(m02.need) begin m02.YouGotIt <= 1;end
+				      else begin m06.YouGotIt <= 1;end
+      end
+    endcase
   end
+  
   //End of transaction, pull down grant (yougotit) and increment appropriate Mcounter, also track total transfers
   case(1'b1)
      (s00.Clast):begin 
@@ -400,7 +406,7 @@ always_ff @(posedge(cks.sysClk))begin
 		    (m06.YouGotIt):begin m06.YouGotIt <= 0;m06xfer_count<=m06xfer_count+1;end
 	     endcase // 1'b1
 	     xfer_counter <= xfer_counter +1;
-	 end
+	   end
      (s01.Clast):begin 
      		case(1'b1)
      		(m00.YouGotIt):begin m00.YouGotIt <= 0;m00xfer_count<=m00xfer_count+1;end 
@@ -412,7 +418,7 @@ always_ff @(posedge(cks.sysClk))begin
 		    (m06.YouGotIt):begin m06.YouGotIt <= 0;m06xfer_count<=m06xfer_count+1;end
 	     endcase // 1'b1
 	     xfer_counter <= xfer_counter +1;
-	      end
+	   end
      (s02.Clast):begin 
      		case(1'b1)
      		(m00.YouGotIt):begin m00.YouGotIt <= 0;m00xfer_count<=m00xfer_count+1;end 
@@ -424,7 +430,7 @@ always_ff @(posedge(cks.sysClk))begin
 		    (m06.YouGotIt):begin m06.YouGotIt <= 0;m06xfer_count<=m06xfer_count+1;end
 	     endcase // 1'b1
 	     xfer_counter <= xfer_counter +1;
-	      end
+	   end
      (s03.Clast):begin 
      		case(1'b1)
      		(m00.YouGotIt):begin m00.YouGotIt <= 0;m00xfer_count<=m00xfer_count+1;end 
@@ -436,7 +442,7 @@ always_ff @(posedge(cks.sysClk))begin
 		    (m06.YouGotIt):begin m06.YouGotIt <= 0;m06xfer_count<=m06xfer_count+1;end
 	     endcase // 1'b1
 	     xfer_counter <= xfer_counter +1;
-	      end
+	   end
      (s04.Clast):begin 
      		case(1'b1)
      		(m00.YouGotIt):begin m00.YouGotIt <= 0;m00xfer_count<=m00xfer_count+1;end 
@@ -448,7 +454,7 @@ always_ff @(posedge(cks.sysClk))begin
 		    (m06.YouGotIt):begin m06.YouGotIt <= 0;m06xfer_count<=m06xfer_count+1;end
 	     endcase // 1'b1
 	     xfer_counter <= xfer_counter +1;
-	      end
+	   end
      (s05.Clast):begin 
      		case(1'b1)
      		(m00.YouGotIt):begin m00.YouGotIt <= 0;m00xfer_count<=m00xfer_count+1;end 
@@ -460,7 +466,7 @@ always_ff @(posedge(cks.sysClk))begin
 		    (m06.YouGotIt):begin m06.YouGotIt <= 0;m06xfer_count<=m06xfer_count+1;end
 	     endcase // 1'b1
 	     xfer_counter <= xfer_counter +1;
-	      end
+	   end
      (s06.Clast):begin 
      		case(1'b1)
      		(m00.YouGotIt):begin m00.YouGotIt <= 0;m00xfer_count<=m00xfer_count+1;end 
@@ -472,7 +478,7 @@ always_ff @(posedge(cks.sysClk))begin
 		    (m06.YouGotIt):begin m06.YouGotIt <= 0;m06xfer_count<=m06xfer_count+1;end
 	     endcase // 1'b1
 	     xfer_counter <= xfer_counter +1;
-	      end
+	   end
      (s07.Clast):begin 
      		case(1'b1)
      		(m00.YouGotIt):begin m00.YouGotIt <= 0;m00xfer_count<=m00xfer_count+1;end 
@@ -484,7 +490,7 @@ always_ff @(posedge(cks.sysClk))begin
 		    (m06.YouGotIt):begin m06.YouGotIt <= 0;m06xfer_count<=m06xfer_count+1;end
 	     endcase // 1'b1
 	     xfer_counter <= xfer_counter +1;
-	      end
+	   end
      (s08.Clast):begin 
      		case(1'b1)
      		(m00.YouGotIt):begin m00.YouGotIt <= 0;m00xfer_count<=m00xfer_count+1;end 
@@ -496,7 +502,7 @@ always_ff @(posedge(cks.sysClk))begin
 		    (m06.YouGotIt):begin m06.YouGotIt <= 0;m06xfer_count<=m06xfer_count+1;end
 	     endcase // 1'b1
 	     xfer_counter <= xfer_counter +1;
-	      end
+	   end
      (s09.Clast):begin 
      		case(1'b1)
      		(m00.YouGotIt):begin m00.YouGotIt <= 0;m00xfer_count<=m00xfer_count+1;end 
@@ -508,7 +514,7 @@ always_ff @(posedge(cks.sysClk))begin
 		    (m06.YouGotIt):begin m06.YouGotIt <= 0;m06xfer_count<=m06xfer_count+1;end
 	     endcase // 1'b1
 	     xfer_counter <= xfer_counter +1;
-	      end
+	   end
      (s10.Clast):begin 
      		case(1'b1)
      		(m00.YouGotIt):begin m00.YouGotIt <= 0;m00xfer_count<=m00xfer_count+1;end 
@@ -520,7 +526,7 @@ always_ff @(posedge(cks.sysClk))begin
 		    (m06.YouGotIt):begin m06.YouGotIt <= 0;m06xfer_count<=m06xfer_count+1;end
 	     endcase // 1'b1
 	     xfer_counter <= xfer_counter +1;
-	      end
+	   end
      (s11.Clast):begin 
      		case(1'b1)
      		(m00.YouGotIt):begin m00.YouGotIt <= 0;m00xfer_count<=m00xfer_count+1;end 
@@ -532,7 +538,7 @@ always_ff @(posedge(cks.sysClk))begin
 		    (m06.YouGotIt):begin m06.YouGotIt <= 0;m06xfer_count<=m06xfer_count+1;end
 	     endcase // 1'b1
 	     xfer_counter <= xfer_counter +1;
-	      end
+	   end
      (s12.Clast):begin 
      		case(1'b1)
      		(m00.YouGotIt):begin m00.YouGotIt <= 0;m00xfer_count<=m00xfer_count+1;end 
@@ -544,7 +550,7 @@ always_ff @(posedge(cks.sysClk))begin
 		    (m06.YouGotIt):begin m06.YouGotIt <= 0;m06xfer_count<=m06xfer_count+1;end
 	     endcase // 1'b1
 	     xfer_counter <= xfer_counter +1;
-	      end
+	   end
      (s13.Clast):begin 
      		case(1'b1)
      		(m00.YouGotIt):begin m00.YouGotIt <= 0;m00xfer_count<=m00xfer_count+1;end 
@@ -556,8 +562,8 @@ always_ff @(posedge(cks.sysClk))begin
 		    (m06.YouGotIt):begin m06.YouGotIt <= 0;m06xfer_count<=m06xfer_count+1;end
 	     endcase // 1'b1
 	     xfer_counter <= xfer_counter +1;
-	      end
+	   end
   endcase
-end
+ end
 end
 endmodule

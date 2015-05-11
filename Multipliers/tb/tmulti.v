@@ -1,6 +1,3 @@
-// This is a simple testbench for 271hw
-// Name: Zan Zhan, SJSU ID: 010057489
-//
 `timescale 1ns/10ps
 
 module tmulti();

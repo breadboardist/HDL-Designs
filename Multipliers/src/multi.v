@@ -12,7 +12,6 @@ output valid;
 reg   [63:0] prodt;
 wire         valid;
 wire  [31:0] q0, h0, mlier_comp, mcand_comp;
-//reg   [31:0] r_mlier, r_mcand, q0, h0;
 
 reg  [63:0] s_buf;
 reg  [33:0] sft_cnt;
@@ -23,13 +22,12 @@ reg         load_ok;
 wire [63:0] ture_mcand;
 reg         mlier_msb, mcand_msb;
 
-//*********************************************//
+
 // 32 clk cycle, produce sft/add operation
 add_full_32b add32_inst1(mlier_comp, cout1, ~mlier, 32'b1, 1'b0);
 add_full_32b add32_inst2(mcand_comp, cout2, ~mcand, 32'b1, 1'b0);
 
-//assign  q0 = (mlier[31])? (~mlier + 1'b1) : mlier;
-//assign  h0 = (mcand[31])? (~mcand + 1'b1) : mcand;
+
 assign  q0 = (mlier[31])? mlier_comp : mlier;
 assign  h0 = (mcand[31])? mcand_comp : mcand;
 
@@ -81,7 +79,6 @@ always @( posedge clock or posedge reset ) begin
     end
 end 
 
-//*********************************************//
 // 1 clk cycle, produce sign adjustment
 wire [63: 0] mult_tmp;
 wire [63: 0] mult_out;
