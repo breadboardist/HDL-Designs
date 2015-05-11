@@ -97,73 +97,42 @@ always @(*) begin// figure out how many continuous 0 exist
 	if (!start || !load_ok) begin
 		sft_num = 0;
 	end else begin 
-		if (q0_judge[31:0] ==0) begin
-			sft_num = 32;
-		end else if (q0_judge[30:0] ==0 ) begin
-			sft_num = 31;
-		end else if (q0_judge[29:0] ==0 ) begin
-			sft_num = 30;
-		end else if (q0_judge[28:0] == 0) begin
-			sft_num = 29;
-		end else if (q0_judge[27:0] == 0) begin
-			sft_num = 28;
-		end else if (q0_judge[26:0] == 0) begin
-			sft_num = 27;
-		end else if (q0_judge[25:0] == 0) begin
-			sft_num = 26;
-		end else if (q0_judge[24:0] == 0) begin
-			sft_num = 25;
-		end else if (q0_judge[23:0] == 0) begin
-			sft_num = 24;
-		end else if (q0_judge[22:0] == 0) begin
-			sft_num = 23;
-		end else if (q0_judge[21:0] == 0) begin
-			sft_num = 22;
-		end else if (q0_judge[20:0] == 0) begin
-			sft_num = 21;
-		end else if (q0_judge[19:0] == 0) begin
-			sft_num = 20;
-		end else if (q0_judge[18:0] == 0) begin
-			sft_num = 19;
-		end else if (q0_judge[17:0] == 0) begin
-			sft_num = 18;
-		end else if (q0_judge[16:0] == 0) begin
-			sft_num = 17;
-		end else if (q0_judge[15:0] == 0) begin
-			sft_num = 16;
-		end else if (q0_judge[14:0] == 0) begin
-			sft_num = 15;
-		end else if (q0_judge[13:0] == 0) begin
-			sft_num = 14;
-		end else if (q0_judge[12:0] == 0) begin
-			sft_num = 13;
-		end else if (q0_judge[11:0] == 0) begin
-			sft_num = 12;
-		end else if (q0_judge[10:0] == 0) begin
-			sft_num = 11;
-		end else if (q0_judge[ 9:0] == 0) begin
-			sft_num = 10;
-		end else if (q0_judge[ 8:0] == 0) begin
-			sft_num = 9 ;
-		end else if (q0_judge[ 7:0] == 0) begin
-			sft_num = 8 ;
-		end else if (q0_judge[ 6:0] == 0) begin
-			sft_num = 7 ;
-		end else if (q0_judge[ 5:0] == 0) begin
-			sft_num = 6 ;
-		end else if (q0_judge[ 4:0] == 0) begin
-			sft_num = 5 ;
-		end else if (q0_judge[ 3:0] == 0) begin
-			sft_num = 4 ;
-		end else if (q0_judge[ 2:0] == 0) begin
-			sft_num = 3 ;
-		end else if (q0_judge[ 1:0] == 0) begin
-			sft_num = 2 ;
-		end else if (q0_judge[ 0] == 0) begin
-			sft_num = 1 ;
-		end else begin
-			sft_num = 0;
-		end
+		case (1'b1)
+			(q0_judge[31:0] == 0):sft_num = 32;
+			(q0_judge[30:0] == 0):sft_num = 31;
+			(q0_judge[29:0] == 0):sft_num = 30;
+			(q0_judge[28:0] == 0):sft_num = 29;
+			(q0_judge[27:0] == 0):sft_num = 28;
+			(q0_judge[26:0] == 0):sft_num = 27;
+			(q0_judge[25:0] == 0):sft_num = 26;
+			(q0_judge[24:0] == 0):sft_num = 25;
+			(q0_judge[23:0] == 0):sft_num = 24;
+			(q0_judge[22:0] == 0):sft_num = 23;
+			(q0_judge[21:0] == 0):sft_num = 22;
+			(q0_judge[20:0] == 0):sft_num = 21;
+			(q0_judge[19:0] == 0):sft_num = 20;
+			(q0_judge[18:0] == 0):sft_num = 19;
+			(q0_judge[17:0] == 0):sft_num = 18;
+			(q0_judge[16:0] == 0):sft_num = 17;
+			(q0_judge[15:0] == 0):sft_num = 16;
+			(q0_judge[14:0] == 0):sft_num = 15;
+			(q0_judge[13:0] == 0):sft_num = 14;
+			(q0_judge[12:0] == 0):sft_num = 13;
+			(q0_judge[11:0] == 0):sft_num = 12;
+			(q0_judge[10:0] == 0):sft_num = 11;
+			(q0_judge[ 9:0] == 0):sft_num = 10;
+			(q0_judge[ 8:0] == 0):sft_num = 9 ;
+			(q0_judge[ 7:0] == 0):sft_num = 8 ;
+			(q0_judge[ 6:0] == 0):sft_num = 7 ;
+			(q0_judge[ 5:0] == 0):sft_num = 6 ;
+			(q0_judge[ 4:0] == 0):sft_num = 5 ;
+			(q0_judge[ 3:0] == 0):sft_num = 4 ;
+			(q0_judge[ 2:0] == 0):sft_num = 3 ;
+			(q0_judge[ 1:0] == 0):sft_num = 2 ;
+			(q0_judge[ 0 ]  == 0):sft_num = 1 ;
+			default: sft_num = 0;
+		endcase
+		 
 	end
 end 
 

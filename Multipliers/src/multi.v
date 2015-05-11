@@ -41,29 +41,33 @@ add_full_64b add_full_64b(
 	.cin	(1'b0));
 
 always @( posedge clock or posedge reset ) begin
-    if ( reset == 1'b1 ) begin
+    if ( reset ) begin
         h_sft <= 0;    
         q_sft <= 0;    
-        s_buf <= 0; mlier_msb <= 0; mcand_msb <= 0;   
+        s_buf <= 0;
+        mlier_msb <= 0; 
+        mcand_msb <= 0;   
         sft_cnt <= 34'b1;    
-	load_ok <= 0;
+		load_ok <= 0;
     end else begin 
         if (!load_ok) begin
           if (start) begin
 	        h_sft <= {32'b0, h0};    
 	        q_sft <= {1'b1,q0};     
-		mlier_msb <= mlier[31]; mcand_msb <= mcand[31];
+			mlier_msb <= mlier[31]; 
+			mcand_msb <= mcand[31];
           end else begin
 	        h_sft <= 0;    
 	        q_sft <= 0;     
-		mlier_msb <= 0; mcand_msb <= 0;
+			mlier_msb <= 0; 
+			mcand_msb <= 0;
           end
 	end else begin
-		h_sft <= {h_sft[62:0], 1'b0};
-		q_sft <= {1'b0, q_sft[31:1]};
+			h_sft <= {h_sft[62:0], 1'b0};
+			q_sft <= {1'b0, q_sft[31:1]};
 	end
 
-        if (!start) begin
+    if (!start) begin
 		load_ok <= 0;
 	end else begin
 		load_ok <= 1;
@@ -76,7 +80,7 @@ always @( posedge clock or posedge reset ) begin
 	       	s_buf <= sum;    
 	        sft_cnt <= {sft_cnt[32:0], 1'b0};    
 	end
-    end
+   end
 end 
 
 // 1 clk cycle, produce sign adjustment
@@ -99,7 +103,8 @@ end
 endmodule
 
 module add_full_1b (sum, cout, a, b, cin);
-input a, b, cin; output sum, cout;
+input a, b, cin; 
+output sum, cout;
 wire sum_1st, cout_1st;
 
 assign sum_1st = a ^ b;
