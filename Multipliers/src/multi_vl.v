@@ -14,7 +14,7 @@ module multi_vl(clock, reset, mlier, mcand, prodt, start, valid);
 
 	reg   [63:0] 	prodt;
 	wire  [31:0] 	reg_mlier, reg_mcand, comp_mlier, comp_mcand;
-	wire  			cout1, cout2;
+	//wire  			cout1, cout2;
 	reg  [63:0] 	s_buf;
 	reg  [35:0] 	sft_cnt;
 	wire [63:0] 	sum;
@@ -141,7 +141,7 @@ module multi_vl(clock, reset, mlier, mcand, prodt, start, valid);
 	// 1 clk cycle, produce sign adjustment
 	wire [63: 0] 	mult_tmp;
 	wire [63: 0] 	mult_out;
-	
+
 	assign  mult_tmp = ~(sum - 1'b1);
 	assign  mult_out = ((mlier_msb ^ mcand_msb) && (|sum))? {1'b1,mult_tmp} : {1'b0, sum};
 
