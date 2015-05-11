@@ -1,4 +1,4 @@
-
+`timescale 1ns/10ps
 module multi(clock, reset, mlier, mcand, prodt, start, valid);
 
 input clock;

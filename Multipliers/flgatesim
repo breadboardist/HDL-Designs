@@ -1,0 +1,3 @@
+#!/usr/bin/csh
+source /apps/design_environment.csh
+ncverilog +libext+.tsbvlibp +access+r +v2k -y /apps/toshiba/sjsu/verilog/tc240c +define+tb_fix_post=1 tb/tmulti.v src/multi_gates.v | tee ./results/FLgatesimres.txt
