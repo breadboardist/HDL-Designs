@@ -1,4 +1,62 @@
 `timescale 1ns/10ps
+// Arbiter with suppoer for upto seven masters
+//--------------------------------------------
+// The masters will make a request with a signal 'need'
+// The masters own the bus when they receive a signal 'YouGotIt'
+
+
+// Masters can also be a slave. A master may target itself.
+//  Master  Master   Master
+//  Number  Slave    Slave
+//          Addr     Addr
+//          Start    End
+
+//    0  ffff8ddc  ffff8edc
+//    1  ffff7015  ffff7085
+//    2  ffff58ce  ffff58df
+//    3  ffff3ca5  ffff3d61
+//    4  fffe951f  fffe9553
+//    5  fffe93e5  fffe93fe
+//    6  ffff5342  ffff5374
+
+// The master address bus is 48 bits wide, and named 'addrM'
+// The master data out bus is called 'DoutM'
+// The master data in bus is called 'DinMast'
+// Each master shall be arbitrated so it receives at least
+// the following transfer cycle percentages:
+// Master Percent 
+//   0     21
+//   1      6
+//   2      6
+//   3     19
+//   4     21
+//   5     21
+//   6      6
+
+// The percentages shall be computed over intervals of 500 cycles
+// All percentage usages start over on each interval
+
+// The slave data bus into the slave is 16 bits wide, and named 'dbus_in'
+// The slave data bus out from the slave is named 'dataOut'
+
+//  The slave address bus is 48 bits wide, and named 'Adr'
+// Each slave has an enable called 'tarActive' indicating a valid cycle has begun
+// Each slave indicates the end of transfer with a signal called 'Clast'
+// Each cycle after tarActive up to and including Clast is assumed to transfer data
+
+// slave Addr L    Addr H
+
+//  0  fffffc6a  fffffd5a
+//  1  ffff3064  ffff3100
+//  2  ffff7d12  ffff7ded
+//  3  ffff6513  ffff6554
+//  4  ffff4096  ffff418a
+//  5  ffffaac2  ffffab79
+//  6  ffff6066  ffff610b
+
+// The clock is named 'sysClk' and is active on the posedge
+// The system reset is named 'rst'
+
 
 module g16Arbitrator (g16_if.CLKS cks,
 						g16_if.Mstr m00, g16_if.Slave s00,
