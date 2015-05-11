@@ -20,7 +20,7 @@ module multi_vl(clock, reset, mlier, mcand, prodt, start, valid);
 	wire [63:0] 	acc;
 	wire [31:0] 	zeroes_mlier;
 	reg  [5:0]   	shift_amount;
-	//wire [63:0] 	multiplier;
+	
 	reg  [63:0] 	mcand_sft;
 	reg  [32:0] 	mlier_sft;
 	reg         	mlier_msb, mcand_msb;
@@ -41,8 +41,8 @@ module multi_vl(clock, reset, mlier, mcand, prodt, start, valid);
 	FullAdder64Bit U1	(
 							.sum	(acc), 
 							.cout	(), 
-							.a	(acc_d), 
-							.b	(mcand_sft), 
+							.a		(acc_d), 
+							.b		(mcand_sft), 
 							.cin	(1'b0)
 						);
 
@@ -152,22 +152,22 @@ end
 	end 
 
 	// 1 clk cycle, produce sign adjustment
-	wire [63: 0] 	mult_tmp;
-	wire [63: 0] 	mult_out;
+	wire [63: 0] 	prodt_tmp;
+	wire [63: 0] 	prodt_out;
 
-	assign  mult_tmp = ~(acc - 1'b1);
-	assign  mult_out = ((mlier_msb ^ mcand_msb) && (|acc))? {1'b1,mult_tmp} : {1'b0, acc};
+	assign  prodt_tmp = ~(acc - 1'b1);
+	assign  prodt_out = ((mlier_msb ^ mcand_msb) && (|acc))? {1'b1,prodt_tmp} : {1'b0, acc};
 
 	assign valid = shift_position[34];
 
 	always @( posedge clock or posedge reset ) begin
-	    if ( reset == 1'b1 ) begin
+	    if ( reset ) begin
 	        prodt <= 0;    
 	    end else begin
 		if (zeroes_mlier[31:0] == 32'b0) begin
 			prodt 	<= 0;    
 		end else begin
-			prodt 	<= mult_out;    
+			prodt 	<= prodt_out;    
 		end
 	    end
 	end 

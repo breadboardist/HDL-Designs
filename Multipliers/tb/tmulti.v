@@ -1,187 +1,199 @@
+/////////////////////////////////////////////////////////////
+//Testbench to test Fixed and Variable Latency Multipliers //
+/////////////////////////////////////////////////////////////
+
 `timescale 1ns/10ps
-
 module tmulti();
-
-`ifdef tb_fix_pre
-parameter tb_type = 1;
-parameter vcd_name = "wave/multi_fix.vcd";
-`endif
-
-`ifdef tb_fix_post
-parameter tb_type = 2;
-parameter vcd_name = "wave/multi_fix_post.vcd";
-`endif
-
-`ifdef tb_var_pre
-parameter tb_type = 3;
-parameter vcd_name = "wave/multi_var.vcd";
-`endif
-
-`ifdef tb_var_post
-parameter tb_type = 4;
-parameter vcd_name = "wave/multi_var_post.vcd";
-`endif
-
-reg clock, reset, start, start_bf;
-reg [31:0] mlier, mcand, r_mlier, r_mcand; 
-reg [63:0] r_prodt, c_prodt; 
-wire [63:0] prodt;
-wire valid;
-
-wire [31:0] q0,h0;
-wire [63:0] mr1,mr2,exp;
-reg  [5 :0] pt;
-reg  [7 :0] latency, r_latency, tmp1;
-reg debug = 1 ;
-
-initial begin
-  if(debug) begin
-    $dumpfile(vcd_name);
-    $dumpvars(9,tmulti);
-  end
-  clock=0;
-  forever #5.0 clock=~clock; 
-end
-
-initial begin
-  if (tb_type == 1) 
-  $display("\nInstance fix latency multiplier and kick off simulation.\n");
-  else if (tb_type == 2)
-  $display("\nInstance fix latency multiplier and kick off gate level simulation.\n");
-  else if (tb_type == 3)
-  $display("\nInstance variable latency multiplier and kick off simulation.\n");
-  else if (tb_type == 4)
-  $display("\nInstance variable latency multiplier and kick off gate level simulation.\n");
-
-  reset=1;   start=0;   mlier=0;   mcand=0;
-  #19.0;  reset=0;  #1.0;
-//** multiplier is positive and multiplcant is positive *
-  start=1;  mlier=32'h00000001;  mcand=32'h7fffffff;  #(10.0*33);  
-  start=0;  mlier=32'h00000000;  mcand=32'h00000000;  #50.0;
-
-  start=1;  mlier=32'h7fffffff;  mcand=32'h7fffffff;  #(10.0*33);  
-  start=0;  mlier=32'h00000000;  mcand=32'h00000000;  #50.0;
-
-  start=1;  mlier=32'h00000001;  mcand=32'h00000001;  #(10.0*33);  
-  start=0;  mlier=32'h00000000;  mcand=32'h00000000;  #50.0;
-
-  start=1;  mlier=32'h7fffffff;  mcand=32'h00000001;  #(10.0*33);  
-  start=0;  mlier=32'h00000000;  mcand=32'h00000000;  #50.0;
-
-  start=1;  mlier=32'h5555aaaa;  mcand=32'h7fffffff;  #(10.0*33);  
-  start=0;  mlier=32'h00000000;  mcand=32'h00000000;  #50.0;
-
-  start=1;  mlier=32'h76543210;  mcand=32'h7fffffff;  #(10.0*33);  
-  start=0;  mlier=32'h00000000;  mcand=32'h00000000;  #50.0;
-
-//** multiplier is positive and multiplcant is negtive **
-  start=1;  mlier=32'h00000001;  mcand=32'h80000000;  #(10.0*33);  
-  start=0;  mlier=32'h00000000;  mcand=32'h00000000;  #50.0;
-
-  start=1;  mlier=32'h7fffffff;  mcand=32'h80000000;  #(10.0*33);  
-  start=0;  mlier=32'h00000000;  mcand=32'h00000000;  #50.0;
-
-  start=1;  mlier=32'h00000001;  mcand=32'hffffffff;  #(10.0*33);  
-  start=0;  mlier=32'h00000000;  mcand=32'h00000000;  #50.0;
-
-  start=1;  mlier=32'h7fffffff;  mcand=32'hffffffff;  #(10.0*33);  
-  start=0;  mlier=32'h00000000;  mcand=32'h00000000;  #50.0;
-
-  start=1;  mlier=32'h5555aaaa;  mcand=32'h80000000;  #(10.0*33);  
-  start=0;  mlier=32'h00000000;  mcand=32'h00000000;  #50.0;
-
-  start=1;  mlier=32'h76543210;  mcand=32'h80000000;  #(10.0*33);  
-  start=0;  mlier=32'h00000000;  mcand=32'h00000000;  #50.0;
-
-//** multiplier is negtive and multiplcant is positive ***
-  start=1;  mlier=32'hffffffff;  mcand=32'h7fffffff;  #(10.0*33);  
-  start=0;  mlier=32'h00000000;  mcand=32'h00000000;  #50.0;
-
-  start=1;  mlier=32'h80000000;  mcand=32'h7fffffff;  #(10.0*33);  
-  start=0;  mlier=32'h00000000;  mcand=32'h00000000;  #50.0;
-
-  start=1;  mlier=32'hffffffff;  mcand=32'h00000001;  #(10.0*33);  
-  start=0;  mlier=32'h00000000;  mcand=32'h00000000;  #50.0;
-
-  start=1;  mlier=32'h80000000;  mcand=32'h00000001;  #(10.0*33);   
-  start=0;  mlier=32'h00000000;  mcand=32'h00000000;  #50.0;
-
-  start=1;  mlier=32'haaaa5555;  mcand=32'h7fffffff;  #(10.0*33);  
-  start=0;  mlier=32'h00000000;  mcand=32'h00000000;  #50.0;
-
-  start=1;  mlier=32'h87654321;  mcand=32'h7fffffff;  #(10.0*33);  
-  start=0;  mlier=32'h00000000;  mcand=32'h00000000;  #50.0;
-
-//** multiplier is negtive and multiplcant is negtive ****
-  start=1;  mlier=32'hffffffff;  mcand=32'h80000000;  #(10.0*33);  
-  start=0;  mlier=32'h00000000;  mcand=32'h00000000;  #50.0;
-
-  start=1;  mlier=32'h80000000;  mcand=32'h80000000;  #(10.0*33);  
-  start=0;  mlier=32'h00000000;  mcand=32'h00000000;  #50.0;
-
-  start=1;  mlier=32'hffffffff;  mcand=32'hffffffff;  #(10.0*33);  
-  start=0;  mlier=32'h00000000;  mcand=32'h00000000;  #50.0;
-
-  start=1;  mlier=32'h80000000;  mcand=32'hffffffff;  #(10.0*33);  
-  start=0;  mlier=32'h00000000;  mcand=32'h00000000;  #50.0;
-
-  start=1;  mlier=32'haaaa5555;  mcand=32'h80000000;  #(10.0*33);  
-  start=0;  mlier=32'h00000000;  mcand=32'h00000000;  #50.0;
-
-  start=1;  mlier=32'h87654321;  mcand=32'h80000000;  #(10.0*33);  
-  start=0;  mlier=32'h00000000;  mcand=32'h00000000;  #50.0;
-
-  //** zero case ****
-  start=1;  mlier=32'h00000000;  mcand=32'h7fffffff;  #(10.0*33);  
-  start=0;  mlier=32'h00000000;  mcand=32'h00000000;  #50.0;
-
-  start=1;  mlier=32'h00000000;  mcand=32'h80000000;  #(10.0*33);  
-  start=0;  mlier=32'h00000000;  mcand=32'h00000000;  #50.0;
-
-  start=1;  mlier=32'h7fffffff;  mcand=32'h00000000;  #(10.0*33);   
-  start=0;  mlier=32'h00000000;  mcand=32'h00000000;  #50.0;
-
-  start=1;  mlier=32'h80000000;  mcand=32'h00000000;  #(10.0*33);   
-  start=0;  mlier=32'h00000000;  mcand=32'h00000000;  #50.0;
-  // Random Values
-  start=1;  mlier=$random;  mcand=$random;  #(10.0*33);  
-  start=0;  mlier=$random;  mcand=$random;  #50.0;
-
-  start=1;  mlier=$random;  mcand=$random;  #(10.0*33);  
-  start=0;  mlier=$random;  mcand=$random;  #50.0;
-
-  start=1;  mlier=$random;  mcand=$random;  #(10.0*33);   
-  start=0;  mlier=$random;  mcand=$random;  #50.0;
   
-  start=1;  mlier=$random;  mcand=$random;  #(10.0*33);   
-  start=0;  mlier=$random;  mcand=$random;  #50.0;
+  //Check which simulation is being performed
+  `ifdef tb_fix_pre
+  parameter tb_type = 1;
+  parameter vcd_name = "wave/FL.vcd";
+  `endif
 
-  mlier=0; 
-  mcand=0;
+  `ifdef tb_fix_post
+  parameter tb_type = 2;
+  parameter vcd_name = "wave/FLGates.vcd";
+  `endif
 
-  #(500*2);
-  if (tb_type == 1) 
-  $display("\n\n\nWe passed the test on FL multi, happy :)\n\n\n");
-  else if (tb_type == 2)
-  $display("\n\n\nWe passed the gate level simulation on FL multi, happy :)\n\n\n");
-  else if (tb_type == 3)
-  $display("\n\n\nWe passed the test on VL multi, happy :)\n\n\n");
-  else if (tb_type == 4)
-  $display("\n\n\nWe passed the gate level simulation on VL multi, happy :)\n\n\n");
+  `ifdef tb_var_pre
+  parameter tb_type = 3;
+  parameter vcd_name = "wave/VL.vcd";
+  `endif
 
-  $finish;
+  `ifdef tb_var_post
+  parameter tb_type = 4;
+  parameter vcd_name = "VLGates.vcd";
+  `endif
+
+  ////////////////////////////////////
+  //Ports and register declarations //
+  ////////////////////////////////////
+  
+  reg clock, reset, start, start_bf;
+  reg [31:0] mlier, mcand, r_mlier, r_mcand; 
+  reg [63:0] r_prodt, c_prodt; 
+  wire [63:0] prodt;
+  wire valid;
+
+  wire [31:0] q0,h0;
+  wire [63:0] mr1,mr2,exp;
+  reg  [5 :0] pt;
+  reg  [7 :0] latency, r_latency, tmp1;
+  reg debug = 1 ;
+
+  initial begin
+    //Generate VCD
+    if(debug) begin
+      $dumpfile(vcd_name);
+      $dumpvars(9,tmulti);
+    end
+    //Clocking block
+    clock=0;
+    forever #5.0 clock=~clock; 
+  end
+
+  initial begin
+    if (tb_type == 1) 
+      $display("\nFixed Latency Multiplier RTL Simulation\n");
+    else if (tb_type == 2)
+      $display("\nFixed Latency Multiplier GLS Simulation\n");
+    else if (tb_type == 3)
+      $display("\nVariable Latency Multiplier RTL Simulation\n");
+    else if (tb_type == 4)
+      $display("\nVariable Latency Multiplier GLS Simulation\n");
+
+    reset=1;   start=0;   mlier=0;   mcand=0;
+    #19.0;  reset=0;  #1.0;
+
+    //** multiplier is positive and multiplcant is positive *
+    start=1;  mlier=32'h00000001;  mcand=32'h7fffffff;  #(10.0*33);  
+    start=0;  mlier=32'h00000000;  mcand=32'h00000000;  #50.0;
+
+    start=1;  mlier=32'h7fffffff;  mcand=32'h7fffffff;  #(10.0*33);  
+    start=0;  mlier=32'h00000000;  mcand=32'h00000000;  #50.0;
+
+    start=1;  mlier=32'h00000001;  mcand=32'h00000001;  #(10.0*33);  
+    start=0;  mlier=32'h00000000;  mcand=32'h00000000;  #50.0;
+
+    start=1;  mlier=32'h7fffffff;  mcand=32'h00000001;  #(10.0*33);  
+    start=0;  mlier=32'h00000000;  mcand=32'h00000000;  #50.0;
+
+    start=1;  mlier=32'h5555aaaa;  mcand=32'h7fffffff;  #(10.0*33);  
+    start=0;  mlier=32'h00000000;  mcand=32'h00000000;  #50.0;
+
+    start=1;  mlier=32'h76543210;  mcand=32'h7fffffff;  #(10.0*33);  
+    start=0;  mlier=32'h00000000;  mcand=32'h00000000;  #50.0;
+
+    //** multiplier is positive and multiplcant is negtive **
+    start=1;  mlier=32'h00000001;  mcand=32'h80000000;  #(10.0*33);  
+    start=0;  mlier=32'h00000000;  mcand=32'h00000000;  #50.0;
+
+    start=1;  mlier=32'h7fffffff;  mcand=32'h80000000;  #(10.0*33);  
+    start=0;  mlier=32'h00000000;  mcand=32'h00000000;  #50.0;
+
+    start=1;  mlier=32'h00000001;  mcand=32'hffffffff;  #(10.0*33);  
+    start=0;  mlier=32'h00000000;  mcand=32'h00000000;  #50.0;
+
+    start=1;  mlier=32'h7fffffff;  mcand=32'hffffffff;  #(10.0*33);  
+    start=0;  mlier=32'h00000000;  mcand=32'h00000000;  #50.0;
+
+    start=1;  mlier=32'h5555aaaa;  mcand=32'h80000000;  #(10.0*33);  
+    start=0;  mlier=32'h00000000;  mcand=32'h00000000;  #50.0;
+
+    start=1;  mlier=32'h76543210;  mcand=32'h80000000;  #(10.0*33);  
+    start=0;  mlier=32'h00000000;  mcand=32'h00000000;  #50.0;
+
+    //** multiplier is negtive and multiplcant is positive ***
+    start=1;  mlier=32'hffffffff;  mcand=32'h7fffffff;  #(10.0*33);  
+    start=0;  mlier=32'h00000000;  mcand=32'h00000000;  #50.0;
+
+    start=1;  mlier=32'h80000000;  mcand=32'h7fffffff;  #(10.0*33);  
+    start=0;  mlier=32'h00000000;  mcand=32'h00000000;  #50.0;
+
+    start=1;  mlier=32'hffffffff;  mcand=32'h00000001;  #(10.0*33);  
+    start=0;  mlier=32'h00000000;  mcand=32'h00000000;  #50.0;
+
+    start=1;  mlier=32'h80000000;  mcand=32'h00000001;  #(10.0*33);   
+    start=0;  mlier=32'h00000000;  mcand=32'h00000000;  #50.0;
+
+    start=1;  mlier=32'haaaa5555;  mcand=32'h7fffffff;  #(10.0*33);  
+    start=0;  mlier=32'h00000000;  mcand=32'h00000000;  #50.0;
+
+    start=1;  mlier=32'h87654321;  mcand=32'h7fffffff;  #(10.0*33);  
+    start=0;  mlier=32'h00000000;  mcand=32'h00000000;  #50.0;
+
+    // Multiplier is negtive and Multiplcand is negtive
+    start=1;  mlier=32'hffffffff;  mcand=32'h80000000;  #(10.0*33);  
+    start=0;  mlier=32'h00000000;  mcand=32'h00000000;  #50.0;
+
+    start=1;  mlier=32'h80000000;  mcand=32'h80000000;  #(10.0*33);  
+    start=0;  mlier=32'h00000000;  mcand=32'h00000000;  #50.0;
+
+    start=1;  mlier=32'hffffffff;  mcand=32'hffffffff;  #(10.0*33);  
+    start=0;  mlier=32'h00000000;  mcand=32'h00000000;  #50.0;
+
+    start=1;  mlier=32'h80000000;  mcand=32'hffffffff;  #(10.0*33);  
+    start=0;  mlier=32'h00000000;  mcand=32'h00000000;  #50.0;
+
+    start=1;  mlier=32'haaaa5555;  mcand=32'h80000000;  #(10.0*33);  
+    start=0;  mlier=32'h00000000;  mcand=32'h00000000;  #50.0;
+
+    start=1;  mlier=32'h87654321;  mcand=32'h80000000;  #(10.0*33);  
+    start=0;  mlier=32'h00000000;  mcand=32'h00000000;  #50.0;
+
+    //Zero Values
+    start=1;  mlier=32'h00000000;  mcand=32'h7fffffff;  #(10.0*33);  
+    start=0;  mlier=32'h00000000;  mcand=32'h00000000;  #50.0;
+
+    start=1;  mlier=32'h00000000;  mcand=32'h80000000;  #(10.0*33);  
+    start=0;  mlier=32'h00000000;  mcand=32'h00000000;  #50.0;
+
+    start=1;  mlier=32'h7fffffff;  mcand=32'h00000000;  #(10.0*33);   
+    start=0;  mlier=32'h00000000;  mcand=32'h00000000;  #50.0;
+
+    start=1;  mlier=32'h80000000;  mcand=32'h00000000;  #(10.0*33);   
+    start=0;  mlier=32'h00000000;  mcand=32'h00000000;  #50.0;
+
+    // Random Values
+    start=1;  mlier=$random;  mcand=$random;  #(10.0*33);  
+    start=0;  mlier=$random;  mcand=$random;  #50.0;
+
+    start=1;  mlier=$random;  mcand=$random;  #(10.0*33);  
+    start=0;  mlier=$random;  mcand=$random;  #50.0;
+
+    start=1;  mlier=$random;  mcand=$random;  #(10.0*33);   
+    start=0;  mlier=$random;  mcand=$random;  #50.0;
+    
+    start=1;  mlier=$random;  mcand=$random;  #(10.0*33);   
+    start=0;  mlier=$random;  mcand=$random;  #50.0;
+
+    mlier=0; 
+    mcand=0;
+
+    #(1000);
+
+    if (tb_type == 1) 
+      $display("\nFixed Latency Multiplier RTL Simulation completed successfully.\n");
+    else if (tb_type == 2)
+      $display("\nFixed Latency Multiplier GLS Simulation completed successfully.\n");
+    else if (tb_type == 3)
+      $display("\nVariable Latency Multiplier RTL Simulation completed successfully.\n");
+    else if (tb_type == 4)
+      $display("\nVariable Latency Multiplier GLS Simulation completed successfully.\n");
+
+    $finish;
 end
 
-//*****************************************************
+//Instantiate the correct multiplier module
 generate
-if (tb_type == 1 || tb_type == 2) begin : fix_latency_enable
-multi    multi   (clock, reset, mlier, mcand, prodt, start, valid);
-
-end else if (tb_type == 3 || tb_type == 4) begin : var_latency_enable
-multi_vl multi_vl(clock, reset, mlier, mcand, prodt, start, valid);
-end
+  if (tb_type == 1 || tb_type == 2) begin : fix_latency_enable
+    multi    multi   (clock, reset, mlier, mcand, prodt, start, valid);
+  end else if (tb_type == 3 || tb_type == 4) begin : var_latency_enable
+    multi_vl multi_vl(clock, reset, mlier, mcand, prodt, start, valid);
+  end
 endgenerate
-//*****************************************************
+
 
 assign  q0 = (r_mlier[31])? (~r_mlier + 1'b1) : r_mlier;
 assign  h0 = (r_mcand[31])? (~r_mcand + 1'b1) : r_mcand;
@@ -224,7 +236,7 @@ always @( posedge clock or posedge reset ) begin
     end
 
     if (latency > 33) begin
-        death(4'h2, pt, prodt, exp);
+        error(4'h2, pt, prodt, exp);
     end 
 
     if (valid) begin
@@ -238,13 +250,13 @@ always @( posedge clock or posedge reset ) begin
       $display("=> Total %d latency, test ok \n", latency);
       $display("-=-=-=-=-=-=-=-=-     End    -=-=-=-=-=-=-=-=-=-");
       if (prodt != exp) begin
-        death(4'h1, pt, prodt, exp);
+        error(4'h1, pt, prodt, exp);
       end
     end        
   end
 end
 
-task death(input [3:0] status, pt, input [63:0] prodt, exp);
+task error(input [3:0] status, pt, input [63:0] prodt, exp);
   begin
     $display("-=-=-=-=-=-=-=-=-ERROR Message-=-=-=-=-=-=-=-=-=-");
     $display("\n");

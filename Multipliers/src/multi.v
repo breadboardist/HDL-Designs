@@ -98,12 +98,12 @@ module multi(clock, reset, mlier, mcand, prodt, start, valid);
 	// 1 clk cycle to perform sign adjustment and produce result //
 	///////////////////////////////////////////////////////////////
 	
-	wire [63: 0] mult_tmp;
-	wire [63: 0] mult_out;
+	wire [63: 0] prodt_tmp;
+	wire [63: 0] prodt_out;
 
 	//Produce sign adjustment depending on the MSB of the inputs and output
-	assign  mult_tmp = ~(acc - 1'b1);
-	assign  mult_out = ((msb_mlier ^ msb_mcand) && (|acc))? {1'b1,mult_tmp} : {1'b0, acc};
+	assign  prodt_tmp = ~(acc - 1'b1);
+	assign  prodt_out = ((msb_mlier ^ msb_mcand) && (|acc))? {1'b1,prodt_tmp} : {1'b0, acc};
 
 	//When 33 clock cycles have been completed, the valid signal can be asserted
 	assign valid = shift_position[33];
@@ -112,7 +112,7 @@ module multi(clock, reset, mlier, mcand, prodt, start, valid);
 	    if ( reset ) begin
 	        prodt <= 0;    
 	    end else begin 
-	       	prodt <= mult_out;    
+	       	prodt <= prodt_out;    
 	    end
 	end 
 
