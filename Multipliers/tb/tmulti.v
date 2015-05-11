@@ -23,7 +23,7 @@ module tmulti();
 
   `ifdef tb_var_post
   parameter tb_type = 4;
-  parameter vcd_name = "VLGates.vcd";
+  parameter vcd_name = "wave/VLGates.vcd";
   `endif
 
   ////////////////////////////////////
@@ -67,7 +67,7 @@ module tmulti();
     #19.0;  reset=0;  #1.0;
 
     //Multiplier is Positive and Multiplicand is Positive
-    $display("\nMultiplier is Positive and Multiplicand is Positive\n");
+    $display("Multiplier is Positive and Multiplicand is Positive\n");
     start=1;  mlier=32'h00000001;  mcand=32'h7fffffff;  #(10.0*33);  
     start=0;  mlier=32'h00000000;  mcand=32'h00000000;  #50.0;
 
@@ -85,9 +85,10 @@ module tmulti();
 
     start=1;  mlier=32'h76543210;  mcand=32'h7fffffff;  #(10.0*33);  
     start=0;  mlier=32'h00000000;  mcand=32'h00000000;  #50.0;
+    $display("-----------------------------------------------------");
 
     //Multiplier is Positive and Multiplicand is Negative
-    $display("\nMultiplier is Positive and Multiplicand is Negative\n");
+    $display("Multiplier is Positive and Multiplicand is Negative\n");
     start=1;  mlier=32'h00000001;  mcand=32'h80000000;  #(10.0*33);  
     start=0;  mlier=32'h00000000;  mcand=32'h00000000;  #50.0;
 
@@ -105,9 +106,10 @@ module tmulti();
 
     start=1;  mlier=32'h76543210;  mcand=32'h80000000;  #(10.0*33);  
     start=0;  mlier=32'h00000000;  mcand=32'h00000000;  #50.0;
+    $display("-----------------------------------------------------");
 
     //Multiplier is Negative and Multiplicand is Positive
-    $display("\nMultiplier is Negative and Multiplicand is Positive\n");
+    $display("Multiplier is Negative and Multiplicand is Positive\n");
     start=1;  mlier=32'hffffffff;  mcand=32'h7fffffff;  #(10.0*33);  
     start=0;  mlier=32'h00000000;  mcand=32'h00000000;  #50.0;
 
@@ -125,9 +127,10 @@ module tmulti();
 
     start=1;  mlier=32'h87654321;  mcand=32'h7fffffff;  #(10.0*33);  
     start=0;  mlier=32'h00000000;  mcand=32'h00000000;  #50.0;
+    $display("-----------------------------------------------------");
 
     //Multiplier is Negative and Multiplicand is Negative
-    $display("\nMultiplier is Negative and Multiplicand is Negative\n");
+    $display("Multiplier is Negative and Multiplicand is Negative\n");
     start=1;  mlier=32'hffffffff;  mcand=32'h80000000;  #(10.0*33);  
     start=0;  mlier=32'h00000000;  mcand=32'h00000000;  #50.0;
 
@@ -145,8 +148,10 @@ module tmulti();
 
     start=1;  mlier=32'h87654321;  mcand=32'h80000000;  #(10.0*33);  
     start=0;  mlier=32'h00000000;  mcand=32'h00000000;  #50.0;
+    $display("-----------------------------------------------------");
 
     //Zero Values
+    $display("Multiplier is Zero or Multiplicand is Zero\n");
     start=1;  mlier=32'h00000000;  mcand=32'h7fffffff;  #(10.0*33);  
     start=0;  mlier=32'h00000000;  mcand=32'h00000000;  #50.0;
 
@@ -158,9 +163,10 @@ module tmulti();
 
     start=1;  mlier=32'h80000000;  mcand=32'h00000000;  #(10.0*33);   
     start=0;  mlier=32'h00000000;  mcand=32'h00000000;  #50.0;
+    $display("-----------------------------------------------------");
 
     // Random Values
-    $display("\nMultiplier is Randomly Generated and Multiplicand is Randomly Generated\n");
+    $display("Multiplier is Randomly Generated and Multiplicand is Randomly Generated\n");
     start=1;  mlier=$random;  mcand=$random;  #(10.0*33);  
     start=0;  mlier=$random;  mcand=$random;  #50.0;
 
@@ -172,6 +178,7 @@ module tmulti();
     
     start=1;  mlier=$random;  mcand=$random;  #(10.0*33);   
     start=0;  mlier=$random;  mcand=$random;  #50.0;
+    $display("-----------------------------------------------------");
 
     mlier=0; 
     mcand=0;
