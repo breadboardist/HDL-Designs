@@ -1,5 +1,5 @@
 `timescale 1ns/10ps
-
+//Arbiter Supporting Seven Masters
 module g16Arbitrator (g16_if.CLKS cks,
 						g16_if.Mstr m00, g16_if.Slave s00,
 						g16_if.Mstr m01, g16_if.Slave s01,						
