@@ -66,7 +66,8 @@ module tmulti();
     reset=1;   start=0;   mlier=0;   mcand=0;
     #19.0;  reset=0;  #1.0;
 
-    //** multiplier is positive and multiplcant is positive *
+    //Multiplier is Positive and Multiplicand is Positive
+    $display("\nMultiplier is Positive and Multiplicand is Positive\n");
     start=1;  mlier=32'h00000001;  mcand=32'h7fffffff;  #(10.0*33);  
     start=0;  mlier=32'h00000000;  mcand=32'h00000000;  #50.0;
 
@@ -85,7 +86,8 @@ module tmulti();
     start=1;  mlier=32'h76543210;  mcand=32'h7fffffff;  #(10.0*33);  
     start=0;  mlier=32'h00000000;  mcand=32'h00000000;  #50.0;
 
-    //** multiplier is positive and multiplcant is negtive **
+    //Multiplier is Positive and Multiplicand is Negative
+    $display("\nMultiplier is Positive and Multiplicand is Negative\n");
     start=1;  mlier=32'h00000001;  mcand=32'h80000000;  #(10.0*33);  
     start=0;  mlier=32'h00000000;  mcand=32'h00000000;  #50.0;
 
@@ -104,7 +106,8 @@ module tmulti();
     start=1;  mlier=32'h76543210;  mcand=32'h80000000;  #(10.0*33);  
     start=0;  mlier=32'h00000000;  mcand=32'h00000000;  #50.0;
 
-    //** multiplier is negtive and multiplcant is positive ***
+    //Multiplier is Negative and Multiplicand is Positive
+    $display("\nMultiplier is Negative and Multiplicand is Positive\n");
     start=1;  mlier=32'hffffffff;  mcand=32'h7fffffff;  #(10.0*33);  
     start=0;  mlier=32'h00000000;  mcand=32'h00000000;  #50.0;
 
@@ -123,7 +126,8 @@ module tmulti();
     start=1;  mlier=32'h87654321;  mcand=32'h7fffffff;  #(10.0*33);  
     start=0;  mlier=32'h00000000;  mcand=32'h00000000;  #50.0;
 
-    // Multiplier is negtive and Multiplcand is negtive
+    //Multiplier is Negative and Multiplicand is Negative
+    $display("\nMultiplier is Negative and Multiplicand is Negative\n");
     start=1;  mlier=32'hffffffff;  mcand=32'h80000000;  #(10.0*33);  
     start=0;  mlier=32'h00000000;  mcand=32'h00000000;  #50.0;
 
@@ -156,6 +160,7 @@ module tmulti();
     start=0;  mlier=32'h00000000;  mcand=32'h00000000;  #50.0;
 
     // Random Values
+    $display("\nMultiplier is Randomly Generated and Multiplicand is Randomly Generated\n");
     start=1;  mlier=$random;  mcand=$random;  #(10.0*33);  
     start=0;  mlier=$random;  mcand=$random;  #50.0;
 
