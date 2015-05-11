@@ -14,125 +14,138 @@ module multi_vl(clock, reset, mlier, mcand, prodt, start, valid);
 
 	reg   [63:0] 	prodt;
 	wire  [31:0] 	reg_mlier, reg_mcand, comp_mlier, comp_mcand;
-	//wire  			cout1, cout2;
-	reg  [63:0] 	s_buf;
-	reg  [35:0] 	sft_cnt;
-	wire [63:0] 	sum;
-	wire [31:0] 	reg_mlier_judge;
-	integer     	sft_num;
-	wire [63:0] 	multiplier;
-	reg  [63:0] 	h_sft;
-	reg  [32:0] 	q_sft;
+	
+	reg  [63:0] 	acc_d;
+	reg  [35:0] 	shift_position;
+	wire [63:0] 	acc;
+	wire [31:0] 	zeroes_mlier;
+	reg  [5:0]   	shift_amount;
+	//wire [63:0] 	multiplier;
+	reg  [63:0] 	mcand_sft;
+	reg  [32:0] 	mlier_sft;
 	reg         	mlier_msb, mcand_msb;
-	reg         	load_ok, first_sft;
+	reg         	load_vals, sft_init;
 
-	// 32 clk cycle, produce sft/add operation
+	/////////////////////////////////////////////////
+	// 32 clk cycle to perform shift/add operation //
+	/////////////////////////////////////////////////
+
+	// Adders to convert two's complement form of the multiplier to original form
 	FullAdder32Bit U2(comp_mlier, cout1, ~mlier, 32'b1, 1'b0);
 	FullAdder32Bit U3(comp_mcand, cout2, ~mcand, 32'b1, 1'b0);
 
+	// Determine if the mlier or mcand needs conversion from two's complement form
 	assign  reg_mlier = (mlier[31])? comp_mlier : mlier;
 	assign  reg_mcand = (mcand[31])? comp_mcand : mcand;
 
 	FullAdder64Bit U1	(
-							.sum	(sum), 
+							.sum	(acc), 
 							.cout	(), 
-							.a	(s_buf), 
-							.b	(h_sft), 
+							.a	(acc_d), 
+							.b	(mcand_sft), 
 							.cin	(1'b0)
 						);
 
 	always @( posedge clock or posedge reset ) begin
-	    if ( reset == 1'b1 ) begin
-	        h_sft <= 0;    
-	        q_sft <= 0;    
-	        s_buf <= 0; mlier_msb <= 0; mcand_msb <= 0;   
-	        sft_cnt <= 36'b1;  
-		load_ok <= 0; first_sft <= 1;
-	    end else begin 
-	        if (!load_ok) begin
-	          if (start) begin
-		        h_sft <= {32'b0, reg_mcand};    
-		        q_sft <= {1'b1,reg_mlier};     
-			mlier_msb <= mlier[31]; mcand_msb <= mcand[31];
-	          end else begin
-		        h_sft <= 0;    
-		        q_sft <= 0;     
-			mlier_msb <= 0; mcand_msb <= 0; first_sft <= 1;
+	    if ( reset ) begin
+	    	//Reset Everything
+	        mcand_sft 		<= 0;    
+	        mlier_sft 		<= 0;    
+	        acc_d 			<= 0; 
+	        mlier_msb 		<= 0; 
+	        mcand_msb 		<= 0;   
+	        shift_position 	<= 36'b1;  
+			load_vals 		<= 0; 
+			sft_init 		<= 1;
+	    end else begin
+	    	//Begin State Machine Multiplication
+	        if (!load_vals) begin
+	          	if (start) begin
+		        	mcand_sft <= {32'b0, reg_mcand};    
+		        	mlier_sft <= {1'b1,reg_mlier};     
+					mlier_msb <= mlier[31]; 
+					mcand_msb <= mcand[31];
+	          	end else begin
+		        	mcand_sft <= 0;    
+		        	mlier_sft <= 0;     
+					mlier_msb <= 0; 
+					mcand_msb <= 0; 
+					sft_init  <= 1;
 	          end
-	        end else begin    // shift multiplicant based on continuous 0 bit in multiplier
-	                first_sft <= 0;
-			q_sft <= (q_sft >> sft_num) >> 1;  
-	                if (first_sft && load_ok) begin // handle abnormal case for loading
-	        		h_sft <=  h_sft << sft_num ; 
+	        end else begin    // Shift multiplicand based on continuous zeroes in multiplier
+	                sft_init <= 0;
+					mlier_sft <= (mlier_sft >> shift_amount) >> 1;  
+	                if (sft_init && load_vals) begin // handle abnormal case for loading
+	        			mcand_sft <=  mcand_sft << shift_amount ; 
 	                end else begin
-	        		h_sft <= (h_sft << sft_num) <<1;   
+	        			mcand_sft <= (mcand_sft << shift_amount) <<1;   
 	                end
-		end
+			end
 	        
 	        if (!start) begin
-			load_ok <= 0;
-		end else begin
-			load_ok <= 1;
-		end
+				load_vals <= 0;
+			end else begin
+				load_vals <= 1;
+			end
 
-	// sft_cnt is used to count multipier's sft status.
+		// Keeping track of the shift position by shifting the shift_position register by the amount of shift
+		// being performed.
 		if (!start) begin
-		        sft_cnt <= 36'b1;    
-	        end else begin
-		        sft_cnt <= (sft_cnt << sft_num)<<1 ;    
+		        shift_position <= 36'b1;    
+	    end else begin
+		        shift_position <= (shift_position << shift_amount)<<1 ;    
 		end
 
 		if (!start) begin
-		       	s_buf <= 0;    
-	        end else if (first_sft && load_ok) begin
-	     		s_buf <= 0;    
-	        end else begin
-	     		s_buf <= sum;    
+		       	acc_d <= 0;    
+	    end else if (sft_init && load_vals) begin
+	     		acc_d <= 0;    
+	    end else begin
+	     		acc_d <= acc;    
 		end
+	end
+end 
 
-	    end
-	end 
-
-	assign reg_mlier_judge = q_sft[31:0] ;
+	assign zeroes_mlier = mlier_sft[31:0] ;
 
 	always @(*) begin// figure out how many continuous 0 exist
-		if (!start || !load_ok) begin
-			sft_num = 0;
+		if (!start || !load_vals) begin
+			shift_amount = 0;
 		end else begin 
 			case (1'b1)
-				(reg_mlier_judge[31:0] == 0):sft_num = 32;
-				(reg_mlier_judge[30:0] == 0):sft_num = 31;
-				(reg_mlier_judge[29:0] == 0):sft_num = 30;
-				(reg_mlier_judge[28:0] == 0):sft_num = 29;
-				(reg_mlier_judge[27:0] == 0):sft_num = 28;
-				(reg_mlier_judge[26:0] == 0):sft_num = 27;
-				(reg_mlier_judge[25:0] == 0):sft_num = 26;
-				(reg_mlier_judge[24:0] == 0):sft_num = 25;
-				(reg_mlier_judge[23:0] == 0):sft_num = 24;
-				(reg_mlier_judge[22:0] == 0):sft_num = 23;
-				(reg_mlier_judge[21:0] == 0):sft_num = 22;
-				(reg_mlier_judge[20:0] == 0):sft_num = 21;
-				(reg_mlier_judge[19:0] == 0):sft_num = 20;
-				(reg_mlier_judge[18:0] == 0):sft_num = 19;
-				(reg_mlier_judge[17:0] == 0):sft_num = 18;
-				(reg_mlier_judge[16:0] == 0):sft_num = 17;
-				(reg_mlier_judge[15:0] == 0):sft_num = 16;
-				(reg_mlier_judge[14:0] == 0):sft_num = 15;
-				(reg_mlier_judge[13:0] == 0):sft_num = 14;
-				(reg_mlier_judge[12:0] == 0):sft_num = 13;
-				(reg_mlier_judge[11:0] == 0):sft_num = 12;
-				(reg_mlier_judge[10:0] == 0):sft_num = 11;
-				(reg_mlier_judge[ 9:0] == 0):sft_num = 10;
-				(reg_mlier_judge[ 8:0] == 0):sft_num = 9 ;
-				(reg_mlier_judge[ 7:0] == 0):sft_num = 8 ;
-				(reg_mlier_judge[ 6:0] == 0):sft_num = 7 ;
-				(reg_mlier_judge[ 5:0] == 0):sft_num = 6 ;
-				(reg_mlier_judge[ 4:0] == 0):sft_num = 5 ;
-				(reg_mlier_judge[ 3:0] == 0):sft_num = 4 ;
-				(reg_mlier_judge[ 2:0] == 0):sft_num = 3 ;
-				(reg_mlier_judge[ 1:0] == 0):sft_num = 2 ;
-				(reg_mlier_judge[ 0 ]  == 0):sft_num = 1 ;
-				default: sft_num = 0;
+				(zeroes_mlier[31:0] == 0):shift_amount = 32;
+				(zeroes_mlier[30:0] == 0):shift_amount = 31;
+				(zeroes_mlier[29:0] == 0):shift_amount = 30;
+				(zeroes_mlier[28:0] == 0):shift_amount = 29;
+				(zeroes_mlier[27:0] == 0):shift_amount = 28;
+				(zeroes_mlier[26:0] == 0):shift_amount = 27;
+				(zeroes_mlier[25:0] == 0):shift_amount = 26;
+				(zeroes_mlier[24:0] == 0):shift_amount = 25;
+				(zeroes_mlier[23:0] == 0):shift_amount = 24;
+				(zeroes_mlier[22:0] == 0):shift_amount = 23;
+				(zeroes_mlier[21:0] == 0):shift_amount = 22;
+				(zeroes_mlier[20:0] == 0):shift_amount = 21;
+				(zeroes_mlier[19:0] == 0):shift_amount = 20;
+				(zeroes_mlier[18:0] == 0):shift_amount = 19;
+				(zeroes_mlier[17:0] == 0):shift_amount = 18;
+				(zeroes_mlier[16:0] == 0):shift_amount = 17;
+				(zeroes_mlier[15:0] == 0):shift_amount = 16;
+				(zeroes_mlier[14:0] == 0):shift_amount = 15;
+				(zeroes_mlier[13:0] == 0):shift_amount = 14;
+				(zeroes_mlier[12:0] == 0):shift_amount = 13;
+				(zeroes_mlier[11:0] == 0):shift_amount = 12;
+				(zeroes_mlier[10:0] == 0):shift_amount = 11;
+				(zeroes_mlier[ 9:0] == 0):shift_amount = 10;
+				(zeroes_mlier[ 8:0] == 0):shift_amount = 9 ;
+				(zeroes_mlier[ 7:0] == 0):shift_amount = 8 ;
+				(zeroes_mlier[ 6:0] == 0):shift_amount = 7 ;
+				(zeroes_mlier[ 5:0] == 0):shift_amount = 6 ;
+				(zeroes_mlier[ 4:0] == 0):shift_amount = 5 ;
+				(zeroes_mlier[ 3:0] == 0):shift_amount = 4 ;
+				(zeroes_mlier[ 2:0] == 0):shift_amount = 3 ;
+				(zeroes_mlier[ 1:0] == 0):shift_amount = 2 ;
+				(zeroes_mlier[ 0 ]  == 0):shift_amount = 1 ;
+				default: shift_amount = 0;
 			endcase
 			 
 		end
@@ -142,16 +155,16 @@ module multi_vl(clock, reset, mlier, mcand, prodt, start, valid);
 	wire [63: 0] 	mult_tmp;
 	wire [63: 0] 	mult_out;
 
-	assign  mult_tmp = ~(sum - 1'b1);
-	assign  mult_out = ((mlier_msb ^ mcand_msb) && (|sum))? {1'b1,mult_tmp} : {1'b0, sum};
+	assign  mult_tmp = ~(acc - 1'b1);
+	assign  mult_out = ((mlier_msb ^ mcand_msb) && (|acc))? {1'b1,mult_tmp} : {1'b0, acc};
 
-	assign valid = sft_cnt[34];
+	assign valid = shift_position[34];
 
 	always @( posedge clock or posedge reset ) begin
 	    if ( reset == 1'b1 ) begin
 	        prodt <= 0;    
 	    end else begin
-		if (reg_mlier_judge[31:0] == 32'b0) begin
+		if (zeroes_mlier[31:0] == 32'b0) begin
 			prodt 	<= 0;    
 		end else begin
 			prodt 	<= mult_out;    
