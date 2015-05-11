@@ -243,12 +243,10 @@ always @( posedge clock or posedge reset ) begin
       r_prodt <= prodt;
       c_prodt <= (prodt[63]) ? ~(prodt-1) : prodt;
       pt <= pt + 1;
-      $display("-=-=-=-=-=-=-=-=-    Begin   -=-=-=-=-=-=-=-=-=-");
-      $display("=> No.%d test pattern, mlier=32'h%h, mcand=32'h%h;", pt, r_mlier, r_mcand);
-      $display("=> Expect data is : 64'h%h", exp);
-      $display("=> Product data is: 64'h%h", prodt);
-      $display("=> Total %d latency, test ok \n", latency);
-      $display("-=-=-=-=-=-=-=-=-     End    -=-=-=-=-=-=-=-=-=-");
+      $display("=> Test Pattern #%d: Multiplier=32'h%h, Multiplcand=32'h%h", pt, r_mlier, r_mcand);
+      $display("=> Expected product is  : 64'h%h", exp);
+      $display("=> Computed product is  : 64'h%h", prodt);
+      $display("=> Latency is           : %d\n", latency);
       if (prodt != exp) begin
         error(4'h1, pt, prodt, exp);
       end
