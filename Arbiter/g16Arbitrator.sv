@@ -1,5 +1,5 @@
 `timescale 1ns/10ps
-// Arbiter with suppoer for upto seven masters
+// Arbiter with support for upto seven masters
 //--------------------------------------------
 // The masters will make a request with a signal 'need'
 // The masters own the bus when they receive a signal 'YouGotIt'
