@@ -131,7 +131,7 @@ initial begin
   start=1;  mlier=32'h87654321;  mcand=32'h80000000;  #(10.0*33);  
   start=0;  mlier=32'h00000000;  mcand=32'h00000000;  #50.0;
 
-//** zero case ****
+  //** zero case ****
   start=1;  mlier=32'h00000000;  mcand=32'h7fffffff;  #(10.0*33);  
   start=0;  mlier=32'h00000000;  mcand=32'h00000000;  #50.0;
 
@@ -143,6 +143,18 @@ initial begin
 
   start=1;  mlier=32'h80000000;  mcand=32'h00000000;  #(10.0*33);   
   start=0;  mlier=32'h00000000;  mcand=32'h00000000;  #50.0;
+  // Random Values
+  start=1;  mlier=$random;  mcand=$random;  #(10.0*33);  
+  start=0;  mlier=$random;  mcand=$random;  #50.0;
+
+  start=1;  mlier=$random;  mcand=$random;  #(10.0*33);  
+  start=0;  mlier=$random;  mcand=$random;  #50.0;
+
+  start=1;  mlier=$random;  mcand=$random;  #(10.0*33);   
+  start=0;  mlier=$random;  mcand=$random;  #50.0;
+  
+  start=1;  mlier=$random;  mcand=$random;  #(10.0*33);   
+  start=0;  mlier=$random;  mcand=$random;  #50.0;
 
   mlier=0; 
   mcand=0;
@@ -219,10 +231,12 @@ always @( posedge clock or posedge reset ) begin
       r_prodt <= prodt;
       c_prodt <= (prodt[63]) ? ~(prodt-1) : prodt;
       pt <= pt + 1;
+      $display("-=-=-=-=-=-=-=-=-    Begin   -=-=-=-=-=-=-=-=-=-");
       $display("=> No.%d test pattern, mlier=32'h%h, mcand=32'h%h;", pt, r_mlier, r_mcand);
       $display("=> Expect data is : 64'h%h", exp);
       $display("=> Product data is: 64'h%h", prodt);
       $display("=> Total %d latency, test ok \n", latency);
+      $display("-=-=-=-=-=-=-=-=-     End    -=-=-=-=-=-=-=-=-=-");
       if (prodt != exp) begin
         death(4'h1, pt, prodt, exp);
       end
