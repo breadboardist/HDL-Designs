@@ -23,7 +23,7 @@ setenv HSP_HOME /apps/synopsys/HSPICE/hspice
 setenv VCS_HOME /apps/synopsys/I-2014.03-2
 source ${VCS_HOME}/bin/environ.csh
 
-dc_shell -f ./scripts/multi_vl_syn.script | tee ./results/VLsynres.txt
-grep -i error ./results/VLsynres.txt
-grep -i latch ./results/VLsynres.txt
-grep -i violated ./results/VLsynres.txt
+dc_shell -f ./scripts/multi_vl_syn.script | tee ./results/mostOpt.txt
+grep -i error ./results/mostOpt.txt
+grep -i latch ./results/mostOpt.txt
+grep -i violated ./results/mostOpt.txt

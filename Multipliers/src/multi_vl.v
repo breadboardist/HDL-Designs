@@ -108,7 +108,7 @@ end
 
 	assign zeroes_mlier = mlier_sft[31:0] ;
 
-	always @(*) begin// figure out how many continuous 0 exist
+	always @(*) begin// Determine the number of continuous zeroes in the multiplier to get shift amount
 		if (!start || !load_vals) begin
 			shift_amount = 0;
 		end else begin 
