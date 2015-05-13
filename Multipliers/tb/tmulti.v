@@ -234,18 +234,18 @@ always @( posedge clock or posedge reset ) begin
 
     start_d <= start;
    
-    if(start && !start_d)begin
+    
       case (1'b1)
         (valid==1): latency <= 0;
         (latency!=0): latency <= latency+1;
-        default: latency <= 1;
+        (start && !start_d): latency <= 1;
       endcase // 1'b1
     //   latency <= 1; 
     // end else if (valid)begin
     //   latency <= 0; 
     // end else if (latency != 0)begin
     //   latency <= latency + 1; 
-    end 
+    
 
     if(start && !start_d)begin
       loadedmcand <= mcand; 
