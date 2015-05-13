@@ -219,10 +219,10 @@ always @( posedge clock or posedge reset ) begin
     r_prodt <= 0; loadedmlier <= 0; loadedmcand <= 0; start_d <= 0;
   end else begin
     if (loadwait[4]) begin 
-	latency_q <= 0;
+	   latency_q <= 0;
     end else if (valid) begin
    	latency_q <= latency;
-    end
+  end
 
     if (valid) begin
         loadwait <= 8'b1; 
@@ -235,11 +235,16 @@ always @( posedge clock or posedge reset ) begin
     start_d <= start;
    
     if(start && !start_d)begin
-      latency <= 1; 
-    end else if (valid)begin
-      latency <= 0; 
-    end else if (latency != 0)begin
-      latency <= latency + 1; 
+      case (1'b1)
+        (valid==1): latency <= 0;
+        (latency!=0): latency <= latency+1;
+        default: latency <= 1;
+      endcase // 1'b1
+    //   latency <= 1; 
+    // end else if (valid)begin
+    //   latency <= 0; 
+    // end else if (latency != 0)begin
+    //   latency <= latency + 1; 
     end 
 
     if(start && !start_d)begin
