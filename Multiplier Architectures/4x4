@@ -1,0 +1,49 @@
+module mult4x4 (clk94,St94,Mplier94,Mcand94,prod94,done94);
+input clk94;
+input St94;
+input [3:0] Mplier94;
+input [3:0] Mcand94;
+output [8:0] prod94;
+output done94;
+reg done94;
+reg [3:0] pstate, nstate;
+reg [8:0] prod94;
+reg [8:0] ACC;
+wire M;
+assign M = ACC[0];
+always @(posedge clk94 or posedge St94) if (St94) pstate = s0;
+else pstate = nstate;
+always @(pstate)
+       case (pstate)
+             0: if(St94) nstate = 1;
+             1: if(M) nstate = 2; else nstate = 2;
+             2: nstate = 3;
+             3: if(M) nstate = 4; else nstate = 4;
+             4: nstate = 5;
+             5: if(M) nstate = 6; else nstate = 6;
+             6: nstate = 7;
+             7: if(M) nstate = 8; else nstate = 8;
+             8: nstate = 9;
+             9: nstate = 0;
+endcase
+always @(pstate) //Output (Action)
+       case (pstate)
+       0: begin
+             ACC[8:4] = 5'b00000;
+             ACC[3:0] = Mplier94;
+             end
+       1: if (M) ACC[8:4] = {1'b0, ACC[7:4]} + {1'b0, Mcand94};
+       2: ACC = {1'b0, ACC[8:1]};
+       3: if (M) ACC[8:4] = {1'b0, ACC[7:4]} + {1'b0, Mcand94};
+       4: ACC = {1'b0, ACC[8:1]};
+       5: if (M) ACC[8:4] = {1'b0, ACC[7:4]} + {1'b0, Mcand94};
+       6: ACC = {1'b0, ACC[8:1]};
+￼
+7: if (M) ACC[8:4] = {1'b0, ACC[7:4]} + {1'b0, Mcand94};
+       8: ACC = {1'b0, ACC[8:1]};
+       9: begin
+             done94 = 1'b1;
+             prod94 = ACC;
+             end
+       endcase
+endmodule
