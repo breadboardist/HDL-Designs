@@ -58,7 +58,7 @@ module DF_Fir
 
   //Delay Blocks and Registering Output
   always @( posedge clk or posedge reset)
-    begin:
+    begin
       if (reset == 1'b1) begin
         delay_pipeline[0] <= 0;
         delay_pipeline[1] <= 0;
