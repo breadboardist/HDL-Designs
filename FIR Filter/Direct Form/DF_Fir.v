@@ -12,8 +12,8 @@ module DF_Fir
   input   clk; 
   input   clk_enable; 
   input   reset; 
-  input   signed [15:0] filter_in; //sfix16_En15
-  output  signed [32:0] filter_out; //sfix33_En31
+  input   signed [15:0] filter_in; 
+  output  signed [32:0] filter_out;
 
   // Filter Coefficients
   parameter signed [15:0] coeff1 = 16'b1111111011110100; 
