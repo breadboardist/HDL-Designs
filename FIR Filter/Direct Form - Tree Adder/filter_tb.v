@@ -80,6 +80,7 @@ module filter_tb;
 
  reg  signed [15:0] filter_in_data_log_force [0:199];
  reg  signed [32:0] filter_out_expected [0:199];
+ integer f;
 
  initial //Input & Output data
  begin
@@ -488,6 +489,9 @@ module filter_tb;
  filter_out_expected[198] <= 33'h01384ed51;
  filter_out_expected[199] <= 33'h00f096184;
 
+ //File to write output to
+ f = $fopen("output.txt","w");
+
  end // Input & Output data
 
 
@@ -693,8 +697,9 @@ module filter_tb;
                         $time, filter_out_expected[filter_out_addr], filter_out);
            if (filter_out_errCnt >= MAX_ERROR_COUNT) 
              $display("Warning: Number of errors for filter_out have exceeded the maximum error limit");
+        end else begin
+             $fwrite(f,"%h\n",filter_out);
         end
-
       end
     end
   end // checker_filter_out
