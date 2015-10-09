@@ -39,7 +39,7 @@ module filter_tb;
       done = 0; 
 
   end
-  endtask // filter_in_data_log_task
+  endtask
 
   task filter_out_task; 
     input         clk;
@@ -70,7 +70,7 @@ module filter_tb;
       done = 0; 
 
   end
-  endtask // filter_out_task
+  endtask
 
  // Constants
  parameter clk_high                         = 5;
@@ -495,8 +495,6 @@ module filter_tb;
 
  end // Input & Output data
 
-  parameter MAX_ERROR_COUNT = 200; //uint32
-
   reg  clk; 
   reg  clk_enable; 
   reg  reset; 
@@ -535,10 +533,7 @@ module filter_tb;
 
 
  // Block Statements
-  // -------------------------------------------------------------
   // Driving the test bench enable
-  // -------------------------------------------------------------
-
   always @(reset, snkDone)
   begin
     if (reset == 1'b1)
@@ -551,7 +546,7 @@ module filter_tb;
     end
   end
 
-  always @(posedge clk or posedge reset) // completed_msg
+  always @(posedge clk or posedge reset)
   begin
     if (reset) begin 
        // Nothing to reset.
@@ -564,12 +559,8 @@ module filter_tb;
               $display("**************TEST COMPLETED (FAILED)**************");
       end
     end
-  end // completed_msg;
-
-  // -------------------------------------------------------------
-  // System Clock (fast clock) and reset
-  // -------------------------------------------------------------
-
+  end
+  // System Clock and reset
   always  // clock generation
   begin // clk_gen
     clk <= 1'b1;
@@ -583,21 +574,17 @@ module filter_tb;
       # clk_low;
       $stop;
     end
-  end  // clk_gen
+  end
 
-  initial  // reset block
-  begin // reset_gen
+  initial // reset block
+  begin
     reset <= 1'b1;
     # (clk_period * 2);
     @ (posedge clk);
     # (clk_hold);
     reset <= 1'b0;
-  end  // reset_gen
-
-  // -------------------------------------------------------------
+  end
   // Testbench clock enable
-  // -------------------------------------------------------------
-
   always @ (posedge clk or posedge reset)
     begin: tb_enb_delay
       if (reset == 1'b1) begin
@@ -618,10 +605,8 @@ module filter_tb;
       rdEnb <= 0;
   end
 
-  // -------------------------------------------------------------
-  // Read the data and transmit it to the DUT
-  // -------------------------------------------------------------
 
+  // Read the data and transmit it to the DUT
   always @(posedge clk or posedge reset)
   begin
     filter_in_data_log_task(clk,reset,
@@ -630,21 +615,14 @@ module filter_tb;
   end
 
   assign filter_in_data_log_rdenb = rdEnb;
-
   always @ (filter_in_data_log_rdenb, filter_in_data_log_addr)
-  begin // stimuli_filter_in_data_log_filter_in
+  begin
     if (filter_in_data_log_rdenb == 1) begin
       filter_in <= # clk_hold filter_in_data_log_force[filter_in_data_log_addr];
     end
-  end // stimuli_filter_in_data_log_filter_in
-
-  // -------------------------------------------------------------
+  end
   // Create done signal for Input data
-  // -------------------------------------------------------------
-
   assign srcDone = filter_in_data_log_done;
-
-
   always @( posedge clk or posedge reset)
     begin: ceout_delayLine
       if (reset == 1'b1) begin
@@ -657,15 +635,10 @@ module filter_tb;
         int_delay_pipe[1] <= int_delay_pipe[0];
         end
       end
-    end // ceout_delayLine
+    end
 
   assign delayLine_out = int_delay_pipe[1];
-
   assign expected_ce_out =  delayLine_out & clk_enable;
-
-  // -------------------------------------------------------------
-  //  Checker: Checking the data received from the DUT.
-  // -------------------------------------------------------------
 
   always @(posedge clk or posedge reset)
   begin
@@ -675,7 +648,6 @@ module filter_tb;
   end
 
   assign filter_out_rdenb = expected_ce_out;
-
   assign filter_out_ref = filter_out_expected[filter_out_addr];
 
 
@@ -692,15 +664,13 @@ module filter_tb;
            filter_out_testFailure <= 1;
                $display("ERROR in filter_out at time %t : Expected '%h' Actual '%h'", 
                     $time, filter_out_expected[filter_out_addr], filter_out);
-           if (filter_out_errCnt >= MAX_ERROR_COUNT) 
-             $display("Warning: Number of errors for filter_out have exceeded the maximum error limit");
         end else begin
              $fwrite(f,"%h\n",filter_out);
         end
 
       end
     end
-  end // checker_filter_out
+  end
 
   always @ (posedge clk or posedge reset) // checkDone_1
   begin
@@ -710,17 +680,16 @@ module filter_tb;
       check1_Done <= 1;
   end
 
-  // -------------------------------------------------------------
+
   // Create done and test failure signal for output data
-  // -------------------------------------------------------------
+
 
   assign snkDone = check1_Done;
-
   assign testFailure = filter_out_testFailure;
 
-  // -------------------------------------------------------------
+
   // Global clock enable
-  // -------------------------------------------------------------
+
   always @(snkDone, tbenb_dly)
   begin
     if (snkDone == 0)
@@ -728,9 +697,4 @@ module filter_tb;
     else
       # clk_hold clk_enable <= 0;
   end
-
- // Assignment Statements
-
-
-
-endmodule // filter_tb
+endmodule

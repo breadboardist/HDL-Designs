@@ -494,37 +494,31 @@ module filter_tb;
 
  end // Input & Output data
 
+  reg  clk; 
+  reg  clk_enable; 
+  reg  reset; 
+  reg  signed [15:0] filter_in; 
+  wire signed [32:0] filter_out; 
 
-
-  parameter MAX_ERROR_COUNT = 200; //uint32
-
-
- // Signals
-  reg  clk; // boolean
-  reg  clk_enable; // boolean
-  reg  reset; // boolean
-  reg  signed [15:0] filter_in; // sfix16_En15
-  wire signed [32:0] filter_out; // sfix33_En31
-
-  reg  tb_enb; // boolean
-  wire srcDone; // boolean
-  wire snkDone; // boolean
-  wire testFailure; // boolean
-  reg  tbenb_dly; // boolean
-  reg  rdEnb; // boolean
-  wire filter_in_data_log_rdenb; // boolean
-  reg  [7:0] filter_in_data_log_addr; // ufix8
-  reg  filter_in_data_log_done; // boolean
-  reg  filter_out_testFailure; // boolean
-  integer filter_out_errCnt; // uint32
-  wire delayLine_out; // boolean
-  wire expected_ce_out; // boolean
-  reg  int_delay_pipe [0:1] ; // boolean
-  wire filter_out_rdenb; // boolean
-  reg  [7:0] filter_out_addr; // ufix8
-  reg  filter_out_done; // boolean
-  wire signed [32:0] filter_out_ref; // sfix33_En31
-  reg  check1_Done; // boolean
+  reg  tb_enb; 
+  wire srcDone; 
+  wire snkDone; 
+  wire testFailure; 
+  reg  tbenb_dly; 
+  reg  rdEnb; 
+  wire filter_in_data_log_rdenb; 
+  reg  [7:0] filter_in_data_log_addr; 
+  reg  filter_in_data_log_done; 
+  reg  filter_out_testFailure; 
+  integer filter_out_errCnt; 
+  wire delayLine_out; 
+  wire expected_ce_out; 
+  reg  int_delay_pipe [0:1] ; 
+  wire filter_out_rdenb; 
+  reg  [7:0] filter_out_addr; 
+  reg  filter_out_done; 
+  wire signed [32:0] filter_out_ref; 
+  reg  check1_Done; 
 
  // Module Instances
   DF_Fir_Tree u_DF_Fir_Tree
@@ -538,9 +532,9 @@ module filter_tb;
 
 
  // Block Statements
-  // -------------------------------------------------------------
+  
   // Driving the test bench enable
-  // -------------------------------------------------------------
+  
 
   always @(reset, snkDone)
   begin
@@ -569,9 +563,9 @@ module filter_tb;
     end
   end // completed_msg;
 
-  // -------------------------------------------------------------
+  
   // System Clock (fast clock) and reset
-  // -------------------------------------------------------------
+  
 
   always  // clock generation
   begin // clk_gen
@@ -597,9 +591,9 @@ module filter_tb;
     reset <= 1'b0;
   end  // reset_gen
 
-  // -------------------------------------------------------------
+  
   // Testbench clock enable
-  // -------------------------------------------------------------
+  
 
   always @ (posedge clk or posedge reset)
     begin: tb_enb_delay
@@ -621,9 +615,9 @@ module filter_tb;
       rdEnb <= 0;
   end
 
-  // -------------------------------------------------------------
+  
   // Read the data and transmit it to the DUT
-  // -------------------------------------------------------------
+  
 
   always @(posedge clk or posedge reset)
   begin
@@ -641,9 +635,9 @@ module filter_tb;
     end
   end // stimuli_filter_in_data_log_filter_in
 
-  // -------------------------------------------------------------
+  
   // Create done signal for Input data
-  // -------------------------------------------------------------
+  
 
   assign srcDone = filter_in_data_log_done;
 
@@ -666,9 +660,9 @@ module filter_tb;
 
   assign expected_ce_out =  delayLine_out & clk_enable;
 
-  // -------------------------------------------------------------
+  
   //  Checker: Checking the data received from the DUT.
-  // -------------------------------------------------------------
+  
 
   always @(posedge clk or posedge reset)
   begin
@@ -695,8 +689,6 @@ module filter_tb;
            filter_out_testFailure <= 1;
                    $display("ERROR  in filter_out at time %t : Expected '%h' Actual '%h'", 
                         $time, filter_out_expected[filter_out_addr], filter_out);
-           if (filter_out_errCnt >= MAX_ERROR_COUNT) 
-             $display("Warning: Number of errors for filter_out have exceeded the maximum error limit");
         end else begin
              $fwrite(f,"%h\n",filter_out);
         end
@@ -712,17 +704,17 @@ module filter_tb;
       check1_Done <= 1;
   end
 
-  // -------------------------------------------------------------
+  
   // Create done and test failure signal for output data
-  // -------------------------------------------------------------
+  
 
   assign snkDone = check1_Done;
 
   assign testFailure = filter_out_testFailure;
 
-  // -------------------------------------------------------------
+  
   // Global clock enable
-  // -------------------------------------------------------------
+  
   always @(snkDone, tbenb_dly)
   begin
     if (snkDone == 0)
