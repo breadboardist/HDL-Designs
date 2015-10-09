@@ -80,7 +80,7 @@ module filter_tb;
 
  reg  signed [15:0] filter_in_data_log_force [0:199];
  reg  signed [32:0] filter_out_expected [0:199];
-
+ integer f;
 
 
  initial //Input & Output data
