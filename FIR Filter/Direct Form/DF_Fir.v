@@ -87,7 +87,7 @@ module DF_Fir
       end
     end
 
-
+  //Multiplication Operations
   assign mul_temp = delay_pipeline[8] * coeff9;
   assign product9 = mul_temp[30:0];
 
@@ -116,7 +116,8 @@ module DF_Fir
 
   assign mul_temp_8 = delay_pipeline[0] * coeff1;
   assign product1 = mul_temp_8[30:0];
-
+  
+  //Add Operations
   assign add_signext = product1_cast;
   assign add_signext_1 = $signed({{2{product2[30]}}, product2});
   assign add_temp = add_signext + add_signext_1;

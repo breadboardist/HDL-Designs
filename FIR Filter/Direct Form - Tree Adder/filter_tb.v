@@ -531,11 +531,8 @@ module filter_tb;
     );
 
 
- // Block Statements
-  
+  // Block Statements
   // Driving the test bench enable
-  
-
   always @(reset, snkDone)
   begin
     if (reset == 1'b1)
@@ -548,7 +545,7 @@ module filter_tb;
     end
   end
 
-  always @(posedge clk or posedge reset) // completed_msg
+  always @(posedge clk or posedge reset)
   begin
     if (reset) begin 
        // Nothing to reset.
@@ -565,10 +562,8 @@ module filter_tb;
 
   
   // System Clock (fast clock) and reset
-  
-
-  always  // clock generation
-  begin // clk_gen
+  always  
+  begin 
     clk <= 1'b1;
     # clk_high;
     clk <= 1'b0;
@@ -580,21 +575,18 @@ module filter_tb;
       # clk_low;
       $stop;
     end
-  end  // clk_gen
+  end  
 
-  initial  // reset block
-  begin // reset_gen
+  initial  
+  begin 
     reset <= 1'b1;
     # (clk_period * 2);
     @ (posedge clk);
     # (clk_hold);
     reset <= 1'b0;
-  end  // reset_gen
+  end
 
-  
   // Testbench clock enable
-  
-
   always @ (posedge clk or posedge reset)
     begin: tb_enb_delay
       if (reset == 1'b1) begin
@@ -605,7 +597,7 @@ module filter_tb;
           tbenb_dly <= tb_enb;
         end
       end
-    end // tb_enb_delay
+    end 
 
   always @(snkDone, tbenb_dly)
   begin
@@ -617,8 +609,6 @@ module filter_tb;
 
   
   // Read the data and transmit it to the DUT
-  
-
   always @(posedge clk or posedge reset)
   begin
     filter_in_data_log_task(clk,reset,
@@ -633,15 +623,10 @@ module filter_tb;
     if (filter_in_data_log_rdenb == 1) begin
       filter_in <= # clk_hold filter_in_data_log_force[filter_in_data_log_addr];
     end
-  end // stimuli_filter_in_data_log_filter_in
+  end
 
-  
   // Create done signal for Input data
-  
-
   assign srcDone = filter_in_data_log_done;
-
-
   always @( posedge clk or posedge reset)
     begin: ceout_delayLine
       if (reset == 1'b1) begin
@@ -654,16 +639,12 @@ module filter_tb;
         int_delay_pipe[1] <= int_delay_pipe[0];
         end
       end
-    end // ceout_delayLine
+    end
 
   assign delayLine_out = int_delay_pipe[1];
-
   assign expected_ce_out =  delayLine_out & clk_enable;
-
-  
+ 
   //  Checker: Checking the data received from the DUT.
-  
-
   always @(posedge clk or posedge reset)
   begin
     filter_out_task(clk,reset,
@@ -672,10 +653,7 @@ module filter_tb;
   end
 
   assign filter_out_rdenb = expected_ce_out;
-
   assign filter_out_ref = filter_out_expected[filter_out_addr];
-
-
   always @ (posedge clk or posedge reset) // checker_filter_out
   begin
     if (reset == 1) begin
@@ -694,27 +672,21 @@ module filter_tb;
         end
       end
     end
-  end // checker_filter_out
+  end 
 
-  always @ (posedge clk or posedge reset) // checkDone_1
+  always @ (posedge clk or posedge reset) 
   begin
     if (reset == 1)
       check1_Done <= 0;
     else if ((check1_Done == 0) && (filter_out_done == 1) && (filter_out_rdenb == 1))
       check1_Done <= 1;
   end
-
   
   // Create done and test failure signal for output data
-  
-
   assign snkDone = check1_Done;
-
   assign testFailure = filter_out_testFailure;
-
-  
-  // Global clock enable
-  
+ 
+  // Global clock enable  
   always @(snkDone, tbenb_dly)
   begin
     if (snkDone == 0)
@@ -722,9 +694,4 @@ module filter_tb;
     else
       # clk_hold clk_enable <= 0;
   end
-
- // Assignment Statements
-
-
-
 endmodule // filter_tb
