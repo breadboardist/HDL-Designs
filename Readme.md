@@ -7,6 +7,10 @@ List of Projects in the Repo
 * Single Cycle MIPS (Can execute 23 instructions)
 * Five Stage Pipelined MIPS (Can execute 23 instruction. Has a pipeline capable of forwarding and stalling)
 * Root Mean Square Calculator
+* 32-bit Multipliers (Iterative Architecture)
+* N-bit Multipliers (Array Architecture, Iterative Architecture)
+* Direct Form FIR Filter (Order = 8)
+* Bus Arbiter (Support for 7 masters/7 slaves)
 
 License 
 ========
