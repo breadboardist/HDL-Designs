@@ -11,6 +11,7 @@ List of Projects in the Repo
 * N-bit Multipliers (Array Architecture, Iterative Architecture)
 * Direct Form FIR Filter (Order = 8)
 * Bus Arbiter (Support for 7 masters/7 slaves)
+* IEEE754 compatible Natural Log Calculator
 
 License 
 ========
